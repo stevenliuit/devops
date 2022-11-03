@@ -27,7 +27,7 @@ public abstract class Authenticator implements Serializable {
 		this.timeout = timeout;
 	}
 
-	@Editable(order=20000, placeholder="No default group", description="Optionally add newly authenticated user to "
+	@Editable(order=20000, placeholder="无默认组", description="Optionally add newly authenticated user to "
 			+ "specified group if membership information is not retrieved")
 	@GroupChoice
 	public String getDefaultGroup() {

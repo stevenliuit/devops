@@ -3,11 +3,11 @@
 		<div class="card-body">
 			<div class="head d-flex flex-wrap">
 				<div class="input-group base mr-3 mb-4 d-none d-lg-inline-flex">
-					<span class="input-group-prepend"><span class="input-group-text">Base</span></span> 
+					<span class="input-group-prepend"><span class="input-group-text">基本</span></span> 
 					<input wicket:id="baseBranch" type="hidden" class="form-control">					
 				</div>
 				<div class="clearable-wrapper mr-3 mb-4">
-					<input wicket:id="filterBranches" class="form-control search" placeholder="Filter branches...">
+					<input wicket:id="filterBranches" class="form-control search" placeholder="过滤分支...">
 				</div>
 				<a wicket:id="createBranch" class="btn btn-primary btn-icon mb-4"><wicket:svg href="plus" class="icon"></wicket:svg></a>
 			</div>
@@ -21,7 +21,7 @@
 		<div class="title my-2">
 			<a wicket:id="branchLink" class="name mr-2"><span wicket:id="name"></span></a>
 			<a wicket:id="buildStatus" class="build-status mr-2"></a>
-			<span class="badge badge-info badge-sm mr-2" wicket:id="default">default</span>
+			<span class="badge badge-info badge-sm mr-2" wicket:id="default">默认</span>
 		</div>
 		<div class="commit-message mb-2">
 			<span wicket:id="message"></span>
@@ -45,7 +45,7 @@
 	<wicket:fragment wicket:id="createBranchFrag">
 		<form wicket:id="form" class="create-branch">
 			<div class="modal-header">
-				<h5 class="modal-title">Create Branch</h5>
+				<h5 class="modal-title">创建分支</h5>
 				<button wicket:id="close" type="button" class="close"><wicket:svg href="times" class="icon"/></button>
 			</div>
 			<div class="modal-body">
@@ -53,7 +53,7 @@
 				<div wicket:id="editor"></div>
 			</div>
 			<div class="modal-footer">
-				<button wicket:id="create" class="btn btn-primary">Create</button>
+				<button wicket:id="create" class="btn btn-primary">创建</button>
 				<button wicket:id="cancel" class="btn btn-secondary">Cancel</button>
 			</div>
 		</form>
@@ -61,18 +61,18 @@
 	<wicket:fragment wicket:id="confirmDeleteBranchFrag">
         <div class="confirm-delete-branch">
             <div class="modal-header">
-                <h5 class="modal-title">Please confirm</h5>
+                <h5 class="modal-title">请确认</h5>
                 <button wicket:id="close" type="button" class="close"><wicket:svg href="times" class="icon"/></button>
             </div>
             <div wicket:id="body" class="modal-body"></div>
             <div class="modal-footer">
-                <a wicket:id="delete" class="btn btn-danger">Delete</a>
+                <a wicket:id="delete" class="btn btn-danger">删除</a>
                 <a wicket:id="cancel" class="btn btn-secondary">Cancel</a>
             </div>
         </div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="openRequestsFrag">
-		There are <a wicket:id="openRequests">open pull requests</a> against branch <span wicket:id="branch"></span>. 
-		These pull requests will be discarded if the branch is deleted.
+		有 <a wicket:id="openRequests">打开拉取请求</a> 反对分支 <span wicket:id="branch"></span>. 
+		如果分支被删除，这些拉取请求将被丢弃。
 	</wicket:fragment>
 </wicket:extend>

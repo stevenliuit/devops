@@ -24,7 +24,7 @@ public abstract class PullRequestTrigger extends TransitionTrigger {
 				.getRuleName(IssueQueryLexer.FixedInCurrentPullRequest));		
 	}
 	
-	@Editable(name="Target Branches", order=100, placeholder="Any branch", description="Optionally specify "
+	@Editable(name="Target Branches", order=100, placeholder="所有分支", description="Optionally specify "
 			+ "space-separated target branches of the pull requests to check. Use '**', '*' or '?' for "
 			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
 			+ "Prefix with '-' to exclude. Leave empty to match all branches")
@@ -37,7 +37,7 @@ public abstract class PullRequestTrigger extends TransitionTrigger {
 		this.branches = branches;
 	}
 
-	@Editable(order=1000, name="Applicable Issues", placeholder="All", description="Optionally specify issues "
+	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues "
 			+ "applicable for this transition. Leave empty for all issues")
 	@IssueQuery(withOrder = false, withCurrentPullRequestCriteria = true)
 	@Override

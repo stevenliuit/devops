@@ -140,7 +140,7 @@ public abstract class TaskButton extends AjaxButton {
 		
 		ExecutorService executorService = OneDev.getInstance(ExecutorService.class);
 		List<JobLogEntryEx> messages = new ArrayList<>();
-		messages.add(new JobLogEntryEx(new JobLogEntry(new Date(), "Please wait...")));
+		messages.add(new JobLogEntryEx(new JobLogEntry(new Date(), "请稍等...")));
 		TaskFuture future = getTaskFutures().put(path, new TaskFuture(executorService.submit(new Callable<TaskResult>() {
 
 			@Override

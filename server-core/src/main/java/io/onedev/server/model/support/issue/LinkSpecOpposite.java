@@ -44,7 +44,7 @@ public class LinkSpecOpposite implements Serializable {
 		this.multiple = multiple;
 	}
 
-	@Editable(order=300, name="Linkable Issues On the Other Side", placeholder="All issues", 
+	@Editable(order=300, name="Linkable Issues On the Other Side", placeholder="所有问题", 
 			description="Optionally specify criteria of issues which can be linked on the other side")
 	@io.onedev.server.web.editable.annotation.IssueQuery
 	public String getIssueQuery() {

@@ -134,7 +134,7 @@ public class Import implements Serializable, Validatable {
 			return new ArrayList<>();
 	}
 
-	@Editable(order=500, placeholder="Access Anonymously", description="Specify a secret to be used as "
+	@Editable(order=500, placeholder="匿名访问", description="Specify a secret to be used as "
 			+ "access token to import build spec from above project. If not specified, OneDev will try "
 			+ "to import build spec anonymously")
 	@ChoiceProvider("getAccessTokenSecretChoices")

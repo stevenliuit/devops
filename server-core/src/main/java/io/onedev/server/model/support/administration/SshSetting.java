@@ -27,7 +27,7 @@ public class SshSetting implements Serializable, Validatable {
 	
     private String pemPrivateKey;
     
-    @Editable(placeholder="PEM private key begins with '-----BEGIN RSA PRIVATE KEY-----'")
+    @Editable(placeholder="PEM私钥开始为 '-----BEGIN RSA PRIVATE KEY-----'")
     @OmitName
     @Multiline
     @NotEmpty

@@ -33,7 +33,7 @@ public class NamedAgentQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@AgentQuery(forExecutor=false)
 	@Override
 	public String getQuery() {

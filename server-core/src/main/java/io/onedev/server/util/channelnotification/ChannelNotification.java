@@ -66,7 +66,7 @@ public class ChannelNotification implements Serializable {
 		this.issues = issues;
 	}
 
-	@Editable(order=200, name="Applicable Issues", placeholder="All")
+	@Editable(order=200, name="Applicable Issues", placeholder="所有")
 	@IssueQuery(withOrder=false)
 	@ShowCondition("isIssuesEnabled")
 	public String getIssueQuery() {
@@ -91,7 +91,7 @@ public class ChannelNotification implements Serializable {
 		this.pullRequests = pullRequests;
 	}
 
-	@Editable(order=400, name="Applicable Pull Requests", placeholder="All")
+	@Editable(order=400, name="Applicable Pull Requests", placeholder="所有")
 	@PullRequestQuery(withOrder=false)
 	@ShowCondition("isPullRequestsEnabled")
 	public String getPullRequestQuery() {
@@ -116,7 +116,7 @@ public class ChannelNotification implements Serializable {
 		this.builds = builds;
 	}
 
-	@Editable(order=600, name="Applicable Builds", placeholder="All")
+	@Editable(order=600, name="Applicable Builds", placeholder="所有")
 	@BuildQuery(withOrder=false, withUnfinishedCriteria=true)
 	@ShowCondition("isBuildsEnabled")
 	public String getBuildQuery() {
@@ -141,7 +141,7 @@ public class ChannelNotification implements Serializable {
 		this.codePush = codePush;
 	}
 
-	@Editable(order=800, name="Applicable Commits", placeholder="All")
+	@Editable(order=800, name="Applicable Commits", placeholder="所有")
 	@CommitQuery
 	@ShowCondition("isCodePushEnabled")
 	public String getCommitQuery() {
@@ -166,7 +166,7 @@ public class ChannelNotification implements Serializable {
 		this.codeComments = codeComments;
 	}
 
-	@Editable(order=1000, name="Applicable Code Comments", placeholder="All")
+	@Editable(order=1000, name="Applicable Code Comments", placeholder="所有")
 	@CodeCommentQuery(withOrder=false)
 	@ShowCondition("isCodeCommentsEnabled")
 	public String getCodeCommentQuery() {

@@ -144,7 +144,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		return new ArrayList<>();
 	}
 
-	@Editable(order=200, placeholder="Use Any Applicable Executor", description="Optionally specify executor "
+	@Editable(order=200, placeholder="使用任何适用的Executor", description="Optionally specify executor "
 			+ "to execute this job. Leave empty to use any executor as long as its job requirement is satisfied")
 	@Interpolative(literalSuggester="suggestJobExecutors", variableSuggester="suggestVariables")
 	public String getJobExecutor() {
@@ -225,7 +225,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.projectDependencies = projectDependencies;
 	}
 
-	@Editable(order=9114, group="Dependencies & Services", placeholder="No required services", 
+	@Editable(order=9114, group="Dependencies & Services", placeholder="无需服务", 
 			description="Optionally specify services required by this job. "
 			+ "<b class='text-warning'>NOTE:</b> Services are only supported by docker aware executors "
 			+ "(server docker executor, remote docker executor, or kubernetes executor)")

@@ -30,7 +30,7 @@ public abstract class SsoConnector implements Serializable {
 
 	public abstract String getButtonImageUrl();
 
-	@Editable(order=20000, placeholder="No default group", description="Optionally add newly authenticated "
+	@Editable(order=20000, placeholder="无默认分组", description="Optionally add newly authenticated "
 			+ "user to specified group if membership information is not retrieved")
 	@GroupChoice
 	public String getDefaultGroup() {

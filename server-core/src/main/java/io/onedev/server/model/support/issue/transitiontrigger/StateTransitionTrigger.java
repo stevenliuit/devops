@@ -40,7 +40,7 @@ public class StateTransitionTrigger extends TransitionTrigger {
 		return stateNames;
 	}
 	
-	@Editable(order=1000, name="Applicable Issues", placeholder="All", description="Optionally specify issues "
+	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues "
 			+ "applicable for this transition. Leave empty for all issues")
 	@IssueQuery(withOrder = false, withCurrentIssueCriteria = true)
 	@Override

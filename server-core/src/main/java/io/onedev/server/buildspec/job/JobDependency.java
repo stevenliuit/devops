@@ -71,7 +71,7 @@ public class JobDependency implements Serializable {
 		this.jobParams = jobParams;
 	}
 	
-	@Editable(order=300, name="Artifacts to Retrieve", placeholder="Do not retrieve", description=""
+	@Editable(order=300, name="Artifacts to Retrieve", placeholder="不检索", description=""
 			+ "Optionally specify artifacts to retrieve from the dependency into "
 			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>. "
 			+ "Only published artifacts (via artifact publish step) can be retrieved. Leave empty to not "
@@ -86,7 +86,7 @@ public class JobDependency implements Serializable {
 		this.artifacts = artifacts;
 	}
 
-	@Editable(order=400, placeholder="Job workspace", description=""
+	@Editable(order=400, placeholder="工作空间", description=""
 			+ "Optionally specify a path relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> "
 			+ "to put retrieved artifacts. Leave empty to use job workspace itself")
 	@Interpolative(variableSuggester="suggestVariables")

@@ -86,7 +86,7 @@ public abstract class JobExecutor implements Serializable {
 		return OneDev.getInstance(TerminalManager.class).isTerminalSupported();
 	}
 
-	@Editable(order=10000, placeholder="Can be used by any jobs", 
+	@Editable(order=10000, placeholder="可供任何jobs使用", 
 			description="Optionally specify jobs authorized to use this executor")
 	@JobAuthorization
 	@Nullable

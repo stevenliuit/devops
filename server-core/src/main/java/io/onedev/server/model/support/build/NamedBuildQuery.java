@@ -34,7 +34,7 @@ public class NamedBuildQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@BuildQuery(withCurrentUserCriteria=true, withUnfinishedCriteria=true)
 	@Override
 	public String getQuery() {

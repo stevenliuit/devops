@@ -134,7 +134,7 @@ public class BranchProtection implements Serializable {
 		this.signatureRequired = signatureRequired;
 	}
 
-	@Editable(order=400, name="Required Reviewers", placeholder="No one", description="Optionally specify "
+	@Editable(order=400, name="Required Reviewers", placeholder="没有人", description="Optionally specify "
 			+ "required reviewers for changes of specified branch")
 	@io.onedev.server.web.editable.annotation.ReviewRequirement
 	public String getReviewRequirement() {
@@ -156,7 +156,7 @@ public class BranchProtection implements Serializable {
 		reviewRequirement = parsedReviewRequirement.toString();
 	}
 	
-	@Editable(order=500, name="Required Builds", placeholder="No any", description="Optionally choose required builds")
+	@Editable(order=500, name="Required Builds", placeholder="没有任何", description="Optionally choose required builds")
 	@JobChoice(tagsMode=true)
 	public List<String> getJobNames() {
 		return jobNames;

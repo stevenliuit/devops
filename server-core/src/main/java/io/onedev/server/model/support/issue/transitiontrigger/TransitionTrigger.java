@@ -17,7 +17,7 @@ public abstract class TransitionTrigger implements Serializable {
 	
 	private String issueQuery;
 	
-	@Editable(order=1000, name="Applicable Issues", placeholder="All", description=""
+	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description=""
 			+ "Optionally specify issues applicable for this transition. Leave empty for all issues. ")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withOrder = false)
 	public String getIssueQuery() {

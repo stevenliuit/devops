@@ -34,7 +34,7 @@ public class NamedIssueQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@IssueQuery(withCurrentUserCriteria = true)
 	@Override
 	public String getQuery() {

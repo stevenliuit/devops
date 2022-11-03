@@ -41,7 +41,7 @@ public class SystemSetting implements Serializable, Validatable {
 	
 	private boolean gravatarEnabled;
 	
-	@Editable(name="Server URL", order=90, description="Specify root URL to access this server")
+	@Editable(name="Server URL", order=90, description="指定 root URL 以访问此服务器")
 	@NotEmpty
 	public String getServerUrl() {
 		return serverUrl;
@@ -52,8 +52,8 @@ public class SystemSetting implements Serializable, Validatable {
 	}
 
 	@Editable(name="SSH Root URL", order=150, placeholderProvider="getSshRootUrlPlaceholder", description=""
-			+ "Optionally specify SSH root URL, which will be used to construct project clone url via SSH protocol. "
-			+ "Leave empty to derive from server url")
+			+ "可选指定 SSH root URL，该 URL 将用于通过 SSH 协议构造项目克隆 url. "
+			+ "留空以从服务器 url 派生")
 	public String getSshRootUrl() {
 		return sshRootUrl;
 	}
@@ -86,11 +86,11 @@ public class SystemSetting implements Serializable, Validatable {
 		return null;
 	}
 
-	@Editable(order=200, name="Git Command Line", description="OneDev requires git command line to manage repositories. The minimum "
-			+ "required version is 2.11.1. Also make sure that git-lfs is installed if you want to retrieve "
-			+ "LFS files in build job")
+	@Editable(order=200, name="Git 命令行", description="管理系统需要 git 命令行来管理存储库。 最低 "
+			+ "required version is 2.11.1. 如果要检索，还要确保安装了 git-lfs "
+			+ "构建作业中的 LFS 文件")
 	@Valid
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public GitConfig getGitConfig() {
 		return gitConfig;
 	}
@@ -99,7 +99,7 @@ public class SystemSetting implements Serializable, Validatable {
 		this.gitConfig = gitConfig;
 	}
 
-	@Editable(order=250, name="curl Command Line", description="OneDev configures git hooks to communicate with itself via curl")
+	@Editable(order=250, name="curl 命令行", description="管理系统配置 git hooks 以通过 curl 与自身通信")
 	@Valid
 	@NotNull(message="may not be empty")
 	public CurlConfig getCurlConfig() {
@@ -110,7 +110,7 @@ public class SystemSetting implements Serializable, Validatable {
 		this.curlConfig = curlConfig;
 	}
 	
-	@Editable(order=500, description="Whether or not to enable user gravatar (https://gravatar.com)")
+	@Editable(order=500, description="是否开启用户 gravatar (https://gravatar.com)")
 	public boolean isGravatarEnabled() {
 		return gravatarEnabled;
 	}

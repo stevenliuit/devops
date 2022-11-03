@@ -47,7 +47,7 @@ public class JobSecret implements Serializable {
 		this.value = value;
 	}
 
-	@Editable(order=300, placeholder="All", description=""
+	@Editable(order=300, placeholder="所有", description=""
 			+ "Optionally specify space-separated branches to authorize.\n"
 			+ "Only builds from authorized branches can access this secret.\n"
 			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "

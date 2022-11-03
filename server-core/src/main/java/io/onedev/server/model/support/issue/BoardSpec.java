@@ -74,7 +74,7 @@ public class BoardSpec implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=200, placeholder="Not specified", description="Optionally specify a base query to "
+	@Editable(order=200, placeholder="未指定", description="Optionally specify a base query to "
 			+ "filter/order issues of the board")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withCurrentUserCriteria = true)
 	@Nullable
@@ -86,7 +86,7 @@ public class BoardSpec implements Serializable {
 		this.baseQuery = baseQuery;
 	}
 
-	@Editable(order=250, placeholder="Not specified", description="Optionally specify a base query to filter/order issues in backlog. "
+	@Editable(order=250, placeholder="未指定", description="Optionally specify a base query to filter/order issues in backlog. "
 			+ "Backlog issues are those not associating with current milestone")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withCurrentUserCriteria = true)
 	@Nullable
@@ -147,7 +147,7 @@ public class BoardSpec implements Serializable {
 		return displayColumns;
 	}
 
-	@Editable(order=500, placeholder="Not displaying any fields", description="Specify fields to display in board card")
+	@Editable(order=500, placeholder="不显示任何字段", description="Specify fields to display in board card")
 	@ChoiceProvider("getDisplayFieldChoices")
 	public List<String> getDisplayFields() {
 		return displayFields;

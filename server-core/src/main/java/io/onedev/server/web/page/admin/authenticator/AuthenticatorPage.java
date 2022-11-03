@@ -141,12 +141,12 @@ public class AuthenticatorPage extends AdministrationPage {
 						new UsernamePasswordToken(token.getUserName(), token.getPassword()));
 				StringBuilder retrievedInfoBuilder = new StringBuilder();
 				if (authenticated.getFullName() != null) {
-					retrievedInfoBuilder.append("Full Name: ")
+					retrievedInfoBuilder.append("全名: ")
 							.append(authenticated.getFullName())
 							.append("<br>");
 				}
 				if (authenticated.getEmail() != null) {
-					retrievedInfoBuilder.append("Email: ")
+					retrievedInfoBuilder.append("电子邮件: ")
 							.append(authenticated.getEmail())
 							.append("<br>");
 				}
@@ -156,13 +156,13 @@ public class AuthenticatorPage extends AdministrationPage {
 							.append("<br>");
 				}
 				if (authenticated.getSshKeys() != null) {
-					retrievedInfoBuilder.append("Number of SSH Keys: ").append(authenticated.getSshKeys().size())
+					retrievedInfoBuilder.append("SSH 密钥数量: ").append(authenticated.getSshKeys().size())
 							.append("<br>");
 				}
 				StringBuilder messageBuilder = 
-						new StringBuilder("Test successful: authentication passed");
+						new StringBuilder("测试成功：认证通过");
 				if (retrievedInfoBuilder.length() != 0) {
-					messageBuilder.append(" with below information retrieved:<br>")
+					messageBuilder.append(" 检索到以下信息:<br>")
 							.append(retrievedInfoBuilder);
 				} 
 				return messageBuilder.toString();

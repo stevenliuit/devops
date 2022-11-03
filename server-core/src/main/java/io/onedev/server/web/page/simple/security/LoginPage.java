@@ -58,7 +58,7 @@ public class LoginPage extends SimplePage {
 	
 	private String errorMessage;
 	
-	private String subTitle = "Enter your details to login to your account";
+	private String subTitle = "输入您的详细信息以登录您的帐户";
 	
 	public LoginPage(PageParameters params) {
 		super(params);
@@ -148,7 +148,7 @@ public class LoginPage extends SimplePage {
 				password = object;
 			}
 			
-		}).setLabel(Model.of("Password")).setRequired(true));
+		}).setLabel(Model.of("密码")).setRequired(true));
 		
 		form.add(new CheckBox("rememberMe", new IModel<Boolean>() {
 
@@ -334,7 +334,7 @@ public class LoginPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Sign In To OneDev";
+		return "登陆管理系统";
 	}
 
 	@Override

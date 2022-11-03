@@ -28,7 +28,7 @@ public class StateSpec implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=200, placeholder="No description")
+	@Editable(order=200, placeholder="无描述")
 	public String getDescription() {
 		return description;
 	}

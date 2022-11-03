@@ -25,7 +25,7 @@ public abstract class PullRequestTrigger extends JobTrigger {
 	
 	private String paths;
 	
-	@Editable(name="Target Branches", placeholder="Any branch", order=100, description=""
+	@Editable(name="Target Branches", placeholder="任何分支", order=100, description=""
 			+ "Optionally specify space-separated target branches of the pull requests to check. "
 			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
 			+ "Prefix with '-' to exclude. Leave empty to match all branches")
@@ -43,7 +43,7 @@ public abstract class PullRequestTrigger extends JobTrigger {
 		return SuggestionUtils.suggestBranches(Project.get(), matchWith);
 	}
 	
-	@Editable(name="Touched Files", order=200, placeholder="Any file", description=""
+	@Editable(name="Touched Files", order=200, placeholder="任何文件", description=""
 			+ "Optionally specify space-separated files to check. "
 			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
 			+ "Prefix with '-' to exclude. Leave empty to match all files")

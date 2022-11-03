@@ -16,7 +16,7 @@ public class FloatField extends FieldSpec {
 
 	private DefaultValueProvider defaultValueProvider;
 	
-	@Editable(order=1200, name="Default Value", placeholder="No default value")
+	@Editable(order=1200, name="Default Value", placeholder="无默认值")
 	@Valid
 	public DefaultValueProvider getDefaultValueProvider() {
 		return defaultValueProvider;

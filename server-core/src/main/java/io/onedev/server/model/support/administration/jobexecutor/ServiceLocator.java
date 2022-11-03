@@ -24,7 +24,7 @@ public class ServiceLocator implements Serializable {
 	
 	private List<NodeSelectorEntry> nodeSelector = new ArrayList<>();
 	
-	@Editable(order=100, name="Applicable Names", placeholder="All", description=""
+	@Editable(order=100, name="Applicable Names", placeholder="所有", description=""
 			+ "Optionally specify space-separated service names applicable for this locator. "
 			+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. "
 			+ "Leave empty to match all")
@@ -37,7 +37,7 @@ public class ServiceLocator implements Serializable {
 		this.serviceNames = serviceNames;
 	}
 	
-	@Editable(order=200, name="Applicable Images", placeholder="All", description=""
+	@Editable(order=200, name="Applicable Images", placeholder="所有", description=""
 			+ "Optionally specify space-separated service images applicable for this locator. "
 			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
 			+ "Prefix with '-' to exclude. Leave empty to match all")

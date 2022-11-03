@@ -34,7 +34,7 @@ public class NamedPullRequestQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@PullRequestQuery(withCurrentUserCriteria=true)
 	@Override
 	public String getQuery() {

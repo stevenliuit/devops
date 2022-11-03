@@ -937,7 +937,7 @@ public class ProjectListPanel extends Panel {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				List<String> hints = super.getHints(terminalExpect);
-				hints.add("Free input for fuzzy query on name/path");
+				hints.add("名称/路径模糊查询的自由输入");
 				return hints;
 			}
 			

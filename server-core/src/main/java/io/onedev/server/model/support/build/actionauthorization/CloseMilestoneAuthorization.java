@@ -16,7 +16,7 @@ public class CloseMilestoneAuthorization extends ActionAuthorization {
 
 	private String milestoneNames;
 
-	@Editable(order=100, placeholder="All", description="Specify space-separated milestone names. "
+	@Editable(order=100, placeholder="所有", description="Specify space-separated milestone names. "
 			+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. Leave empty to match all")
 	@Patterns(suggester = "suggestMilestones")
 	public String getMilestoneNames() {

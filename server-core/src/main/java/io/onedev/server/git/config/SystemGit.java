@@ -6,7 +6,7 @@ import org.apache.commons.lang3.SystemUtils;
 
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(name="Use Git in System Path", order=100)
+@Editable(name="在系统路径中使用 Git", order=100)
 public class SystemGit extends GitConfig {
 
 	private static final long serialVersionUID = 1L;

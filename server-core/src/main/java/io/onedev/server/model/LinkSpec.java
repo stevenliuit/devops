@@ -73,7 +73,7 @@ public class LinkSpec extends AbstractEntity {
 	}
 
 
-	@Editable(order=160, name="Linkable Issues", placeholder="All issues", 
+	@Editable(order=160, name="Linkable Issues", placeholder="所有问题", 
 			description="Optionally specify criteria of issues which can be linked")
 	@io.onedev.server.web.editable.annotation.IssueQuery
 	public String getIssueQuery() {

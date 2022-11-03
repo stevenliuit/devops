@@ -37,7 +37,7 @@ public class OAuthCallbackPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Please wait...";
+		return "请稍等...";
 	}
 
 	@Override

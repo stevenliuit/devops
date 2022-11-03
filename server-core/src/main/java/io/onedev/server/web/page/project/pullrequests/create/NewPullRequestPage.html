@@ -3,7 +3,7 @@
 		<div class="revision-compare mb-5">
 			<div class="base revision card">
 				<div class="card-body">
-					<div class="title">Target</div>
+					<div class="title">目标</div>
 					<div wicket:id="target" class="selector"></div>
 					<a wicket:id="targetCommitLink" class="message"><span wicket:id="message"></span></a>
 				</div>
@@ -13,7 +13,7 @@
 			</div>
 			<div class="compare revision card">
 				<div class="card-body">
-					<div class="title">Source</div>
+					<div class="title">源</div>
 					<div wicket:id="source" class="selector"></div>
 					<a wicket:id="sourceCommitLink" class="message"><span wicket:id="message"></span></a>
 				</div>
@@ -37,29 +37,29 @@
 	<wicket:fragment wicket:id="sameBranchFrag">
 		<div class="alert alert-notice alert-light-warning shadow mb-5">
 			<div class="summary">
-				<span>Please select different branches</span>
+				<span>请选择不同的分支</span>
 			</div>
 		</div>		
 	</wicket:fragment>
 	<wicket:fragment wicket:id="mergedFrag">
 		<div class="alert alert-notice alert-light-success shadow mb-5">
 			<div class="summary">
-				Branch <a wicket:id="targetBranch"></a> is up to date with all commits from <a wicket:id="sourceBranch"></a>.
-				Try <a wicket:id="swapBranches">swap source and target</a> for the comparison.
+				分支 <a wicket:id="targetBranch"></a> 是最新的所有提交 <a wicket:id="sourceBranch"></a>.
+				尝试 <a wicket:id="swapBranches">交换源和目标</a> 进行比较。
 			</div>
 		</div>		
 	</wicket:fragment>
 	<wicket:fragment wicket:id="unrelatedHistoryFrag">
 		<div class="alert alert-notice alert-light-warning shadow mb-5">
 			<div class="summary">
-				<span>History of target branch and source branch is unrelated</span>
+				<span>目标分支和源分支的历史不相关</span>
 			</div>
 		</div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="branchNotSpecifiedFrag">
 		<div class="alert alert-notice alert-light-warning shadow mb-5">
 			<div class="summary">
-				<span>Please select branches to create pull request</span>
+				<span>请选择分支以创建拉取请求</span>
 			</div>
 		</div>
 	</wicket:fragment>
@@ -69,16 +69,16 @@
 				<form wicket:id="form" class="leave-confirm">
 					<div class="form-group">
 						<label>Title <span class="text-danger"></span></label>
-						<input wicket:id="title" type="text" class="form-control" placeholder="Input title here">
+						<input wicket:id="title" type="text" class="form-control" placeholder="在此输入标题">
 						<div wicket:id="titleFeedback"></div>
 					</div>
 					<div class="form-group">
-						<label>Description</label>
+						<label>描述</label>
 						<div wicket:id="description"></div>						
 						<div wicket:id="descriptionFeedback"></div>
 					</div>
 					<div class="form-group merge-strategy">
-						<label>Merge Strategy</label>
+						<label>合并策略</label>
 						<div wicket:id="mergeStrategy">
 							<select wicket:id="select" class="form-control custom-select"></select>
 							<div wicket:id="help" class="form-text text-muted"></div>	
@@ -86,16 +86,16 @@
 						</div>						
 					</div>
 					<div class="form-group">
-						<label>Reviewers</label>
+						<label>审稿人</label>
 						<div wicket:id="reviewers"></div>
-						<div class="text-muted form-text">Pull request can only be merged after getting approvals from all reviewers</div>
+						<div class="text-muted form-text">拉取请求只有在获得所有审阅者的批准后才能合并</div>
 					</div>
 					<div class="form-group">
-						<label>Assignees</label>
+						<label>受让人</label>
 						<div wicket:id="assignees"></div>
-						<div class="text-muted form-text">Assignees have code write permission and will be responsible for merging the pull request</div>
+						<div class="text-muted form-text">受让人具有代码写入权限，并将负责合并拉取请求</div>
 					</div>
-					<button wicket:id="send" type="submit" class="btn btn-primary">Send Pull Request</button>
+					<button wicket:id="send" type="submit" class="btn btn-primary">发送拉取请求</button>
 				</form>
 			</div>
 		</div>	

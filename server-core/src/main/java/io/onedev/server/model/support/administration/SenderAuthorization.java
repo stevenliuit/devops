@@ -30,7 +30,7 @@ public class SenderAuthorization implements Serializable {
 	
 	private String authorizedRoleName;
 	
-	@Editable(order=100, name="Applicable Senders", placeholder="Any sender", description=""
+	@Editable(order=100, name="Applicable Senders", placeholder="任何发件人", description=""
 			+ "Specify space-separated sender email addresses applicable for this entry. "
 			+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. "
 			+ "Leave empty to match all senders")
@@ -43,7 +43,7 @@ public class SenderAuthorization implements Serializable {
 		this.senderEmails = senderEmails;
 	}
 
-	@Editable(order=150, placeholder="Any project", description="Specify space-separated projects "
+	@Editable(order=150, placeholder="任何项目", description="Specify space-separated projects "
 			+ "authorized to senders above. Use '**' or '*' or '?' for "
 			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
 			+ "Prefix with '-' to exclude. Leave empty to authorize all projects")

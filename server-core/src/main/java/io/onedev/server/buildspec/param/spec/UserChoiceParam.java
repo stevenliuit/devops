@@ -37,7 +37,7 @@ public class UserChoiceParam extends ParamSpec {
 		this.choiceProvider = choiceProvider;
 	}
 
-	@Editable(order=1100, name="Default Value", placeholder="No default value")
+	@Editable(order=1100, name="Default Value", placeholder="无默认值")
 	@ShowCondition("isDefaultValueProviderVisible")
 	@Valid
 	public DefaultValueProvider getDefaultValueProvider() {
@@ -54,7 +54,7 @@ public class UserChoiceParam extends ParamSpec {
 	}
 	
 	@ShowCondition("isDefaultMultiValueProviderVisible")
-	@Editable(order=1100, name="Default Value", placeholder="No default value")
+	@Editable(order=1100, name="Default Value", placeholder="无默认值")
 	@Valid
 	public DefaultMultiValueProvider getDefaultMultiValueProvider() {
 		return defaultMultiValueProvider;

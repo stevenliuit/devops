@@ -40,7 +40,7 @@ public class ChoiceField extends FieldSpec {
 	}
 
 	@ShowCondition("isDefaultValueProviderVisible")
-	@Editable(order=1100, name="Default Value", placeholder="No default value")
+	@Editable(order=1100, name="Default Value", placeholder="无默认值")
 	@Valid
 	public DefaultValueProvider getDefaultValueProvider() {
 		return defaultValueProvider;
@@ -56,7 +56,7 @@ public class ChoiceField extends FieldSpec {
 	}
 
 	@ShowCondition("isDefaultMultiValueProviderVisible")
-	@Editable(order=1100, name="Default Value", placeholder="No default value")
+	@Editable(order=1100, name="Default Value", placeholder="无默认值")
 	@Valid
 	public DefaultMultiValueProvider getDefaultMultiValueProvider() {
 		return defaultMultiValueProvider;

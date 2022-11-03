@@ -137,7 +137,7 @@ public class InvitationListPage extends AdministrationPage {
 		
 		List<IColumn<UserInvitation, Void>> columns = new ArrayList<>();
 		
-		columns.add(new AbstractColumn<UserInvitation, Void>(Model.of("Email Address")) {
+		columns.add(new AbstractColumn<UserInvitation, Void>(Model.of("电子邮件地址")) {
 
 			@Override
 			public void populateItem(Item<ICellPopulator<UserInvitation>> cellItem, 

@@ -180,7 +180,7 @@ public class DefaultDataManager implements DataManager, Serializable {
 			if (validator.validate(bean).isEmpty()) {
 				createRoot(bean);
 			} else {
-				manualConfigs.add(new ManualConfig("Create Administrator Account", null, bean) {
+				manualConfigs.add(new ManualConfig("创建管理员账户", null, bean) {
 	
 					@Override
 					public void complete() {
@@ -228,7 +228,7 @@ public class DefaultDataManager implements DataManager, Serializable {
 			if (ingressUrl != null)
 				excludedProps.add("serverUrl");
 
-			manualConfigs.add(new ManualConfig("Specify System Setting", null, 
+			manualConfigs.add(new ManualConfig("指定系统设置", null, 
 					systemSetting, excludedProps) {
 	
 				@Override

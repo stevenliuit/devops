@@ -105,7 +105,7 @@ public class ProjectDependency implements Serializable {
 		this.artifacts = artifacts;
 	}
 	
-	@Editable(order=500, placeholder="Job workspace", description=""
+	@Editable(order=500, placeholder="工作空间", description=""
 			+ "Optionally specify a path relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> "
 			+ "to put retrieved artifacts. Leave empty to use job workspace itself")
 	@Interpolative(variableSuggester="suggestVariables")
@@ -122,7 +122,7 @@ public class ProjectDependency implements Serializable {
 		return BuildSpec.suggestVariables(matchWith, false, false, false);
 	}
 	
-	@Editable(order=500, placeholder="Access Anonymously", description="Specify a secret to be used as "
+	@Editable(order=500, placeholder="匿名访问", description="Specify a secret to be used as "
 			+ "access token to retrieve artifacts from above project. If not specified, project "
 			+ "artifacts will be accessed anonymously")
 	@ChoiceProvider("getAccessTokenSecretChoices")

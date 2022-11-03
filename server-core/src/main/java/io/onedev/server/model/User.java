@@ -435,7 +435,7 @@ public class User extends AbstractEntity implements AuthenticationInfo {
     	return SecurityUtils.asSubject(getId());
     }
 
-	@Editable(name="Login Name", order=100)
+	@Editable(name="用户名", order=100)
 	@UserName
 	@NotEmpty
 	public String getName() {

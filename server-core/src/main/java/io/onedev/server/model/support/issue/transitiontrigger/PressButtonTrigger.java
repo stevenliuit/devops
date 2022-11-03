@@ -199,7 +199,7 @@ public class PressButtonTrigger extends TransitionTrigger {
 		}
 	}
 
-	@Editable(order=1000, name="Applicable Issues", placeholder="All", description="Optionally specify "
+	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify "
 			+ "issues applicable for this transition. Leave empty for all issues")
 	@IssueQuery(withOrder = false, withCurrentUserCriteria = true)	
 	@Override

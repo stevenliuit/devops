@@ -33,7 +33,7 @@ public class NamedProjectQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@ProjectQuery
 	@Override
 	public String getQuery() {

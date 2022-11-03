@@ -34,7 +34,7 @@ public abstract class ParamSpec extends InputSpec {
 		super.setName(name);
 	}
 
-	@Editable(order=30, placeholder="No description", description="Optionally describes the param")
+	@Editable(order=30, placeholder="无描述", description="Optionally describes the param")
 	@Override
 	public String getDescription() {
 		return super.getDescription();
@@ -56,7 +56,7 @@ public abstract class ParamSpec extends InputSpec {
 		super.setAllowMultiple(allowMultiple);
 	}
 
-	@Editable(order=40, name="Show Conditionally", placeholder="Always", 
+	@Editable(order=40, name="Show Conditionally", placeholder="总是", 
 			description="Enable if visibility of this param depends on other params")
 	@Valid
 	@Override

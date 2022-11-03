@@ -64,7 +64,7 @@ public abstract class FieldSpec extends InputSpec {
 		super.setName(name);
 	}
 
-	@Editable(order=30, placeholder="No description", description="Optionally describes the custom field")
+	@Editable(order=30, placeholder="无描述", description="Optionally describes the custom field")
 	@Override
 	public String getDescription() {
 		return super.getDescription();
@@ -86,7 +86,7 @@ public abstract class FieldSpec extends InputSpec {
 		super.setAllowMultiple(allowMultiple);
 	}
 
-	@Editable(order=40, name="Show Conditionally", placeholder="Always", description="Enable if visibility "
+	@Editable(order=40, name="Show Conditionally", placeholder="总是", description="Enable if visibility "
 			+ "of this field depends on other fields")
 	@Valid
 	@Override

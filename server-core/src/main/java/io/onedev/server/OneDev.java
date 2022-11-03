@@ -118,7 +118,7 @@ public class OneDev extends AbstractPlugin implements Serializable {
 				logger.warn("Please set up the server at " + getIngressUrl());
 			else
 				logger.warn("Please set up the server at " + guessServerUrl());
-			initStage = new InitStage("Server Setup", manualConfigs);
+			initStage = new InitStage("服务安装", manualConfigs);
 			
 			initStage.waitForFinish();
 		}

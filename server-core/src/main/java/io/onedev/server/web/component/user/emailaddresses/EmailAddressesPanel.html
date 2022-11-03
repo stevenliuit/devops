@@ -1,16 +1,16 @@
 <wicket:panel>
 	<div class="email-addresses">
 		<ul class="alert alert-light px-5 mb-5">
-			<li>Primary email address will be used to receive notifications, show gravatar (if enabled) etc.</li>
-			<li>Git email address will be used as git author/committer for commits created on web UI</li>
-			<li>When determine if <span wicket:id="who"></span> author/committer of a git commit, all emails listed here will be checked</li>
-			<li>Unverified email address is <b>NOT</b> applicable for above functionalities</li>
+			<li>主要电子邮件地址将用于接收通知、显示 gravatar（如果启用）等。</li>
+			<li>Git 电子邮件地址将用作在 Web UI 上创建的提交的 git 作者/提交者</li>
+			<li>当确定是否 <span wicket:id="who"></span> git 提交的作者/提交者，将检查此处列出的所有电子邮件</li>
+			<li>未经验证的电子邮件地址是 <b>不是</b> 适用于以上功能</li>
 		</ul>
 		<table class="table">
 			<tr wicket:id="emailAddresses">
 				<td>
 					<span wicket:id="value" class="font-size-lg"></span>
-					<span wicket:id="primary" class="badge badge-info badge-sm ml-3">Primary</span>
+					<span wicket:id="primary" class="badge badge-info badge-sm ml-3">基本的</span>
 					<span wicket:id="git" class="badge badge-info badge-sm ml-1">Git</span>
 					<span wicket:id="verificationStatus" class="ml-1"></span>
 					<div wicket:id="externalManagedNote" class="text-warning font-size-sm mt-2"></div>
@@ -21,10 +21,10 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-					<div class="mb-2 mt-4 font-weight-bolder">Add New Email Address</div>
+					<div class="mb-2 mt-4 font-weight-bolder">添加新的电子邮件地址</div>
 					<div class="form-group">
 						<form wicket:id="form" class="form-inline">
-							<input wicket:id="emailAddress" class="form-control form-control-sm flex-flow-0 mr-3" placeholder="Email Address"> 
+							<input wicket:id="emailAddress" class="form-control form-control-sm flex-flow-0 mr-3" placeholder="电子邮件地址"> 
 							<button type="submit" class="btn btn-icon btn-sm btn-primary"><wicket:svg href="plus" class="icon"/></button>
 						</form>
 						<div wicket:id="feedback"></div>

@@ -6,7 +6,7 @@
 				<a wicket:id="edit" title="Edit title" class="btn btn-xs btn-icon btn-light btn-hover-primary edit mr-3"><wicket:svg href="edit" class="icon"></wicket:svg></a>
 				<form wicket:id="editForm" class="form flex-grow-1 d-flex align-items-center">
 					<div class="clearable-wrapper mr-3 flex-grow-1">
-						<input wicket:id="title" type="text" placeholder="Input title" class="form-control">
+						<input wicket:id="title" type="text" placeholder="输入标题" class="form-control">
 					</div>
 					<div class="flex-shrink-0 text-nowrap">
 						<button wicket:id="save" title="Save" value="Save" class="btn btn-primary btn-icon mr-1" type="submit"><wicket:svg href="tick" class="icon"></wicket:svg></button>
@@ -14,7 +14,7 @@
 					</div>
 				</form>
 			</div>
-			<a wicket:id="moreInfo" class="side-info flex-shrink-0 ml-3" title="More info"><wicket:svg href="ellipsis" class="icon"></wicket:svg></a>
+			<a wicket:id="moreInfo" class="side-info flex-shrink-0 ml-3" title="更多信息"><wicket:svg href="ellipsis" class="icon"></wicket:svg></a>
 		</div>
 		<div class="card-body d-flex">
 			<div class="main flex-grow-1">
@@ -30,49 +30,49 @@
 	                </div>
 					</wicket:enclosure>
 					<div wicket:id="discarded" class="discarded text-gray">
-						<wicket:svg href="info-circle" class="icon"></wicket:svg> This pull request has been discarded
+						<wicket:svg href="info-circle" class="icon"></wicket:svg> 此拉取请求已被丢弃
 					</div>
 					<div wicket:id="fastForwarded" class="fast-forwarded text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Target branch was fast-forwarded to source branch
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 目标分支被快速转发到源分支
 					</div>
 					<div wicket:id="merged" class="merged text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Commits were merged into target branch
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 提交被合并到目标分支
 					</div>
 					<div wicket:id="mergedOutside" class="merged-outside text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Commits were merged into target branch outside of this pull request
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 提交已合并到此拉取请求之外的目标分支
 					</div>
 					<div wicket:id="squashed" class="squashed text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Commits were squashed into a single commit on target branch
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 提交被压缩到目标分支上的单个提交
 					</div>
 					<div wicket:id="rebased" class="rebased text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Commits were rebased onto target branch
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 提交被重新定位到目标分支
 					</div>
 					<div wicket:id="calculatingMergePreview" class="calculating-merge-preview text-warning">
-						<wicket:svg href="loading" class="icon spin"></wicket:svg> Calculating merge preview...
+						<wicket:svg href="loading" class="icon spin"></wicket:svg> 计算合并预览...
 					</div>
 					<div wicket:id="calculatedMergePreview" class="calculated-merge-preview text-success">
-						<wicket:svg href="tick-circle" class="icon"></wicket:svg> Able to merge without conflicts
+						<wicket:svg href="tick-circle" class="icon"></wicket:svg> 能够无冲突地合并
 					</div>
 					<div wicket:id="hasMergeConflict" class="has-merge-conflict text-danger">
-						<wicket:svg href="exclamation-circle" class="icon"></wicket:svg> There are merge conflicts. 
+						<wicket:svg href="exclamation-circle" class="icon"></wicket:svg> 存在合并冲突。 
 						<wicket:enclosure child="resolveInstructions">
-							Please follow <a wicket:id="resolveInstructions" class="link-primary" href="javascript:void(0);">this instruction</a> to resolve the conflicts
+							请关注 <a wicket:id="resolveInstructions" class="link-primary" href="javascript:void(0);">本指令</a> 解决冲突
 						</wicket:enclosure>
 					</div>
 					<div wicket:id="noValidCommitSignature" class="no-valid-commit-signature text-danger">
-						<wicket:svg href="times-circle" class="icon"></wicket:svg> Pull request can not be merged now as valid signature is required for head commit   
+						<wicket:svg href="times-circle" class="icon"></wicket:svg> 拉取请求现在无法合并，因为头部提交需要有效签名 
 					</div>
 					<div wicket:id="requestedForChanges" class="requested-for-changes text-warning">
-						<wicket:svg href="diff" class="icon"></wicket:svg> Pull request can not be merged now as it was <a class="more-info d-inline link-primary">requested for changes</a> 
+						<wicket:svg href="diff" class="icon"></wicket:svg> 拉取请求现在无法合并 <a class="more-info d-inline link-primary">要求更改</a> 
 					</div>
 					<div wicket:id="waitingForReviews" class="waiting-for-reviews text-warning">
-						<wicket:svg href="clock" class="icon"></wicket:svg> Pull request can not be merged now as it is <a class="more-info d-inline link-primary">pending review</a>
+						<wicket:svg href="clock" class="icon"></wicket:svg> 拉取请求现在无法合并 <a class="more-info d-inline link-primary">等待审核</a>
 					</div>
 					<div wicket:id="unsuccessfulBuilds" class="unsuccessful-builds text-danger">
-						<wicket:svg href="times-circle" class="icon"></wicket:svg> Pull request can not be merged now as <a class="more-info d-inline link-primary">required builds</a> are not successful
+						<wicket:svg href="times-circle" class="icon"></wicket:svg> 拉取请求现在无法合并为 <a class="more-info d-inline link-primary">所需的构建</a> 不成功
 					</div>
 					<div wicket:id="unfinishedBuilds" class="unfinished-builds text-warning">
-						<wicket:svg href="clock" class="icon"></wicket:svg> Pull request can not be merged now as <a class="more-info d-inline link-primary">required builds</a> are not finished yet
+						<wicket:svg href="clock" class="icon"></wicket:svg> 拉取请求现在无法合并为 <a class="more-info d-inline link-primary">所需的构建</a> 还没有完成
 					</div>
 					<wicket:enclosure child="untriggeredJobs">
 					<div class="untriggered-builds text-warning">
@@ -80,7 +80,7 @@
 					</div>
 					</wicket:enclosure>
 					<div wicket:id="mergeableByCodeWriters" class="mergeable-by-code-writers text-info">
-						<wicket:svg href="info-circle" class="icon"></wicket:svg> Pull request can only be merged by users with code write permission
+						<wicket:svg href="info-circle" class="icon"></wicket:svg> 拉取请求只能由具有代码写入权限的用户合并
 					</div>
 					<div wicket:id="contributions" class="contribution">
 						<div wicket:id="head" class="head font-weight-bold mb-2 "></div>
@@ -88,13 +88,13 @@
 					</div>
 				</div>
 				<div wicket:id="requestOperations" class="operations">
-					<a wicket:id="merge" class="btn btn-sm btn-outline-success">Merge</a>
-					<a wicket:id="discard" class="btn btn-sm btn-outline-danger">Discard</a>
-					<a wicket:id="approve" class="btn btn-sm btn-outline-primary">Approve</a>
-					<a wicket:id="requestForChanges" class="btn btn-sm btn-outline-primary">Request For Changes</a>
-					<a wicket:id="reopen" class="btn btn-sm btn-outline-primary">Reopen</a>
-					<a wicket:id="deleteSourceBranch" class="btn btn-sm btn-outline-primary">Delete Source Branch</a>
-					<a wicket:id="restoreSourceBranch" class="btn btn-sm btn-outline-primary">Restore Source Branch</a>
+					<a wicket:id="merge" class="btn btn-sm btn-outline-success">合并</a>
+					<a wicket:id="discard" class="btn btn-sm btn-outline-danger">丢弃</a>
+					<a wicket:id="approve" class="btn btn-sm btn-outline-primary">批准</a>
+					<a wicket:id="requestForChanges" class="btn btn-sm btn-outline-primary">请求更改</a>
+					<a wicket:id="reopen" class="btn btn-sm btn-outline-primary">重新开放</a>
+					<a wicket:id="deleteSourceBranch" class="btn btn-sm btn-outline-primary">删除源分支</a>
+					<a wicket:id="restoreSourceBranch" class="btn btn-sm btn-outline-primary">恢复源分支</a>
 				</div>
 				<ul wicket:id="requestTabs" class="tabs nav nav-tabs nav-tabs-line nav-bold mb-5 mt-3 align-items-center"></ul>
 				<wicket:child></wicket:child>
@@ -103,33 +103,33 @@
 		</div>
 	</div>
 	<wicket:fragment wicket:id="codeCommentsTabLinkFrag">
-		<a wicket:id="link" class="code-comments nav-link d-flex align-items-center">Code Comments <wicket:svg href="dot" class="icon ml-2 d-none"></wicket:svg></a>
+		<a wicket:id="link" class="code-comments nav-link d-flex align-items-center">代码注释 <wicket:svg href="dot" class="icon ml-2 d-none"></wicket:svg></a>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="moreInfoFrag">
 		<div class="submission">
 			<table class="table table-borderless">
 				<tr>
-					<td class="name">Submitter</td>
+					<td class="name">提交者</td>
 					<td class="value text-break text-right"><span wicket:id="submitter"></span></td>
 				</tr>
 				<tr>
-					<td class="name">Target</td>
+					<td class="name">目标</td>
 					<td class="value text-break text-right">
 						<a wicket:id="changeTargetBranch" class="btn btn-xs btn-icon btn-light btn-hover-primary" title="Change"><wicket:svg href="arrow" class="rotate-90 icon"/></a>
 						<a wicket:id="targetBranch"></a>
 					</td>
 				</tr>
 				<tr>
-					<td class="name">Source</td>
+					<td class="name">源</td>
 					<td class="value text-right text-break"><a wicket:id="sourceBranch"></a></td>
 				</tr>
 			</table>
 		</div>
 		<wicket:enclosure child="reviews">
 		<div class="reviews">
-			<div class="head">Reviewers</div>
+			<div class="head">审稿人</div>
 			<div wicket:id="reviews" class="body"></div>
-			<div wicket:id="reviewerHelp" class="font-size-sm text-muted form-text">Pull request can only be merged after getting approvals from all reviewers</div>
+			<div wicket:id="reviewerHelp" class="font-size-sm text-muted form-text">拉取请求只有在获得所有审阅者的批准后才能合并</div>
 		</div>
 		</wicket:enclosure>
 		<wicket:enclosure child="jobs">
@@ -141,18 +141,18 @@
 				</span>
 			</div> 
 			<div wicket:id="jobs" class="body"></div>
-			<div wicket:id="jobsHelp" class="font-size-sm text-muted form-text">Jobs marked with <span class="text-danger">*</span> are required to be successful</div>
+			<div wicket:id="jobsHelp" class="font-size-sm text-muted form-text">Jobs 标有 <span class="text-danger">*</span> 需要成功</div>
 		</div>
 		</wicket:enclosure>
 		<wicket:enclosure child="assignments">
 		<div class="assignments">
-			<div class="head">Assignees</div>
+			<div class="head">受让人</div>
 			<div wicket:id="assignments" class="body"></div>
-			<div wicket:id="assigneeHelp" class="font-size-sm text-muted form-text">Assignees are expected to merge the pull request</div>
+			<div wicket:id="assigneeHelp" class="font-size-sm text-muted form-text">受让人应合并拉取请求</div>
 		</div>
 		</wicket:enclosure>
 		<div wicket:id="mergeStrategy" class="merge-strategy">
-			<div class="head">Merge Strategy</div>
+			<div class="head">合并策略</div>
 			<div class="body">
 				<select wicket:id="editor" class="form-control custom-select"></select> 
 				<span wicket:id="viewer"></span>
@@ -161,42 +161,42 @@
 		</div>
         <div wicket:id="labels" class="labels">
 			<div wicket:id="head" class="d-flex align-items-center justify-content-between mb-3">
-		        <span class="font-weight-bolder">Labels</span>
+		        <span class="font-weight-bolder">标签</span>
 				<wicket:svg href="gear" class="icon icon-sm"></wicket:svg>
 			</div>
 	        <div wicket:id="body" class="body d-flex align-items-center"></div>
-			<span wicket:id="labelsHelp" class="form-text font-size-sm text-muted"><wicket:svg href="bulb" class="icon icon-sm"/> Labels can be defined in Administration / Label Management</span>
+			<span wicket:id="labelsHelp" class="form-text font-size-sm text-muted"><wicket:svg href="bulb" class="icon icon-sm"/> 标签可以在管理/标签管理中定义</span>
         </div>
 		<div wicket:id="watches" class="watches"></div>
 		<div wicket:id="reference"></div>
 		<div wicket:id="actions" class="d-flex align-items-center justify-content-between">
 			<wicket:enclosure child="synchronize">
 			<div class="synchronize d-flex align-items-center mr-3">
-				<a wicket:id="synchronize" class="btn btn-light-primary mr-2">Synchronize</a>
-				<a href="javascript:void(0)" class="help text-muted text-hover-primary" title="In case the pull request status is out of sync with underlying repository, you may synchronize them manually here">
+				<a wicket:id="synchronize" class="btn btn-light-primary mr-2">同步</a>
+				<a href="javascript:void(0)" class="help text-muted text-hover-primary" title="如果拉取请求状态与底层存储库不同步，您可以在此处手动同步它们">
 					<wicket:svg href="question-o" class="icon"/>
 				</a>
 			</div>
 			</wicket:enclosure>
-			<a wicket:id="delete" class="delete btn btn-light-danger">Delete</a>
+			<a wicket:id="delete" class="delete btn btn-light-danger">删除</a>
 		</div>
     </wicket:fragment>
 	<wicket:fragment wicket:id="projectTitleFrag">
 		<span class="d-flex align-items-center">
-			<a wicket:id="pullRequests" class="text-nowrap">Pull Requests</a> 
+			<a wicket:id="pullRequests" class="text-nowrap">拉取请求</a> 
 			<span class="dot"></span>
 			<span wicket:id="pullRequestNumber"></span>
 		</span>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="cloneFrag">
 		<div class="p-4">
-			<h6>Checkout Pull Request Head</h6>
+			<h6>Checkout拉取请求头</h6>
 			<div class="code">  
 				<div>git fetch origin <span wicket:id="headRef"></span></div>
 				<div>git checkout FETCH_HEAD</div>
 			</div>
 			<wicket:enclosure child="mergeRef">
-			<h6 class="mt-4">Checkout Pull Request Merge Preview</h6>
+			<h6 class="mt-4">Checkout 拉取请求合并预览</h6>
 			<div class="code">  
 				<div>git fetch origin <span wicket:id="mergeRef"></span></div>
 				<div>git checkout FETCH_HEAD</div>

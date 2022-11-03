@@ -180,24 +180,24 @@ public abstract class ProjectPage extends LayoutPage implements ProjectAware {
 		if (getProject().isCodeManagement() && SecurityUtils.canReadCode(getProject())) {
 			List<SidebarMenuItem> codeMenuItems = new ArrayList<>();
 	
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Files", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "文件", 
 					ProjectBlobPage.class, ProjectBlobPage.paramsOf(getProject())));
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Commits", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "提交", 
 					ProjectCommitsPage.class, ProjectCommitsPage.paramsOf(getProject(), null), 
 					Lists.newArrayList(CommitDetailPage.class)));
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Branches", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "分支", 
 					ProjectBranchesPage.class, ProjectBranchesPage.paramsOf(getProject())));
 			codeMenuItems.add(new SidebarMenuItem.Page(null, "Tags", 
 					ProjectTagsPage.class, ProjectTagsPage.paramsOf(getProject())));
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Pull Requests", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "拉取请求", 
 					ProjectPullRequestsPage.class, ProjectPullRequestsPage.paramsOf(getProject(), 0), 
 					Lists.newArrayList(NewPullRequestPage.class, PullRequestDetailPage.class, InvalidPullRequestPage.class)));
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Code Comments", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "代码注释", 
 					ProjectCodeCommentsPage.class, ProjectCodeCommentsPage.paramsOf(getProject(), 0)));
-			codeMenuItems.add(new SidebarMenuItem.Page(null, "Code Compare", 
+			codeMenuItems.add(new SidebarMenuItem.Page(null, "代码比较", 
 					RevisionComparePage.class, RevisionComparePage.paramsOf(getProject())));
 			
-			menuItems.add(new SidebarMenuItem.SubMenu("git", "Code", codeMenuItems));
+			menuItems.add(new SidebarMenuItem.SubMenu("git", "代码", codeMenuItems));
 		}		
 		if (getProject().isIssueManagement()) {
 			List<SidebarMenuItem> issueMenuItems = new ArrayList<>();

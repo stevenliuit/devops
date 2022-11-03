@@ -21,7 +21,7 @@ public class FieldsAndLinksBean implements Serializable {
 	
 	private List<String> links;
 
-	@Editable(order=100, name="Display Fields", placeholder="Not displaying any fields", 
+	@Editable(order=100, name="Display Fields", placeholder="不显示任何字段", 
 			description="Specify fields to be displayed in the issue list")
 	@ChoiceProvider("getFieldChoices")
 	public List<String> getFields() {

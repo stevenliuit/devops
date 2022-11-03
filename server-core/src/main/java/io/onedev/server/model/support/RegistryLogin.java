@@ -18,7 +18,7 @@ public class RegistryLogin implements Serializable {
 	
 	private String password;
 
-	@Editable(order=100, placeholder="Default registry", 
+	@Editable(order=100, placeholder="默认注册", 
 			description="Specify registry url. Leave empty for official registry")
 	public String getRegistryUrl() {
 		return registryUrl;

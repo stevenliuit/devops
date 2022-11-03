@@ -33,7 +33,7 @@ public class NamedCommitQuery implements NamedQuery {
 		this.name = name;
 	}
 
-	@Editable(placeholder="All")
+	@Editable(placeholder="所有")
 	@CommitQuery(withCurrentUserCriteria=true)
 	@Override
 	public String getQuery() {

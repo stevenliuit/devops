@@ -209,9 +209,9 @@ onedev.server.inputassist = {
 	
 	updateHelp: function($dropdown) {
 		if ($dropdown.find("li.active").length != 0) {
-			$dropdown.find(".help .complete").empty().append("<span class='keycap'>Tab</span> or <span class='keycap'>Enter</span> to complete.");
+			$dropdown.find(".help .complete").empty().append("<span class='keycap'>Tab</span> 或 <span class='keycap'>Enter</span> 去完成.");
 		} else {
-			$dropdown.find(".help .complete").empty().append("<span class='keycap'>Tab</span> to complete.");
+			$dropdown.find(".help .complete").empty().append("<span class='keycap'>Tab</span> 去完成.");
 		}
 	}
 };

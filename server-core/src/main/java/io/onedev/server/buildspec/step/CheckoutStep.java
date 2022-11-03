@@ -71,7 +71,7 @@ public class CheckoutStep extends Step {
 		this.cloneDepth = cloneDepth;
 	}
 
-	@Editable(order=300, placeholder="Job workspace", description="Optionally specify path relative to "
+	@Editable(order=300, placeholder="工作空间", description="Optionally specify path relative to "
 			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> to clone code into. "
 			+ "Leave empty to use job workspace itself")
 	@Interpolative(variableSuggester="suggestVariables")
