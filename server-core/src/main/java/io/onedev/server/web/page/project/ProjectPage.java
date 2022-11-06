@@ -202,20 +202,20 @@ public abstract class ProjectPage extends LayoutPage implements ProjectAware {
 		if (getProject().isIssueManagement()) {
 			List<SidebarMenuItem> issueMenuItems = new ArrayList<>();
 			
-			issueMenuItems.add(new SidebarMenuItem.Page(null, "List", 
+			issueMenuItems.add(new SidebarMenuItem.Page(null, "列表", 
 					ProjectIssueListPage.class, ProjectIssueListPage.paramsOf(getProject(), 0), 
 					Lists.newArrayList(NewIssuePage.class, IssueDetailPage.class)));
 			issueMenuItems.add(new SidebarMenuItem.Page(null, "Boards", 
 					IssueBoardsPage.class, IssueBoardsPage.paramsOf(getProject())));
-			issueMenuItems.add(new SidebarMenuItem.Page(null, "Milestones", 
+			issueMenuItems.add(new SidebarMenuItem.Page(null, "里程碑", 
 					MilestoneListPage.class, MilestoneListPage.paramsOf(getProject(), false, null), 
 					Lists.newArrayList(NewMilestonePage.class, MilestoneDetailPage.class, MilestoneEditPage.class)));
 			
-			menuItems.add(new SidebarMenuItem.SubMenu("bug", "Issues", issueMenuItems));
+			menuItems.add(new SidebarMenuItem.SubMenu("bug", "问题", issueMenuItems));
 		}
 		
 		if (getProject().isCodeManagement()) {
-			menuItems.add(new SidebarMenuItem.Page("play-circle", "Builds", 
+			menuItems.add(new SidebarMenuItem.Page("play-circle", "构建", 
 					ProjectBuildsPage.class, ProjectBuildsPage.paramsOf(getProject(), 0), 
 					Lists.newArrayList(BuildDetailPage.class, InvalidBuildPage.class)));
 		}
@@ -223,9 +223,9 @@ public abstract class ProjectPage extends LayoutPage implements ProjectAware {
 		List<SidebarMenuItem> statsMenuItems = new ArrayList<>();
 		
 		if (getProject().isCodeManagement() && SecurityUtils.canReadCode(getProject())) {
-			statsMenuItems.add(new SidebarMenuItem.Page(null, "Contributions", 
+			statsMenuItems.add(new SidebarMenuItem.Page(null, "贡献", 
 					ProjectContribsPage.class, ProjectContribsPage.paramsOf(getProject())));
-			statsMenuItems.add(new SidebarMenuItem.Page(null, "Source Lines", 
+			statsMenuItems.add(new SidebarMenuItem.Page(null, "源代码行", 
 					SourceLinesPage.class, SourceLinesPage.paramsOf(getProject())));
 		}
 		
@@ -236,40 +236,40 @@ public abstract class ProjectPage extends LayoutPage implements ProjectAware {
 			statsMenuItems.addAll(contribution.getMenuItems(getProject()));
 		
 		if (!statsMenuItems.isEmpty())
-			menuItems.add(new SidebarMenuItem.SubMenu("statistics", "Statistics", statsMenuItems));
+			menuItems.add(new SidebarMenuItem.SubMenu("statistics", "统计数据", statsMenuItems));
 		
-		menuItems.add(new SidebarMenuItem.Page("tree", "Child Projects", 
+		menuItems.add(new SidebarMenuItem.Page("tree", "子项目", 
 				ProjectChildrenPage.class, ProjectChildrenPage.paramsOf(getProject(), null, 0)));
 		
 		if (SecurityUtils.canManage(getProject())) {
 			List<SidebarMenuItem> settingMenuItems = new ArrayList<>();
-			settingMenuItems.add(new SidebarMenuItem.Page(null, "General Setting", 
+			settingMenuItems.add(new SidebarMenuItem.Page(null, "通用设置", 
 					GeneralProjectSettingPage.class, GeneralProjectSettingPage.paramsOf(getProject())));
-			settingMenuItems.add(new SidebarMenuItem.Page(null, "Edit Avatar", 
+			settingMenuItems.add(new SidebarMenuItem.Page(null, "编辑头像", 
 					AvatarEditPage.class, AvatarEditPage.paramsOf(getProject())));
-			settingMenuItems.add(new SidebarMenuItem.Page(null, "Authorizations", 
+			settingMenuItems.add(new SidebarMenuItem.Page(null, "授权", 
 					ProjectAuthorizationsPage.class, ProjectAuthorizationsPage.paramsOf(getProject())));
 			
-			settingMenuItems.add(new SidebarMenuItem.Page(null, "Branch Protection", 
+			settingMenuItems.add(new SidebarMenuItem.Page(null, "分支保护", 
 					BranchProtectionsPage.class, BranchProtectionsPage.paramsOf(getProject())));
-			settingMenuItems.add(new SidebarMenuItem.Page(null, "Tag Protection", 
+			settingMenuItems.add(new SidebarMenuItem.Page(null, "标签保护", 
 					TagProtectionsPage.class, TagProtectionsPage.paramsOf(getProject())));
 			
 			List<SidebarMenuItem> buildSettingMenuItems = new ArrayList<>();
 			
 			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "Job Secrets", 
 					JobSecretsPage.class, JobSecretsPage.paramsOf(getProject())));
-			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "Action Authorizations", 
+			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "Action授权", 
 					ActionAuthorizationsPage.class, ActionAuthorizationsPage.paramsOf(getProject())));
-			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "Build Preserve Rules", 
+			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "建立保留规则", 
 					BuildPreservationsPage.class, BuildPreservationsPage.paramsOf(getProject())));
-			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "Default Fixed Issue Filters", 
+			buildSettingMenuItems.add(new SidebarMenuItem.Page(null, "默认固定问题过滤器", 
 					DefaultFixedIssueFiltersPage.class, DefaultFixedIssueFiltersPage.paramsOf(getProject())));
 			
 			settingMenuItems.add(new SidebarMenuItem.SubMenu(null, "Build", buildSettingMenuItems));
 
 			if (getSettingManager().getServiceDeskSetting() != null && getProject().isIssueManagement()) {
-				settingMenuItems.add(new SidebarMenuItem.Page(null, "Service Desk", 
+				settingMenuItems.add(new SidebarMenuItem.Page(null, "服务桌面", 
 						ProjectServiceDeskSettingPage.class, ProjectServiceDeskSettingPage.paramsOf(getProject())));
 			}
 			
@@ -286,7 +286,7 @@ public abstract class ProjectPage extends LayoutPage implements ProjectAware {
 				}
 			}
 			
-			menuItems.add(new SidebarMenuItem.SubMenu("sliders", "Settings", settingMenuItems));
+			menuItems.add(new SidebarMenuItem.SubMenu("sliders", "设置", settingMenuItems));
 		}
 		
 		String avatarUrl = OneDev.getInstance(AvatarManager.class).getAvatarUrl(getProject().getId());

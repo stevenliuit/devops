@@ -596,7 +596,7 @@ public abstract class PullRequestListPanel extends Panel {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				List<String> hints = super.getHints(terminalExpect);
-				hints.add("Free input for fuzzy query on number/title/description");
+				hints.add("免费输入号码/标题/描述模糊查询");
 				return hints;
 			}
 			

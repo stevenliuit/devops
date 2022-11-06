@@ -20,7 +20,7 @@ public class GitHubProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to GitHub";
+			return "验证 GitHub";
 		}
 
 		@Override
@@ -36,7 +36,7 @@ public class GitHubProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose organization";
+			return "选择组织";
 		}
 
 		@Override
@@ -78,7 +78,7 @@ public class GitHubProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

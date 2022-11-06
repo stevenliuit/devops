@@ -16,7 +16,7 @@ public class SpecifiedDefaultValue implements DefaultValueProvider {
 	private Date value;
 
 	@Editable(name="Specified default value")
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	@WithTime
 	@OmitName
 	public Date getValue() {

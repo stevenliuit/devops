@@ -67,9 +67,9 @@ public class OtherMailSetting extends MailSetting {
 		this.smtpPassword = smtpPassword;
 	}
 
-	@Editable(order=410, name="System Email Address", description="This address will be used as sender address of "
-			+ "various notifications. Emails targeting this address and its sub addressing in the IMAP inbox will "
-			+ "also be checked if <code>Check Incoming Email</code> option is enabled below")
+	@Editable(order=410, name="系统电子邮件地址", description="此地址将用作发件人地址 "
+			+ "各种通知。 针对该地址及其在 IMAP 收件箱中的子地址的电子邮件将 "
+			+ "还要检查是否 <code>检查传入的电子邮件</code> 选项在下面启用")
 	@Email
 	@NotEmpty
 	public String getEmailAddress() {
@@ -80,8 +80,8 @@ public class OtherMailSetting extends MailSetting {
 		this.emailAddress = emailAddress;
 	}
 
-	@Editable(order=430, name="Enable SMTP StartTLS", description="Whether or not to enable StartTLS "
-			+ "when connect to SMTP server")
+	@Editable(order=430, name="启用 SMTP StartTLS", description="是否开启 StartTLS "
+			+ "连接到 SMTP 服务器时")
 	public boolean isEnableStartTLS() {
 		return enableStartTLS;
 	}
@@ -90,9 +90,9 @@ public class OtherMailSetting extends MailSetting {
 		this.enableStartTLS = enableStartTLS;
 	}
 
-	@Editable(order=450, name="Check Incoming Email", description="Enable this to post issue and pull request comments via email. "
-			+ "<b class='text-danger'>NOTE:</b> <a href='https://en.wikipedia.org/wiki/Email_address#Subaddressing' target='_blank'>Sub addressing</a> "
-			+ "needs to be enabled for above email address, as OneDev uses it to track issue and pull request contexts")
+	@Editable(order=450, name="检查传入的电子邮件", description="启用此功能以通过电子邮件发布问题和拉取请求评论. "
+			+ "<b class='text-danger'>NOTE:</b> <a href='https://en.wikipedia.org/wiki/Email_address#Subaddressing' target='_blank'>子地址</a> "
+			+ "需要为上述电子邮件地址启用，因为本系统使用它来跟踪问题和拉取请求上下文")
 	public OtherInboxPollSetting getOtherInboxPollSetting() {
 		return otherInboxPollSetting;
 	}

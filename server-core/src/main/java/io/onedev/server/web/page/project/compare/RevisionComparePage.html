@@ -4,11 +4,11 @@
 			<div class="base revision card">
 				<div class="card-body">
 					<div class="head">
-						<div class="title">Base</div>
+						<div class="title">基础</div>
 						<wicket:enclosure child="compareWithMergeBase">
 						<label class="checkbox">
 							<input wicket:id="compareWithMergeBase" type="checkbox">
-							common ancestor
+							共同祖先
 						</label>
 						<span wicket:id="mergeBaseTooltip" class="help"><wicket:svg href="question-o" class="icon"></wicket:svg></span>
 						</wicket:enclosure>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="compare revision card">
 				<div class="card-body">
-					<div class="title">Compare</div>
+					<div class="title">比较</div>
 					<div wicket:id="rightRevSelector" class="selector"></div>
 					<a wicket:id="rightCommitLink" class="message"><span wicket:id="message"></span></a>
 				</div>
@@ -32,13 +32,13 @@
 			<span wicket:id="description"></span> <a wicket:id="link"><span wicket:id="label"></span></a>
 		</div>
 		<div>
-			<a wicket:id="createRequest" class="btn btn-primary btn-block mb-5"><wicket:svg href="plus" class="icon mr-2"/> Create Pull Request for This Change</a>
+			<a wicket:id="createRequest" class="btn btn-primary btn-block mb-5"><wicket:svg href="plus" class="icon mr-2"/> 为此更改创建拉取请求</a>
 		</div>
 		<div wicket:id="revisionNotSpecified" class="alert alert-notice alert-light-warning mb-5">
-			<span>Please select revisions to compare</span>
+			<span>请选择要比较的修订</span>
 		</div>
 		<div wicket:id="unrelatedHistory" class="alert alert-notice alert-light-warning mb-5">
-			<span>History of comparing revisions is unrelated</span>
+			<span>比较修订的历史不相关</span>
 		</div>
 		<wicket:enclosure child="tabs">
 		<div class="card compare-result">

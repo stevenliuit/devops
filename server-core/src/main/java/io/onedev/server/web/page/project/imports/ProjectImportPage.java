@@ -119,7 +119,7 @@ public class ProjectImportPage extends LayoutPage {
 					
 					@Override
 					protected String getTitle() {
-						return "Test importing from " + importer.getName();
+						return "从" + importer.getName() + "测试";
 					}
 
 					@Override
@@ -143,7 +143,7 @@ public class ProjectImportPage extends LayoutPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Importing projects from " + importer.getName());
+		return new Label(componentId, "从" + importer.getName() + "导入项目");
 	}
 	
 	public static PageParameters paramsOf(String importer) {

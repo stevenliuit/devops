@@ -39,9 +39,9 @@ public class OtherInboxPollSetting extends InboxPollSetting {
 		this.imapPort = imapPort;
 	}
 
-	@Editable(order=300, name="IMAP User", description="Specify IMAP user name.<br>"
-			+ "<b class='text-danger'>NOTE: </b> This account should be able to receive emails sent to system "
-			+ "email address specified above")
+	@Editable(order=300, name="IMAP User", description="指定 IMAP 用户名.<br>"
+			+ "<b class='text-danger'>NOTE: </b> 此帐户应该能够接收发送到系统的电子邮件 "
+			+ "上面指定的电子邮件地址")
 	@NotEmpty
 	public String getImapUser() {
 		return imapUser;
@@ -62,7 +62,7 @@ public class OtherInboxPollSetting extends InboxPollSetting {
 		this.imapPassword = imapPassword;
 	}
 
-	@Editable(order=700, name="Enable IMAP SSL", description="Whether or not to enable SSL when connect to IMAP server")
+	@Editable(order=700, name="启用 IMAP SSL", description="连接 IMAP 服务器时是否启用 SSL")
 	public boolean isEnableSSL() {
 		return enableSSL;
 	}

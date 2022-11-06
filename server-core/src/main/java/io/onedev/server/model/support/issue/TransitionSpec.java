@@ -69,7 +69,7 @@ public class TransitionSpec implements Serializable {
 	}
 
 	@Editable(order=400, name="Do Transition When")
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public TransitionTrigger getTrigger() {
 		return trigger;
 	}

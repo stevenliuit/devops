@@ -233,7 +233,7 @@ public class SsoConnectorListPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "<span class='text-truncate'>Single Sign On</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-truncate'>单点登录</span>").setEscapeModelStrings(false);
 	}
 	
 }

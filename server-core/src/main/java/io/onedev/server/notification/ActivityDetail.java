@@ -67,9 +67,9 @@ public class ActivityDetail implements Serializable {
 		builder.append("  <thead>");
 		builder.append("    <tr>");
 		if (changes.size() != 1 || !hideNameIfOnlyOneRow) 
-			builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>Name</th>");
-		builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>Previous Value</th>");
-		builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>Current Value</th>");
+			builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>名称</th>");
+		builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>以前的值</th>");
+		builder.append("      <th style='padding:0.4em 0.6em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>当前的值</th>");
 		builder.append("    </tr>");
 		builder.append("  </thead>");
 		builder.append("  <tbody>");
@@ -84,13 +84,13 @@ public class ActivityDetail implements Serializable {
 			if (change.getOldValue() != null)
 				builder.append("<pre style='margin:0;'>" + HtmlEscape.escapeHtml5(change.getOldValue()) + "</pre>");
 			else
-				builder.append("<i>empty</i>");
+				builder.append("<i>空的</i>");
 			builder.append("  </td>");
 			builder.append("  <td style='padding:0.4em 0.6em; font-size:0.9em; border-bottom:1px solid #EBEDF3; font-size:0.9em; text-align:left;'>");
 			if (change.getNewValue() != null)
 				builder.append("<pre style='margin:0;'>" + HtmlEscape.escapeHtml5(change.getNewValue()) + "</pre>");
 			else
-				builder.append("<i>empty</i>");
+				builder.append("<i>空的</i>");
 			builder.append("  </td>");
 			builder.append("</tr>");
 		}
@@ -109,16 +109,16 @@ public class ActivityDetail implements Serializable {
 		for (PropertyChange change: changes) {
 			builder.append("----------------------------------------\n");
 			if (changes.size() != 1 || !hideNameIfOnlyOneRow) {
-				builder.append("Name: ").append(change.getName());
+				builder.append("名称: ").append(change.getName());
 				builder.append("\n");
 			}
-			builder.append("Previous Value: ");
+			builder.append("以前的值: ");
 			if (change.getOldValue() != null)
 				builder.append(change.getOldValue());
 			else
 				builder.append("<empty>");
 			builder.append("\n");
-			builder.append("Current Value: ");
+			builder.append("当前的值: ");
 			if (change.getNewValue() != null)
 				builder.append(change.getNewValue());
 			else

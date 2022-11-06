@@ -19,7 +19,7 @@ public class BitbucketProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to Bitbucket Cloud";
+			return "向 Bitbucket Cloud 进行身份验证";
 		}
 
 		@Override
@@ -35,7 +35,7 @@ public class BitbucketProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose workspace";
+			return "选择工作区";
 		}
 
 		@Override
@@ -53,7 +53,7 @@ public class BitbucketProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify repositories";
+			return "指定存储库";
 		}
 
 		@Override
@@ -78,7 +78,7 @@ public class BitbucketProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

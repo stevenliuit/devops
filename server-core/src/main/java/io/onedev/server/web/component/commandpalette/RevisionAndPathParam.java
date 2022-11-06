@@ -27,7 +27,7 @@ public class RevisionAndPathParam extends ParamSegment {
 			Map<String, String> paramValues, int count) {
 		Map<String, String> suggestions = new LinkedHashMap<>();
 		if (matchWith.length() == 0) {
-			suggestions.put("Type to search in default branch", null);
+			suggestions.put("键入以在默认分支中搜索", null);
 		} else {
 			Project project = ParsedUrl.getProject(paramValues);
 			if (project.getDefaultBranch() != null) {

@@ -70,8 +70,8 @@ public class BranchProtection implements Serializable {
 		this.enabled = enabled;
 	}
 
-	@Editable(order=100, description="Specify space-separated branches to be protected. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude")
+	@Editable(order=100, description="指定要保护的以空格分隔的分支. 使用 '**', '*' 或者 '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除")
 	@Patterns(suggester = "suggestBranches", path=true)
 	@NotEmpty
 	public String getBranches() {
@@ -87,9 +87,9 @@ public class BranchProtection implements Serializable {
 		return SuggestionUtils.suggestBranches(Project.get(), matchWith);
 	}
 	
-	@Editable(order=150, name="Applicable Users", description="Rule will apply only if the user changing the branch matches criteria specified here")
+	@Editable(order=150, name="适用用户", description="仅当更改分支的用户符合此处指定的条件时，才会应用规则")
 	@io.onedev.server.web.editable.annotation.UserMatch
-	@NotEmpty(message="may not be empty")
+	@NotEmpty(message="不能为空")
 	public String getUserMatch() {
 		return userMatch;
 	}
@@ -98,7 +98,7 @@ public class BranchProtection implements Serializable {
 		this.userMatch = userMatch;
 	}
 
-	@Editable(order=200, description="Check this to prevent forced push")
+	@Editable(order=200, description="检查此项以防止强制推送")
 	public boolean isPreventForcedPush() {
 		return preventForcedPush;
 	}
@@ -107,7 +107,7 @@ public class BranchProtection implements Serializable {
 		this.preventForcedPush = preventForcedPush;
 	}
 
-	@Editable(order=300, description="Check this to prevent branch deletion")
+	@Editable(order=300, description="选中此项以防止分支删除")
 	public boolean isPreventDeletion() {
 		return preventDeletion;
 	}
@@ -116,7 +116,7 @@ public class BranchProtection implements Serializable {
 		this.preventDeletion = preventDeletion;
 	}
 
-	@Editable(order=350, description="Check this to prevent branch creation")
+	@Editable(order=350, description="选中此项以防止创建分支")
 	public boolean isPreventCreation() {
 		return preventCreation;
 	}
@@ -125,7 +125,7 @@ public class BranchProtection implements Serializable {
 		this.preventCreation = preventCreation;
 	}
 
-	@Editable(order=360, description="Check this to require valid signature of head commit")
+	@Editable(order=360, description="选中此项以要求头部提交的有效签名")
 	public boolean isSignatureRequired() {
 		return signatureRequired;
 	}
@@ -134,8 +134,7 @@ public class BranchProtection implements Serializable {
 		this.signatureRequired = signatureRequired;
 	}
 
-	@Editable(order=400, name="Required Reviewers", placeholder="没有人", description="Optionally specify "
-			+ "required reviewers for changes of specified branch")
+	@Editable(order=400, name="所需的审稿人", placeholder="没有人", description="（可选）为指定分支的更改指定所需的审阅者")
 	@io.onedev.server.web.editable.annotation.ReviewRequirement
 	public String getReviewRequirement() {
 		return reviewRequirement;
@@ -156,7 +155,7 @@ public class BranchProtection implements Serializable {
 		reviewRequirement = parsedReviewRequirement.toString();
 	}
 	
-	@Editable(order=500, name="Required Builds", placeholder="没有任何", description="Optionally choose required builds")
+	@Editable(order=500, name="所需的构建", placeholder="没有任何", description="（可选）选择所需的构建")
 	@JobChoice(tagsMode=true)
 	public List<String> getJobNames() {
 		return jobNames;
@@ -166,7 +165,7 @@ public class BranchProtection implements Serializable {
 		this.jobNames = jobNames;
 	}
 	
-	@Editable(order=700, description="Optionally specify path protection rules")
+	@Editable(order=700, description="可选择指定路径保护规则")
 	@Valid
 	public List<FileProtection> getFileProtections() {
 		return fileProtections;
@@ -214,7 +213,7 @@ public class BranchProtection implements Serializable {
 				break;
 			}
 		}
-		return usage.prefix("branch protection '" + getBranches() + "'");
+		return usage.prefix("分支保护 '" + getBranches() + "'");
 	}
 	
 	public void onRenameUser(String oldName, String newName) {
@@ -230,17 +229,17 @@ public class BranchProtection implements Serializable {
 	public Usage onDeleteUser(String userName) {
 		Usage usage = new Usage();
 		if (UserMatch.isUsingUser(userMatch, userName))
-			usage.add("applicable users");
+			usage.add("适用用户");
 		if (ReviewRequirement.isUsingUser(reviewRequirement, userName))
-			usage.add("required reviewers");
+			usage.add("要求的审稿人");
 
 		for (FileProtection protection: getFileProtections()) {
 			if (ReviewRequirement.isUsingUser(protection.getReviewRequirement(), userName)) {
-				usage.add("file protections");
+				usage.add("文件保护");
 				break;
 			}
 		}
-		return usage.prefix("branch protection '" + getBranches() + "'");
+		return usage.prefix("分支保护 '" + getBranches() + "'");
 	}
 	
 	/**

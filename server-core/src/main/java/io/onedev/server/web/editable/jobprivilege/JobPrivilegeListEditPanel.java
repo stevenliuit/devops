@@ -118,15 +118,15 @@ class JobPrivilegeListEditPanel extends PropertyEditor<List<Serializable>> {
 			public void populateItem(Item<ICellPopulator<JobPrivilege>> cellItem, String componentId, IModel<JobPrivilege> rowModel) {
 				JobPrivilege privilege = rowModel.getObject();
 				if (privilege.isManageJob())
-					cellItem.add(new Label(componentId, "Manage Job"));
+					cellItem.add(new Label(componentId, "管理Job"));
 				else if (privilege.isRunJob())
-					cellItem.add(new Label(componentId, "Run Job"));
+					cellItem.add(new Label(componentId, "运行Job"));
 				else if (privilege.isAccessLog())
-					cellItem.add(new Label(componentId, "Access Log"));
+					cellItem.add(new Label(componentId, "访问日志"));
 				else if (privilege.getAccessibleReports() != null)
-					cellItem.add(new Label(componentId, "Access Reports: " + privilege.getAccessibleReports()));
+					cellItem.add(new Label(componentId, "访问报告: " + privilege.getAccessibleReports()));
 				else
-					cellItem.add(new Label(componentId, "Access Artifacts"));
+					cellItem.add(new Label(componentId, "访问工件"));
 			}
 		});		
 		

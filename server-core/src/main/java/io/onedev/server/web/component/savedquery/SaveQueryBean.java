@@ -14,7 +14,7 @@ public class SaveQueryBean implements Serializable {
 
 	private String name;
 	
-	@Editable(description="Specify name of the saved query")
+	@Editable(description="指定已保存查询的名称")
 	@NotEmpty
 	@OmitName
 	public String getName() {

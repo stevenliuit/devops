@@ -45,7 +45,7 @@ public class FileUploadField extends org.apache.wicket.markup.html.form.upload.F
 	}
 	
 	protected String getHint() {
-		return "Select file...";
+		return "选择文件...";
 	}
 	
 	protected String getIcon() {

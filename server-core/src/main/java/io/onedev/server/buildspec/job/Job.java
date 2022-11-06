@@ -121,7 +121,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 	
 	private transient Map<String, ParamSpec> paramSpecMap;
 	
-	@Editable(order=100, description="Specify name of the job")
+	@Editable(order=100, description="指定作业名称")
 	@SuggestionProvider("getNameSuggestions")
 	@NotEmpty
 	@Override
@@ -144,8 +144,8 @@ public class Job implements NamedElement, Serializable, Validatable {
 		return new ArrayList<>();
 	}
 
-	@Editable(order=200, placeholder="使用任何适用的Executor", description="Optionally specify executor "
-			+ "to execute this job. Leave empty to use any executor as long as its job requirement is satisfied")
+	@Editable(order=200, placeholder="使用任何适用的Executor", description="可选择指定执行者 "
+			+ "执行此作业。 留空以使用任何执行器，只要满足其工作要求")
 	@Interpolative(literalSuggester="suggestJobExecutors", variableSuggester="suggestVariables")
 	public String getJobExecutor() {
 		return jobExecutor;
@@ -174,7 +174,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		return SuggestionUtils.suggest(applicableJobExecutors, matchWith);
 	}
 	
-	@Editable(order=200, description="Steps will be executed serially on same node, sharing the same <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>")
+	@Editable(order=200, description="步骤将在同一个节点上串行执行，共享同一个 <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>")
 	public List<Step> getSteps() {
 		return steps;
 	}
@@ -183,7 +183,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.steps = steps;
 	}
 
-	@Editable(order=400, name="Parameter Specs", group="Params & Triggers", description="Optionally define parameter specifications of the job")
+	@Editable(order=400, name="参数规格", group="参数和触发器", description="可选择定义作业的参数规范")
 	@Valid
 	public List<ParamSpec> getParamSpecs() {
 		return paramSpecs;
@@ -193,7 +193,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.paramSpecs = paramSpecs;
 	}
 
-	@Editable(order=500, group="Params & Triggers", description="Use triggers to run the job automatically under certain conditions")
+	@Editable(order=500, group="参数和触发器", description="使用触发器在特定条件下自动运行作业")
 	@Valid
 	public List<JobTrigger> getTriggers() {
 		return triggers;
@@ -203,8 +203,8 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.triggers = triggers;
 	}
 
-	@Editable(name="Job Dependencies", order=9110, group="Dependencies & Services", description="Job dependencies determines the order and "
-			+ "concurrency when run different jobs. You may also specify artifacts to retrieve from upstream jobs")
+	@Editable(name="工作依赖", order=9110, group="依赖项和服务", description="作业依赖决定了顺序和 "
+			+ "运行不同作业时的并发性。 您还可以指定要从上游作业中检索的工件")
 	@Valid
 	public List<JobDependency> getJobDependencies() {
 		return jobDependencies;
@@ -214,8 +214,8 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.jobDependencies = jobDependencies;
 	}
 
-	@Editable(name="Project Dependencies", order=9112, group="Dependencies & Services", description="Use project dependency to retrieve "
-			+ "artifacts from other projects")
+	@Editable(name="项目依赖", order=9112, group="依赖项和服务", description="使用项目依赖检索 "
+			+ "来自其他项目的工件")
 	@Valid
 	public List<ProjectDependency> getProjectDependencies() {
 		return projectDependencies;
@@ -225,10 +225,10 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.projectDependencies = projectDependencies;
 	}
 
-	@Editable(order=9114, group="Dependencies & Services", placeholder="无需服务", 
-			description="Optionally specify services required by this job. "
-			+ "<b class='text-warning'>NOTE:</b> Services are only supported by docker aware executors "
-			+ "(server docker executor, remote docker executor, or kubernetes executor)")
+	@Editable(order=9114, group="依赖项和服务", placeholder="无需服务", 
+			description="可选择指定此作业所需的服务. "
+			+ "<b class='text-warning'>NOTE:</b> 服务仅受 docker 感知执行器支持 "
+			+ "(服务器 docker 执行器、远程 docker 执行器或 kubernetes 执行器)")
 	@ChoiceProvider("getServiceChoices")
 	public List<String> getRequiredServices() {
 		return requiredServices;
@@ -253,7 +253,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		return choices;
 	}
 
-	@Editable(order=9400, group="More Settings", description="Specify condition to retry build upon failure")
+	@Editable(order=9400, group="更多设置", description="指定在失败时重试构建的条件")
 	@NotEmpty
 	@RetryCondition
 	public String getRetryCondition() {
@@ -264,8 +264,8 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.retryCondition = retryCondition;
 	}
 
-	@Editable(order=9410, group="More Settings", description="Maximum of retries before giving up")
-	@Min(value=1, message="This value should not be less than 1")
+	@Editable(order=9410, group="更多设置", description="放弃前的最大重试次数")
+	@Min(value=1, message="此值不应小于 1")
 	public int getMaxRetries() {
 		return maxRetries;
 	}
@@ -274,10 +274,10 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.maxRetries = maxRetries;
 	}
 
-	@Editable(order=9420, group="More Settings", description="Delay for the first retry in seconds. "
-			+ "Delay of subsequent retries will be calculated using an exponential back-off "
-			+ "based on this delay")
-	@Min(value=1, message="This value should not be less than 1")
+	@Editable(order=9420, group="更多设置", description="第一次重试的延迟（以秒为单位）. "
+			+ "后续重试的延迟将使用指数计算back-off "
+			+ "基于这个延迟")
+	@Min(value=1, message="此值不应小于 1")
 	public int getRetryDelay() {
 		return retryDelay;
 	}
@@ -286,8 +286,8 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.retryDelay = retryDelay;
 	}
 	
-	@Editable(order=10050, name="CPU Requirement", group="More Settings", description="Specify CPU requirement of the job in millis. "
-			+ "1000 millis means a single CPU core")
+	@Editable(order=10050, name="CPU 要求", group="更多设置", description="以毫秒为单位指定作业的 CPU 要求. "
+			+ "1000 毫秒表示单个 CPU 内核")
 	public int getCpuRequirement() {
 		return cpuRequirement;
 	}
@@ -296,7 +296,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.cpuRequirement = cpuRequirement;
 	}
 
-	@Editable(order=10060, group="More Settings", description="Specify memory requirement of the job in mega bytes")
+	@Editable(order=10060, group="更多设置", description="以兆字节指定作业的内存需求")
 	public int getMemoryRequirement() {
 		return memoryRequirement;
 	}
@@ -305,13 +305,13 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.memoryRequirement = memoryRequirement;
 	}
 
-	@Editable(order=10100, group="More Settings", description="Cache specific paths to speed up job execution. "
-			+ "For instance for Java Maven projects executed by various docker executors, you may cache folder "
-			+ "<tt>/root/.m2/repository</tt> to avoid downloading dependencies for subsequent executions.<br>"
-			+ "<b class='text-danger'>WARNING</b>: When using cache, malicious jobs running with same job executor "
-			+ "can read or even pollute the cache intentionally using same cache key as yours. To avoid this "
-			+ "issue, make sure job executor executing your job can only be used by trusted jobs via job "
-			+ "authorization setting</b>")
+	@Editable(order=10100, group="更多设置", description="缓存特定路径以加速作业执行. "
+			+ "例如，对于由各种 docker 执行程序执行的 Java Maven 项目，您可以缓存文件夹 "
+			+ "<tt>/root/.m2/repository</tt> 避免为后续执行下载依赖项.<br>"
+			+ "<b class='text-danger'>WARNING</b>: 使用缓存时，恶意作业与相同的作业执行器一起运行 "
+			+ "可以使用与您相同的缓存键故意读取甚至污染缓存。 为了避免这个问题, "
+			+ "请确保执行您的作业的作业执行者只能通过作业由受信任的作业使用 "
+			+ "授权设置</b>")
 	@Valid
 	public List<CacheSpec> getCaches() {
 		return caches;
@@ -321,7 +321,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.caches = caches;
 	}
 
-	@Editable(order=10500, group="More Settings", description="Specify timeout in seconds")
+	@Editable(order=10500, group="更多设置", description="以秒为单位指定超时")
 	public long getTimeout() {
 		return timeout;
 	}
@@ -330,7 +330,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		this.timeout = timeout;
 	}
 	
-	@Editable(order=10600, name="Post Build Actions", group="More Settings")
+	@Editable(order=10600, name="后期构建操作", group="更多设置")
 	@Valid
 	public List<PostBuildAction> getPostBuildActions() {
 		return postBuildActions;
@@ -359,12 +359,12 @@ public class Job implements NamedElement, Serializable, Validatable {
 		for (CacheSpec cache: caches) {
 			if (!keys.add(cache.getKey())) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Duplicate key (" + cache.getKey() + ")")
+				context.buildConstraintViolationWithTemplate("重复键 (" + cache.getKey() + ")")
 						.addPropertyNode("caches").addConstraintViolation();
 			}
 			if (!paths.add(cache.getPath())) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Duplicate path (" + cache.getPath() + ")")
+				context.buildConstraintViolationWithTemplate("重复路径 (" + cache.getPath() + ")")
 						.addPropertyNode("caches").addConstraintViolation();
 			} 
 		}
@@ -373,7 +373,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		for (JobDependency dependency: jobDependencies) {
 			if (!dependencyJobNames.add(dependency.getJobName())) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Duplicate dependency (" + dependency.getJobName() + ")")
+				context.buildConstraintViolationWithTemplate("重复依赖 (" + dependency.getJobName() + ")")
 						.addPropertyNode("jobDependencies").addConstraintViolation();
 			} 
 		}
@@ -382,7 +382,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		for (ProjectDependency dependency: projectDependencies) {
 			if (!dependencyProjectPaths.add(dependency.getProjectPath())) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Duplicate dependency (" + dependency.getProjectPath() + ")")
+				context.buildConstraintViolationWithTemplate("重复依赖 (" + dependency.getProjectPath() + ")")
 						.addPropertyNode("projectDependencies").addConstraintViolation();
 			}
 		}
@@ -391,7 +391,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 		for (ParamSpec paramSpec: paramSpecs) {
 			if (!paramSpecNames.add(paramSpec.getName())) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Duplicate parameter spec (" + paramSpec.getName() + ")")
+				context.buildConstraintViolationWithTemplate("重复的参数规范 (" + paramSpec.getName() + ")")
 						.addPropertyNode("paramSpecs").addConstraintViolation();
 			} 
 		}
@@ -402,7 +402,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 			} catch (Exception e) {
 				String message = e.getMessage();
 				if (message == null)
-					message = "Malformed retry condition";
+					message = "重试条件格式错误";
 				context.buildConstraintViolationWithTemplate(message)
 						.addPropertyNode(PROP_RETRY_CONDITION)
 						.addConstraintViolation();
@@ -416,7 +416,7 @@ public class Job implements NamedElement, Serializable, Validatable {
 				try {
 					ParamUtils.validateParams(getParamSpecs(), trigger.getParams());
 				} catch (Exception e) {
-					String errorMessage = String.format("Error validating job parameters (item: #%s, error message: %s)", 
+					String errorMessage = String.format("验证作业参数时出错 (item: #%s, error message: %s)", 
 							(triggerIndex+1), e.getMessage());
 					context.buildConstraintViolationWithTemplate(errorMessage)
 							.addPropertyNode(PROP_TRIGGERS)

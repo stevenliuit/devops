@@ -27,8 +27,8 @@ public class ProjectNameValidator implements ConstraintValidator<ProjectName, St
 			constraintContext.disableDefaultConstraintViolation();
 			String message = this.message;
 			if (message.length() == 0) {
-				message = "Should start and end with alphanumeric or underscore. "
-						+ "Only alphanumeric, underscore, dash, and dot are allowed in the middle.";
+				message = "应该以字母数字或下划线开头和结尾. "
+						+ "中间只允许使用字母数字、下划线、破折号和点。";
 			}
 			constraintContext.buildConstraintViolationWithTemplate(message).addConstraintViolation();
 			return false;
@@ -36,7 +36,7 @@ public class ProjectNameValidator implements ConstraintValidator<ProjectName, St
 			constraintContext.disableDefaultConstraintViolation();
 			String message = this.message;
 			if (message.length() == 0)
-				message = "'" + value + "' is a reserved name";
+				message = "'" + value + "' 被预定了";
 			constraintContext.buildConstraintViolationWithTemplate(message).addConstraintViolation();
 			return false;
 		} else {

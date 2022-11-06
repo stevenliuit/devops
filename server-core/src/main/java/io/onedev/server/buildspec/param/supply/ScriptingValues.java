@@ -16,14 +16,14 @@ import io.onedev.server.util.GroovyUtils;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.ScriptChoice;
 
-@Editable(name="Evaluate script to get values or secrets")
+@Editable(name="评估脚本以获取值或secrets")
 public class ScriptingValues implements ValuesProvider {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static final String DISPLAY_NAME = "Evaluate script to get values";
+	public static final String DISPLAY_NAME = "评估脚本以获取值";
 	
-	public static final String SECRET_DISPLAY_NAME = "Evaluate script to get secrets";
+	public static final String SECRET_DISPLAY_NAME = "评估脚本以获取secrets";
 	
 	private String scriptName;
 	

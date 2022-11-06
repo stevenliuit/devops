@@ -53,7 +53,7 @@ onedev.server.codemirror = {
 			return CodeMirror.findModeByName("jsx");
 		else if (fileName.endsWith(".ld") || fileName.endsWith(".asm")) 
 			return CodeMirror.findModeByName("gas");			
-		else if (fileName == ".onedev-buildspec") 
+		else if (fileName == ".cicd-buildspec") 
 			return CodeMirror.findModeByName("xml");			
 		else 
 		    return CodeMirror.findModeByFileName(fileName);

@@ -120,7 +120,7 @@ public class GpgSigningKeyPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "GPG Signing Key");
+		return new Label(componentId, "GPG 签名密钥");
 	}
 
 }

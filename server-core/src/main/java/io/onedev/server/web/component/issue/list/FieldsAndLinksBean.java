@@ -21,8 +21,8 @@ public class FieldsAndLinksBean implements Serializable {
 	
 	private List<String> links;
 
-	@Editable(order=100, name="Display Fields", placeholder="不显示任何字段", 
-			description="Specify fields to be displayed in the issue list")
+	@Editable(order=100, name="显示字段", placeholder="不显示任何字段", 
+			description="指定要在问题列表中显示的字段")
 	@ChoiceProvider("getFieldChoices")
 	public List<String> getFields() {
 		return fields;
@@ -41,8 +41,8 @@ public class FieldsAndLinksBean implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=200, name="Display Links", placeholder="Not displaying any links", 
-			description="Specify links to be displayed in the issue list")
+	@Editable(order=200, name="显示链接", placeholder="不显示任何链接", 
+			description="指定要在问题列表中显示的链接")
 	@ChoiceProvider("getLinkChoices")
 	public List<String> getLinks() {
 		return links;

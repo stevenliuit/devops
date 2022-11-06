@@ -29,7 +29,7 @@ public class HomePage extends LayoutPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Home");
+		return new Label(componentId, "主页");
 	}
 
 }

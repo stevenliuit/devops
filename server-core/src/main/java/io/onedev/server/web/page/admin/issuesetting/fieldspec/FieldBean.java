@@ -15,7 +15,7 @@ public class FieldBean implements Serializable {
 	private FieldSpec field;
 
 	@Editable(name="Type", order=100)
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public FieldSpec getField() {
 		return field;
 	}

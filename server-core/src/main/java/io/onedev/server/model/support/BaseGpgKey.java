@@ -39,7 +39,7 @@ public class BaseGpgKey extends AbstractEntity implements Validatable {
     
     private transient List<PGPPublicKey> publicKeys;
 
-    @Editable(name="GPG Public Key", placeholder="GPG public key begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'")
+    @Editable(name="GPG 公钥", placeholder="GPG 公钥以 '-----BEGIN PGP PUBLIC KEY BLOCK-----' 开头")
     @NotEmpty
     @Multiline
     @OmitName

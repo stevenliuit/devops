@@ -27,12 +27,12 @@ public abstract class ApiHelpPage extends LayoutPage {
 
 	@Override
 	protected String getPageTitle() {
-		return "RESTful API Help";
+		return "RESTful API帮助";
 	}
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "RESTful API Help");
+		return new Label(componentId, "RESTful API帮助");
 	}
 	
 	protected String getResourceTitle(Class<?> resourceClass) {

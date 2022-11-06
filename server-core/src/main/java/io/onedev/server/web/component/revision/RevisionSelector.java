@@ -151,15 +151,15 @@ public abstract class RevisionSelector extends Panel {
 			protected String load() {
 				if (branchesActive) {
 					if (canCreateBranch) {
-						return "Find or create branch";
+						return "查找或创建分支";
 					} else {
-						return "Find branch";
+						return "查找分支";
 					}
 				} else {
 					if (canCreateTag) {
-						return "Find or create tag";
+						return "查找或创建标签";
 					} else {
-						return "Find tag";
+						return "查找标签";
 					}
 				}
 			}
@@ -386,7 +386,7 @@ public abstract class RevisionSelector extends Panel {
 				item.add(AttributeAppender.append("class", "active"));
 			itemsView.add(item);
 		}
-		itemsContainer.add(new Label("noItems", branchesActive? "No branches found": "No tags found") {
+		itemsContainer.add(new Label("noItems", branchesActive? "未找到分支": "未找到标记") {
 
 			@Override
 			protected void onConfigure() {

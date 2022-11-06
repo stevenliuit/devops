@@ -21,7 +21,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.Patterns;
 
-@Editable(order=1050, name="Publish Artifacts")
+@Editable(order=1050, name="发布工件")
 public class PublishArtifactStep extends ServerSideStep {
 
 	private static final long serialVersionUID = 1L;
@@ -30,9 +30,9 @@ public class PublishArtifactStep extends ServerSideStep {
 	
 	private String artifacts;
 	
-	@Editable(order=50, name="From Path", placeholder="工作空间", description="Optionally specify path "
-			+ "relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> to publish "
-			+ "artifacts from. Leave empty to use job workspace itself")
+	@Editable(order=50, name="从路径", placeholder="工作空间", description="（可选）指定相对于的路径"
+			+ " <a href='$docRoot/pages/concepts.md#job-workspace'>工作区</a> 去发布 "
+			+ "来自的工件. 保留为空以使用作业工作区本身")
 	@Interpolative(variableSuggester="suggestVariables")
 	@SafePath
 	@Override
@@ -44,8 +44,7 @@ public class PublishArtifactStep extends ServerSideStep {
 		this.sourcePath = sourcePath;
 	}
 	
-	@Editable(order=100, description="Specify files to publish as job artifacts relative to "
-			+ "source path specified above. Use * or ? for pattern match")
+	@Editable(order=100, description="指定要作为作业工件发布的文件（相对于上面指定的源路径）. 使用 * 或者 ? 用于模式匹配")
 	@Interpolative(variableSuggester="suggestVariables")
 	@Patterns(path=true)
 	@NotEmpty

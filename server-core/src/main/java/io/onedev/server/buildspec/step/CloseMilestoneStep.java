@@ -26,7 +26,7 @@ public class CloseMilestoneStep extends ServerSideStep {
 	
 	private String milestoneName;
 	
-	@Editable(order=1000, description="Specify name of the milestone")
+	@Editable(order=1000, description="指定里程碑的名称")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getMilestoneName() {

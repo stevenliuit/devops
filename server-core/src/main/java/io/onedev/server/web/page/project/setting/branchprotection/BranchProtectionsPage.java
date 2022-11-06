@@ -120,7 +120,7 @@ public class BranchProtectionsPage extends ProjectSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Branch Protection");
+		return new Label(componentId, "分支保护");
 	}
 	
 }

@@ -2,12 +2,12 @@
 	<div class="card ssh-server-key">
 		<div class="card-body">
 			<div class="alert alert-light alert-notice mb-4">
-				Specify the private key (in PEM format) used by SSH server to establish connections with client
+				指定 SSH 服务器用来与客户端建立连接的私钥（PEM 格式）
 			</div>
 			<form wicket:id="form" class="leave-confirm">
 				<div wicket:id="editor" class="mb-4"></div>
-				<input type="submit" class="btn btn-primary dirty-aware mr-1" value="Save Setting">
-				<a wicket:id="rekey" class="btn btn-light-primary">Regenerate Private Key</a>
+				<input type="submit" class="btn btn-primary dirty-aware mr-1" value="保存设置">
+				<a wicket:id="rekey" class="btn btn-light-primary">重新生成私钥</a>
 			</form>
 		</div>
 	</div>

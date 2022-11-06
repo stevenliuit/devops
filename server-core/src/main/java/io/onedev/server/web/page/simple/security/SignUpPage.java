@@ -112,12 +112,12 @@ public class SignUpPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Sign Up";
+		return "注册";
 	}
 
 	@Override
 	protected String getSubTitle() {
-		return "Enter your details to create your account";
+		return "输入您的详细信息以创建您的帐户";
 	}
 
 }

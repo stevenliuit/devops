@@ -108,7 +108,7 @@ public class ImportServer implements Serializable, Validatable {
 	
 	private String password;
 	
-	@Editable(order=10, name="YouTrack API URL", description="Specify url of YouTrack API. For instance <tt>http://localhost:8080/api</tt>")
+	@Editable(order=10, name="YouTrack API URL", description="指定 YouTrack API 的 url。 例如 <tt>http://localhost:8080/api</tt>")
 	@NotEmpty
 	public String getApiUrl() {
 		return apiUrl;
@@ -118,11 +118,11 @@ public class ImportServer implements Serializable, Validatable {
 		this.apiUrl = apiUrl;
 	}
 	
-	@Editable(order=200, name="YouTrack Login Name", description="Specify YouTrack login name. This account should have permission to:"
+	@Editable(order=200, name="YouTrack Login Name", description="指定 YouTrack 登录名。 此帐户应有权:"
 			+ "<ul>"
-			+ "<li>Read full information and issues of the projects you want to import"
-			+ "<li>Read issue tags"
-			+ "<li>Read user basic information"
+			+ "<li>阅读您要导入的项目的完整信息和问题"
+			+ "<li>阅读问题标签"
+			+ "<li>阅读用户基本信息"
 			+ "</ul>")
 	@NotEmpty
 	public String getUserName() {
@@ -133,7 +133,7 @@ public class ImportServer implements Serializable, Validatable {
 		this.userName = userName;
 	}
 
-	@Editable(order=300, name="YouTrack Password or Access Token", description="Specify YouTrack password or access token for above user")
+	@Editable(order=300, name="YouTrack 密码或访问令牌", description="为上述用户指定 YouTrack 密码或访问令牌")
 	@Password
 	@NotEmpty
 	public String getPassword() {

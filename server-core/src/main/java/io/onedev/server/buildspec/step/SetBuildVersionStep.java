@@ -22,7 +22,7 @@ import io.onedev.server.persistence.TransactionManager;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(order=260, name="Set Build Version")
+@Editable(order=260, name="设置构建版本")
 public class SetBuildVersionStep extends ServerSideStep {
 
 	private static final long serialVersionUID = 1L;

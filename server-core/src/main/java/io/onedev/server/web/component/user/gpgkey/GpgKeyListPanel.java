@@ -67,7 +67,7 @@ public class GpgKeyListPanel extends GenericPanel<List<GpgKey>> {
 			
 		});
 		
-		columns.add(new AbstractColumn<GpgKey, Void>(Model.of("Email Addresses")) {
+		columns.add(new AbstractColumn<GpgKey, Void>(Model.of("电子邮件地址")) {
 
 			@Override
 			public void populateItem(Item<ICellPopulator<GpgKey>> cellItem, String componentId,

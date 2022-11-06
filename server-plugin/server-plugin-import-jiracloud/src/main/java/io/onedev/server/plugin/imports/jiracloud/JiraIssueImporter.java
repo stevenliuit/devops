@@ -20,7 +20,7 @@ public class JiraIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to JIRA cloud";
+			return "验证 JIRA cloud";
 		}
 
 		@Override
@@ -36,7 +36,7 @@ public class JiraIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose project";
+			return "选择项目";
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class JiraIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

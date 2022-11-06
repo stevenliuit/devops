@@ -23,7 +23,7 @@ public class MilestoneMultiChoice extends Select2MultiChoice<Milestone> {
 		if (isRequired())
 			getSettings().setPlaceholder("Choose milestones...");
 		else
-			getSettings().setPlaceholder("Not specified");
+			getSettings().setPlaceholder("未指定");
 		getSettings().setFormatResult("onedev.server.milestoneChoiceFormatter.formatResult");
 		getSettings().setFormatSelection("onedev.server.milestoneChoiceFormatter.formatSelection");
 		getSettings().setEscapeMarkup("onedev.server.milestoneChoiceFormatter.escapeMarkup");

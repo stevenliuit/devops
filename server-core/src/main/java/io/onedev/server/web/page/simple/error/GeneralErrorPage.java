@@ -48,7 +48,7 @@ public class GeneralErrorPage extends SimplePage {
 			title = response.getEntity().toString();
 			statusCode = response.getStatus();
 		} else {
-			title = "An unexpected exception occurred";
+			title = "发生意外异常";
 			detailMessage = Throwables.getStackTraceAsString(exception);
 			statusCode = Response.Status.INTERNAL_SERVER_ERROR.getStatusCode();
 			if (!SecurityUtils.isAdministrator()) 
@@ -101,7 +101,7 @@ public class GeneralErrorPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "OOPS! There Is An Error";
+		return "OOPS! 有错误哦";
 	}
 
 	@Override

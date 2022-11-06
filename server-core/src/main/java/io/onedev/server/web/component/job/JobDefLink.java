@@ -55,7 +55,7 @@ public abstract class JobDefLink extends BookmarkablePageLink<Void> {
 		ProjectBlobPage.State state = new ProjectBlobPage.State();
 		state.blobIdent = new BlobIdent(commitId.name(), BuildSpec.BLOB_PATH, FileMode.REGULAR_FILE.getBits()); 
 		if (getProject().getBlob(state.blobIdent, false) == null)
-			state.blobIdent = new BlobIdent(commitId.name(), ".onedev-buildspec", FileMode.REGULAR_FILE.getBits());
+			state.blobIdent = new BlobIdent(commitId.name(), ".cicd-buildspec", FileMode.REGULAR_FILE.getBits());
 		state.position = BuildSpecRenderer.getPosition(Job.SELECTION_PREFIX + jobName);
 		state.requestId = PullRequest.idOf(getPullRequest());
 		return ProjectBlobPage.paramsOf(getProject(), state);

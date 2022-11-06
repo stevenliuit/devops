@@ -74,7 +74,7 @@ public class MyGpgKeysPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "My GPG Keys");
+		return new Label(componentId, "我的 GPG 密钥");
 	}
 	
 }

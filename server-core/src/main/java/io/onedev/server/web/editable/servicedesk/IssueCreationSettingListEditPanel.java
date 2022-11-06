@@ -110,7 +110,7 @@ class IssueCreationSettingListEditPanel extends PropertyEditor<List<Serializable
 				if (setting.getSenderEmails() != null)
 					cellItem.add(new Label(componentId, setting.getSenderEmails()));
 				else
-					cellItem.add(new Label(componentId, "<i>Any sender</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>任何发件人</i>").setEscapeModelStrings(false));
 			}
 		});		
 		
@@ -122,7 +122,7 @@ class IssueCreationSettingListEditPanel extends PropertyEditor<List<Serializable
 				if (setting.getApplicableProjects() != null)
 					cellItem.add(new Label(componentId, setting.getApplicableProjects()));
 				else
-					cellItem.add(new Label(componentId, "<i>Any project</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>任何发件人</i>").setEscapeModelStrings(false));
 			}
 		});		
 		

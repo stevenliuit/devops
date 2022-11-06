@@ -45,11 +45,8 @@ public class JobSecretsPage extends ProjectBuildSettingPage {
 		super.onInitialize();
 
 		String note = String.format("<svg class='icon mr-2'><use xlink:href='%s'/></svg> "
-				+ "Define job secrets to be used in build spec. Secrets defined in parent "
-				+ "project will also be availalbe for use. If secret of same name is defined "
-				+ "in both parent and child project, the one defined in child project will "
-				+ "take effect. Note that Secret value less "
-				+ "than %d characters will not be masked in build log", 
+				+ "定义要在构建规范中使用的作业secrets. 父项目中定义的secrets也将可供使用. 如果在父项目和子项目中都定义了同名密码,"
+				+ "子项目中定义的将生效. 请注意，小于 %d 个字符的 Secret 值不会在构建日志中被屏蔽", 
 				SpriteImage.getVersionedHref("bulb"), SecretInput.MASK.length());
 		add(new Label("secretsNote", note).setEscapeModelStrings(false));
 
@@ -107,7 +104,7 @@ public class JobSecretsPage extends ProjectBuildSettingPage {
 				if (rowModel.getObject().getAuthorizedBranches() != null)
 					cellItem.add(new Label(componentId, rowModel.getObject().getAuthorizedBranches()));
 				else
-					cellItem.add(new Label(componentId, "<i>All</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>所有</i>").setEscapeModelStrings(false));
 			}
 			
 		});
@@ -159,7 +156,7 @@ public class JobSecretsPage extends ProjectBuildSettingPage {
 					@Override
 					protected void updateAjaxAttributes(AjaxRequestAttributes attributes) {
 						super.updateAjaxAttributes(attributes);
-						String message = "Do you really want to delete secret '" + rowModel.getObject().getName() + "'?";
+						String message = "你真的要删除secret吗 '" + rowModel.getObject().getName() + "'?";
 						attributes.getAjaxCallListeners().add(new ConfirmClickListener(message));
 					}
 
@@ -167,7 +164,7 @@ public class JobSecretsPage extends ProjectBuildSettingPage {
 					public void onClick(AjaxRequestTarget target) {
 						getProject().getBuildSetting().getJobSecrets().remove(index);
 						OneDev.getInstance(ProjectManager.class).save(getProject());
-						Session.get().success("Secret '" + rowModel.getObject().getName() + "' deleted");
+						Session.get().success("Secret '" + rowModel.getObject().getName() + "' 已删除");
 						target.add(secretsTable);
 					}
 

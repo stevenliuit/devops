@@ -7,7 +7,7 @@ import io.onedev.server.event.pullrequest.PullRequestChanged;
 import io.onedev.server.model.support.pullrequest.changedata.PullRequestMergeData;
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(order=310, name="Pull request merge", description="Job will run on merge commit of target branch and source branch")
+@Editable(order=310, name="拉取请求合并", description="作业将在目标分支和源分支的合并提交上运行")
 public class PullRequestMergeTrigger extends PullRequestTrigger {
 
 	private static final long serialVersionUID = 1L;

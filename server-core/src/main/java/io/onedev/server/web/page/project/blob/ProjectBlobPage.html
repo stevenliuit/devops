@@ -6,20 +6,20 @@
 				<a wicket:id="buildStatus" class="build-status mr-3 py-2"></a>
 				<div wicket:id="blobNavigator" class="blob-navigator mr-3 py-2"></div>
 			</div>
-			<div wicket:id="blob操作" class="d-flex align-items-center py-2">
-				<a wicket:id="getCode" title="Code clone or download" class="mr-4 font-weight-bolder text-nowrap link-info"><wicket:svg href="download2" class="icon"/> Clone</a>
-				<a wicket:id="add" title="Add files to current directory" class="mr-3 text-nowrap dropdown-toggle">Add</a>
-				<a wicket:id="search" title="Search files, symbols and texts" class="mr-3 text-nowrap dropdown-toggle">Search</a>
-				<a wicket:id="history" title="Commit history of current path" class="text-nowrap">History</a>
+			<div wicket:id="blobOperations" class="d-flex align-items-center py-2">
+				<a wicket:id="getCode" title="代码克隆或下载" class="mr-4 font-weight-bolder text-nowrap link-info"><wicket:svg href="download2" class="icon"/> 克隆</a>
+				<a wicket:id="add" title="将文件添加到当前目录" class="mr-3 text-nowrap dropdown-toggle">添加</a>
+				<a wicket:id="search" title="搜索文件、符号和文本" class="mr-3 text-nowrap dropdown-toggle">搜索</a>
+				<a wicket:id="history" title="当前路径的提交历史" class="text-nowrap">历史</a>
 			</div>
 		</div>
 		<div wicket:id="revisionIndexing" class="p-3 revision-indexing text-warning flex-shrink-0">
 			<wicket:svg href="loading" class="icon spin"/>
-			Revision indexing in progress... (search in this revision will be accurate after indexed)
+			正在进行修订索引... (此修订版中的搜索将在索引后更准确)
 		</div>
 		<div wicket:id="buildSupportNote" class="build-support-note p-3 flex-shrink-0">
 			<wicket:svg href="bulb" class="icon"/> 
-			Enable build support by <a wicket:id="addFile" class="link-primary"></a>
+			通过以下方式启用构建支持 <a wicket:id="addFile" class="link-primary"></a>
 		</div>
 		<div wicket:id="blobContent" class="blob-content autofit flex-grow-1 d-flex flex-column"></div>
 		<div wicket:id="searchResult" class="search-result flex-shrink-0 flex-column overflow-hidden">
@@ -31,19 +31,19 @@
 		<div class="border-bottom d-flex align-items-center px-3 py-2 justify-content-between">
 			<span wicket:id="size"></span>
 			<span>
-				<a wicket:id="download" class="btn btn-icon btn-xs btn-light btn-hover-primary ml-4" title="Download"><wicket:svg href="download" class="icon"/></a>
+				<a wicket:id="download" class="btn btn-icon btn-xs btn-light btn-hover-primary ml-4" title="下载"><wicket:svg href="download" class="icon"/></a>
 				<span wicket:id="delete" class="ml-1">
-					<a wicket:id="link" class="btn btn-icon btn-xs btn-light btn-hover-danger" title="Delete"><wicket:svg href="trash" class="icon"/></a>
+					<a wicket:id="link" class="btn btn-icon btn-xs btn-light btn-hover-danger" title="删除"><wicket:svg href="trash" class="icon"/></a>
 				</span>
 			</span>
 		</div>	
 		<div class="alert alert-notice alert-light-warning m-4">
-			Binary file
+			二进制文件
 		</div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="lfsObjectMissingFrag">
 	<div class="alert alert-notice alert-light-warning m-4">
-		This is a Git LFS object, but the storage file is missing
+		这是一个 Git LFS 对象，但缺少存储文件
 	</div>
 	</wicket:fragment>
 </wicket:extend>

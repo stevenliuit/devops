@@ -101,7 +101,7 @@ public class SystemSetting implements Serializable, Validatable {
 
 	@Editable(order=250, name="curl 命令行", description="管理系统配置 git hooks 以通过 curl 与自身通信")
 	@Valid
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public CurlConfig getCurlConfig() {
 		return curlConfig;
 	}

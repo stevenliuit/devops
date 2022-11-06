@@ -11,14 +11,14 @@ import io.onedev.server.model.Build;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(name="Use specified values or job secrets")
+@Editable(name="使用指定的值或job secrets")
 public class SpecifiedValues implements ValuesProvider {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String DISPLAY_NAME = "Use specified values";
+	public static final String DISPLAY_NAME = "使用指定值";
 	
-	public static final String SECRET_DISPLAY_NAME = "Use specified job secrets";
+	public static final String SECRET_DISPLAY_NAME = "使用指定的job secrets";
 
 	private List<List<String>> values = new ArrayList<>();
 	

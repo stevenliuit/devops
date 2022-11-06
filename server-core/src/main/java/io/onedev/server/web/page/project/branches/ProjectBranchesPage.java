@@ -894,12 +894,12 @@ public class ProjectBranchesPage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Branches");
+		return new Label(componentId, "分支机构");
 	}
 
 	@Override
 	protected String getPageTitle() {
-		return "Branches - " + getProject().getPath();
+		return "分支机构 - " + getProject().getPath();
 	}
 	
 	@Override

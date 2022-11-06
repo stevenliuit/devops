@@ -68,7 +68,7 @@ public abstract class RevisionPicker extends DropdownLink {
 				
 			};
 		} else {
-			return new Label(id, "Project not specified yet").add(AttributeAppender.append("class", "m-3 text-danger font-italic"));
+			return new Label(id, "尚未指定项目").add(AttributeAppender.append("class", "m-3 text-danger font-italic"));
 		}
 	}
 
@@ -105,7 +105,7 @@ public abstract class RevisionPicker extends DropdownLink {
 				} 
 				label = HtmlEscape.escapeHtml5(label);
 			} else {
-				label = "Choose Revision";
+				label = "选择修订版";
 				icon = "";
 			}
 			
@@ -119,7 +119,7 @@ public abstract class RevisionPicker extends DropdownLink {
 					label, 
 					SpriteImage.getVersionedHref(IconScope.class, "arrow")));
 		} else {
-			return Model.of("<i>Select project first</i>");
+			return Model.of("<i>先选择项目</i>");
 		}
 	}
 

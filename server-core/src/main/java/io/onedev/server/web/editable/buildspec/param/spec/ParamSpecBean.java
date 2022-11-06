@@ -16,7 +16,7 @@ public class ParamSpecBean implements Serializable {
 
 	// change Named("paramSpec") also if change name of this property 
 	@Editable(name="Type", order=100)
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public ParamSpec getParamSpec() {
 		return paramSpec;
 	}

@@ -326,9 +326,9 @@ public abstract class CommandPalettePanel extends Panel {
 				StringBuilder hintBuilder = new StringBuilder();
 
 				if (searchBase != null) 
-					hintBuilder.append("<span class='text-nowrap'><span class='keycap'>Tab</span> to search</span>");
+					hintBuilder.append("<span class='text-nowrap'><span class='keycap'>Tab</span> 寻找</span>");
 				if (url != null) 
-					hintBuilder.append("<span class='text-nowrap'><span class='keycap'>Enter</span> to go</span>");
+					hintBuilder.append("<span class='text-nowrap'><span class='keycap'>Enter</span> 进入</span>");
 				
 				if (url != null || searchBase != null)
 					container.add(new Label("label", suggestion.getLabel()));

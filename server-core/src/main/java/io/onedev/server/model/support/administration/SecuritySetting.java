@@ -32,7 +32,7 @@ public class SecuritySetting implements Serializable {
 	
 	private transient Optional<Group> defaultLoginGroup;
 	
-	@Editable(order=100, description="Whether or not to allow anonymous users to access this server")
+	@Editable(order=100, description="是否允许匿名用户访问此服务器")
 	public boolean isEnableAnonymousAccess() {
 		return enableAnonymousAccess;
 	}
@@ -41,7 +41,7 @@ public class SecuritySetting implements Serializable {
 		this.enableAnonymousAccess = enableAnonymousAccess;
 	}
 
-	@Editable(order=200, name="Enable Self Sign-Up", description="User can sign up if this option is enabled")
+	@Editable(order=200, name="启用用户注册", description="如果启用此选项，用户可以注册")
 	public boolean isEnableSelfRegister() {
 		return enableSelfRegister;
 	}
@@ -50,8 +50,8 @@ public class SecuritySetting implements Serializable {
 		this.enableSelfRegister = enableSelfRegister;
 	}
 
-	@Editable(order=300, name="Default Login Group", description="Optionally specify a default group "
-			+ "for all users logged in")
+	@Editable(order=300, name="默认登录组", description="（可选）指定默认组 "
+			+ "对于所有登录的用户")
 	@GroupChoice
 	public String getDefaultLoginGroupName() {
 		return defaultLoginGroupName;
@@ -61,9 +61,9 @@ public class SecuritySetting implements Serializable {
 		this.defaultLoginGroupName = defaultLoginGroupName;
 	}
 
-	@Editable(order=400, name="Enforce Two-factor Authentication", description="Check this to enforce "
-			+ "all users to set up two-factor authentication upon next login. Users will not be able "
-			+ "to disable two-factor authentication themselves if this option is set")
+	@Editable(order=400, name="实施双因素身份验证", description="选中此项以强制执行 "
+			+ "所有用户在下次登录时设置双重身份验证。 用户将无法 "
+			+ "如果设置了此选项，则自行禁用双因素身份验证")
 	public boolean isEnforce2FA() {
 		return enforce2FA;
 	}

@@ -252,9 +252,9 @@ public abstract class BuildListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -274,7 +274,7 @@ public abstract class BuildListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Cancel Selected Builds";
+						return "取消选定的构建";
 					}
 					
 					@Override
@@ -289,7 +289,7 @@ public abstract class BuildListPanel extends Panel {
 								for (IModel<Build> each: selectionColumn.getSelections()) {
 									Build build = each.getObject();
 									if (build.isFinished()) {
-										errorMessage = "Build #" + build.getNumber() + " already finished";
+										errorMessage = "构建 #" + build.getNumber() + " 已经完成了";
 										break;
 									} 
 								}
@@ -303,12 +303,12 @@ public abstract class BuildListPanel extends Panel {
 										protected void onConfirm(AjaxRequestTarget target) {
 											for (IModel<Build> each: selectionColumn.getSelections()) 
 												OneDev.getInstance(JobManager.class).cancel(each.getObject());
-											Session.get().success("Cancel request submitted");
+											Session.get().success("提交的取消请求");
 										}
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to cancel selected builds";
+											return "在下面键入 <code>yes</code> 下面取消选定的构建";
 										}
 										
 										@Override
@@ -333,7 +333,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select builds to cancel");
+									tag.put("title", "请选择要取消的版本");
 								}
 							}
 							
@@ -346,7 +346,7 @@ public abstract class BuildListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Re-run Selected Builds";
+						return "重新运行选定的构建";
 					}
 					
 					@Override
@@ -361,7 +361,7 @@ public abstract class BuildListPanel extends Panel {
 								for (IModel<Build> each: selectionColumn.getSelections()) {
 									Build build = each.getObject();
 									if (!build.isFinished()) {
-										errorMessage = "Build #" + build.getNumber() + " not finished yet";
+										errorMessage = "构建 #" + build.getNumber() + " 还没有完成";
 										break;
 									} 
 								}
@@ -375,14 +375,14 @@ public abstract class BuildListPanel extends Panel {
 										protected void onConfirm(AjaxRequestTarget target) {
 											for (IModel<Build> each: selectionColumn.getSelections()) { 
 												Build build = each.getObject();
-												OneDev.getInstance(JobManager.class).resubmit(build, "Resubmitted manually");
+												OneDev.getInstance(JobManager.class).resubmit(build, "手动重新提交");
 											}
-											Session.get().success("Re-run request submitted");
+											Session.get().success("已提交重新运行请求");
 										}
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to re-run selected builds";
+											return "在下面键入 <code>yes</code> 下面重新运行选定的构建";
 										}
 										
 										@Override
@@ -407,7 +407,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select builds to re-run");
+									tag.put("title", "请选择要重新运行的构建");
 								}
 							}
 							
@@ -420,7 +420,7 @@ public abstract class BuildListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Builds";
+						return "删除选定的构建";
 					}
 					
 					@Override
@@ -445,7 +445,7 @@ public abstract class BuildListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete selected builds";
+										return "在下面键入 <code>yes</code> 下面删除选定的构建";
 									}
 									
 									@Override
@@ -469,7 +469,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select builds to delete");
+									tag.put("title", "请选择要删除的构建");
 								}
 							}
 							
@@ -482,7 +482,7 @@ public abstract class BuildListPanel extends Panel {
 					
 					@Override
 					public String getLabel() {
-						return "Cancel All Queried Builds";
+						return "取消所有查询的构建";
 					}
 					
 					@Override
@@ -498,7 +498,7 @@ public abstract class BuildListPanel extends Panel {
 								for (Iterator<Build> it = (Iterator<Build>) dataProvider.iterator(0, buildsTable.getItemCount()); it.hasNext();) { 
 									Build build = it.next();
 									if (build.isFinished()) {
-										errorMessage = "Build #" + build.getNumber() + " already finished";
+										errorMessage = "构建 #" + build.getNumber() + " 已经完成了";
 										break;
 									}
 								}
@@ -512,12 +512,12 @@ public abstract class BuildListPanel extends Panel {
 										protected void onConfirm(AjaxRequestTarget target) {
 											for (Iterator<Build> it = (Iterator<Build>) dataProvider.iterator(0, buildsTable.getItemCount()); it.hasNext();) 
 												OneDev.getInstance(JobManager.class).cancel(it.next());
-											Session.get().success("Cancel request submitted");
+											Session.get().success("提交的取消请求");
 										}
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to cancel all queried builds";
+											return "在下面键入 <code>yes</code> 下面取消所有查询的构建";
 										}
 										
 										@Override
@@ -542,7 +542,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No builds to cancel");
+									tag.put("title", "没有要取消的构建");
 								}
 							}
 							
@@ -555,7 +555,7 @@ public abstract class BuildListPanel extends Panel {
 					
 					@Override
 					public String getLabel() {
-						return "Re-run All Queried Builds";
+						return "重新运行所有查询的构建";
 					}
 					
 					@Override
@@ -571,7 +571,7 @@ public abstract class BuildListPanel extends Panel {
 								for (Iterator<Build> it = (Iterator<Build>) dataProvider.iterator(0, buildsTable.getItemCount()); it.hasNext();) { 
 									Build build = it.next();
 									if (!build.isFinished()) {
-										errorMessage = "Build #" + build.getNumber() + " not finished yet";
+										errorMessage = "构建 #" + build.getNumber() + " 还没有完成";
 										break;
 									}
 								}
@@ -584,13 +584,13 @@ public abstract class BuildListPanel extends Panel {
 										@Override
 										protected void onConfirm(AjaxRequestTarget target) {
 											for (Iterator<Build> it = (Iterator<Build>) dataProvider.iterator(0, buildsTable.getItemCount()); it.hasNext();) 
-												OneDev.getInstance(JobManager.class).resubmit(it.next(), "Resubmitted manually");
-											Session.get().success("Re-run request submitted");
+												OneDev.getInstance(JobManager.class).resubmit(it.next(), "手动重新提交");
+											Session.get().success("已提交重新运行请求");
 										}
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to re-run all queried builds";
+											return "在下面键入 <code>yes</code> 以重新运行所有查询的构建";
 										}
 										
 										@Override
@@ -615,7 +615,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No builds to re-run");
+									tag.put("title", "没有要重新运行的构建");
 								}
 							}
 							
@@ -628,7 +628,7 @@ public abstract class BuildListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Builds";
+						return "删除所有查询的构建";
 					}
 					
 					@Override
@@ -655,7 +655,7 @@ public abstract class BuildListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete all queried builds";
+										return "在下面键入 <code>yes</code> 下面删除所有查询的构建";
 									}
 									
 									@Override
@@ -679,7 +679,7 @@ public abstract class BuildListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No builds to delete");
+									tag.put("title", "没有要删除的构建");
 								}
 							}
 							
@@ -861,7 +861,7 @@ public abstract class BuildListPanel extends Panel {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				List<String> hints = super.getHints(terminalExpect);
-				hints.add("Free input for fuzzy query on number/version/job");
+				hints.add("模糊查询的自由输入 number/version/job");
 				return hints;
 			}
 			
@@ -932,7 +932,7 @@ public abstract class BuildListPanel extends Panel {
 		};
 		
 		if (expectedCount != 0 && expectedCount != dataProvider.size())
-			warn("Some builds might be hidden due to permission policy");
+			warn("由于权限策略，某些构建可能会被隐藏");
 		
 		body = new WebMarkupContainer("body");
 		add(body.setOutputMarkupId(true));
@@ -1107,7 +1107,7 @@ public abstract class BuildListPanel extends Panel {
 					if (param != null && build.isParamVisible(paramName))
 						cellItem.add(new ParamValuesLabel(componentId, param));
 					else
-						cellItem.add(new Label(componentId, "<i>Unspecified</i>").setEscapeModelStrings(false));
+						cellItem.add(new Label(componentId, "<i>未指定</i>").setEscapeModelStrings(false));
 				}
 				
 			});

@@ -125,7 +125,7 @@ public class JobExecutorsPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Job Executors");
+		return new Label(componentId, "作业执行者");
 	}
 
 }

@@ -32,7 +32,7 @@ public class ProjectDashboardPage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Dashboard");
+		return new Label(componentId, "仪表板");
 	}
 
 	@Override

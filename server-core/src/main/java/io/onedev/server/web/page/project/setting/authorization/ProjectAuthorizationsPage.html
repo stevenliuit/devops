@@ -1,14 +1,14 @@
 <wicket:extend>
 	<div class="alert alert-notice bg-white text-gray mb-4">
 		<wicket:svg href="bulb" class="icon mr-2"></wicket:svg>
-		When authorize a user, the user will also be authorized with the role for all child projects
+		授权用户时，该用户也将获得所有子项目的角色
 	</div>
 	<div class="card project-authorizations">
 		<div class="card-body">
 			<form wicket:id="form" class="authorization-list leave-confirm">
 				<div wicket:id="feedback" class="mb-4"></div>
 				<div wicket:id="editor"></div>
-				<input type="submit" class="btn btn-primary dirty-aware mt-4" value="Save">
+				<input type="submit" class="btn btn-primary dirty-aware mt-4" value="保存">
 			</form>
 		</div>
 	</div>

@@ -1,15 +1,15 @@
 <wicket:panel>
 	<div class="p-5 token-list">
-		<h6 class="text-center mb-4">Available Agent Tokens</h6>
+		<h6 class="text-center mb-4">可用的Agent令牌</h6>
 		<div class="alert alert-light alert-notice mb-5">
-			Agent tokens are used to authorize agents. It should be configured via environment variable 
-			<tt>agentToken</tt> if agent runs as docker container, or property <tt>agentToken</tt> in 
-			file <tt>&lt;agent dir&gt;/conf/agent.properties</tt> if agent runs on bare metal/virtual machine. 
-			A token will be in-use and removed from this list if agent using it connects to server
+			Agent令牌用于授权代理。 它应该通过环境变量进行配置
+			<tt>agentToken</tt> 如果代理作为 docker 容器或属性运行 <tt>agentToken</tt> 在
+			文件 <tt>&lt;agent dir&gt;/conf/agent.properties</tt> 如果agent在裸机/虚拟机上运行. 
+			如果使用它的代理连接到服务器，则令牌将被使用并从此列表中删除
 		</div>
 		<div class="mb-4">
-			<a wicket:id="addNew" class="btn btn-primary mr-2">Generate New</a>
-			<a wicket:id="deleteAll" class="btn btn-danger">Delete All</a>
+			<a wicket:id="addNew" class="btn btn-primary mr-2">生成新的</a>
+			<a wicket:id="deleteAll" class="btn btn-danger">删除所有</a>
 		</div>
 		<table wicket:id="tokens" class="table"></table>
 	</div>

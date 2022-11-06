@@ -3,8 +3,7 @@ package io.onedev.server.plugin.notification.discord;
 import io.onedev.server.util.channelnotification.ChannelNotificationSetting;
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(name="Discord Notifications", order=200, description="Set up discord notification settings. Settings will be inherited by "
-		+ "child projects, and can be overriden by defining setting with same webhook url")
+@Editable(name="Discord通知", order=200, description="设置不和谐通知设置。 设置将被子项目继承，并且可以通过使用相同的 webhook url 定义设置来覆盖")
 public class DiscordNotificationSetting extends ChannelNotificationSetting {
 
 	private static final long serialVersionUID = 1L;

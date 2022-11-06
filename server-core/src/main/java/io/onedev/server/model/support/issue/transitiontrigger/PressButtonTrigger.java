@@ -55,7 +55,7 @@ public class PressButtonTrigger extends TransitionTrigger {
 		this.buttonLabel = buttonLabel;
 	}
 
-	@Editable(order=200, description="Optionally specify authorized roles to press this button. If not specified, all users are allowed")
+	@Editable(order=200, description="可以选择指定授权角色以按下此按钮。 如果未指定，则允许所有用户")
 	@ChoiceProvider("getRoleChoices")
 	public List<String> getAuthorizedRoles() {
 		return authorizedRoles;
@@ -79,8 +79,8 @@ public class PressButtonTrigger extends TransitionTrigger {
 		return choices;
 	}
 
-	@Editable(order=500, placeholder="No fields to prompt", description="Optionally select fields "
-			+ "to prompt when this button is pressed")
+	@Editable(order=500, placeholder="没有要提示的字段", description="可选择select字段 "
+			+ "按下此按钮时提示")
 	@ChoiceProvider("getFieldChoices")
 	public List<String> getPromptFields() {
 		return promptFields;
@@ -199,8 +199,8 @@ public class PressButtonTrigger extends TransitionTrigger {
 		}
 	}
 
-	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify "
-			+ "issues applicable for this transition. Leave empty for all issues")
+	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="可选择指定 "
+			+ "适用于此过渡的问题。 为所有问题留空")
 	@IssueQuery(withOrder = false, withCurrentUserCriteria = true)	
 	@Override
 	public String getIssueQuery() {
@@ -214,9 +214,9 @@ public class PressButtonTrigger extends TransitionTrigger {
 	@Override
 	public String getDescription() {
 		if (authorizedRoles.isEmpty())
-			return "button '" + buttonLabel + "' is pressed by any user";
+			return "按钮 '" + buttonLabel + "' 被任何用户按下";
 		else
-			return "button '" + buttonLabel + "' is pressed by any user of roles " + authorizedRoles;
+			return "按钮 '" + buttonLabel + "' 被任何角色用户按下 " + authorizedRoles;
 	}
 	
 }

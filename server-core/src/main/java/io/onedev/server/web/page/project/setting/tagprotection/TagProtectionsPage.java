@@ -120,7 +120,7 @@ public class TagProtectionsPage extends ProjectSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Tag Protection");
+		return new Label(componentId, "标签保护");
 	}
 	
 }

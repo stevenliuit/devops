@@ -437,12 +437,12 @@ public class IssueBoardsPage extends ProjectIssuesPage {
 								&& getMilestone().getDueDate().before(new Date()) 
 								&& !getMilestone().isClosed()) {
 							add(AttributeAppender.append("class", "btn-danger"));
-							add(AttributeAppender.replace("title", "Milestone is due"));
+							add(AttributeAppender.replace("title", "里程碑到期"));
 						} else {
 							add(AttributeAppender.append("class", "btn-outline-secondary btn-hover-primary"));
 						}
 					} else {
-						add(new Label("label", "<i>Unscheduled</i>").setEscapeModelStrings(false));
+						add(new Label("label", "<i>不定期</i>").setEscapeModelStrings(false));
 						add(AttributeAppender.append("class", "btn-outline-secondary btn-hover-primary"));
 					}
 				}
@@ -676,9 +676,9 @@ public class IssueBoardsPage extends ProjectIssuesPage {
 			});
 			
 			if (backlog)
-				queryInput.add(AttributeAppender.append("placeholder", "Filter and order backlog issues..."));
+				queryInput.add(AttributeAppender.append("placeholder", "过滤和订阅积压问题..."));
 			else
-				queryInput.add(AttributeAppender.append("placeholder", "Filter and order issues..."));
+				queryInput.add(AttributeAppender.append("placeholder", "过滤和排序问题..."));
 				
 			form.add(queryInput);
 
@@ -1050,12 +1050,12 @@ public class IssueBoardsPage extends ProjectIssuesPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Issue Boards");
+		return new Label(componentId, "发行板");
 	}
 	
 	@Override
 	protected String getPageTitle() {
-		return "Issue Boards - " + getProject().getPath();
+		return "发行板 - " + getProject().getPath();
 	}
 	
 	@Override

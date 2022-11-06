@@ -661,11 +661,11 @@ public class User extends AbstractEntity implements AuthenticationInfo {
     public String getAuthSource() {
 		if (isExternalManaged()) {
 			if (getSsoConnector() != null)
-				return "SSO Provider: " + getSsoConnector();
+				return "SSO 提供商: " + getSsoConnector();
 			else
-				return "External Authenticator";
+				return "外部验证器";
 		} else {
-			return "Builtin User Store";
+			return "内置用户存储";
 		}
     }
 

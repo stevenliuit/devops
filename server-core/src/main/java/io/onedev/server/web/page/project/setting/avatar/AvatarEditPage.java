@@ -85,7 +85,7 @@ public class AvatarEditPage extends ProjectSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Edit Avatar").add(AttributeAppender.replace("class", "text-truncate"));
+		return new Label(componentId, "编辑头像").add(AttributeAppender.replace("class", "text-truncate"));
 	}
 	
 }

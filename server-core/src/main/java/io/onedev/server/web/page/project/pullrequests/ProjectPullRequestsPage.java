@@ -257,12 +257,12 @@ public class ProjectPullRequestsPage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "<span class='text-nowrap'>Pull Requests</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-nowrap'>拉取请求</span>").setEscapeModelStrings(false);
 	}
 
 	@Override
 	protected String getPageTitle() {
-		return "Pull Requests - " + getProject().getPath();
+		return "拉取请求 - " + getProject().getPath();
 	}
 	
 	@Override

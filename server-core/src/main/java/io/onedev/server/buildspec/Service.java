@@ -36,7 +36,7 @@ public class Service implements NamedElement, Serializable {
 	
 	private int memoryRequirement = 256;
 	
-	@Editable(order=100, description="Specify name of the service, which will be used as host name to access the service")
+	@Editable(order=100, description="指定服务名称，作为访问服务的主机名")
 	@SuggestionProvider("getNameSuggestions")
 	@DnsName
 	@NotEmpty
@@ -71,7 +71,7 @@ public class Service implements NamedElement, Serializable {
 		this.image = image;
 	}
 
-	@Editable(order=220, description="Optionally specify arguments to run above image")
+	@Editable(order=220, description="（可选）指定要在image上方运行的参数")
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getArguments() {
 		return arguments;
@@ -81,8 +81,7 @@ public class Service implements NamedElement, Serializable {
 		this.arguments = arguments;
 	}
 
-	@Editable(order=300, name="Environment Variables", description="Optionally specify environment variables of "
-			+ "the service")
+	@Editable(order=300, name="环境变量", description="可选择指定服务的环境变量")
 	public List<EnvVar> getEnvVars() {
 		return envVars;
 	}
@@ -91,9 +90,8 @@ public class Service implements NamedElement, Serializable {
 		this.envVars = envVars;
 	}
 
-	@Editable(order=400, description="Specify command to check readiness of the service. This command will "
-			+ "be interpretated by cmd.exe on Windows images, and by shell on Linux images. It will be "
-			+ "executed repeatedly until a zero code is returned to indicate service ready")
+	@Editable(order=400, description="指定命令以检查服务的就绪情况. 此命令将由 Windows image上的 cmd.exe 解释,"
+			+ " 并通过 Linux image上的 shell. 它将重复执行，直到返回一个零代码表示服务就绪")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getReadinessCheckCommand() {
@@ -104,8 +102,8 @@ public class Service implements NamedElement, Serializable {
 		this.readinessCheckCommand = readinessCheckCommand;
 	}
 	
-	@Editable(order=10000, name="CPU Requirement", group="More Settings", description="Specify CPU requirement of the service in millis. "
-			+ "1000 millis means a single CPU core")
+	@Editable(order=10000, name="CPU 要求", group="更多设置", description="以毫秒为单位指定服务的 CPU 要求. "
+			+ "1000 毫秒表示单个 CPU 内核")
 	public int getCpuRequirement() {
 		return cpuRequirement;
 	}
@@ -114,7 +112,7 @@ public class Service implements NamedElement, Serializable {
 		this.cpuRequirement = cpuRequirement;
 	}
 
-	@Editable(order=10100, group="More Settings", description="Specify memory requirement of the service in mega bytes")
+	@Editable(order=10100, group="更多设置", description="以兆字节指定服务的内存需求")
 	public int getMemoryRequirement() {
 		return memoryRequirement;
 	}

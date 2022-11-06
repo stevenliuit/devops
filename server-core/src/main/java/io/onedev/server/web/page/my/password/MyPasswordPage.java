@@ -24,12 +24,12 @@ public class MyPasswordPage extends MyPage {
 		if (getLoginUser().getPassword().equals(User.EXTERNAL_MANAGED)) {
 			String message;
 			if (getLoginUser().getSsoConnector() != null) {
-				message = "You are currently authenticated via SSO provider '" 
+				message = "您目前通过 SSO 提供商进行身份验证 '" 
 						+ getLoginUser().getSsoConnector() 
-						+ "', please change password there instead";
+						+ "', 请在SSO提供商更改密码";
 			} else {
-				message = "You are currently authenticated via external system, "
-						+ "please change password there instead";
+				message = "您当前已通过外部系统进行身份验证, "
+						+ "请在SSO提供商更改密码";
 			}
 			add(new Label("content", message).add(AttributeAppender.append("class", "alert alert-light-warning alert-notice mb-0")));
 		} else {
@@ -46,7 +46,7 @@ public class MyPasswordPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Change My Password");
+		return new Label(componentId, "修改我的密码");
 	}
 
 }

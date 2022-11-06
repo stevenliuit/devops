@@ -14,7 +14,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.page.project.issues.detail.IssueDetailPage;
 import io.onedev.server.web.util.WicketUtils;
 
-@Editable(order=130, name="All users")
+@Editable(order=130, name="所有用户")
 public class AllUsers implements ChoiceProvider {
 
 	private static final long serialVersionUID = 1L;

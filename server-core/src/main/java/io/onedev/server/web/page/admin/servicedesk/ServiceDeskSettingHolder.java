@@ -12,7 +12,7 @@ public class ServiceDeskSettingHolder implements Serializable {
 
 	private ServiceDeskSetting serviceDeskSetting;
 
-	@Editable(name="Enable")
+	@Editable(name="开启")
 	public ServiceDeskSetting getServiceDeskSetting() {
 		return serviceDeskSetting;
 	}

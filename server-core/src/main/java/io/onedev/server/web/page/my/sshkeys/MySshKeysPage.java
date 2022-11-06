@@ -86,7 +86,7 @@ public class MySshKeysPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "My SSH Keys");
+		return new Label(componentId, "我的 SSH 密钥");
 	}
 	
 }

@@ -23,7 +23,7 @@ public class JobSingleChoice extends Select2Choice<String> {
 		if (isRequired())
 			getSettings().setPlaceholder("Choose job...");
 		else
-			getSettings().setPlaceholder("Not specified");
+			getSettings().setPlaceholder("未指定");
 		getSettings().setFormatResult("onedev.server.choiceFormatter.formatResult");
 		getSettings().setFormatSelection("onedev.server.choiceFormatter.formatSelection");
 		getSettings().setEscapeMarkup("onedev.server.choiceFormatter.escapeMarkup");

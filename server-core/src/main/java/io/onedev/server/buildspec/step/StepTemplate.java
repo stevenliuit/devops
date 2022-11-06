@@ -53,8 +53,8 @@ public class StepTemplate implements NamedElement, Serializable {
 		return new ArrayList<>();
 	}
 	
-	@Editable(order=200, description="Steps will be executed serially on same node, sharing the same <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>")
-	@Size(min=1, max=1000, message="At least one step needs to be defined")
+	@Editable(order=200, description="步骤将在同一个节点上串行执行，共享同一个 <a href='$docRoot/pages/concepts.md#job-workspace'>工作区</a>")
+	@Size(min=1, max=1000, message="至少需要定义一个步骤")
 	public List<Step> getSteps() {
 		return steps;
 	}
@@ -63,7 +63,7 @@ public class StepTemplate implements NamedElement, Serializable {
 		this.steps = steps;
 	}
 
-	@Editable(order=300, name="Parameter Specs", description="Optionally define parameter specifications of the step template")
+	@Editable(order=300, name="参数规格", description="可选地定义步骤模板的参数规范")
 	@Valid
 	public List<ParamSpec> getParamSpecs() {
 		return paramSpecs;

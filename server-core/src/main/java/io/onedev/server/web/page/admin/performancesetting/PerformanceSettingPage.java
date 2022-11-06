@@ -43,7 +43,7 @@ public class PerformanceSettingPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Performance Setting");
+		return new Label(componentId, "性能设置");
 	}
 
 }

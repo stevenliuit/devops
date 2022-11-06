@@ -20,14 +20,14 @@ public class GlobalBuildSetting implements Serializable {
 	
 	public GlobalBuildSetting() {
 		namedQueries.add(new NamedBuildQuery("All", null));
-		namedQueries.add(new NamedBuildQuery("Successful", "successful"));
-		namedQueries.add(new NamedBuildQuery("Failed", "failed"));
-		namedQueries.add(new NamedBuildQuery("Cancelled", "cancelled"));
-		namedQueries.add(new NamedBuildQuery("Timed out", "timed out"));
-		namedQueries.add(new NamedBuildQuery("Running", "running"));
-		namedQueries.add(new NamedBuildQuery("Waiting", "waiting"));
-		namedQueries.add(new NamedBuildQuery("Pending", "pending"));
-		namedQueries.add(new NamedBuildQuery("Build recently", "\"Submit Date\" is since \"last week\""));		
+		namedQueries.add(new NamedBuildQuery("成功的", "successful"));
+		namedQueries.add(new NamedBuildQuery("失败的", "failed"));
+		namedQueries.add(new NamedBuildQuery("取消", "cancelled"));
+		namedQueries.add(new NamedBuildQuery("超时", "timed out"));
+		namedQueries.add(new NamedBuildQuery("运行中", "running"));
+		namedQueries.add(new NamedBuildQuery("等待中", "waiting"));
+		namedQueries.add(new NamedBuildQuery("待办的", "pending"));
+		namedQueries.add(new NamedBuildQuery("最近构建", "\"Submit Date\" is since \"last week\""));		
 	}
 	
 	public List<NamedBuildQuery> getNamedQueries() {

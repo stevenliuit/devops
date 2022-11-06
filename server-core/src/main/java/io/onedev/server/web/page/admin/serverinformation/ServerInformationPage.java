@@ -79,7 +79,7 @@ public class ServerInformationPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Server Information");
+		return new Label(componentId, "服务器信息");
 	}
 	
 }

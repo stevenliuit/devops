@@ -144,7 +144,7 @@ public class NewIssuePage extends ProjectPage implements InputContext, ScriptIde
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "<span class='text-nowrap'>Create Issue</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-nowrap'>创建问题</span>").setEscapeModelStrings(false);
 	}
 	
 	@Override

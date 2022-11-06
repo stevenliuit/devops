@@ -20,9 +20,9 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Patterns;
 import io.onedev.server.web.util.SuggestionUtils;
 
-@Editable(order=100, name="Branch update", description=""
-		+ "Job will run when code is committed. <b class='text-info'>NOTE:</b> This trigger will ignore commits "
-		+ "with message containing <code>[skip ci]</code>, <code>[ci skip]</code>, <code>[no ci]</code>, "
+@Editable(order=100, name="分支更新", description=""
+		+ "提交代码时将运行作业. <b class='text-info'>NOTE:</b> 此触发器将忽略提交 "
+		+ "带有包含的消息 <code>[skip ci]</code>, <code>[ci skip]</code>, <code>[no ci]</code>, "
 		+ "<code>[skip job]</code>, <code>[job skip]</code>, or <code>[no job]</code>")
 
 public class BranchUpdateTrigger extends JobTrigger {
@@ -33,9 +33,9 @@ public class BranchUpdateTrigger extends JobTrigger {
 	
 	private String paths;
 	
-	@Editable(name="Branches", order=100, placeholder="任何分支", description="Optionally specify space-separated branches "
-			+ "to check. Use '**' or '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all branches")
+	@Editable(name="分支机构", order=100, placeholder="任何分支", description="可选择指定空格分隔的分支 "
+			+ "去检查. 使用 '**' 或者 '*' 或者 '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除. 留空以匹配所有分支")
 	@Patterns(suggester = "suggestBranches", path=true)
 	public String getBranches() {
 		return branches;
@@ -50,9 +50,9 @@ public class BranchUpdateTrigger extends JobTrigger {
 		return SuggestionUtils.suggestBranches(Project.get(), matchWith);
 	}
 	
-	@Editable(name="Touched Files", order=200, placeholder="任何文件", 
-			description="Optionally specify space-separated files to check. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-					+ "Prefix with '-' to exclude. Leave empty to match all files")
+	@Editable(name="触摸的文件", order=200, placeholder="任何文件", 
+			description="（可选）指定要检查的以空格分隔的文件. 使用 '**', '*' 或者 '?' 对于 <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+					+ "前缀为 '-' 以排除。保留为空以匹配所有文件")
 	@Patterns(suggester = "getPathSuggestions", path=true)
 	public String getPaths() {
 		return paths;
@@ -113,7 +113,7 @@ public class BranchUpdateTrigger extends JobTrigger {
 
 					@Override
 					public String getDescription() {
-						return "Branch '" + updatedBranch + "' is updated";
+						return "分支 '" + updatedBranch + "' 已更新";
 					}
 					
 				};
@@ -126,13 +126,13 @@ public class BranchUpdateTrigger extends JobTrigger {
 	public String getTriggerDescription() {
 		String description;
 		if (getBranches() != null && getPaths() != null)
-			description = String.format("When update branches '%s' and touch files '%s'", getBranches(), getPaths());
+			description = String.format("更新分支时 '%s' 和触摸文件 '%s'", getBranches(), getPaths());
 		else if (getBranches() != null)
-			description = String.format("When update branches '%s'", getBranches());
+			description = String.format("更新分支时 '%s'", getBranches());
 		else if (getPaths() != null)
-			description = String.format("When touch files '%s'", getPaths());
+			description = String.format("触摸文件时 '%s'", getPaths());
 		else
-			description = "When update branches";
+			description = "更新分支时";
 		return description;
 	}
 

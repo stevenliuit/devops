@@ -91,7 +91,7 @@ public class ImportServer implements Serializable, Validatable {
 	
 	private String accessToken;
 
-	@Editable(order=10, name="Gitea API URL", description="Specify Gitea API url, for instance <tt>https://gitea.example.com/api/v1</tt>")
+	@Editable(order=10, name="Gitea API URL", description="指定 Gitea API url，例如 <tt>https://gitea.example.com/api/v1</tt>")
 	@NotEmpty
 	public String getApiUrl() {
 		return apiUrl;

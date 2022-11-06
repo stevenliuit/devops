@@ -83,7 +83,7 @@ public abstract class Widget implements Serializable {
 
 	public Component render(String componentId, boolean failsafe) {
 		if (failsafe) {
-			return new Label(componentId, "Not rendered in failsafe mode")
+			return new Label(componentId, "未在故障安全模式下呈现")
 					.add(AttributeAppender.append("class", "text-info font-italic"));
 		} else {
 			try {
@@ -96,7 +96,7 @@ public abstract class Widget implements Serializable {
 				if (explicitException != null) 
 					message = HtmlEscape.escapeHtml5(explicitException.getMessage());
 				else
-					message = "Error rendering widget, check server log for details";
+					message = "渲染小部件时出错，请查看服务器日志以获取详细信息";
 				
 				message = "<div class='alert alert-notice alert-light-danger mb-0'>" + message + "</div>";
 				

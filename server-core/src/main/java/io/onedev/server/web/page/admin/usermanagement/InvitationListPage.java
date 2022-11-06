@@ -265,7 +265,7 @@ public class InvitationListPage extends AdministrationPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Invitations");
+		return new Label(componentId, "邀请函");
 	}
 
 }

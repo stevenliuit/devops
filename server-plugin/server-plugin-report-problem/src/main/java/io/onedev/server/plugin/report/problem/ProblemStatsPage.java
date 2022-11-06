@@ -16,7 +16,7 @@ public class ProblemStatsPage extends BuildMetricStatsPage<ProblemMetric> {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Code Problem Statistics");
+		return new Label(componentId, "代码问题统计");
 	}
 
 }

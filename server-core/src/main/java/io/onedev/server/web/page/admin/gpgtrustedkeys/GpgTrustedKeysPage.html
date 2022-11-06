@@ -2,7 +2,7 @@
 	<div class="card gpg-trusted-keys">
 		<div class="card-body">
 			<div class="alert alert-light alert-notice mb-4">
-				Add GPG public keys to be trusted here. Commits signed with trusted keys will be shown as verified. 
+				在此处添加要信任的 GPG 公钥. 使用可信密钥签名的提交将显示为已验证. 
 			</div>
 			<a wicket:id="newKey" class="btn btn-primary btn-icon mb-4" title="Add GPG Key"><wicket:svg href="plus" class="icon"></wicket:svg></a>
 			<table wicket:id="keys" class="table table-hover"></table>
@@ -14,7 +14,7 @@
 	<wicket:fragment wicket:id="addKeyFrag">
 		<div class="add-gpg-trusted-key">
 			<div class="modal-header">
-				<h5 class="modal-title">Add a GPG Public Key</h5>
+				<h5 class="modal-title">添加 GPG 公钥</h5>
 				<button wicket:id="close" type="button" class="close"><wicket:svg href="times" class="icon"/></button>
 			</div>
 			<form wicket:id="form">
@@ -22,8 +22,8 @@
 					<div wicket:id="editor"></div>
 				</div>
 				<div class="modal-footer">
-					<input wicket:id="add" type="submit" class="btn btn-primary dirty-aware" value="Add">
-					<button wicket:id="cancel" type="button" class="btn btn-secondary">Cancel</button>
+					<input wicket:id="add" type="submit" class="btn btn-primary dirty-aware" value="添加">
+					<button wicket:id="cancel" type="button" class="btn btn-secondary">取消</button>
 				</div>
 			</form>
 		</div>

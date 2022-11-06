@@ -71,7 +71,7 @@ public class SshServerKeyPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "SSH Server Key");
+		return new Label(componentId, "SSH 服务器密钥");
 	}
     
 }

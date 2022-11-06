@@ -51,7 +51,7 @@ public class LabelManagementPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new org.apache.wicket.markup.html.basic.Label(componentId, "Labels");
+		return new org.apache.wicket.markup.html.basic.Label(componentId, "标签");
 	}
 
 }

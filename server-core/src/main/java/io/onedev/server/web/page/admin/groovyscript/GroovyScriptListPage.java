@@ -211,7 +211,7 @@ public class GroovyScriptListPage extends AdministrationPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Groovy Scripts");
+		return new Label(componentId, "Groovy脚本");
 	}
 	
 }

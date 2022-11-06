@@ -227,7 +227,7 @@ public class BuildSpecEditPanel extends FormComponentPanel<byte[]> implements Bu
 													if (job.getName() != null)
 														return HtmlEscape.escapeHtml5(job.getName());
 													else
-														return "<i>No Name</i>";
+														return "<i>没有名字</i>";
 												}
 												
 											}).setEscapeModelStrings(false));
@@ -978,7 +978,7 @@ public class BuildSpecEditPanel extends FormComponentPanel<byte[]> implements Bu
 									if (element.getName() != null)
 										return HtmlEscape.escapeHtml5(element.getName());
 									else
-										return "<i>No Name</i>";
+										return "<i>没有名字</i>";
 								}
 								
 							}).setEscapeModelStrings(false));

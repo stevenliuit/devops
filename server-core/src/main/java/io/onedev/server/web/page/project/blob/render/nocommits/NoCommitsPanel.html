@@ -1,15 +1,15 @@
 <wicket:panel>
 	<div class="m-4 no-commits text-center">
 		<img src="/icon/empty.svg" class="text-center mb-5"/>
-	    <h3 class="alert-heading mb-3">Project does not have any code yet</h3>
+	    <h3 class="alert-heading mb-3">项目还没有任何代码</h3>
 		<div class="mb-4">
-			You may initialize the project by <a wicket:id="addFiles" class="link-primary">adding files</a>,
-			<a wicket:id="setupBuildSpec" class="link-primary">setting up build spec</a>,  
-			or <a wicket:id="pushInstructions" class="link-primary">pushing an existing repository</a>
+			您可以通过以下方式初始化项目 <a wicket:id="addFiles" class="link-primary">添加文件</a>,
+			<a wicket:id="setupBuildSpec" class="link-primary">设置构建规范</a>,  
+			或者 <a wicket:id="pushInstructions" class="link-primary">推送现有存储库</a>
 		</div>
 	</div>
 	<wicket:fragment wicket:id="pushInstructionsFrag">
-		<div class="mb-3">Run below commands from within your git repository:</div>
+		<div class="mb-3">从git存储库中运行以下命令:</div>
 		<div class="code">
 			<div>git remote add origin <span wicket:id="url"></span></div>
 			<div>git push -u origin master</div>

@@ -230,12 +230,12 @@ public class ProjectCommitsPage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Commits");
+		return new Label(componentId, "提交");
 	}
 	
 	@Override
 	protected String getPageTitle() {
-		return "Commits - " + getProject().getPath();
+		return "提交 - " + getProject().getPath();
 	}
 	
 	@Override

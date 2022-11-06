@@ -159,7 +159,7 @@ public class LdapAuthenticator extends Authenticator {
 			+ "To give appropriate permissions to a LDAP group, a OneDev group with same name should "
 			+ "be defined. Use strategy <tt>Do Not Retrieve Groups</tt> if you want to manage group "
 			+ "memberships at OneDev side")
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public GroupRetrieval getGroupRetrieval() {
 		return groupRetrieval;
 	}

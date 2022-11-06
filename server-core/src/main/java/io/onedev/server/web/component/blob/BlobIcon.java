@@ -22,7 +22,7 @@ public class BlobIcon extends WebComponent {
 		String icon;
 		BlobIdent blobIdent = (BlobIdent) getDefaultModelObject();
 		
-		if (blobIdent.path.equals(BuildSpec.BLOB_PATH) || blobIdent.path.equals(".onedev-buildspec"))
+		if (blobIdent.path.equals(BuildSpec.BLOB_PATH) || blobIdent.path.equals(".cicd-buildspec"))
 			icon = "gear";
 		else if (blobIdent.isTree())
 			icon = "folder";

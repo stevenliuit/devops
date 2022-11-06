@@ -338,7 +338,7 @@ public class GroupMembershipsPage extends GroupPage {
 							"verificationStatus", Model.of(emailAddress)));
 					cellItem.add(fragment);
 				} else {
-					cellItem.add(new Label(componentId, "<i>Not specified</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>未指定</i>").setEscapeModelStrings(false));
 				}
 			}
 			

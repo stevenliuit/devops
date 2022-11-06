@@ -14,7 +14,7 @@ public class SpecifiedDefaultValue implements DefaultValueProvider {
 	private Integer value;
 
 	@Editable(name="Specified default value")
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	@WorkingPeriod
 	@OmitName
 	public Integer getValue() {

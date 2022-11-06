@@ -257,12 +257,12 @@ public class ProjectBuildsPage extends ProjectPage {
 	
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Builds");
+		return new Label(componentId, "构建");
 	}
 	
 	@Override
 	protected String getPageTitle() {
-		return "Builds - " + getProject().getPath();
+		return "构建 - " + getProject().getPath();
 	}
 	
 }

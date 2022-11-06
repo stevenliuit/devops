@@ -19,7 +19,7 @@ public class YouTrackProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to YouTrack";
+			return "验证 YouTrack";
 		}
 
 		@Override
@@ -35,7 +35,7 @@ public class YouTrackProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify projects";
+			return "指定项目";
 		}
 
 		@Override
@@ -53,7 +53,7 @@ public class YouTrackProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

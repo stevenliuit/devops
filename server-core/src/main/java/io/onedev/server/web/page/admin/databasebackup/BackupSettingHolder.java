@@ -12,7 +12,7 @@ public class BackupSettingHolder implements Serializable {
 
 	private BackupSetting backupSetting;
 
-	@Editable(name="Enable Auto Backup")
+	@Editable(name="开启默认备份")
 	public BackupSetting getBackupSetting() {
 		return backupSetting;
 	}

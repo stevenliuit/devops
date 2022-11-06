@@ -3,10 +3,10 @@
     <wicket:fragment wicket:id="parseableFrag">
     	<div class="head">
     		<a wicket:id="jobs" class="jobs">Jobs</a>
-    		<a wicket:id="services" class="services">Services</a>
-    		<a wicket:id="stepTemplates" class="step-templates">Step Templates</a>
-    		<a wicket:id="properties" class="properties">Properties</a>
-    		<a wicket:id="imports" class="imports">Imports</a>
+    		<a wicket:id="services" class="services">服务</a>
+    		<a wicket:id="stepTemplates" class="step-templates">步骤模板</a>
+    		<a wicket:id="properties" class="properties">属性</a>
+    		<a wicket:id="imports" class="imports">导入</a>
     	</div>
         <div wicket:id="body" class="body d-flex flex-column flex-grow-1">
 			<div wicket:id="feedback"></div>
@@ -14,7 +14,7 @@
 		</div>
     </wicket:fragment>
     <wicket:fragment wicket:id="unparseableFrag">
-        <div class="title">Error parsing build spec</div>
+        <div class="title">解析构建规范时出错</div>
         <div wicket:id="errorMessage" class="error-message"></div>
     </wicket:fragment>
 	<wicket:fragment wicket:id="jobsFrag">
@@ -34,7 +34,7 @@
             </div></div>
             <div class="add btn-group btn-block">
                 <a wicket:id="create" class="create btn btn-primary justify-content-start no-suggestions">
-                    <wicket:svg href="plus" class="icon flex-shrink-0 mr-1"></wicket:svg> Add New
+                    <wicket:svg href="plus" class="icon flex-shrink-0 mr-1"></wicket:svg> 新的添加
                 </a>
             </div>
         </div>
@@ -52,7 +52,7 @@
 	</wicket:fragment>
     <wicket:fragment wicket:id="addJobFrag">
         <a wicket:id="create" class="create btn btn-primary justify-content-start text-nowrap">
-            <wicket:svg href="plus" class="icon flex-shrink-0 mr-1"></wicket:svg> Add New
+            <wicket:svg href="plus" class="icon flex-shrink-0 mr-1"></wicket:svg> 新的添加
         </a>
         <a wicket:id="suggestions" class="suggestions btn btn-primary flex-grow-0 flex-shrink-0 btn-icon" title="Suggestions">
 			<wicket:svg href="wand" class="icon"/>

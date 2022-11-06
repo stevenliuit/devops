@@ -12,14 +12,14 @@ import io.onedev.server.util.validation.annotation.Code;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(order=200, name="Custom Linux Shell")
+@Editable(order=200, name="自定义 Linux Shell")
 public class ShellInterpreter extends Interpreter {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String shell = "bash";
 
-	@Editable(order=100, name="Shell", description="Specify shell to be used")
+	@Editable(order=100, name="Shell", description="指定要使用的外壳")
 	@NotEmpty
 	public String getShell() {
 		return shell;
@@ -29,11 +29,11 @@ public class ShellInterpreter extends Interpreter {
 		this.shell = shell;
 	}
 
-	@Editable(order=110, description="Specify shell commands to execute "
-			+ "under the <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>job workspace</a>")
+	@Editable(order=110, description="指定要执行的 shell 命令 "
+			+ "在下面 <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>工作区</a>")
 	@Interpolative
 	@Code(language=Code.SHELL, variableProvider="suggestVariables")
-	@Size(min=1, message="may not be empty")
+	@Size(min=1, message="不能为空")
 	@Override
 	public List<String> getCommands() {
 		return super.getCommands();

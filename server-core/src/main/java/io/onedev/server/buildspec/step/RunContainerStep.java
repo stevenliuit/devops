@@ -20,10 +20,10 @@ import io.onedev.server.util.validation.annotation.SafePath;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(order=150, name="Run Docker Container", description="Run specified docker container. To access files in "
-		+ "job workspace, either use environment variable <tt>JOB_WORKSPACE</tt>, or specify volume mounts. "
-		+ "<b class='text-warning'>NOTE:</b> If this step runs with a Kubernetes executor, the option "
-		+ "<code>mount container sock</code> of that executor must be enabled")
+@Editable(order=150, name="运行 Docker 容器", description="运行指定的 docker 容器。 访问文件 "
+		+ "工作区, 要么使用环境变量 <tt>JOB_WORKSPACE</tt>, 或指定卷安装. "
+		+ "<b class='text-warning'>NOTE:</b> 如果此步骤使用 Kubernetes 执行程序运行, 选项 "
+		+ "<code>安装容器sock</code> 必须启用该执行程序")
 public class RunContainerStep extends Step {
 
 	private static final long serialVersionUID = 1L;
@@ -51,9 +51,8 @@ public class RunContainerStep extends Step {
 		return new RunContainerFacade(getImage(), getArgs(), envMap, getWorkingDir(), mountMap, isUseTTY());
 	}
 
-	@Editable(order=100, description="Specify container image to run. <b class='text-warning'>NOTE:</b> A shell must "
-			+ "exist in the container if the step is executed by kubernetes executor, as OneDev needs to intercept the "
-			+ "entrypoint to make step containers executing sequentially in the pod")
+	@Editable(order=100, description="指定要运行的容器映像. <b class='text-warning'>NOTE:</b> 如果步骤由 kubernetes executor 执行，则容器中必须存在 shell"
+			+ ", 因为系统需要拦截入口点以使步骤容器在 pod 中顺序执行")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getImage() {
@@ -64,8 +63,8 @@ public class RunContainerStep extends Step {
 		this.image = image;
 	}
 
-	@Editable(order=200, name="Arguments", description="Specify container arguments separated by space. "
-			+ "Single argument containing space should be quoted")
+	@Editable(order=200, name="Arguments", description="指定用空格分隔的容器参数. "
+			+ "应引用包含空格的单个参数")
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getArgs() {
 		return args;
@@ -75,8 +74,8 @@ public class RunContainerStep extends Step {
 		this.args = args;
 	}
 
-	@Editable(order=200, name="Working Directory", description="Optionally specify working directory of the container. "
-			+ "Leave empty to use default working directory of the container")
+	@Editable(order=200, name="工作目录", description="可选择指定容器的工作目录. "
+			+ "留空以使用容器的默认工作目录")
 	@SafePath
 	@Interpolative(variableSuggester="suggestVariables")
 	@Nullable
@@ -88,8 +87,8 @@ public class RunContainerStep extends Step {
 		this.workingDir = workingDir;
 	}
 
-	@Editable(order=400, name="Environment Variables", description="Optionally specify environment "
-			+ "variables for the container")
+	@Editable(order=400, name="环境变量", description="可选择指定环境 "
+			+ "容器变量")
 	public List<EnvVar> getEnvVars() {
 		return envVars;
 	}
@@ -98,7 +97,7 @@ public class RunContainerStep extends Step {
 		this.envVars = envVars;
 	}
 
-	@Editable(order=500, description="Optionally mount directories or files under job workspace into container")
+	@Editable(order=500, description="可选择将作业工作区下的目录或文件挂载到容器中")
 	public List<VolumeMount> getVolumeMounts() {
 		return volumeMounts;
 	}
@@ -107,10 +106,9 @@ public class RunContainerStep extends Step {
 		this.volumeMounts = volumeMounts;
 	}
 
-	@Editable(order=10000, name="Enable TTY Mode", description="Many commands print outputs with ANSI colors in "
-			+ "TTY mode to help identifying problems easily. However some commands running in this mode may "
-			+ "wait for user input to cause build hanging. This can normally be fixed by adding extra options "
-			+ "to the command")
+	@Editable(order=10000, name="启用 TTY 模式", description="许多命令在 TTY 模式下使用 ANSI 颜色打印输出，以帮助轻松识别问题."
+			+ " 但是，在此模式下运行的某些命令可能会等待用户输入导致构建挂起."
+			+ " 这通常可以通过在命令中添加额外的选项来解决")
 	public boolean isUseTTY() {
 		return useTTY;
 	}

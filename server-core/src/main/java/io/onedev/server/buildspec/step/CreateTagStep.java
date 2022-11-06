@@ -23,7 +23,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.Multiline;
 
-@Editable(name="Create Tag", order=300)
+@Editable(name="创建标签", order=300)
 public class CreateTagStep extends ServerSideStep {
 
 	private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ public class CreateTagStep extends ServerSideStep {
 	
 	private String tagMessage;
 	
-	@Editable(order=1000, description="Specify name of the tag")
+	@Editable(order=1000, description="指定标签名称")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getTagName() {
@@ -43,7 +43,7 @@ public class CreateTagStep extends ServerSideStep {
 		this.tagName = tagName;
 	}
 	
-	@Editable(order=1050, description="Optionally specify message of the tag")
+	@Editable(order=1050, description="可选地指定标签的消息")
 	@Multiline
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getTagMessage() {

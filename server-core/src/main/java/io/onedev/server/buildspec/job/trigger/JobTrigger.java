@@ -50,11 +50,11 @@ public abstract class JobTrigger implements Serializable {
 	
 	private List<ParamSupply> params = new ArrayList<>();
 	
-	@Editable(name="Applicable Projects", order=900, placeholder="任何项目", description=""
-			+ "Optionally specify space-separated projects applicable for this trigger. "
-			+ "This is useful for instance when you want to prevent the job from being "
-			+ "triggered in forked projects. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all projects")
+	@Editable(name="适用项目", order=900, placeholder="任何项目", description=""
+			+ "（可选）指定适用于此触发器的空格分隔项目. "
+			+ "例如，当您想阻止作业被 "
+			+ "在分叉项目中触发。 利用 '**', '*' 或者 '?' 为了 <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除. 留空以匹配所有项目")
 	@Patterns(suggester="suggestProjects", path=true)
 	public String getProjects() {
 		return projects;
@@ -69,7 +69,7 @@ public abstract class JobTrigger implements Serializable {
 		return SuggestionUtils.suggestProjectPaths(matchWith);
 	}
 
-	@Editable(name="Job Parameters", order=1000)
+	@Editable(name="作业参数", order=1000)
 	@ParamSpecProvider("getParamSpecs")
 	@VariableOption(withBuildVersion=false, withDynamicVariables=false)
 	@OmitName
@@ -107,7 +107,7 @@ public abstract class JobTrigger implements Serializable {
 	public String getDescription() {
 		String description = getTriggerDescription();
 		if (projects != null)
-			description += " in projects '" + projects + "'";
+			description += " 在项目中 '" + projects + "'";
 		return description;
 	}
 

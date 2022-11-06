@@ -145,7 +145,7 @@ class ServiceLocatorListEditPanel extends PropertyEditor<List<Serializable>> {
 				if (rowModel.getObject().getServiceNames() != null) 
 					cellItem.add(new Label(componentId, rowModel.getObject().getServiceNames()));
 				else 
-					cellItem.add(new Label(componentId, "<i>All</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>所有</i>").setEscapeModelStrings(false));
 			}
 		});		
 		
@@ -157,7 +157,7 @@ class ServiceLocatorListEditPanel extends PropertyEditor<List<Serializable>> {
 				if (rowModel.getObject().getServiceImages() != null) 
 					cellItem.add(new Label(componentId, rowModel.getObject().getServiceImages()));
 				else 
-					cellItem.add(new Label(componentId, "<i>All</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>所有</i>").setEscapeModelStrings(false));
 			}
 		});	
 		

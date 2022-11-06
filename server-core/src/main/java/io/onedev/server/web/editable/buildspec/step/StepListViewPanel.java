@@ -82,7 +82,7 @@ class StepListViewPanel extends Panel {
 							@Override
 							protected Component newTitle(String componentId) {
 								String stepType = EditableUtils.getDisplayName(steps.get(stepIndex).getClass());
-								return new Label(componentId, "Step (type: " + stepType + ")");
+								return new Label(componentId, "步骤 (type: " + stepType + ")");
 							}
 
 							@Override

@@ -15,7 +15,7 @@ public class PostBuildActionBean implements Serializable {
 	private PostBuildAction action;
 
 	@Editable(order=100, name="Type")
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	public PostBuildAction getAction() {
 		return action;
 	}

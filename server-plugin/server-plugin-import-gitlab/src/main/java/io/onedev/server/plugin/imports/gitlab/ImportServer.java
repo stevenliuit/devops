@@ -96,7 +96,7 @@ public class ImportServer implements Serializable, Validatable {
 	
 	private String accessToken;
 	
-	@Editable(order=10, name="GitLab API URL", description="Specify GitLab API url, for instance <tt>https://gitlab.example.com/api/v4</tt>")
+	@Editable(order=10, name="GitLab API URL", description="指定 GitLab API url，例如 <tt>https://gitlab.example.com/api/v4</tt>")
 	@NotEmpty
 	public String getApiUrl() {
 		return apiUrl;
@@ -106,8 +106,8 @@ public class ImportServer implements Serializable, Validatable {
 		this.apiUrl = apiUrl;
 	}
 
-	@Editable(order=100, name="GitLab Personal Access Token", description="GitLab personal access token should be generated with "
-			+ "scope <b>read_api</b>, <b>read_user</b> and <b>read_repository</b>")
+	@Editable(order=100, name="GitLab 个人访问令牌", description="GitLab 个人访问令牌应使用生成 "
+			+ "范围 <b>read_api</b>, <b>read_user</b> 和 <b>read_repository</b>")
 	@Password
 	@NotEmpty
 	public String getAccessToken() {

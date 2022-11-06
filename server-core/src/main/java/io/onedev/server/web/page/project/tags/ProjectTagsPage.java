@@ -502,12 +502,12 @@ public class ProjectTagsPage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Tags");
+		return new Label(componentId, "标签");
 	}
 
 	@Override
 	protected String getPageTitle() {
-		return "Tags - " + getProject().getPath();
+		return "标签 - " + getProject().getPath();
 	}
 	
 	@Override

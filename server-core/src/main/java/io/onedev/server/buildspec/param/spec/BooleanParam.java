@@ -19,7 +19,7 @@ public class BooleanParam extends ParamSpec {
 	private DefaultValueProvider defaultValueProvider = new FalseDefaultValue();
 
 	@Editable(name="Default Value", order=1000)
-	@NotNull(message="may not be empty")
+	@NotNull(message="不能为空")
 	@Valid
 	public DefaultValueProvider getDefaultValueProvider() {
 		return defaultValueProvider;

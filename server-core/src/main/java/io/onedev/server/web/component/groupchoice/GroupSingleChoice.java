@@ -24,7 +24,7 @@ public class GroupSingleChoice extends Select2Choice<Group> {
 		if (isRequired())
 			getSettings().setPlaceholder("Choose group...");
 		else
-			getSettings().setPlaceholder("Not specified");
+			getSettings().setPlaceholder("未指定");
 		getSettings().setFormatResult("onedev.server.groupChoiceFormatter.formatResult");
 		getSettings().setFormatSelection("onedev.server.groupChoiceFormatter.formatSelection");
 		getSettings().setEscapeMarkup("onedev.server.groupChoiceFormatter.escapeMarkup");

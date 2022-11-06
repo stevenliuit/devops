@@ -3,11 +3,11 @@
 	<wicket:fragment wicket:id="pendingVerifyFrag">
 		<form wicket:id="form">
 			<div class="modal-header">
-				<h5 id="modal-title" class="modal-title">设置两因素身份验证</h5>
+				<h5 id="modal-title" class="modal-title">设置双因素身份验证</h5>
 				<button wicket:id="close" type="button" class="close"><wicket:svg href="times" class="icon"/></button>
 			</div>
 			<div class="modal-body">
-				<div wicket:id="enforceNotice" class="alert alert-light-warning">强制执行两因素身份验证
+				<div wicket:id="enforceNotice" class="alert alert-light-warning">强制执行双因素身份验证
 				为您的帐户增强安全性。 请按照以下步骤进行设置</div>
 				<div class="text-secondary font-weight-boldest">
 				使用您的 TOTP 身份验证器扫描下面的 QR 码
@@ -26,14 +26,14 @@
 				<div wicket:id="feedback" class="mb-n3 mt-3"></div>
 			</div>
 			<div class="modal-footer">
-				<input wicket:id="verify" type="submit" class="dirty-aware btn btn-primary" value="Verify">
-				<a wicket:id="cancel" class="btn btn-secondary">Cancel</a>
+				<input wicket:id="verify" type="submit" class="dirty-aware btn btn-primary" value="验证">
+				<a wicket:id="cancel" class="btn btn-secondary">取消</a>
 			</div>
 		</form>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="verifiedFrag">
 		<div class="modal-header">
-			<h5 id="modal-title" class="modal-title">设置两因素身份验证</h5>
+			<h5 id="modal-title" class="modal-title">设置双因素身份验证</h5>
 			<button wicket:id="close" type="button" class="close"><wicket:svg href="times" class="icon"/></button>
 		</div>
 		<div class="modal-body">

@@ -213,7 +213,7 @@ public abstract class SavedQueriesPanel<T extends NamedQuery> extends Panel {
 					fragment = new Fragment(id, "editPersonalAwareSavedQueriesFrag", SavedQueriesPanel.this);
 					List<Tab> tabs = new ArrayList<>();
 
-					tabs.add(new AjaxActionTab(Model.of("Mine")) {
+					tabs.add(new AjaxActionTab(Model.of("我的")) {
 
 						@Override
 						protected void updateAjaxAttributes(AjaxRequestAttributes attributes) {
@@ -232,7 +232,7 @@ public abstract class SavedQueriesPanel<T extends NamedQuery> extends Panel {
 					fragment.add(newPersonalQueriesEditor(TAB_PANEL_ID, modal));
 					
 					if (canEditCommonQueries()) {
-						tabs.add(new AjaxActionTab(Model.of("All Users")) {
+						tabs.add(new AjaxActionTab(Model.of("所有用户")) {
 
 							@Override
 							protected void updateAjaxAttributes(AjaxRequestAttributes attributes) {

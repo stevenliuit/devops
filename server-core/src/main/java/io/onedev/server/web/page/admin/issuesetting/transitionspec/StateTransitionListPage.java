@@ -225,7 +225,7 @@ public class StateTransitionListPage extends IssueSettingPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "<span class='text-truncate'>Issue State Transitions</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-truncate'>问题状态转换</span>").setEscapeModelStrings(false);
 	}
 	
 }

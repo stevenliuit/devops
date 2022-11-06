@@ -51,7 +51,7 @@ public abstract class BuildSpecLink extends BookmarkablePageLink<Void> {
 		state.blobIdent = new BlobIdent(commitId.name(), BuildSpec.BLOB_PATH, FileMode.REGULAR_FILE.getBits()); 
 		state.requestId = PullRequest.idOf(getPullRequest());
 		if (getProject().getBlob(state.blobIdent, false) == null)
-			state.blobIdent = new BlobIdent(commitId.name(), ".onedev-buildspec", FileMode.REGULAR_FILE.getBits());
+			state.blobIdent = new BlobIdent(commitId.name(), ".cicd-buildspec", FileMode.REGULAR_FILE.getBits());
 		return ProjectBlobPage.paramsOf(getProject(), state);
 	}
 

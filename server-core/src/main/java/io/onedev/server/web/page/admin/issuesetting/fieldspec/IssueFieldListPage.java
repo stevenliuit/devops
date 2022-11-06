@@ -231,7 +231,7 @@ public class IssueFieldListPage extends IssueSettingPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Issue Custom Fields");
+		return new Label(componentId, "发布自定义字段");
 	}
 
 }

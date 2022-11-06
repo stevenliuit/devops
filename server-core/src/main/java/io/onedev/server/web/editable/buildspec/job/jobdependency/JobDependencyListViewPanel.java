@@ -90,7 +90,7 @@ class JobDependencyListViewPanel extends Panel {
 
 							@Override
 							protected Component newTitle(String componentId) {
-								return new Label(componentId, "Job Dependency");
+								return new Label(componentId, "Job依赖");
 							}
 
 							@Override

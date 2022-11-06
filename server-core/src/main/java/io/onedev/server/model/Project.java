@@ -258,13 +258,13 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
     
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=true)
-	@Api(description="Represents the project from which this project is forked. Remove this property if "
-			+ "the project is not a fork when create/update the project")
+	@Api(description="表示从中派生此项目的项目。 删除此属性，如果 "
+			+ "创建/更新项目时，该项目不是fork的")
 	private Project forkedFrom;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=true)
-	@Api(description="Represents the parent project. Remove this property if the project does not have a parent project")
+	@Api(description="代表父项目。 如果项目没有父项目，则删除此属性")
 	private Project parent;
 	
 	@Column(nullable=false)
@@ -326,8 +326,8 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
     
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(nullable=true)
-	@Api(description="This represents default role of the project. Remove this property if the project should not "
-			+ "have a default role when create/update the project")
+	@Api(description="这代表项目的默认角色。 如果项目不应该删除此属性 "
+			+ "创建/更新项目时具有默认角色")
     private Role defaultRole;
     
 	@OneToMany(mappedBy="project", cascade=CascadeType.REMOVE)
@@ -754,7 +754,7 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 	@Nullable
 	public Blob getBlob(BlobIdent blobIdent, boolean mustExist) {
 		Preconditions.checkArgument(blobIdent.revision!=null && blobIdent.path!=null && blobIdent.mode!=null, 
-				"Revision, path and mode of ident param should be specified");
+				"应指定 ident 参数的修订、路径和模式");
 		
 		Optional<Blob> blob = getBlobCache().get(blobIdent);
 		if (blob == null) {
@@ -902,7 +902,7 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 			if (blob != null) {  
 				buildSpec = Optional.fromNullable(BuildSpec.parse(blob.getBytes()));
 			} else { 
-				Blob oldBlob = getBlob(new BlobIdent(commitId.name(), ".onedev-buildspec", FileMode.TYPE_FILE), false);
+				Blob oldBlob = getBlob(new BlobIdent(commitId.name(), ".cicd-buildspec", FileMode.TYPE_FILE), false);
 				if (oldBlob != null)
 					buildSpec = Optional.fromNullable(BuildSpec.parse(oldBlob.getBytes()));
 				else
@@ -1210,7 +1210,7 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 		this.codeComments = codeComments;
 	}
 	
-	@Editable(order=250, description="Whether or not to enable code management for the project")
+	@Editable(order=250, description="是否为项目启用代码管理")
 	public boolean isCodeManagement() {
 		return codeManagement;
 	}
@@ -1219,7 +1219,7 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 		this.codeManagement = codeManagement;
 	}
 
-	@Editable(order=300, description="Whether or not to enable issue management for the project")
+	@Editable(order=300, description="是否为项目启用问题管理")
 	public boolean isIssueManagement() {
 		return issueManagement;
 	}
@@ -1313,11 +1313,11 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 	public ArrayList<NamedCommitQuery> getNamedCommitQueries() {
 		if (namedCommitQueries == null) {
 			namedCommitQueries = new ArrayList<>();
-			namedCommitQueries.add(new NamedCommitQuery("All", null));
-			namedCommitQueries.add(new NamedCommitQuery("Default branch", "default-branch"));
-			namedCommitQueries.add(new NamedCommitQuery("Authored by me", "authored-by-me"));
-			namedCommitQueries.add(new NamedCommitQuery("Committed by me", "committed-by-me"));
-			namedCommitQueries.add(new NamedCommitQuery("Committed recently", "after(last week)"));
+			namedCommitQueries.add(new NamedCommitQuery("所有", null));
+			namedCommitQueries.add(new NamedCommitQuery("默认分支", "default-branch"));
+			namedCommitQueries.add(new NamedCommitQuery("由我撰写", "authored-by-me"));
+			namedCommitQueries.add(new NamedCommitQuery("由我提交", "committed-by-me"));
+			namedCommitQueries.add(new NamedCommitQuery("最近提交", "after(last week)"));
 		}
 		return namedCommitQueries;
 	}
@@ -1329,12 +1329,12 @@ public class Project extends AbstractEntity implements LabelSupport<ProjectLabel
 	public ArrayList<NamedCodeCommentQuery> getNamedCodeCommentQueries() {
 		if (namedCodeCommentQueries == null) {
 			namedCodeCommentQueries = new ArrayList<>(); 
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("Unresolved", "unresolved"));
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("Created by me", "created by me"));
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("Created recently", "\"Create Date\" is since \"last week\""));
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("Updated recently", "\"Update Date\" is since \"last week\""));
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("Resolved", "resolved"));
-			namedCodeCommentQueries.add(new NamedCodeCommentQuery("All", null));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("未解决", "unresolved"));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("由我创建", "created by me"));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("最近创建", "\"Create Date\" is since \"last week\""));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("最近更新了", "\"Update Date\" is since \"last week\""));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("解决", "resolved"));
+			namedCodeCommentQueries.add(new NamedCodeCommentQuery("所有", null));
 		}
 		return namedCodeCommentQueries;
 	}

@@ -198,7 +198,7 @@ public class ActionAuthorizationsPage extends ProjectBuildSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Action Authorizations");
+		return new Label(componentId, "Action授权");
 	}
 
 }

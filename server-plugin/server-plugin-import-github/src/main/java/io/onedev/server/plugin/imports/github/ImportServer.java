@@ -87,7 +87,7 @@ public class ImportServer implements Serializable, Validatable {
 	
 	private String accessToken;
 	
-	@Editable(order=10, name="GitHub API URL", description="Specify GitHub API url, for instance <tt>https://api.github.com</tt>")
+	@Editable(order=10, name="GitHub API URL", description="指定 GitHub API url，例如 <tt>https://api.github.com</tt>")
 	@NotEmpty
 	public String getApiUrl() {
 		return apiUrl;
@@ -97,8 +97,8 @@ public class ImportServer implements Serializable, Validatable {
 		this.apiUrl = apiUrl;
 	}
 
-	@Editable(order=100, name="GitHub Personal Access Token", description="GitHub personal access token should be generated with "
-			+ "scope <b>repo</b> and <b>read:org</b>")
+	@Editable(order=100, name="GitHub 个人访问令牌", description="GitHub 个人访问令牌应使用生成"
+			+ "范围 <b>repo</b> 和 <b>read:org</b>")
 	@Password
 	@NotEmpty
 	public String getAccessToken() {
@@ -391,7 +391,7 @@ public class ImportServer implements Serializable, Validatable {
 							String fieldAndValue = field.getName() + "::" + field.getValue();
 							if (!fieldAndValues.add(fieldAndValue)) {
 								String errorMessage = String.format(
-										"Duplicate issue field mapping (issue: %s, field: %s)", 
+										"重复问题字段映射 (问题: %s, 字段: %s)", 
 										gitHubRepo + "#" + oldNumber, fieldAndValue);
 								throw new ExplicitException(errorMessage);
 							}

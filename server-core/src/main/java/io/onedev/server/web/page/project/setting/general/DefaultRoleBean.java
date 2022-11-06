@@ -17,9 +17,9 @@ public class DefaultRoleBean implements Serializable {
 
 	private String roleName;
 
-	@Editable(name="Default Role", placeholder="No default role", description="Default role determines default "
-			+ "permissions granted to everyone in the system. A permission is default permission of the project, "
-			+ "if it is contained in any default role of the project hierarchy (current and all ancestor projects)")
+	@Editable(name="默认角色", placeholder="没有默认角色", description="默认角色决定默认 "
+			+ "授予系统中每个人的权限. 权限是项目的默认权限, "
+			+ "如果它包含在项目层次结构的任何默认角色中（当前和所有祖先项目）")
 	@RoleChoice
 	public String getRoleName() {
 		return roleName;

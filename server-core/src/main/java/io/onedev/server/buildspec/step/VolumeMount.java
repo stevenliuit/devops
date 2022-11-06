@@ -20,7 +20,7 @@ public class VolumeMount implements Serializable {
 	
 	private String target;
 
-	@Editable(order=100, description="Specify a path relative to job workspace to be used as mount source")
+	@Editable(order=100, description="指定相对于作业工作空间的路径以用作挂载源")
 	@Interpolative(variableSuggester="suggestVariables")
 	@SafePath
 	@NotEmpty
@@ -32,7 +32,7 @@ public class VolumeMount implements Serializable {
 		this.source = sourcePath;
 	}
 
-	@Editable(order=200, description="Specify a path inside container to be used as mount target")
+	@Editable(order=200, description="指定容器内的路径作为挂载目标")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getTargetPath() {

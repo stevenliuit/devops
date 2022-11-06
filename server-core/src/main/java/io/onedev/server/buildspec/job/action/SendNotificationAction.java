@@ -9,7 +9,7 @@ import io.onedev.server.notification.BuildNotificationManager;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.NotificationReceiver;
 
-@Editable(name="Send notification", order=200)
+@Editable(name="发送通知", order=200)
 public class SendNotificationAction extends PostBuildAction {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +36,7 @@ public class SendNotificationAction extends PostBuildAction {
 
 	@Override
 	public String getDescription() {
-		return "Send notification to " + receivers;
+		return "发送通知到 " + receivers;
 	}
 
 }

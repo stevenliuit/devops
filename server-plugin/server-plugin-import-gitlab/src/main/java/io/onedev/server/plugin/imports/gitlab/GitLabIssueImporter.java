@@ -24,7 +24,7 @@ public class GitLabIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to GitLab";
+			return "验证 GitLab";
 		}
 
 		@Override
@@ -40,7 +40,7 @@ public class GitLabIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose project";
+			return "选择项目";
 		}
 
 		@Override
@@ -58,7 +58,7 @@ public class GitLabIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override
@@ -79,10 +79,10 @@ public class GitLabIssueImporter implements IssueImporter {
 		ImportServer server = serverStep.getSetting();
 		String gitLabProject = projectStep.getSetting().getProject();
 		IssueImportOption option = optionStep.getSetting();
-		logger.log("Importing issues from project " + gitLabProject + "...");
+		logger.log("从项目导入问题 " + gitLabProject + "...");
 		Map<String, Optional<User>> users = new HashMap<>();
 		return server.importIssues(gitLabProject, project, retainIssueNumbers, option, users, dryRun, logger)
-				.toHtml("Issues imported successfully");
+				.toHtml("问题导入成功");
 	}
 
 	@Override

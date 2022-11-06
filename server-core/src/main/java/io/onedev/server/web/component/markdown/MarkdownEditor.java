@@ -138,7 +138,7 @@ public class MarkdownEditor extends FormComponentPanel<String> {
 			input = StringUtils.replace(input, "\r\n", "\n");
 			return renderMarkdown(input);
 		} else {
-			return "<div class='message'>Nothing to preview</div>";
+			return "<div class='message'>没有可预览的</div>";
 		}
 	}
 	

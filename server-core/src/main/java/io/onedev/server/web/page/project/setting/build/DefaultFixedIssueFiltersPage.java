@@ -49,7 +49,7 @@ public class DefaultFixedIssueFiltersPage extends ProjectBuildSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Default Fixed Issue Filters");
+		return new Label(componentId, "默认固定问题过滤器");
 	}
 
 }

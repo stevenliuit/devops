@@ -137,7 +137,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		return getId().equals(OWNER_ID);
 	}
 
-	@Editable(order=200, name="Project Management", description="Administrative permission over a project")
+	@Editable(order=200, name="项目管理", description="项目管理权限")
 	public boolean isManageProject() {
 		return manageProject;
 	}
@@ -146,7 +146,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		this.manageProject = manageProject;
 	}
 	
-	@Editable(order=210, name="Create Child Projects", description="Create child projects under a project")
+	@Editable(order=210, name="创建子项目", description="在项目下创建子项目")
 	@ShowCondition("isManageProjectDisabled")
 	public boolean isCreateChildren() {
 		return createChildren;
@@ -161,8 +161,8 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		return !(boolean)EditContext.get().getInputValue("manageProject");
 	}
 
-	@Editable(order=250, name="Pull Request Management", description="Pull request administrative permission inside a project, "
-			+ "including batch operations over multiple pull requests")
+	@Editable(order=250, name="拉取请求管理", description="在项目中请求管理权限, "
+			+ "包括对多个拉取请求的批处理操作")
 	@ShowCondition("isManageProjectDisabled")
 	public boolean isManagePullRequests() {
 		return managePullRequests;
@@ -172,8 +172,8 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		this.managePullRequests = managePullRequests;
 	}
 	
-	@Editable(order=260, name="Code Comment Management", description="Code comment administrative permission inside a project, "
-			+ "including batch operations over multiple code comments")
+	@Editable(order=260, name="代码注释管理", description="项目内部的代码注释管理权限, "
+			+ "包括对多个代码注释的批处理操作")
 	@ShowCondition("isManageProjectDisabled")
 	public boolean isManageCodeComments() {
 		return manageCodeComments;
@@ -200,8 +200,8 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 				&& !(boolean)EditContext.get().getInputValue("manageCodeComments");
 	}
 	
-	@Editable(order=400, name="Issue Management", description="Issue administrative permission inside a project, including batch "
-			+ "operations over multiple issues")
+	@Editable(order=400, name="问题管理", description="在项目内部发布管理权限, 包括批次 "
+			+ "多个问题的操作")
 	@ShowCondition("isManageProjectDisabled")
 	public boolean isManageIssues() {
 		return manageIssues;
@@ -216,7 +216,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		return !(boolean)EditContext.get().getInputValue("manageIssues");
 	}
 	
-	@Editable(order=450, description="This permission enables one to access confidential issues")
+	@Editable(order=450, description="此权限允许访问机密问题")
 	@ShowCondition("isManageIssuesDisabled")
 	public boolean isAccessConfidentialIssues() {
 		return accessConfidentialIssues;
@@ -226,7 +226,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		this.accessConfidentialIssues = accessConfidentialIssues;
 	}
 	
-	@Editable(order=500, description="This permission enables one to schedule issues into milestones")
+	@Editable(order=500, description="此权限允许将问题排定为里程碑")
 	@ShowCondition("isManageIssuesDisabled")
 	public boolean isScheduleIssues() {
 		return scheduleIssues;
@@ -236,7 +236,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		this.scheduleIssues = scheduleIssues;
 	}
 
-	@Editable(order=600, description="Optionally specify custom fields allowed to edit when open new issues")
+	@Editable(order=600, description="可选地指定打开新问题时允许编辑的自定义字段")
 	@ShowCondition("isManageIssuesDisabled")
 	@NotNull
 	public IssueFieldSet getEditableIssueFields() {
@@ -252,7 +252,7 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		return OneDev.getInstance(SettingManager.class).getIssueSetting().getFieldNames();
 	}
 	
-	@Editable(order=625, placeholder="None", description="Optionally specify issue links allowed to edit")
+	@Editable(order=625, placeholder="None", description="可选地指定允许编辑的问题链接")
 	@ShowCondition("isManageIssuesDisabled")
 	@ChoiceProvider("getIssueLinkChoices")
 	public List<String> getEditableIssueLinks() {
@@ -275,8 +275,8 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 		return choices;
 	}
 
-	@Editable(order=650, name="Build Management", description="Build administrative permission for all jobs inside a project, "
-			+ "including batch operations over multiple builds")
+	@Editable(order=650, name="构建管理", description="为项目内的所有作业生成管理权限, "
+			+ "包括多个生成的批处理操作")
 	@ShowCondition("isManageProjectDisabled")
 	public boolean isManageBuilds() {
 		return manageBuilds;
@@ -408,19 +408,19 @@ public class Role extends AbstractEntity implements Permission, Validatable {
 			if (isManageBuilds()) {
 				isValid = false;
 				context.disableDefaultConstraintViolation();
-				context.buildConstraintViolationWithTemplate("Code read privilege is required to manage builds")
+				context.buildConstraintViolationWithTemplate("管理生成需要代码读取权限")
 						.addPropertyNode("manageBuilds").addConstraintViolation();
 			} else {
 				for (JobPrivilege privilege: getJobPrivileges()) {
 					if (privilege.isManageJob()) {
 						isValid = false;
 						context.disableDefaultConstraintViolation();
-						context.buildConstraintViolationWithTemplate("Code read privilege is required to manage jobs")
+						context.buildConstraintViolationWithTemplate("管理job需要代码读取权限")
 								.addPropertyNode("jobPrivileges").addConstraintViolation();
 					} else if (privilege.isRunJob()) {
 						isValid = false;
 						context.disableDefaultConstraintViolation();
-						context.buildConstraintViolationWithTemplate("Code read privilege is required to run jobs")
+						context.buildConstraintViolationWithTemplate("运行job需要代码读取权限")
 								.addPropertyNode("jobPrivileges").addConstraintViolation();
 					}
 				}

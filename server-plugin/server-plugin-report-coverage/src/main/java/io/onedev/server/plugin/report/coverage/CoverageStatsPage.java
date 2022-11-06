@@ -16,7 +16,7 @@ public class CoverageStatsPage extends BuildMetricStatsPage<CoverageMetric> {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Coverage Statistics");
+		return new Label(componentId, "覆盖统计");
 	}
 
 }

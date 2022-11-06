@@ -34,7 +34,7 @@ public abstract class Step implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=10000, description="Under which condition this step should run")
+	@Editable(order=10000, description="此步骤应在什么条件下运行")
 	@NotNull
 	public ExecuteCondition getCondition() {
 		return condition;

@@ -140,10 +140,10 @@ public abstract class FieldSpec extends InputSpec {
 		return Boolean.TRUE.equals(EditContext.get().getInputValue("promptUponIssueOpen"));
 	}
 
-	@Editable(order=10100, placeholder="All projects", description="Specify applicable projects for above option. "
-			+ "Multiple projects should be separated by space. Use '**', '*' or '?' for "
-			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty for all projects")
+	@Editable(order=10100, placeholder="所有项目", description="为上述选项指定适用的项目. "
+			+ "多个项目应以空格分隔。 利用 '**', '*' 或者 '?' 为了 "
+			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除. 为所有项目留空")
 	@io.onedev.server.web.editable.annotation.ShowCondition("isPromptUponIssueOpenEnabled")
 	@Patterns(suggester="suggestProjects", path=true)
 	public String getApplicableProjects() {

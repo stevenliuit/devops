@@ -101,7 +101,7 @@ public class PullRequestNotificationTemplatePage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Pull Request Notification Template");
+		return new Label(componentId, "拉取请求通知模板");
 	}
 
 }

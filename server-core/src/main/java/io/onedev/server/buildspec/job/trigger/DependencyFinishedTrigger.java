@@ -13,7 +13,7 @@ import io.onedev.server.model.Build.Status;
 import io.onedev.server.model.PullRequest;
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(order=500, name="Dependency job finished")
+@Editable(order=500, name="依赖项作业已完成")
 public class DependencyFinishedTrigger extends JobTrigger {
 
 	private static final long serialVersionUID = 1L;
@@ -47,7 +47,7 @@ public class DependencyFinishedTrigger extends JobTrigger {
 
 						@Override
 						public String getDescription() {
-							return "Dependency job '" + dependency.getJobName() + "' is finished";
+							return "依赖项作业 '" + dependency.getJobName() + "' 已完成";
 						}
 						
 					};
@@ -59,7 +59,7 @@ public class DependencyFinishedTrigger extends JobTrigger {
 
 	@Override
 	public String getTriggerDescription() {
-		return "When dependency jobs finished";
+		return "依赖作业完成时";
 	}
 
 }

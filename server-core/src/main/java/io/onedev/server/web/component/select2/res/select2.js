@@ -2751,7 +2751,7 @@ the specific language governing permissions and limitations under the Apache Lic
             return results;
         },
         formatResultCssClass: function(data) {return undefined;},
-        formatNoMatches: function () { return "No matches found"; },
+        formatNoMatches: function () { return "未找到匹配项"; },
         formatInputTooShort: function (input, min) { var n = min - input.length; return "Please enter " + n + " more character" + (n == 1? "" : "s"); },
         formatInputTooLong: function (input, max) { var n = input.length - max; return "Please delete " + n + " character" + (n == 1? "" : "s"); },
         formatSelectionTooBig: function (limit) { return "You can only select " + limit + " item" + (limit == 1 ? "" : "s"); },

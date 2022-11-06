@@ -177,7 +177,7 @@ public class MailSettingPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Mail Setting");
+		return new Label(componentId, "邮件设置");
 	}
 
 }

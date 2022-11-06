@@ -15,16 +15,13 @@
 			</div>
 		</div>
 		<div class="sidebar-footer">
-			<a wicket:id="productVersion" class="sidebar-version"></a>
+		<a wicket:id="productVersion" class="sidebar-version"></a>
 			<div class="dropdown sidebar-help">
 				<a href="#" class="dropdown-toggle no-dropdown-caret" data-toggle="dropdown">
 					<wicket:svg href="question-o" class="icon"></wicket:svg>
 				</a>
 				<div class="dropdown-menu">
-					<a wicket:id="docLink" class="dropdown-item" target="_blank">Documentation</a>
-					<a href="https://code.onedev.io/projects/160/issues?query=%22State%22+is+%22Open%22" class="dropdown-item" target="_blank">Support &amp; Bug Report</a>
 					<a href="/help/api" class="dropdown-item" target="_blank">RESTful API</a>
-					<a wicket:id="incompatibilities" class="dropdown-item">Incompatibilities</a>
 	          	</div>  					
 			</div>
 		</div>
@@ -42,10 +39,7 @@
 		<div class="topbar-right text-nowrap">
 			<a wicket:id="showCommandPalette" class="topbar-link command-palette"></a>
 			<a wicket:id="darkMode" class="topbar-link" title="Toggle dark mode"><svg wicket:id="icon" class="icon"/></a>
-			<a href="https://github.com/theonedev/onedev" class="github topbar-link d-none d-sm-inline" target="_blank">
-				<wicket:svg href="github" class="icon"></wicket:svg>
-			</a>
-	  		<a wicket:id="signIn" class="topbar-link sign-in"><wicket:svg href="login" class="icon"/> <span class="d-none d-sm-inline">Sign In</span></a>
+	  		<a wicket:id="signIn" class="topbar-link sign-in"><wicket:svg href="login" class="icon"/> <span class="d-none d-sm-inline">登陆</span></a>
 			<div wicket:id="userInfo" class="dropdown user-info">
 				<a href="#" class="dropdown-toggle user-info no-dropdown-caret topbar-link" data-toggle="dropdown">
 					<img wicket:id="avatar"> 
@@ -55,29 +49,29 @@
 				<div class="dropdown-menu">
 					<wicket:enclosure child="hasUnverifiedLink">
 					<div class="mx-3 my-2 alert alert-light-warning">
-						You have unverified <a wicket:id="hasUnverifiedLink">email addresses</a>
+						你有未验证 <a wicket:id="hasUnverifiedLink">电子邮件地址</a>
 					</div>
 					</wicket:enclosure>
 					<wicket:enclosure child="noPrimaryAddressLink">
 					<div class="mx-3 my-2 alert alert-light-warning">
-						Primary <a wicket:id="noPrimaryAddressLink">email address</a> not specified
+						基本的 <a wicket:id="noPrimaryAddressLink">电子邮件地址</a> 未指定
 					</div>
 					</wicket:enclosure>
 					<a wicket:id="myProfile" class="dropdown-item">
 						<wicket:svg href="profile" class="icon mr-2"></wicket:svg>
-						Profile
+						帐户
 					</a>
 					<a wicket:id="myEmailSetting" class="dropdown-item">
 						<wicket:svg href="mail" class="icon mr-2"></wicket:svg>
-						Email Addresses
+						电子邮件地址
 					</a>
 					<a wicket:id="myAvatar" class="dropdown-item">
 						<wicket:svg href="avatar" class="icon mr-2"></wicket:svg>
-						Edit Avatar
+						编辑头像
 					</a>
 					<a wicket:id="myPassword" class="dropdown-item">
 						<wicket:svg href="password" class="icon mr-2"></wicket:svg>
-						Change Password
+						更改密码
 					</a>
 					<a wicket:id="mySshKeys" class="dropdown-item">
 						<wicket:svg href="key" class="icon mr-2"></wicket:svg>
@@ -93,7 +87,7 @@
 					</a>
 					<a wicket:id="myTwoFactorAuthentication" class="dropdown-item">
 						<wicket:svg href="shield" class="icon mr-2"></wicket:svg>
-						Two-factor Authentication
+						双因素身份验证
 					</a>
 					<a wicket:id="signOut" class="dropdown-item">
 						<wicket:svg href="logout" class="icon mr-2"></wicket:svg>

@@ -9,7 +9,7 @@
 						<span wicket:id="label"></span>
 						<wicket:svg href="arrow" class="icon rotate-90 ml-1"></wicket:svg>
 					</a>
-					<a wicket:id="backlog" title="Show issues not scheduled into current milestone" class="bg-white backlog btn btn-outline-secondary btn-hover-primary text-nowrap"><wicket:svg href="inbox" class="icon mr-2"></wicket:svg> Backlog</a>
+					<a wicket:id="backlog" title="显示未安排到当前里程碑的问题" class="bg-white backlog btn btn-outline-secondary btn-hover-primary text-nowrap"><wicket:svg href="inbox" class="icon mr-2"></wicket:svg> 积压</a>
 					<a wicket:id="milestone" title="Milestone" class="milestone-selector btn text-nowrap bg-white">
 						<wicket:svg href="milestone" class="icon mr-2"></wicket:svg>
 						<span wicket:id="label"></span>
@@ -20,8 +20,8 @@
 					<div class="input-group">
 						<input wicket:id="input" spellcheck="false" autocomplete="off" class="form-control">
 						<span class="input-group-append text-nowrap">
-							<button wicket:id="submit" type="submit" class="bg-white btn btn-icon btn-outline-secondary btn-hover-primary" title="Query"><wicket:svg href="magnify" class="icon"></wicket:svg></button>
-							<button wicket:id="orderBy" class="bg-white btn btn-icon btn-outline-secondary btn-hover-primary" title="Order by"><wicket:svg href="sort" class="icon"></wicket:svg></button>
+							<button wicket:id="submit" type="submit" class="bg-white btn btn-icon btn-outline-secondary btn-hover-primary" title="查询"><wicket:svg href="magnify" class="icon"></wicket:svg></button>
+							<button wicket:id="orderBy" class="bg-white btn btn-icon btn-outline-secondary btn-hover-primary" title="排序"><wicket:svg href="sort" class="icon"></wicket:svg></button>
 						</span>
 					</div>
 				</div>
@@ -36,29 +36,29 @@
 	</wicket:fragment>
 	<wicket:fragment wicket:id="noBoardsFrag">
 		<div class="alert alert-notice alert-light-success shadow no-boards">
-			<span class="mr-3">No issue boards defined</span> 
-			<a wicket:id="newBoard" class="mr-3"><wicket:svg href="plus" class="icon mr-1"></wicket:svg>Add New</a>
-			<a wicket:id="useDefault"><wicket:svg href="undo" class="icon mr-1"></wicket:svg>Use Default</a>
+			<span class="mr-3">未定义问题板</span> 
+			<a wicket:id="newBoard" class="mr-3"><wicket:svg href="plus" class="icon mr-1"></wicket:svg>新添加</a>
+			<a wicket:id="useDefault"><wicket:svg href="undo" class="icon mr-1"></wicket:svg>使用默认</a>
 		</div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="boardMenuFrag">
 		<div class="board-menu p-4">
-			<div class="text-muted mb-3"><wicket:svg href="bulb" class="icon"/> The first board will be the primary board</div>
+			<div class="text-muted mb-3"><wicket:svg href="bulb" class="icon"/> 第一个board将是主要的board</div>
 			<table class="boards table">
 				<tr wicket:id="boards" class="board">
 					<td class="name">
 						<span wicket:id="dragIndicator" class="drag-indicator"><wicket:svg href="grip" class="icon"/></span>			
 						<a wicket:id="select" class="select"><span wicket:id="name"></span></a>
-						<span wicket:id="primary" class="badge badge-sm badge-light-info ml-2">Primary</span>
+						<span wicket:id="primary" class="badge badge-sm badge-light-info ml-2">主要的</span>
 					</td>
 					<td wicket:id="actions" class="actions text-right">
-						<a wicket:id="edit" class="btn btn-icon btn-xs btn-light btn-hover-primary mr-1" title="Edit"><wicket:svg href="edit" class="icon"></wicket:svg></a>
-						<a wicket:id="delete" class="btn btn-icon btn-xs btn-light btn-hover-danger" title="Delete"><wicket:svg href="trash" class="icon"></wicket:svg></a>
+						<a wicket:id="edit" class="btn btn-icon btn-xs btn-light btn-hover-primary mr-1" title="编辑"><wicket:svg href="edit" class="icon"></wicket:svg></a>
+						<a wicket:id="delete" class="btn btn-icon btn-xs btn-light btn-hover-danger" title="删除"><wicket:svg href="trash" class="icon"></wicket:svg></a>
 					</td>
 				</tr>
 			</table>
-			<a wicket:id="newBoard" class="btn btn-light btn-hover-primary btn-sm btn-block new-board"><wicket:svg href="plus" class="icon mr-2"></wicket:svg> Add New Board</a>
-			<a wicket:id="useDefault" class="btn btn-light btn-hover-primary btn-sm btn-block use-global"><wicket:svg href="undo" class="icon mr-2"></wicket:svg> Use Default Boards</a>
+			<a wicket:id="newBoard" class="btn btn-light btn-hover-primary btn-sm btn-block new-board"><wicket:svg href="plus" class="icon mr-2"></wicket:svg> 添加新的Board</a>
+			<a wicket:id="useDefault" class="btn btn-light btn-hover-primary btn-sm btn-block use-global"><wicket:svg href="undo" class="icon mr-2"></wicket:svg> 使用默认的Boards</a>
 		</div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="milestoneMenuFrag">
@@ -67,7 +67,7 @@
 			<table class="milestones table">
 				<tr wicket:id="milestones" class="milestone">
 					<td class="name">
-						<a wicket:id="select"><span wicket:id="name"></span></a> <span wicket:id="inherited" class="ml-2 badge badge-info badge-sm">Inherited</span>
+						<a wicket:id="select"><span wicket:id="name"></span></a> <span wicket:id="inherited" class="ml-2 badge badge-info badge-sm">继承</span>
 					</td>
 					<td class="status">
 						<span wicket:id="status"></span>
@@ -81,17 +81,17 @@
 				</tr>
 			</table>
 			</wicket:enclosure>
-			<a wicket:id="showClosed" class="show-closed btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="double-arrow" class="icon rotate-90 mr-2"></wicket:svg> Show Closed</a>
-			<a wicket:id="unscheduled" class="no-milestone btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="inbox" class="icon mr-2"></wicket:svg> Unscheduled</a>
-			<a wicket:id="newMilestone" class="new-milestone btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="plus" class="icon mr-2"></wicket:svg> Create Milestone</a>
+			<a wicket:id="showClosed" class="show-closed btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="double-arrow" class="icon rotate-90 mr-2"></wicket:svg> 显示已关闭</a>
+			<a wicket:id="unscheduled" class="no-milestone btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="inbox" class="icon mr-2"></wicket:svg> 非计划的</a>
+			<a wicket:id="newMilestone" class="new-milestone btn btn-block btn-light btn-hover-primary btn-sm"><wicket:svg href="plus" class="icon mr-2"></wicket:svg> 创建里程碑</a>
 		</div>
 	</wicket:fragment>
 	<wicket:fragment wicket:id="milestoneActionsFrag">
-		<a wicket:id="close" class="action">Close</a>
-		<a wicket:id="reopen" class="action">Reopen</a>
+		<a wicket:id="close" class="action">关闭</a>
+		<a wicket:id="reopen" class="action">重新打开</a>
 		<span class="dot mx-2"></span>
-		<a wicket:id="edit" class="action">Edit</a>
+		<a wicket:id="edit" class="action">编辑</a>
 		<span class="dot mx-2"></span>
-		<a wicket:id="delete" class="action">Delete</a>
+		<a wicket:id="delete" class="action">删除</a>
 	</wicket:fragment>
 </wicket:extend>

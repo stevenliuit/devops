@@ -21,7 +21,7 @@ public class BranchBean implements Validatable, Serializable {
 
 	private String name;
 	
-	@Editable(order=100, name="Branch Name")
+	@Editable(order=100, name="分支名称")
 	@NotEmpty
 	@OmitName
 	public String getName() {
@@ -35,7 +35,7 @@ public class BranchBean implements Validatable, Serializable {
 	@Override
 	public boolean isValid(ConstraintValidatorContext context) {
 		if (!Repository.isValidRefName(Constants.R_HEADS + getName())) {
-            context.buildConstraintViolationWithTemplate("Invalid branch name")
+            context.buildConstraintViolationWithTemplate("无效的分支名称")
 		            .addPropertyNode("name").addConstraintViolation()
 		            .disableDefaultConstraintViolation();
             return false;

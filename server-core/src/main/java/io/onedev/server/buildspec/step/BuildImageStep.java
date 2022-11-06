@@ -14,9 +14,9 @@ import io.onedev.server.util.validation.annotation.SafePath;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(order=160, name="Build Docker Image", description="Build and optionally publish docker image. "
-		+ "<span class='text-danger'>Registry logins should be specified</span> in the job executor executing this step if registry authentication "
-		+ "is required for build or publish")
+@Editable(order=160, name="构建 Docker 镜像", description="构建并选择性地发布 docker 镜像. "
+		+ "<span class='text-danger'>应指定注册表登录</span> 如果注册表身份验证，则在执行此步骤的作业执行程序中 "
+		+ "是构建或发布所必需的")
 public class BuildImageStep extends Step {
 
 	private static final long serialVersionUID = 1L;
@@ -29,8 +29,8 @@ public class BuildImageStep extends Step {
 	
 	private boolean publish;
 	
-	@Editable(order=100, description="Optionally specify build path relative to <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>job workspace</a>. "
-			+ "Leave empty to use job workspace itself")
+	@Editable(order=100, description="（可选）指定相对于的构建路径 <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>工作区</a>. "
+			+ "留空以使用作业工作区本身")
 	@Interpolative(variableSuggester="suggestVariables")
 	@SafePath
 	public String getBuildPath() {
@@ -41,8 +41,8 @@ public class BuildImageStep extends Step {
 		this.buildPath = buildPath;
 	}
 
-	@Editable(order=200, description="Optionally specify Dockerfile relative to <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>job workspace</a>. "
-			+ "Leave empty to use file <tt>Dockerfile</tt> under job workspace")
+	@Editable(order=200, description="可选择指定 Dockerfile 相对于 <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>工作区</a>. "
+			+ "留空以使用文件 <tt>Dockerfile</tt> 在工作工作区下")
 	@Interpolative(variableSuggester="suggestVariables")
 	@SafePath
 	public String getDockerfile() {
@@ -53,9 +53,9 @@ public class BuildImageStep extends Step {
 		this.dockerfile = dockerfile;
 	}
 
-	@Editable(order=300, description="Specify full tag of the image, for instance <tt>myorg/myrepo:latest</tt>, "
+	@Editable(order=300, description="指定image的完整标签，例如 <tt>myorg/myrepo:latest</tt>, "
 			+ "<tt>myorg/myrepo:1.0.0</tt>, or <tt>myregistry:5000/myorg/myrepo:1.0.0</tt>. "
-			+ "Multiple tags should be separated with space.<br>")
+			+ "多个标签应该用空格分隔.<br>")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getTags() {
@@ -66,7 +66,7 @@ public class BuildImageStep extends Step {
 		this.tags = tags;
 	}
 
-	@Editable(order=400, name="Publish After Build", description="Whether or not to publish built image to docker registry")
+	@Editable(order=400, name="构建后发布", description="是否将构建的镜像发布到 docker 注册表")
 	public boolean isPublish() {
 		return publish;
 	}

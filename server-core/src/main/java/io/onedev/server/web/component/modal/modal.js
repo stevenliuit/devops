@@ -16,7 +16,7 @@ onedev.server.modal = {
 					&& $modal.nextAll(".modal").length == 0
 					&& !$("body").hasClass("fullscreen")) {
 				if ($modal.find(".leave-confirm.dirty").length != 0) {
-					if (confirm("There are unsaved changes, do you want to close?")) {
+					if (confirm("有未保存的更改，是否要关闭?")) {
 						onedev.server.modal.close($modal, true);
 					}
 				} else {

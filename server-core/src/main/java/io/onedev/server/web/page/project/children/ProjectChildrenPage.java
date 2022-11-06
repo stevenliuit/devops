@@ -104,12 +104,12 @@ public class ProjectChildrenPage extends ProjectPage {
 	
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Child Projects");
+		return new Label(componentId, "子项目");
 	}
 	
 	@Override
 	protected String getPageTitle() {
-		return "Child Projects - " + getProject().getPath();
+		return "子项目 - " + getProject().getPath();
 	}
 
 	@Override

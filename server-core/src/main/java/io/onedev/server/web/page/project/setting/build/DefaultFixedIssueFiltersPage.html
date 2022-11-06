@@ -1,16 +1,14 @@
 <wicket:extend>
 	<div class="alert alert-notice bg-white shadow mb-5 text-gray">
 		<wicket:svg href="bulb" class="icon mr-2"/> 
-		For each build, OneDev calculates a list of fixed issues since previous build automatically. 
-		This setting provides a default query to further filter/order this list. For a given job, 
-		the first matching entry will be used.  
+		对于每个构建，系统都会自动计算自上次构建以来已修复问题的列表。此设置提供默认查询以进一步过滤/排序此列表。 对于给定的作业，将使用第一个匹配条目。
 	</div>
 	<div class="card">
 		<div class="card-body">
 			<form wicket:id="form" class="leave-confirm">
 				<div wicket:id="feedback" class="mb-4"></div>
 				<div wicket:id="editor"></div>		
-				<input type="submit" value="Save" class="dirty-aware btn btn-primary mt-4">
+				<input type="submit" value="保存" class="dirty-aware btn btn-primary mt-4">
 			</form>
 		</div>
 	</div>

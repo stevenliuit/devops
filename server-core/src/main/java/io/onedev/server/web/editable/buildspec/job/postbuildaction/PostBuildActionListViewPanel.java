@@ -81,7 +81,7 @@ class PostBuildActionListViewPanel extends Panel {
 							@Override
 							protected Component newTitle(String componentId) {
 								String actionType = EditableUtils.getDisplayName(actions.get(actionIndex).getClass());
-								return new Label(componentId, "Post Build Action (type: " + actionType + ")");
+								return new Label(componentId, "构建后操作 (type: " + actionType + ")");
 							}
 
 							@Override

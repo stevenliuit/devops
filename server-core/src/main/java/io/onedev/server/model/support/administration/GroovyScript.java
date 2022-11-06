@@ -41,7 +41,7 @@ public class GroovyScript implements Serializable {
 	private String allowedBranches;
 
 	@Editable(order=100)
-	@RegEx(pattern="^(?!" + BUILTIN_PREFIX + ").*$", message="Name is not allowed to start with '" + BUILTIN_PREFIX + "'")
+	@RegEx(pattern="^(?!" + BUILTIN_PREFIX + ").*$", message="名字不能以'" + BUILTIN_PREFIX + "'开头")
 	@NotEmpty
 	public String getName() {
 		return name;
@@ -53,7 +53,7 @@ public class GroovyScript implements Serializable {
 
 	@Editable(order=300)
 	@Code(language = Code.GROOVY)
-	@Size(min=1, message="May not be empty")
+	@Size(min=1, message="不能为空")
 	public List<String> getContent() {
 		return content;
 	}
@@ -76,9 +76,9 @@ public class GroovyScript implements Serializable {
 		return (boolean) EditContext.get().getInputValue("canBeUsedByBuildJobs");
 	}
 
-	@Editable(order=400, placeholder="所有", description="Optionally specify space-separated projects allowed to "
-			+ "execute this script. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. Prefix with '-' to exclude. "
-			+ "Leave empty to allow all")
+	@Editable(order=400, placeholder="所有", description="（可选）指定允许的空格分隔项目 "
+			+ "执行这个脚本. 使用 '**', '*' 或者 '?' 使用 <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. 前缀 '-' 排除. "
+			+ "留空以允许所有")
 	@Patterns(suggester="suggestProjects", path=true)
 	@ShowCondition("isCanBeUsedByBuildJobsEnabled")
 	public String getAllowedProjects() {
@@ -89,9 +89,9 @@ public class GroovyScript implements Serializable {
 		this.allowedProjects = allowedProjects;
 	}
 	
-	@Editable(order=500, placeholder="所有", description="Optionally specify space-separated branches allowed to "
-		+ "execute this script. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-		+ "Prefix with '-' to exclude. Leave empty to allow all")
+	@Editable(order=500, placeholder="所有", description="可选地指定空格分隔的分支允许 "
+		+ "执行这个脚本. 使用 '**', '*' 或者 '?' 使用 <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+		+ "前缀 '-' 排除. 留空以允许所有")
 	@Patterns(path=true)
 	@ShowCondition("isCanBeUsedByBuildJobsEnabled")
 	public String getAllowedBranches() {

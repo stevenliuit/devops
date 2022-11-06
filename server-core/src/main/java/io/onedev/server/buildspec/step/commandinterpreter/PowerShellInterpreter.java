@@ -15,15 +15,14 @@ public class PowerShellInterpreter extends Interpreter {
 
 	private static final long serialVersionUID = 1L;
 
-	@Editable(order=110, description="Specify PowerShell commands to execute "
-			+ "under the <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>job workspace</a>.<br>"
-			+ "<b class='text-warning'>NOTE: </b> OneDev checks exit code of the script to determine if step is successful. "
-			+ "Since PowerShell always exit with 0 even if there are script errors, you should handle errors in the script "
-			+ "and exit with non-zero code, or add line <code>$ErrorActionPreference = &quot;Stop&quot;</code> at start of "
-			+ "your script<br>")
+	@Editable(order=110, description="指定要执行的 PowerShell 命令 "
+			+ "在下面 <a href='$docRoot/pages/concepts.md#job-workspace' target='_blank'>工作区</a>.<br>"
+			+ "<b class='text-warning'>NOTE: </b>系统检查脚本的退出代码以确定步骤是否成功. "
+			+ "由于 PowerShell 总是以 0 退出，即使存在脚本错误, 你应该处理脚本中的错误 "
+			+ "并以非零代码退出，或添加行 <code>$ErrorActionPreference = &quot;Stop&quot;</code> 在脚本的开头<br>")
 	@Interpolative
 	@Code(language=Code.POWER_SHELL, variableProvider="suggestVariables")
-	@Size(min=1, message="may not be empty")
+	@Size(min=1, message="不能为空")
 	@Override
 	public List<String> getCommands() {
 		return super.getCommands();

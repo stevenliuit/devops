@@ -24,7 +24,7 @@ public class GiteaIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to Gitea";
+			return "验证 Gitea";
 		}
 
 		@Override
@@ -40,7 +40,7 @@ public class GiteaIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose repository";
+			return "选择存储库";
 		}
 
 		@Override
@@ -58,7 +58,7 @@ public class GiteaIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override
@@ -80,11 +80,11 @@ public class GiteaIssueImporter implements IssueImporter {
 		String giteaRepo = repositoryStep.getSetting().getRepository();
 		IssueImportOption option = optionStep.getSetting();
 		
-		logger.log("Importing issues from repository " + giteaRepo + "...");
+		logger.log("从存储库导入问题 " + giteaRepo + "...");
 		Map<String, Optional<User>> users = new HashMap<>();
 		
 		return server.importIssues(giteaRepo, project, retainIssueNumbers, option, users, dryRun, logger)
-				.toHtml("Issues imported successfully");
+				.toHtml("问题导入成功");
 	}
 
 	@Override

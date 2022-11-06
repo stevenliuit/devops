@@ -128,7 +128,7 @@ public class NewUserPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Create User");
+		return new Label(componentId, "创建用户");
 	}
 
 }

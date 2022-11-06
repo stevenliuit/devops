@@ -49,7 +49,7 @@ public class BuildPreservationsPage extends ProjectBuildSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Build Preserve Rules");
+		return new Label(componentId, "建立保留规则");
 	}
 
 }

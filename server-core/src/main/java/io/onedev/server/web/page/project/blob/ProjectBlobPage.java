@@ -421,7 +421,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 
 					@Override
 					public String getLabel() {
-						return "Create New File";
+						return "创建新文件";
 					}
 
 					@Override
@@ -443,7 +443,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 
 					@Override
 					public String getLabel() {
-						return "Upload Files";
+						return "上传文件";
 					}
 
 					@Override
@@ -487,15 +487,15 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 				
 				if (reviewRequired.get()) {
 					tag.append("class", "disabled", " ");
-					tag.put("title", "Review required for this change. Submit pull request instead");
+					tag.put("title", "此更改需要审阅。改为提交拉取请求");
 				} else if (buildRequired.get()) {
 					tag.append("class", "disabled", " ");
-					tag.put("title", "Build required for this change. Submit pull request instead");
+					tag.put("title", "此更改需要生成。改为提交拉取请求");
 				} else if (signatureRequiredButNoSigningKey.get()) {
 					tag.append("class", "disabled", " ");
-					tag.put("title", "Signature required for this change, please generate system GPG signing key first");
+					tag.put("title", "此更改需要签名，请先生成系统GPG签名密钥");
 				} else {
-					tag.put("title", "Add on branch " + state.blobIdent.revision);
+					tag.put("title", "加载项分支 " + state.blobIdent.revision);
 				}
 			}
 
@@ -530,7 +530,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 
 					@Override
 					public String getLabel() {
-						return "Quick Search";
+						return "快速搜索";
 					}
 
 					@Override
@@ -561,7 +561,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 
 					@Override
 					public String getLabel() {
-						return "Advanced Search";
+						return "高级搜索";
 					}
 
 					@Override
@@ -929,7 +929,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 			protected void onConfigure() {
 				super.onConfigure();
 				if (resolvedRevision != null && isOnBranch() && state.blobIdent.path == null && state.mode == Mode.VIEW) {
-					BlobIdent oldBlobIdent = new BlobIdent(resolvedRevision.name(), ".onedev-buildspec", FileMode.TYPE_FILE);
+					BlobIdent oldBlobIdent = new BlobIdent(resolvedRevision.name(), ".cicd-buildspec", FileMode.TYPE_FILE);
 					BlobIdent blobIdent = new BlobIdent(resolvedRevision.name(), BuildSpec.BLOB_PATH, FileMode.TYPE_FILE);
 					setVisible(getProject().getBlob(blobIdent, false) == null && getProject().getBlob(oldBlobIdent, false) == null);
 				} else {
@@ -1330,7 +1330,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 		public Mode mode = Mode.VIEW;
 		
 		/*
-		 * Some blob can be rendered in a way for easier understanding, such as .onedev-buildspec.yml, 
+		 * Some blob can be rendered in a way for easier understanding, such as .cicd-buildspec.yml, 
 		 * In these cases, the VIEW_PLAIN mode enables to view plain text of the blob. Applicable
 		 * only when mode is VIEW 
 		 */
@@ -1646,7 +1646,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Files");
+		return new Label(componentId, "文件");
 	}
 
 	@Override

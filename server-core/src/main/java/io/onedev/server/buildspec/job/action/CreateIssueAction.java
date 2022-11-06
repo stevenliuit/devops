@@ -29,7 +29,7 @@ import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.Multiline;
 import io.onedev.server.web.editable.annotation.OmitName;
 
-@Editable(name="Create issue", order=300)
+@Editable(name="创建问题", order=300)
 public class CreateIssueAction extends PostBuildAction {
 
 	private static final long serialVersionUID = 1L;
@@ -42,7 +42,7 @@ public class CreateIssueAction extends PostBuildAction {
 	
 	private List<FieldSupply> issueFields = new ArrayList<>();
 	
-	@Editable(order=1000, name="Title", group="Issue Detail", description="Specify title of the issue")
+	@Editable(order=1000, name="标题", group="问题详细信息", description="指定问题标题")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getIssueTitle() {
@@ -53,7 +53,7 @@ public class CreateIssueAction extends PostBuildAction {
 		this.issueTitle = issueTitle;
 	}
 	
-	@Editable(order=1050, name="Description", group="Issue Detail", description="Optionally specify description of the issue")
+	@Editable(order=1050, name="描述", group="问题详细信息", description="可选地指定问题描述")
 	@Multiline
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getIssueDescription() {
@@ -64,7 +64,7 @@ public class CreateIssueAction extends PostBuildAction {
 		this.issueDescription = issueDescription;
 	}
 
-	@Editable(order=1060, name="Confidential", group="Issue Detail", description="Whether or not the issue should be confidential")
+	@Editable(order=1060, name="保密", group="问题详细信息", description="该问题是否应保密")
 	public boolean isIssueConfidential() {
 		return issueConfidential;
 	}
@@ -125,7 +125,7 @@ public class CreateIssueAction extends PostBuildAction {
 
 	@Override
 	public String getDescription() {
-		return "Create issue";
+		return "创建问题";
 	}
 
 	@Override

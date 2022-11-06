@@ -31,7 +31,7 @@ public class MyAvatarPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Edit My Avatar");
+		return new Label(componentId, "编辑我的头像");
 	}
 
 }

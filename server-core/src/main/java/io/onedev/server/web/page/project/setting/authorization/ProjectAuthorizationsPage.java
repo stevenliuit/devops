@@ -81,7 +81,7 @@ public class ProjectAuthorizationsPage extends ProjectSettingPage {
 					}
 				}
 				if (!canManageProject) {
-					error("You can not unauthorize yourself as a manager");
+					error("您不能取消自己作为管理的授权");
 					return;
 				}
 				Set<String> userNames = new HashSet<>();
@@ -101,7 +101,7 @@ public class ProjectAuthorizationsPage extends ProjectSettingPage {
 				}
 				
 				OneDev.getInstance(UserAuthorizationManager.class).syncAuthorizations(getProject(), authorizations);
-				Session.get().success("User authorizations updated");
+				Session.get().success("已更新用户授权");
 			}
 			
 		};
@@ -112,7 +112,7 @@ public class ProjectAuthorizationsPage extends ProjectSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Project Authorizations");
+		return new Label(componentId, "项目授权");
 	}
 	
 }

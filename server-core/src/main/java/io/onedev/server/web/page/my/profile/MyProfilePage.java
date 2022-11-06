@@ -53,7 +53,7 @@ public class MyProfilePage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "My Profile");
+		return new Label(componentId, "我的账户");
 	}
 
 }

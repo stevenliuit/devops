@@ -156,7 +156,7 @@ onedev.server = {
 			$(window).on("beforeunload", function() {
 				$dirtyForms = $("form").filter('.leave-confirm.dirty');
 				if ($dirtyForms.length != 0) {
-					return "There are unsaved changes";
+					return "有未保存的更改";
 				}
 			});
 
@@ -170,7 +170,7 @@ onedev.server = {
 			var selector = "form.leave-confirm.dirty";
 			var $dirtyForms = $container.find(selector).addBack(selector);
 			if ($dirtyForms.length != 0) {
-				if (confirm("There are unsaved changes, do you want to discard and continue?")) {
+				if (confirm("有未保存的更改，是否要丢弃并继续?")) {
 					return true;
 				} else {
 					return false;

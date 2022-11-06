@@ -20,7 +20,7 @@ public class GiteaProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to Gitea";
+			return "验证 Gitea";
 		}
 
 		@Override
@@ -36,7 +36,7 @@ public class GiteaProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose organization";
+			return "选择组织";
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class GiteaProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify repositories";
+			return "指定存储库";
 		}
 
 		@Override
@@ -78,7 +78,7 @@ public class GiteaProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

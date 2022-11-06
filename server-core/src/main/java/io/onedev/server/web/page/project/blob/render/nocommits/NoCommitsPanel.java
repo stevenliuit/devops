@@ -57,7 +57,7 @@ public class NoCommitsPanel extends Panel {
 
 						@Override
 						public String getLabel() {
-							return "Create New File";
+							return "创建新文件";
 						}
 
 						@Override
@@ -79,7 +79,7 @@ public class NoCommitsPanel extends Panel {
 
 						@Override
 						public String getLabel() {
-							return "Upload Files";
+							return "上传文件";
 						}
 
 						@Override

@@ -196,7 +196,7 @@ public class UserListPage extends AdministrationPage {
 			}
 		});
 		
-		columns.add(new AbstractColumn<User, Void>(Model.of("Full Name")) {
+		columns.add(new AbstractColumn<User, Void>(Model.of("全名")) {
 
 			@Override
 			public String getCssClass() {
@@ -211,7 +211,7 @@ public class UserListPage extends AdministrationPage {
 			
 		});
 		
-		columns.add(new AbstractColumn<User, Void>(Model.of("Primary Email")) {
+		columns.add(new AbstractColumn<User, Void>(Model.of("主要邮箱")) {
 
 			@Override
 			public String getCssClass() {
@@ -229,13 +229,13 @@ public class UserListPage extends AdministrationPage {
 							"verificationStatus", Model.of(emailAddress)));
 					cellItem.add(fragment);
 				} else {
-					cellItem.add(new Label(componentId, "<i>Not specified</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>未指定</i>").setEscapeModelStrings(false));
 				}
 			}
 			
 		});
 		
-		columns.add(new AbstractColumn<User, Void>(Model.of("Auth Source")) {
+		columns.add(new AbstractColumn<User, Void>(Model.of("验证源")) {
 
 			@Override
 			public String getCssClass() {
@@ -271,7 +271,7 @@ public class UserListPage extends AdministrationPage {
 						super.updateAjaxAttributes(attributes);
 						
 						User user = rowModel.getObject();
-						String message = "Do you really want to delete user '" + user.getDisplayName() + "'?";
+						String message = "你真的要删除用户吗 '" + user.getDisplayName() + "'?";
 						attributes.getAjaxCallListeners().add(new ConfirmClickListener(message));
 					}
 
@@ -282,9 +282,9 @@ public class UserListPage extends AdministrationPage {
 							tag.put("disabled", "disabled");
 						User user = rowModel.getObject();
 						if (user.isRoot())
-							tag.put("title", "Root user can not be deleted");
+							tag.put("title", "无法删除root用户");
 						else if (user.equals(SecurityUtils.getUser()))
-							tag.put("title", "You can not delete yourself");
+							tag.put("title", "你不能删除自己");
 					}
 
 					@Override
@@ -386,7 +386,7 @@ public class UserListPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Users");
+		return new Label(componentId, "用户");
 	}
 
 }

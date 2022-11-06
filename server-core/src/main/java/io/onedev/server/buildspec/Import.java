@@ -70,8 +70,8 @@ public class Import implements Serializable, Validatable {
 	};
 	
 	// change Named("projectPath") also if change name of this property 
-	@Editable(order=100, name="Project", description="Specify project to import build spec from. "
-			+ "Default role of this project should have <tt>read code</tt> permission")
+	@Editable(order=100, name="项目", description="指定要从中导入构建规范的项目. "
+			+ "这个项目的默认角色应该有 <tt>read code</tt> 权限")
 	@ChoiceProvider("getProjectChoices")
 	@NotEmpty
 	public String getProjectPath() {
@@ -134,9 +134,7 @@ public class Import implements Serializable, Validatable {
 			return new ArrayList<>();
 	}
 
-	@Editable(order=500, placeholder="匿名访问", description="Specify a secret to be used as "
-			+ "access token to import build spec from above project. If not specified, OneDev will try "
-			+ "to import build spec anonymously")
+	@Editable(order=500, placeholder="匿名访问", description="指定一个secret用作访问令牌以从上述项目导入构建规范. 如果没有指定, 系统将尝试匿名导入构建规范")
 	@ChoiceProvider("getAccessTokenSecretChoices")
 	@Nullable
 	public String getAccessTokenSecret() {
@@ -189,7 +187,7 @@ public class Import implements Serializable, Validatable {
 			if (!subject.isPermitted(new ProjectPermission(project, new ReadCode())) 
 					&& !project.isPermittedByLoginUser(new ReadCode())) {
 				String errorMessage = String.format(
-						"Code read permission is required to import build spec (import project: %s)", 
+						"导入构建规范需要代码读取权限(导入项目: %s)", 
 						projectPath);
 				throw new ExplicitException(errorMessage);
 			}
@@ -198,12 +196,12 @@ public class Import implements Serializable, Validatable {
 			try {
 				buildSpec = project.getBuildSpec(commit);
 			} catch (BuildSpecParseException e) {
-				String errorMessage = String.format("Malformed build spec (import project: %s, tag: %s)", 
+				String errorMessage = String.format("格式错误的构建规范 (导入项目: %s, tag: %s)", 
 						projectPath, tag);
 				throw new ExplicitException(errorMessage);
 			}
 			if (buildSpec == null) {
-				String errorMessage = String.format("Build spec not defined (import project: %s, tag: %s)", 
+				String errorMessage = String.format("构建规范未定义 (导入项目: %s, tag: %s)", 
 						projectPath, tag);
 				throw new ExplicitException(errorMessage);
 			}
@@ -234,7 +232,7 @@ public class Import implements Serializable, Validatable {
 							String location = "imports[" + i + "]";
 							if (violation.getPropertyPath().toString().length() != 0)
 								location += "." + violation.getPropertyPath();
-				    		String message = String.format("Error validating imported build spec (import project: %s, location: %s, message: %s)", 
+				    		String message = String.format("验证导入的构建规范时出错 (导入项目: %s, location: %s, message: %s)", 
 				    				projectPath, location, violation.getMessage());
 				    		throw new ValidationException(message);
 						}

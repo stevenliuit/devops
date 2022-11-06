@@ -296,7 +296,7 @@ onedev.server.sourceView = {
 		cm.setGutterMarker(parseInt(line), "CodeMirror-problems", $gutter[0]);	
 	},
 	confirmUnsavedChanges: function() {
-		return $(".source-view").find("form.dirty").length == 0 || confirm("There are unsaved changes, discard and continue?"); 
+		return $(".source-view").find("form.dirty").length == 0 || confirm("有未保存的更改，丢弃并继续?"); 
 	},
 	addCommentGutter: function(line, comments) {
 		$(".comment-popover[data-line='" + line + "']").remove();

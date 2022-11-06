@@ -2,21 +2,21 @@
 	<div class="card service-desk-setting">
 		<div class="card-body">
 			<div class="alert alert-light alert-notice">
-			<p>The service desk feature enables user to create issues by sending emails to OneDev. Issues can be discussed over 
-			email completely, without the need of logging to OneDev. 
-			<p>System email address defined in mail setting should be 
-			used as recipient of such email, and project name may be appended to this address using to indicate where to create issues. 
-			For instance, if system email address 
-			is specified as <tt>support@example.com</tt>, sending email to <tt>support+myproject@example.com</tt> will create 
-			issue in <tt>myproject</tt>. If project name is not appended, OneDev will look up the project using 
-			project designation information below
-			<p class="text-info mb-0"> <b>NOTE: </b> Service desk only takes effect if <a wicket:id="mailSetting">mail setting</a> is defined and its 
-			<tt>check incoming email</tt> option is enabled. Also <a href='https://en.wikipedia.org/wiki/Email_address#Subaddressing' target='_blank'>sub addressing</a>
-			needs to be enabled for the system email address. Check <a href="https://medium.com/p/e56d62c27e57" target='_blank'>this tutorial</a> for details
+			<p>服务桌面功能使用户能够通过向系统发送电子邮件来创建问题。 有问题可以讨论
+			完全发送电子邮件，无需登录系统. 
+			<p>邮件设置中定义的系统电子邮件地址应为
+			用作此类电子邮件的收件人，项目名称可以附加到此地址，用于指示在哪里创建问题. 
+			例如，如果系统电子邮件地址
+			被指定为 <tt>support@example.com</tt>, 发送电子邮件至 <tt>support+myproject@example.com</tt> 将创建
+			发行于 <tt>myproject</tt>. 如果未附加项目名称，系统将使用
+			项目指定信息如下
+			<p class="text-info mb-0"> <b>NOTE: </b> 服务桌面仅在以下情况下生效 <a wicket:id="mailSetting">邮件设置</a> 被定义并且它的
+			<tt>检查收到的电子邮件</tt> 选项已启用. 还 <a href='https://en.wikipedia.org/wiki/Email_address#Subaddressing' target='_blank'>子寻址</a>
+			需要为系统电子邮件地址启用. 检查 <a href="https://medium.com/p/e56d62c27e57" target='_blank'>本教程</a> 查看详细
 			</div>
 			<form wicket:id="form" class="leave-confirm">
 				<div wicket:id="editor" class="mb-4"></div>
-				<input wicket:id="save" type="submit" class="btn btn-primary dirty-aware mr-1" value="Save Setting">
+				<input wicket:id="save" type="submit" class="btn btn-primary dirty-aware mr-1" value="保存设置">
 			</form>
 		</div>
 	</div>

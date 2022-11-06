@@ -44,8 +44,8 @@ public class PerformanceSetting implements Serializable {
 		}
 	}
 
-	@Editable(order=100, name="CPU Intensive Task Concurrency", description="Specify max concurrent CPU intensive "
-			+ "tasks, such as Git repository pull/push, repository index, etc.")
+	@Editable(order=100, name="CPU 密集型任务并发", description="指定最大并发 CPU 密集型 "
+			+ "任务, 比如 Git 仓库 pull/push, 存储库索引等.")
 	public int getCpuIntensiveTaskConcurrency() {
 		return cpuIntensiveTaskConcurrency;
 	}
@@ -54,10 +54,10 @@ public class PerformanceSetting implements Serializable {
 		this.cpuIntensiveTaskConcurrency = cpuIntensiveTaskConcurrency;
 	}
 
-	@Editable(order=400, name="Server Job Executor CPU Quota", description="Specify CPU quota to run build jobs "
-			+ "on server (via server docker/shell executor). This is normally <i>(CPU cores)*1000</i>, for "
-			+ "instance <i>4000</i> means 4 CPU cores. CPU requirements of all build jobs running on server "
-			+ "will be limited by this quota")
+	@Editable(order=400, name="服务器作业执行器 CPU 配额", description="指定 CPU 配额以运行构建作业 "
+			+ "在服务器上（通过服务器 docker/shell 执行器）. 这通常是 <i>(CPU cores)*1000</i>, 例如 "
+			+ " <i>4000</i> 表示 4 个 CPU 内核. 在服务器上运行的所有构建作业的 CPU 要求 "
+			+ "将受此配额限制")
 	public int getServerJobExecutorCpuQuota() {
 		return serverJobExecutorCpuQuota;
 	}
@@ -66,9 +66,9 @@ public class PerformanceSetting implements Serializable {
 		this.serverJobExecutorCpuQuota = serverJobExecutorCpuQuota;
 	}
 
-	@Editable(order=500, name="Server Job Executor Memory Quota", description="Specify memory quota in mega bytes "
-			+ "to run builds jobs on server (via server docker/shell executor). Memory requirements of all build "
-			+ "jobs running on server will be limited by this quota")
+	@Editable(order=500, name="服务器作业执行器内存配额", description="以兆字节指定内存配额 "
+			+ "在服务器上运行构建作业（通过服务器 docker/shell 执行器）. 所有构建的内存要求 "
+			+ "在服务器上运行的作业将受此配额限制")
 	public int getServerJobExecutorMemoryQuota() {
 		return serverJobExecutorMemoryQuota;
 	}
@@ -77,7 +77,7 @@ public class PerformanceSetting implements Serializable {
 		this.serverJobExecutorMemoryQuota = serverJobExecutorMemoryQuota;
 	}
 
-	@Editable(order=600, name="Max Git LFS File Size (MB)", description="Specify max git LFS file size in mega bytes")
+	@Editable(order=600, name="最大 Git LFS 文件大小 (MB)", description="以兆字节指定最大 git LFS 文件大小")
 	public int getMaxGitLFSFileSize() {
 		return maxGitLFSFileSize;
 	}
@@ -86,9 +86,9 @@ public class PerformanceSetting implements Serializable {
 		this.maxGitLFSFileSize = maxGitLFSFileSize;
 	}
 
-	@Editable(order=700, name="Max Upload File Size (MB)", description="Specify max size of uploaded file in mega bytes. "
-			+ "This applies to file uploaded to repository via web interface, as well as file uploaded to markdown content "
-			+ "(issue comment etc)")
+	@Editable(order=700, name="最大上传文件大小 (MB)", description="指定上传文件的最大大小（以兆字节为单位）. "
+			+ "这适用于通过 Web 界面上传到存储库的文件, 以及上传到markdown内容的文件 "
+			+ "(发表评论等)")
 	public int getMaxUploadFileSize() {
 		return maxUploadFileSize;
 	}
@@ -97,7 +97,7 @@ public class PerformanceSetting implements Serializable {
 		this.maxUploadFileSize = maxUploadFileSize;
 	}
 
-	@Editable(order=800, description="Maximum number of entries to return when search code in repository")
+	@Editable(order=800, description="在存储库中搜索代码时返回的最大条目数")
 	public int getMaxCodeSearchEntries() {
 		return maxCodeSearchEntries;
 	}

@@ -73,7 +73,7 @@ public class NewInvitationPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Invite Users");
+		return new Label(componentId, "邀请用户");
 	}
 
 }

@@ -4,17 +4,17 @@
 		<div wicket:id="feedback"></div>
     	<div class="head">
         	<a wicket:id="jobs" class="jobs">Jobs</a>
-        	<a wicket:id="services" class="services">Services</a>
-        	<a wicket:id="stepTemplates" class="step-templates">Step Templates</a>
-        	<a wicket:id="properties" class="properties">Properties</a>
-        	<a wicket:id="imports" class="imports">Imports</a>
+        	<a wicket:id="services" class="services">服务</a>
+        	<a wicket:id="stepTemplates" class="step-templates">步骤模板</a>
+        	<a wicket:id="properties" class="properties">属性</a>
+        	<a wicket:id="imports" class="imports">导入</a>
         </div>
         <div class="body d-flex flex-column flex-grow-1">
 			<div wicket:id="content" class="content"></div>
 		</div>
     </wicket:fragment>
     <wicket:fragment wicket:id="unparseableFrag">
-        <div class="title">Error parsing build spec</div>
+        <div class="title">解析构建规范时出错</div>
         <div wicket:id="errorMessage" class="error-message"></div>
     </wicket:fragment>
     <wicket:fragment wicket:id="jobsFrag">

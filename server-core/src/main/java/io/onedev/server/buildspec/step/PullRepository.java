@@ -40,9 +40,8 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.ShowCondition;
 
-@Editable(order=60, name="Pull from Remote", group=StepGroup.REPOSITORY_SYNC, description=""
-		+ "This step pulls specified refs from remote. For security reason, it is only allowed "
-		+ "to run from default branch")
+@Editable(order=60, name="从远程拉取", group=StepGroup.REPOSITORY_SYNC, description=""
+		+ "此步骤从远程拉取指定的参考. 出于安全原因，它只允许从默认分支运行")
 public class PullRepository extends SyncRepository {
 
 	private static final long serialVersionUID = 1L;
@@ -55,7 +54,7 @@ public class PullRepository extends SyncRepository {
 
 	private String refs = "refs/heads/* refs/tags/*";
 	
-	@Editable(order=205, description="If enabled, sync to child project instead of current project")
+	@Editable(order=205, description="如果启用，同步到子项目而不是当前项目")
 	public boolean isSyncToChildProject() {
 		return syncToChildProject;
 	}
@@ -64,7 +63,7 @@ public class PullRepository extends SyncRepository {
 		this.syncToChildProject = syncToChildProject;
 	}
 
-	@Editable(order=210, description="Select child project to sync to")
+	@Editable(order=210, description="选择要同步到的子项目")
 	@ShowCondition("isSyncToChildProjectEnabled")
 	@ChoiceProvider("getChildProjects")
 	@NotEmpty
@@ -90,10 +89,10 @@ public class PullRepository extends SyncRepository {
 		return choices;
 	}
 
-	@Editable(order=410, description="Specify space separated refs to pull from remote. '*' can be used in ref "
-			+ "name for wildcard match<br>"
-			+ "<b class='text-danger'>NOTE:</b> branch/tag protection rule will be ignored when update "
-			+ "branches/tags via this step")
+	@Editable(order=410, description="指定以空格分隔的引用以从远程拉取. '*' 可用于参考 "
+			+ "通配符匹配的名称<br>"
+			+ "<b class='text-danger'>NOTE:</b> branch/tag 更新时将忽略保护规则 "
+			+ "branches/tags 通过这一步")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
 	public String getRefs() {

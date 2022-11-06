@@ -78,7 +78,7 @@ public class DatabaseBackupPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Database Backup");
+		return new Label(componentId, "数据库备份");
 	}
 
 }

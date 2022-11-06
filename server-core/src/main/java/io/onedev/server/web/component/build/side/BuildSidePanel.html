@@ -2,14 +2,14 @@
 	<div class="build-side">
         <div wicket:id="general" class="general properties">
         	<div>
-        		<div class="name">Commit</div>
+        		<div class="name">提交</div>
         		<div class="value">
         			<a wicket:id="commit"><span wicket:id="label"></span></a>
         		</div>
         	</div>
 			<wicket:enclosure child="branch">
         	<div>
-        		<div class="name">Branch</div>
+        		<div class="name">分支</div>
         		<div class="value">
         			<a wicket:id="branch"><span wicket:id="label"></span></a>
         		</div>
@@ -39,42 +39,42 @@
             </div>
 			</wicket:enclosure>
             <div>
-                <div class="name">Submitted By</div>
+                <div class="name">提交人</div>
                 <div class="value">
                     <a wicket:id="submitter"></a>
                 </div>
             </div>
             <div>
-                <div class="name">Submitted At</div>
+                <div class="name">提交时间</div>
                 <div class="value"><span wicket:id="submitDate"></span></div>
             </div>
             <wicket:enclosure child="submitReason">
             <div>
-                <div class="name">Submit Reason</div>
+                <div class="name">提交原因</div>
                 <div class="value"><span wicket:id="submitReason"></span></div>
             </div>
             </wicket:enclosure>
             <wicket:enclosure child="retryDate">
             <div>
-                <div class="name">Retried At</div>
+                <div class="name">重试时间</div>
                 <div class="value"><span wicket:id="retryDate"></span></div>
             </div>
             </wicket:enclosure>
             <wicket:enclosure child="queueingTakes">            
             <div>
-                <div class="name">Queueing Takes</div>
+                <div class="name">排队需要</div>
                 <div class="value"><span wicket:id="queueingTakes"></span></div>
             </div>
             </wicket:enclosure>
             <wicket:enclosure child="runningTakes">
             <div>
-                <div class="name">Running Takes</div>
+                <div class="name">运行需要</div>
                 <div class="value"><span wicket:id="runningTakes"></span></div>
             </div>
             </wicket:enclosure>
             <wicket:enclosure child="canceller">
             <div>
-                <div class="name">Cancelled By</div>
+                <div class="name">取消者</div>
                 <div class="value">
                     <a wicket:id="canceller"></a>
                 </div>
@@ -83,14 +83,14 @@
         </div>
         <div wicket:id="labels" class="labels">
 			<div wicket:id="head" class="d-flex align-items-center justify-content-between mb-3">
-		        <span class="font-weight-bolder">Labels</span>
+		        <span class="font-weight-bolder">标签</span>
 				<wicket:svg href="gear" class="icon icon-sm"></wicket:svg>
 			</div>
 	        <div wicket:id="body" class="body d-flex align-items-center"></div>
-			<span wicket:id="labelsHelp" class="form-text font-size-sm text-muted"><wicket:svg href="bulb" class="icon icon-sm"/> Labels can be defined in Administration / Label Management</span>
+			<span wicket:id="labelsHelp" class="form-text font-size-sm text-muted"><wicket:svg href="bulb" class="icon icon-sm"/> 标签可以在管理/标签管理中定义</span>
         </div>
         <div wicket:id="pullRequest" class="pull-request">
-	        <div class="font-weight-bolder mb-3">Pull Request</div>
+	        <div class="font-weight-bolder mb-3">拉取请求</div>
 	        <div class="body d-flex align-items-center">
             	<a wicket:id="title" class="title mr-4"><span wicket:id="label"></span></a>
                 <div wicket:id="status" class="ml-auto status"></div>
@@ -110,13 +110,13 @@
             </wicket:enclosure>
             <span wicket:id="comma">, </span>
             <wicket:enclosure child="dependents">
-            <a wicket:id="dependents"><span wicket:id="label"></span></a> depends on me
+            <a wicket:id="dependents"><span wicket:id="label"></span></a> 取决于我
             </wicket:enclosure>
         </div>
 		<div wicket:id="reference"></div>
 		<wicket:enclosure child="delete">
 			<div class="actions">
-				<a wicket:id="delete" class="delete btn btn-light-danger">Delete</a>
+				<a wicket:id="delete" class="delete btn btn-light-danger">删除</a>
 			</div>
 		</wicket:enclosure>
 	</div>

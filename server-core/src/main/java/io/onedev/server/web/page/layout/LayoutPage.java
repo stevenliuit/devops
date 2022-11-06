@@ -351,10 +351,8 @@ public abstract class LayoutPage extends BasePage {
 		});
 		
 		Plugin product = AppLoader.getProduct();
-		sidebar.add(new ExternalLink("productVersion", "https://code.onedev.io/projects/160")
-				.setBody(Model.of("OneDev " + product.getVersion())));
-		sidebar.add(new ExternalLink("docLink", OneDev.getInstance().getDocRoot() + "/"));
-		sidebar.add(new BookmarkablePageLink<Void>("incompatibilities", IncompatibilitiesPage.class));
+		sidebar.add(new ExternalLink("productVersion", "/")
+				.setBody(Model.of("代码管理系统")));
 		
 		WebMarkupContainer topbar = new WebMarkupContainer("topbar");
 		add(topbar);
@@ -496,7 +494,7 @@ public abstract class LayoutPage extends BasePage {
 			userInfo.add(signOutLink);
 		} else {
 			ViewStateAwarePageLink<Void> signOutLink = new ViewStateAwarePageLink<Void>("signOut", LogoutPage.class); 
-			signOutLink.add(new Label("label", "Sign Out"));
+			signOutLink.add(new Label("label", "退出登陆"));
 			userInfo.add(signOutLink);
 		}
 

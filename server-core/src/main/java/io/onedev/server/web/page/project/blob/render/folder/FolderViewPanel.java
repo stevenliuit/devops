@@ -108,7 +108,7 @@ public class FolderViewPanel extends Panel {
 				Collections.sort(children);
 				
 				BlobIdent oldBuildSpecIdent = new BlobIdent(context.getBlobIdent().revision, 
-						".onedev-buildspec", FileMode.REGULAR_FILE.getBits());
+						".cicd-buildspec", FileMode.REGULAR_FILE.getBits());
 				BlobIdent buildSpecIdent = new BlobIdent(context.getBlobIdent().revision, 
 						BuildSpec.BLOB_PATH, FileMode.REGULAR_FILE.getBits());
 				if (children.contains(oldBuildSpecIdent)) {
@@ -242,7 +242,7 @@ public class FolderViewPanel extends Panel {
 				
 				if (context.getBlobIdent().path != null) 
 					pathLink.add(new Label("label", blobIdent.path.substring(context.getBlobIdent().path.length()+1)));
-				else if (blobIdent.path.equals(BuildSpec.BLOB_PATH) || blobIdent.path.equals(".onedev-buildspec"))
+				else if (blobIdent.path.equals(BuildSpec.BLOB_PATH) || blobIdent.path.equals(".cicd-buildspec"))
 					pathLink.add(new Label("label", "<b>" + HtmlEscape.escapeHtml5(blobIdent.path) + "</b>").setEscapeModelStrings(false));
 				else
 					pathLink.add(new Label("label", blobIdent.path));

@@ -16,8 +16,8 @@ import io.onedev.server.model.Build;
 import io.onedev.server.model.Project;
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(order=70, name="Push to Remote", group=StepGroup.REPOSITORY_SYNC, 
-		description="This step pushes current commit to same ref on remote")
+@Editable(order=70, name="推送到远程", group=StepGroup.REPOSITORY_SYNC, 
+		description="此步骤将当前提交推送到远程上的相同 ref")
 public class PushRepository extends SyncRepository {
 
 	private static final long serialVersionUID = 1L;

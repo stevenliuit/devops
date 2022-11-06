@@ -28,7 +28,7 @@ import io.onedev.server.web.editable.annotation.OmitName;
 import io.onedev.server.web.editable.annotation.ParamSpecProvider;
 import io.onedev.server.web.editable.annotation.VariableOption;
 
-@Editable(order=10000, name="Use Step Template", description="Run specified step template")
+@Editable(order=10000, name="使用步骤模板", description="运行指定的步骤模板")
 public class UseTemplateStep extends Step {
 
 	private static final long serialVersionUID = 1L;

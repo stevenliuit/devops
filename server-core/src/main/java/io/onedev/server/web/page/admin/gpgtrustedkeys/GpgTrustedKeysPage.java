@@ -138,7 +138,7 @@ public class GpgTrustedKeysPage extends AdministrationPage {
 			
 		});
 		
-		columns.add(new AbstractColumn<Long, Void>(Model.of("Email Addresses")) {
+		columns.add(new AbstractColumn<Long, Void>(Model.of("电子邮件地址")) {
 
 			@Override
 			public void populateItem(Item<ICellPopulator<Long>> cellItem, String componentId,
@@ -251,7 +251,7 @@ public class GpgTrustedKeysPage extends AdministrationPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "GPG Trusted Keys");
+		return new Label(componentId, "GPG 可信密钥");
 	}
 
 }

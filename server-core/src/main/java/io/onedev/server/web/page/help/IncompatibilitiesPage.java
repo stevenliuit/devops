@@ -113,7 +113,7 @@ public class IncompatibilitiesPage extends LayoutPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Incompatibilities");
+		return new Label(componentId, "不兼容性");
 	}
 
 }

@@ -186,7 +186,7 @@ public abstract class RunJobLink extends AjaxLink<Void> {
 
 				@Override
 				protected Component newMessageContent(String componentId) {
-					return new Label(componentId, "No refs to build on behalf of");
+					return new Label(componentId, "没有可以代表建立的判断");
 				}
 				
 			};

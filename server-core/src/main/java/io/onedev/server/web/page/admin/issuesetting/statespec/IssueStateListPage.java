@@ -139,7 +139,7 @@ public class IssueStateListPage extends IssueSettingPage {
 				if (description != null)
 					cellItem.add(new Label(componentId, description));
 				else
-					cellItem.add(new Label(componentId, "<i>No description</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>没有说明</i>").setEscapeModelStrings(false));
 			}
 			
 			@Override
@@ -249,7 +249,7 @@ public class IssueStateListPage extends IssueSettingPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Issue States");
+		return new Label(componentId, "问题状态");
 	}
 	
 }

@@ -25,8 +25,8 @@ public class DefaultFixedIssueFilter implements Serializable {
 	
 	private String issueQuery;
 
-	@Editable(order=100, description="Specify space-separated jobs. Use '*' or '?' for wildcard match. "
-			+ "Prefix with '-' to exclude")
+	@Editable(order=100, description="指定以空格分隔的作业。 使用“*”或“？” 用于通配符匹配. "
+			+ "前缀 '-' 排除")
 	@Patterns(suggester = "suggestJobNames")
 	@NotEmpty
 	public String getJobNames() {
@@ -37,7 +37,7 @@ public class DefaultFixedIssueFilter implements Serializable {
 		this.jobNames = jobNames;
 	}
 
-	@Editable(order=200, description="Specify a default query to filter/order fixed issues of specified jobs")
+	@Editable(order=200, description="指定默认查询以过滤/订购指定作业的已修复问题")
 	@IssueQuery(withCurrentUserCriteria = true)
 	@NotEmpty
 	public String getIssueQuery() {

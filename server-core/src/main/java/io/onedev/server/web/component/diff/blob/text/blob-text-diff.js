@@ -797,7 +797,7 @@ onedev.server.blobTextDiff = {
 	},
 	confirmUnsavedChanges: function($container) {
 		return $("#"+$container.data("commentContainerId")).find("form.dirty").length == 0 
-				|| confirm("There are unsaved changes, discard and continue?"); 
+				|| confirm("有未保存的更改，丢弃并继续?"); 
 	},
 	expand: function(containerId, blockIndex, expandedHtml) {
 		var $container = $("#" + containerId);

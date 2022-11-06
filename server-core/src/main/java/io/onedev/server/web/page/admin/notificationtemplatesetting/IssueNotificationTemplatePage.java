@@ -101,7 +101,7 @@ public class IssueNotificationTemplatePage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Issue Notification Template");
+		return new Label(componentId, "问题通知模板");
 	}
 
 }

@@ -64,7 +64,7 @@ public class ProjectServiceDeskSettingPage extends ProjectSettingPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "<span class='text-truncate'>Service Desk Setting</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-truncate'>服务桌面设置</span>").setEscapeModelStrings(false);
 	}
 
 	@Override

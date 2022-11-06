@@ -15,8 +15,8 @@ public class ParentBean implements Serializable {
 
 	private String parentPath;
 
-	@Editable(name="Parent Project", placeholder="No parent", description="Settings and permissions "
-			+ "of parent project will be inherited by this project")
+	@Editable(name="父项目", placeholder="没有父项目", description="设置和权限 "
+			+ "的父项目将被此项目继承")
 	@ProjectPath
 	@ParentChoice
 	public String getParentPath() {

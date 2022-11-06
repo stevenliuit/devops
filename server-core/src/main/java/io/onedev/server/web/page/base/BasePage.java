@@ -361,7 +361,7 @@ public abstract class BasePage extends WebPage {
 	}
 	
 	protected String getPageTitle() {
-		return "OneDev: Self-hosted Git Server with Built-in CI/CD";
+		return "管理系统: 内置的自托管 Git 服务器 CI/CD";
 	}
 
 	protected int getPageRefreshInterval() {

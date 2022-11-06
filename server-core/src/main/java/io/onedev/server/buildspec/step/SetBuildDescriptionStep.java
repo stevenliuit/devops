@@ -19,7 +19,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.Markdown;
 
-@Editable(order=265, name="Set Build Description")
+@Editable(order=265, name="设置构建描述")
 public class SetBuildDescriptionStep extends ServerSideStep {
 
 	private static final long serialVersionUID = 1L;

@@ -42,12 +42,12 @@ public class NewMilestonePage extends ProjectPage {
 				Milestone milestoneWithSameName = milestoneManager.findInHierarchy(getProject(), milestone.getName());
 				if (milestoneWithSameName != null) {
 					editor.error(new Path(new PathNode.Named("name")),
-							"This name has already been used by another milestone in the project hierarchy");
+							"此名称已被项目层次结构中的另一个里程碑使用");
 				} 
 				if (editor.isValid()){
 					milestone.setProject(getProject());
 					milestoneManager.save(milestone);
-					Session.get().success("New milestone created");
+					Session.get().success("创建了新的里程碑");
 					setResponsePage(MilestoneIssuesPage.class, MilestoneIssuesPage.paramsOf(getProject(), milestone, null));
 				}
 				
@@ -69,7 +69,7 @@ public class NewMilestonePage extends ProjectPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Create Milestone");
+		return new Label(componentId, "创建里程碑");
 	}
 
 	@Override

@@ -63,7 +63,7 @@ public class UserTwoFactorAuthenticationPage extends UserPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Two Factor Authentication");
+		return new Label(componentId, "双因素身份验证");
 	}
 
 }

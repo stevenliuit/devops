@@ -244,7 +244,7 @@ public class ProjectIssueListPage extends ProjectIssuesPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Issues");
+		return new Label(componentId, "问题");
 	}
 	
 	@Override

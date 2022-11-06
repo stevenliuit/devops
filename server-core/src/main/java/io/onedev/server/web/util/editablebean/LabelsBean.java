@@ -18,7 +18,7 @@ public class LabelsBean implements Serializable {
 
 	private List<String> labels = new ArrayList<>();
 
-	@Editable(description="Labels can be defined in Administration / Label Management")
+	@Editable(description="标签可以在管理/标签管理中定义")
 	@ChoiceProvider("getLabelChoices")
 	public List<String> getLabels() {
 		return labels;

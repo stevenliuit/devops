@@ -64,7 +64,7 @@ public class Group extends AbstractEntity implements Permission {
 		this.name = name;
 	}
 
-	@Editable(order=200, description="Optionally describe the group")
+	@Editable(order=200, description="可选地描述组")
 	public String getDescription() {
 		return description;
 	}
@@ -73,7 +73,7 @@ public class Group extends AbstractEntity implements Permission {
 		this.description = description;
 	}
 
-	@Editable(order=300, name="Is Site Admin")
+	@Editable(order=300, name="是网站管理员")
 	public boolean isAdministrator() {
 		return administrator;
 	}
@@ -87,7 +87,7 @@ public class Group extends AbstractEntity implements Permission {
 		return !(boolean) EditContext.get().getInputValue("administrator");
 	}
 
-	@Editable(order=300, name="Can Create Root Projects", description="Whether or not to allow creating root projects (project without parent)")
+	@Editable(order=300, name="可以创建根项目", description="是否允许创建根项目（无父项目）")
 	@ShowCondition("isAdministratorDisabled")
 	public boolean isCreateRootProjects() {
 		return createRootProjects;
@@ -97,9 +97,9 @@ public class Group extends AbstractEntity implements Permission {
 		this.createRootProjects = createRootProjects;
 	}
 
-	@Editable(order=400, name="Enforce Two-factor Authentication", description="Check this to enforce "
-			+ "all users in this group to set up two-factor authentication upon next login. Users will "
-			+ "not be able to disable two-factor authentication themselves if this option is set")
+	@Editable(order=400, name="实施双因素身份验证", description="选中此项以强制执行 "
+			+ "该组中的所有用户在下次登录时设置双重身份验证。 用户 "
+			+ "如果设置了此选项，则无法自行禁用双重身份验证")
 	public boolean isEnforce2FA() {
 		return enforce2FA;
 	}

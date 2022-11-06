@@ -45,8 +45,8 @@ public class TagProtection implements Serializable {
 		this.enabled = enabled;
 	}
 
-	@Editable(order=100, description="Specify space-separated tags to be protected. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude")
+	@Editable(order=100, description="指定要保护的以空格分隔的标签. 使用 '**', '*' 或者 '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除")
 	@Patterns(suggester = "suggestTags", path=true)
 	@NotEmpty
 	public String getTags() {
@@ -64,7 +64,7 @@ public class TagProtection implements Serializable {
 	
 	@Editable(order=150, name="Applicable Users", description="Rule will apply if user operating the tag matches criteria specified here")
 	@io.onedev.server.web.editable.annotation.UserMatch
-	@NotEmpty(message="may not be empty")
+	@NotEmpty(message="不能为空")
 	public String getUserMatch() {
 		return userMatch;
 	}
@@ -82,7 +82,7 @@ public class TagProtection implements Serializable {
 			return new ArrayList<>();
 	}
 	
-	@Editable(order=200, description="Check this to prevent tag update")
+	@Editable(order=200, description="选中此项以防止标签更新")
 	public boolean isPreventUpdate() {
 		return preventUpdate;
 	}
@@ -91,7 +91,7 @@ public class TagProtection implements Serializable {
 		this.preventUpdate = preventUpdate;
 	}
 
-	@Editable(order=300, description="Check this to prevent tag deletion")
+	@Editable(order=300, description="选中此项以防止标签删除")
 	public boolean isPreventDeletion() {
 		return preventDeletion;
 	}
@@ -100,7 +100,7 @@ public class TagProtection implements Serializable {
 		this.preventDeletion = preventDeletion;
 	}
 
-	@Editable(order=400, description="Check this to prevent tag creation")
+	@Editable(order=400, description="选中此项以防止创建标签")
 	public boolean isPreventCreation() {
 		return preventCreation;
 	}
@@ -109,7 +109,7 @@ public class TagProtection implements Serializable {
 		this.preventCreation = preventCreation;
 	}
 
-	@Editable(order=560, description="Check this to require valid signature of head commit")
+	@Editable(order=560, description="选中此项以要求头部提交的有效签名")
 	public boolean isSignatureRequired() {
 		return signatureRequired;
 	}
@@ -125,8 +125,8 @@ public class TagProtection implements Serializable {
 	public Usage onDeleteGroup(String groupName) {
 		Usage usage = new Usage();
 		if (UserMatch.isUsingGroup(userMatch, groupName))
-			usage.add("applicable users");
-		return usage.prefix("tag protection '" + getTags() + "'");
+			usage.add("适用用户");
+		return usage.prefix("标签保护 '" + getTags() + "'");
 	}
 	
 	public void onRenameUser(String oldName, String newName) {
@@ -136,15 +136,15 @@ public class TagProtection implements Serializable {
 	public Usage onDeleteUser(String userName) {
 		Usage usage = new Usage();
 		if (UserMatch.isUsingUser(userMatch, userName))
-			usage.add("applicable users");
-		return usage.prefix("tag protection '" + getTags() + "'");
+			usage.add("适用用户");
+		return usage.prefix("标签保护 '" + getTags() + "'");
 	}
 
 	public Usage getTagUsage(String tagName) {
 		Usage usage = new Usage();
 		PatternSet patternSet = PatternSet.parse(getTags());
 		if (patternSet.getIncludes().contains(tagName) || patternSet.getExcludes().contains(tagName))
-			usage.add("tag protection '" + getTags() + "'");
+			usage.add("标签保护 '" + getTags() + "'");
 		return usage;
 	}
 	

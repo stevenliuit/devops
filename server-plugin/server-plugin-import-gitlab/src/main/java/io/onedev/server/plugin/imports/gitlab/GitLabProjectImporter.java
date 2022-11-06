@@ -20,7 +20,7 @@ public class GitLabProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to GitLab";
+			return "从 GitLab 验证";
 		}
 
 		@Override

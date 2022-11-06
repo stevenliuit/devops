@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(name="Active Directory", order=100)
+@Editable(name="活动目录", order=100)
 public class ActiveDirectoryAuthenticator extends LdapAuthenticator {
 
 	private static final long serialVersionUID = 1L;
@@ -12,7 +12,7 @@ public class ActiveDirectoryAuthenticator extends LdapAuthenticator {
 	private String groupSearchBase;
 	
     @Editable(order=100, name="LDAP URL", description=
-    	"Specifies LDAP URL of the Active Directory server, for example: <i>ldap://ad-server</i>, or <i>ldaps://ad-server</i>")
+    	"指定 Active Directory 服务器的 LDAP URL，例如: <i>ldap://ad-server</i>, or <i>ldaps://ad-server</i>")
     @NotEmpty
 	@Override
 	public String getLdapUrl() {
@@ -25,10 +25,9 @@ public class ActiveDirectoryAuthenticator extends LdapAuthenticator {
 	}
 
 	@Editable(order=300, description=""
-			+ "To authenticate user against Active Directory and retrieve associated attributes and groups, OneDev "
-			+ "would have to first authenticate itself against the Active Directory server and OneDev does that by "
-			+ "sending 'manager' DN and password. The manager DN should be specified in form of "
-			+ "<i>&lt;account name&gt;@&lt;domain&gt;</i>, for instance: <i>onedev@example.com</i>")
+			+ "针对 Active Directory 对用户进行身份验证并检索关联的属性和组, "
+			+ "必须首先针对 Active Directory 服务器对自身进行身份验证，而系统通过 "
+			+ "<i>&lt;帐户名称&gt;@&lt;域名&gt;</i>, 例如: <i>onedev@example.com</i>")
 	@NotEmpty
 	@Override
 	public String getManagerDN() {
@@ -41,7 +40,7 @@ public class ActiveDirectoryAuthenticator extends LdapAuthenticator {
 	}
 
 	@Editable(order=500, description=
-		"Specifies the base node for user search. For example: <i>cn=Users, dc=example, dc=com</i>")
+		"指定用户搜索的基节点. 例如: <i>cn=Users, dc=example, dc=com</i>")
 	@NotEmpty
 	@Override
 	public String getUserSearchBase() {
@@ -63,11 +62,11 @@ public class ActiveDirectoryAuthenticator extends LdapAuthenticator {
 		super.setUserSearchFilter(userSearchFilter);
 	}
 
-	@Editable(order=1000, placeholder="Do not retrieve groups", description=""
-			+ "Optionally specify group search base if you want to retrieve group membership information "
-			+ "of the user. For example: <i>cn=Users, dc=example, dc=com</i>. To give appropriate "
-			+ "permissions to a Active Directory group, a OneDev group with same name should be defined. "
-			+ "Leave empty to manage group memberships at OneDev side")
+	@Editable(order=1000, placeholder="不检索组", description=""
+			+ "如果要检索组成员身份信息，可以选择指定组搜索基础 "
+			+ "的用户. 例如: <i>cn=Users, dc=example, dc=com</i>. 给予适当的 "
+			+ "对Active Directory组的权限, 应定义具有相同名称的系统组. "
+			+ "保留为空以管理系统端的组成员身份")
 	public String getGroupSearchBase() {
 		return groupSearchBase;
 	}

@@ -28,8 +28,8 @@ public class UserChoiceField extends FieldSpec {
 	
 	private DefaultMultiValueProvider defaultMultiValueProvider;
 	
-	@Editable(order=1000, name="Available Choices")
-	@NotNull(message="may not be empty")
+	@Editable(order=1000, name="可用选择")
+	@NotNull(message="不能为空")
 	@Valid
 	public ChoiceProvider getChoiceProvider() {
 		return choiceProvider;

@@ -24,7 +24,7 @@ public abstract class PublishReportStep extends ServerSideStep {
 	
 	private transient PatternSet patternSet;
 
-	@Editable(order=50, description="Specify report name")
+	@Editable(order=50, description="指定报告名称")
 	@PathSegment
 	@NotEmpty
 	public String getReportName() {
@@ -44,7 +44,7 @@ public abstract class PublishReportStep extends ServerSideStep {
 		return PatternSet.parse(getFilePatterns());
 	}
 	
-	@Editable(order=100, description="Specify files relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> to publish. Use * or ? for pattern match")
+	@Editable(order=100, description="指定相对于的文件 <a href='$docRoot/pages/concepts.md#job-workspace'>工作区</a> 发布. 使用 * 或者 ? 用于模式匹配")
 	@Interpolative(variableSuggester="suggestVariables")
 	@Patterns(path=true)
 	@NotEmpty

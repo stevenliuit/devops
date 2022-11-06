@@ -18,7 +18,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Patterns;
 import io.onedev.server.web.util.SuggestionUtils;
 
-@Editable(order=200, name="Tag creation")
+@Editable(order=200, name="标记创建")
 public class TagCreateTrigger extends JobTrigger {
 
 	private static final long serialVersionUID = 1L;
@@ -27,10 +27,10 @@ public class TagCreateTrigger extends JobTrigger {
 	
 	private String branches;
 	
-	@Editable(name="Tags", order=100, placeholder="任何tag", description=""
-			+ "Optionally specify space-separated tags to check. Use '**', '*' or '?' for "
-			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all tags")
+	@Editable(name="标签", order=100, placeholder="任何tag", description=""
+			+ "（可选）指定要检查的以空格分隔的标记. 使用 '**', '*' 或者 '?' 对于 "
+			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀为 '-' 以排除。保留为空以匹配所有标记")
 	@Patterns(suggester="suggestTags", path=true)
 	public String getTags() {
 		return tags;
@@ -45,11 +45,11 @@ public class TagCreateTrigger extends JobTrigger {
 		return SuggestionUtils.suggestTags(Project.get(), matchWith);
 	}
 
-	@Editable(name="On Branches", order=200, placeholder="任何分支", description=""
-			+ "This trigger will only be applicable if tagged commit is on branches specified here. "
-			+ "Multiple branches should be separated with spaces. Use '**', '*' or '?' for "
-			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all branches")
+	@Editable(name="在分支上", order=200, placeholder="任何分支", description=""
+			+ "仅当标记的提交在此处指定的分支上时，此触发器才适用. "
+			+ "多个分支应使用空格分隔. 使用 '**', '*' 或者 '?' 对于 "
+			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀为 '-' 以排除。保留为空以匹配所有分支")
 	@Patterns(suggester="suggestBranches", path=true)
 	public String getBranches() {
 		return branches;
@@ -88,7 +88,7 @@ public class TagCreateTrigger extends JobTrigger {
 
 					@Override
 					public String getDescription() {
-						return "Tag '" + updatedTag + "' is created";
+						return "Tag '" + updatedTag + "' 已创建";
 					}
 					
 				};
@@ -99,11 +99,11 @@ public class TagCreateTrigger extends JobTrigger {
 
 	@Override
 	public String getTriggerDescription() {
-		String description = "When create tags";
+		String description = "创建Tag时";
 		if (tags != null)
 			description += " '" + tags + "'";
 		if (branches != null)
-			description += " on branches '" + branches + "'";
+			description += " 在分支上 '" + branches + "'";
 		return description;
 	}
 

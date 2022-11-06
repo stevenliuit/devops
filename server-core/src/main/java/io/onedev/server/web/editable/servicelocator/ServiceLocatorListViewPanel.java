@@ -180,7 +180,7 @@ class ServiceLocatorListViewPanel extends Panel {
 
 						@Override
 						protected Component newTitle(String componentId) {
-							return new Label(componentId, "Service Locator");
+							return new Label(componentId, "服务定位器");
 						}
 
 						@Override

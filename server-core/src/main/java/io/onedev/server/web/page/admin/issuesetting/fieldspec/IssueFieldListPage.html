@@ -1,16 +1,15 @@
 <wicket:extend>
 	<div class="issue-fields">
 		<div class="text-muted mb-4">
-			<wicket:svg href="bulb" class="icon"/> Define all custom issue fields here. Each project can 
-			decide to use all or a subset of these fields via its issue transition setting. 
-			<b class="text-warning">NOTE: </b> Newly defined fields by default only appear in new issues. 
-			Batch edit existing issues from issue list page if you want them to have these new fields  
+			<wicket:svg href="bulb" class="icon"/> 在此处定义所有自定义问题字段。 每个项目都可以通过其问题转换设置决定使用所有这些字段或这些字段的子集. 
+			<b class="text-warning">NOTE: </b> 默认情况下，新定义的字段仅出现在新问题中. 
+			如果您希望它们具有这些新字段，请从问题列表页面批量编辑现有问题 
 		</div>
 		<a wicket:id="addNew" class="btn btn-icon btn-primary mb-4" title="Add custom field"><wicket:svg href="plus" class="icon"></wicket:svg></a>
 		<table wicket:id="issueFields" class="table table-hover"></table>
 	</div>
 	<wicket:fragment wicket:id="actionColumnFrag">
-		<a wicket:id="edit" class="btn btn-xs btn-icon btn-light btn-hover-primary mr-1" title="More"><wicket:svg href="ellipsis" class="icon"></wicket:svg></a>
-		<a wicket:id="delete" class="btn btn-xs btn-icon btn-light btn-hover-danger" title="Delete"><wicket:svg href="trash" class="icon"></wicket:svg></a>
+		<a wicket:id="edit" class="btn btn-xs btn-icon btn-light btn-hover-primary mr-1" title="查看"><wicket:svg href="ellipsis" class="icon"></wicket:svg></a>
+		<a wicket:id="delete" class="btn btn-xs btn-icon btn-light btn-hover-danger" title="删除"><wicket:svg href="trash" class="icon"></wicket:svg></a>
 	</wicket:fragment>
 </wicket:extend>

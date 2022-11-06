@@ -7,10 +7,10 @@ import io.onedev.server.event.pullrequest.PullRequestMergePreviewCalculated;
 import io.onedev.server.model.PullRequest;
 import io.onedev.server.web.editable.annotation.Editable;
 
-@Editable(order=300, name="Pull request open or update", description=""
-		+ "Job will run on the merge commit of target branch and source branch.<br>"
-		+ "<b class='text-info'>NOTE:</b> Unless required by branch protection rule, this trigger will ignore commits "
-		+ "with message containing <code>[skip ci]</code>, <code>[ci skip]</code>, <code>[no ci]</code>, "
+@Editable(order=300, name="拉取请求打开或更新", description=""
+		+ "作业将在目标分支和源分支的合并提交时运行.<br>"
+		+ "<b class='text-info'>NOTE:</b> 除非分支保护规则要求, 此触发器将忽略提交 "
+		+ "消息包含 <code>[skip ci]</code>, <code>[ci skip]</code>, <code>[no ci]</code>, "
 		+ "<code>[skip job]</code>, <code>[job skip]</code>, or <code>[no job]</code>")
 public class PullRequestUpdateTrigger extends PullRequestTrigger {
 
@@ -29,7 +29,7 @@ public class PullRequestUpdateTrigger extends PullRequestTrigger {
 
 	@Override
 	public String getTriggerDescription() {
-		return getTriggerDescription("open/update");
+		return getTriggerDescription("打开/更新");
 	}
 
 }

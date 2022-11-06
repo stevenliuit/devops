@@ -88,7 +88,7 @@ class ParamSpecListViewPanel extends Panel {
 							@Override
 							protected Component newTitle(String componentId) {
 								String paramType = EditableUtils.getDisplayName(paramSpecs.get(paramIndex).getClass());
-								return new Label(componentId, "Parameter Spec (type: " + paramType + ")");
+								return new Label(componentId, "参数规格 (type: " + paramType + ")");
 							}
 
 							@Override

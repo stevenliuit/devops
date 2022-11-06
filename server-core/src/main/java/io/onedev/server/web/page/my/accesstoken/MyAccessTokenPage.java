@@ -32,7 +32,7 @@ public class MyAccessTokenPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "My Access Token");
+		return new Label(componentId, "我的访问令牌");
 	}
 
 }

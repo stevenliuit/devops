@@ -43,10 +43,10 @@ public class SenderAuthorization implements Serializable {
 		this.senderEmails = senderEmails;
 	}
 
-	@Editable(order=150, placeholder="任何项目", description="Specify space-separated projects "
-			+ "authorized to senders above. Use '**' or '*' or '?' for "
-			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to authorize all projects")
+	@Editable(order=150, placeholder="任何项目", description="指定空格分隔的项目 "
+			+ "授权给以上发件人. 使用 '**' 或者 '*' 或者 '?' 为了 "
+			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. "
+			+ "前缀 '-' 排除。 留空以授权所有项目")
 	@Patterns(suggester="suggestProjects", path=true)
 	public String getAuthorizedProjects() {
 		return authorizedProjects;
@@ -61,7 +61,7 @@ public class SenderAuthorization implements Serializable {
 		return SuggestionUtils.suggestProjectPaths(matchWith);
 	}
 	
-	@Editable(order=175, name="Authorized Role", description="Specify authorized role for above projects")
+	@Editable(order=175, name="授权角色", description="为上述项目指定授权角色")
 	@RoleChoice
 	@NotEmpty
 	public String getAuthorizedRoleName() {
@@ -75,7 +75,7 @@ public class SenderAuthorization implements Serializable {
 	public Role getAuthorizedRole() {
 		Role role = OneDev.getInstance(RoleManager.class).find(authorizedRoleName);
 		if (role == null)
-			throw new ExplicitException("Undefined role: " + authorizedRoleName);
+			throw new ExplicitException("未定义的角色: " + authorizedRoleName);
 		return role;
 	}
 	

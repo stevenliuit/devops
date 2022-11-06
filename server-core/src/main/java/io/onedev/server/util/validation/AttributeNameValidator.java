@@ -27,15 +27,15 @@ public class AttributeNameValidator implements ConstraintValidator<AttributeName
 		String message = this.message;
 		if (!PATTERN.matcher(value).matches()) {
 			if (message.length() == 0) {
-				message = "Should start and end with alphanumeric or underscore. "
-						+ "Only alphanumeric, underscore, dash, space and dot are allowed in the middle.";
+				message = "应该以字母数字或下划线开头和结尾. "
+						+ "中间只允许使用字母数字、下划线、破折号和点。";
 			}
 			constraintContext.buildConstraintViolationWithTemplate(message).addConstraintViolation();
 			return false;
 		} else if (Agent.ALL_FIELDS.contains(value)) {
 			constraintContext.disableDefaultConstraintViolation();
 			if (message.length() == 0)
-				message = "'" + value + "' is reserved";
+				message = "'" + value + "' 被预定了";
 			constraintContext.buildConstraintViolationWithTemplate(message).addConstraintViolation();
 			return false;
 		} else {

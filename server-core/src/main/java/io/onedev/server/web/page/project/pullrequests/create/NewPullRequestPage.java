@@ -593,9 +593,9 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 			@Override
 			public String getObject() {
 				if (requestModel.getObject().isOpen())
-					return "This change is already opened for merge by ";
+					return "此更改已打开以供合并 ";
 				else 
-					return "This change is squashed/rebased onto base branch via ";
+					return "此更改通过以下方式压缩/重新定位到基本分支 ";
 			}
 			
 		}).setEscapeModelStrings(false));
@@ -676,7 +676,7 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 				ProjectAndBranch source = getPullRequest().getSource();
 				if (!target.getObjectName().equals(getPullRequest().getTarget().getObjectName()) 
 						|| !source.getObjectName().equals(getPullRequest().getSource().getObjectName())) {
-					getSession().warn("Either target branch or source branch has new commits just now, please re-check.");
+					getSession().warn("目标分支或源分支刚刚有新的提交，请重新检查.");
 					setResponsePage(NewPullRequestPage.class, paramsOf(getProject(), target, source));
 				} else {
 					getPullRequest().setSource(source);
@@ -774,7 +774,7 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 						
 						@Override
 						public Serializable getErrorMessage(IErrorMessageSource messageSource) {
-							return "Description too long";
+							return "说明太长";
 						}
 						
 					});
@@ -869,20 +869,20 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 				PullRequest request = getPullRequest();
 				MergePreview mergePreview = new MergePreview(request.getTarget().getObjectName(), 
 						request.getLatestUpdate().getHeadCommitHash(), request.getMergeStrategy(), null);
-				ObjectId merged = mergePreview.getMergeStrategy().merge(request, "Pull request merge preview");
+				ObjectId merged = mergePreview.getMergeStrategy().merge(request, "拉取请求合并预览");
 				if (merged != null)
 					mergePreview.setMergeCommitHash(merged.name());
 				request.setLastMergePreview(mergePreview);
 				
 				if (merged != null) {
-					String html = String.format("<svg class='icon mt-n1 mr-1'><use xlink:href='%s'/></svg> Able to merge without conflicts", 
+					String html = String.format("<svg class='icon mt-n1 mr-1'><use xlink:href='%s'/></svg> 能够无冲突地合并", 
 							SpriteImage.getVersionedHref("tick-circle-o"));
 					Component result = new Label(componentId, html);
 					result.add(AttributeAppender.append("class", "no-conflict"));
 					result.setEscapeModelStrings(false);
 					return result;
 				} else { 
-					String html = String.format("<svg class='icon mt-n1 mr-1'><use xlink:href='%s'/></svg> There are merge conflicts. "
+					String html = String.format("<svg class='icon mt-n1 mr-1'><use xlink:href='%s'/></svg> 存在合并冲突. "
 							+ "You can still create the pull request though", SpriteImage.getVersionedHref("warning-o"));
 					Component result = new Label(componentId, html);
 					result.add(AttributeAppender.append("class", "conflict"));
@@ -893,7 +893,7 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 
 			@Override
 			public Component getLoadingComponent(String markupId) {
-				String html = String.format("<svg class='icon spin mt-n1 mr-1'><use xlink:href='%s'/></svg> Calculating merge preview...", 
+				String html = String.format("<svg class='icon spin mt-n1 mr-1'><use xlink:href='%s'/></svg> 计算合并预览...", 
 						SpriteImage.getVersionedHref("loading"));
 				Component component = new Label(markupId, html);
 				component.add(AttributeAppender.append("class", "calculating"));
@@ -1071,7 +1071,7 @@ public class NewPullRequestPage extends ProjectPage implements RevisionDiff.Anno
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "<span class='text-nowrap'>Create Pull Request</span>").setEscapeModelStrings(false);
+		return new Label(componentId, "<span class='text-nowrap'>创建拉取请求</span>").setEscapeModelStrings(false);
 	}
 	
 	@Override

@@ -124,7 +124,7 @@ public class IssueImportPage<Where extends Serializable, What extends Serializab
 					
 					@Override
 					protected String getTitle() {
-						return "Test importing from " + importer.getName();
+						return "从" + importer.getName() + "测试";
 					}
 
 					@Override
@@ -162,7 +162,7 @@ public class IssueImportPage<Where extends Serializable, What extends Serializab
 	
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Importing Issues from " + importer.getName());
+		return new Label(componentId, "从" + importer.getName() + "导入问题");
 	}
 	
 	public static PageParameters paramsOf(Project project, String importer) {

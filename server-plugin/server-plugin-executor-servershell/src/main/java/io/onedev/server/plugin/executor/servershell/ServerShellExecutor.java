@@ -295,7 +295,7 @@ public class ServerShellExecutor extends JobExecutor implements Testable<TestDat
 		@Editable
 		@OmitName
 		@Code(language=Code.SHELL)
-		@Size(min=1, message="May not be empty")
+		@Size(min=1, message="不能为空")
 		public List<String> getCommands() {
 			return commands;
 		}

@@ -52,11 +52,11 @@ public abstract class AccessTokenPanel extends Panel {
 			public void onClick() {
 				getUser().setAccessToken(RandomStringUtils.randomAlphanumeric(User.ACCESS_TOKEN_LEN));
 				OneDev.getInstance(UserManager.class).save(getUser());
-				Session.get().success("Access token regenerated");
+				Session.get().success("访问令牌已重新生成");
 				setResponsePage(getPage());
 			}
 			
-		}.add(new ConfirmClickModifier("This will invalidate current token and generate a new one, do you want to continue?")));
+		}.add(new ConfirmClickModifier("这将使当前令牌无效并生成一个新令牌，您要继续吗?")));
 	}
 
 }

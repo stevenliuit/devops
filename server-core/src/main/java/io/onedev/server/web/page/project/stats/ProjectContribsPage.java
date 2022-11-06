@@ -100,7 +100,7 @@ public class ProjectContribsPage extends ProjectStatsPage {
 
 	@Override
 	protected Component newProjectTitle(String componentId) {
-		return new Label(componentId, "Contribution Statistics");
+		return new Label(componentId, "贡献统计");
 	}
 
 }

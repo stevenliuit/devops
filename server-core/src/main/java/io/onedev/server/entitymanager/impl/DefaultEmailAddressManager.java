@@ -241,12 +241,12 @@ public class DefaultEmailAddressManager extends BaseEntityManager<EmailAddress> 
 				serverUrl, emailAddress.getId(), emailAddress.getVerificationCode());
 		String htmlBody = String.format("Hello,"
 			+ "<p style='margin: 16px 0;'>"
-			+ "The account \"%s\" at \"%s\" tries to use email address '%s', please visit below link to verify if this is you:<br><br>"
+			+ "账户 \"%s\" at \"%s\" 尝试使用电子邮件地址 '%s', 请访问以下链接以验证这是否是您:<br><br>"
 			+ "<a href='%s'>%s</a>",
 			user.getName(), serverUrl, emailAddress.getValue(), verificationUrl, verificationUrl);
 
 		String textBody = String.format("Hello,\n\n"
-				+ "The account \"%s\" at \"%s\" tries to use email address \"%s\", please visit below link to verify if this is you:\n\n"
+				+ "账户 \"%s\" at \"%s\" 尝试使用电子邮件地址 \"%s\", 请访问以下链接以验证这是否是您:\n\n"
 				+ "%s",
 				user.getName(), serverUrl, emailAddress.getValue(), verificationUrl);
 		
@@ -254,7 +254,7 @@ public class DefaultEmailAddressManager extends BaseEntityManager<EmailAddress> 
 				settingManager.getMailSetting().getSendSetting(), 
 				Arrays.asList(emailAddress.getValue()),
 				Lists.newArrayList(), Lists.newArrayList(), 
-				"[Verification] Please Verify Your Email Address", 
+				"[确认] 请验证您的电子邮件地址", 
 				htmlBody, textBody, null, null);
 	}
 

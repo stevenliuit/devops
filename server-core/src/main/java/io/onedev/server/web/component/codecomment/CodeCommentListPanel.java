@@ -798,11 +798,11 @@ public abstract class CodeCommentListPanel extends Panel {
 				if (comment.isResolved()) {
 					label = String.format(
 							"<svg class='icon text-success mr-1'><use xlink:href='%s'/></svg> %s", 
-							SpriteImage.getVersionedHref("tick-circle-o"), "Resolved");
+							SpriteImage.getVersionedHref("tick-circle-o"), "解决");
 				} else {
 					label = String.format(
 							"<svg class='icon text-warning mr-1'><use xlink:href='%s'/></svg> %s", 
-							SpriteImage.getVersionedHref("dot"), "Unresolved");
+							SpriteImage.getVersionedHref("dot"), "未解决");
 				}
 				cellItem.add(new Label(componentId, label).setEscapeModelStrings(false));
 			}

@@ -69,7 +69,7 @@ public class SshKeyListPanel extends GenericPanel<List<SshKey>> {
 				if (comment != null)
 					cellItem.add(new Label(componentId, comment));
 				else
-					cellItem.add(new Label(componentId, "<i>No comment</i>").setEscapeModelStrings(false));
+					cellItem.add(new Label(componentId, "<i>没有意见</i>").setEscapeModelStrings(false));
 			}
 			
 		});

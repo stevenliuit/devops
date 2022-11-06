@@ -24,7 +24,7 @@ public class GitHubIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Authenticate to GitHub";
+			return "验证 GitHub";
 		}
 
 		@Override
@@ -40,7 +40,7 @@ public class GitHubIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose repository";
+			return "选择存储库";
 		}
 
 		@Override
@@ -58,7 +58,7 @@ public class GitHubIssueImporter implements IssueImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override
@@ -76,12 +76,12 @@ public class GitHubIssueImporter implements IssueImporter {
 	
 	@Override
 	public String doImport(Project project, boolean retainIssueNumbers, boolean dryRun, TaskLogger logger) {
-		logger.log("Importing issues from repository " + repositoryStep.getSetting().getRepository() + "...");
+		logger.log("从存储库导入问题 " + repositoryStep.getSetting().getRepository() + "...");
 		Map<String, Optional<User>> users = new HashMap<>();
 		
 		ImportResult result = serverStep.getSetting().importIssues(repositoryStep.getSetting().getRepository(), 
 				project,retainIssueNumbers, optionStep.getSetting(), users, dryRun, logger);
-		return result.toHtml("Issues imported successfully");
+		return result.toHtml("问题导入成功");
 	}
 
 	@Override

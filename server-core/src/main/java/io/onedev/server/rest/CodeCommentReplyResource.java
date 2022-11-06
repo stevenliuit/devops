@@ -44,7 +44,7 @@ public class CodeCommentReplyResource {
     	return reply;
 	}
 	
-	@Api(order=200, description="Update code comment reply of specified id in request body, or create new if id property not provided")
+	@Api(order=200, description="更新请求正文中指定 id 的代码注释回复，如果未提供 id 属性，则创建新的")
 	@POST
 	public Long createOrUpdate(@NotNull CodeCommentReply reply) {
     	if (!SecurityUtils.canReadCode(reply.getComment().getProject()) || 

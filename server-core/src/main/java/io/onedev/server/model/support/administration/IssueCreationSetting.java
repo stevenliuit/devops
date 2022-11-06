@@ -40,10 +40,10 @@ public class IssueCreationSetting implements Serializable {
 	
 	private List<FieldSupply> issueFields = new ArrayList<>();
 
-	@Editable(order=100, name="Applicable Senders", placeholder="任何发件人", 
-			description="Specify space-separated sender email addresses applicable for this entry. "
-					+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. "
-					+ "Leave empty to match all senders")
+	@Editable(order=100, name="适用发件人", placeholder="任何发件人", 
+			description="指定适用于此条目的以空格分隔的发件人电子邮件地址. "
+					+ "使用 '*' 或者 '?' 用于通配符匹配. 前缀 '-' 排除. "
+					+ "留空以匹配所有发件人")
 	@Patterns
 	public String getSenderEmails() {
 		return senderEmails;
@@ -53,9 +53,9 @@ public class IssueCreationSetting implements Serializable {
 		this.senderEmails = senderEmails;
 	}
 
-	@Editable(order=150, placeholder="任何项目", description="Specify space-separated projects applicable for this entry. "
-			+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. Leave empty to "
-			+ "match all projects")
+	@Editable(order=150, placeholder="任何项目", description="指定适用于此条目的空格分隔项目. "
+			+ "使用 '*' 或者 '?' 用于通配符匹配. 前缀 '-' 排除. "
+			+ "匹配所有项目")
 	@Patterns(suggester="suggestProjects")
 	public String getApplicableProjects() {
 		return applicableProjects;
@@ -70,7 +70,7 @@ public class IssueCreationSetting implements Serializable {
 		return SuggestionUtils.suggestProjectPaths(matchWith);
 	}
 	
-	@Editable(order=200, description="Whether or not created issue should be confidential")
+	@Editable(order=200, description="创建的问题是否应该保密")
 	public boolean isConfidential() {
 		return confidential;
 	}

@@ -75,17 +75,17 @@ public class GlobalIssueSetting implements Serializable {
 	
 	public GlobalIssueSetting() {
 		ChoiceField type = new ChoiceField();
-		type.setName("Type");
+		type.setName("类型");
 		SpecifiedChoices specifiedChoices = new SpecifiedChoices();
 
 		List<Choice> choices = new ArrayList<>(); 
 		Choice newFeature = new Choice();
-		newFeature.setValue("New Feature");
+		newFeature.setValue("新功能");
 		newFeature.setColor("#1bc5bd");
 		choices.add(newFeature);
 		
 		Choice improvement = new Choice();
-		improvement.setValue("Improvement");
+		improvement.setValue("改进");
 		improvement.setColor("#1bc5bd");
 		choices.add(improvement);
 
@@ -95,12 +95,12 @@ public class GlobalIssueSetting implements Serializable {
 		choices.add(bug);
 
 		Choice task = new Choice();
-		task.setValue("Task");
+		task.setValue("任务");
 		task.setColor("#8950FC");
 		choices.add(task);
 
 		Choice buildFailure = new Choice();
-		buildFailure.setValue("Build Failure");
+		buildFailure.setValue("构建失败");
 		buildFailure.setColor("#F64E60");
 		choices.add(buildFailure);
 		
@@ -114,28 +114,28 @@ public class GlobalIssueSetting implements Serializable {
 		fieldSpecs.add(type);
 		
 		ChoiceField priority = new ChoiceField();
-		priority.setName("Priority");
+		priority.setName("优先");
 		specifiedChoices = new SpecifiedChoices();
 
 		choices = new ArrayList<>(); 
 		
 		Choice minor = new Choice();
-		minor.setValue("Minor");
+		minor.setValue("次要的");
 		minor.setColor("#E4E6EF");
 		choices.add(minor);
 
 		Choice normal = new Choice();
-		normal.setValue("Normal");
+		normal.setValue("普通的");
 		normal.setColor("#3699FF");
 		choices.add(normal);
 
 		Choice major = new Choice();
-		major.setValue("Major");
+		major.setValue("主要的");
 		major.setColor("#FFA800");
 		choices.add(major);
 		
 		Choice critical = new Choice();
-		critical.setValue("Critical");
+		critical.setValue("紧要的");
 		critical.setColor("#F64E60");
 		choices.add(critical);
 		
@@ -143,7 +143,7 @@ public class GlobalIssueSetting implements Serializable {
 		priority.setChoiceProvider(specifiedChoices);
 		
 		specifiedDefaultValue = new SpecifiedDefaultValue();
-		specifiedDefaultValue.setValue("Normal");
+		specifiedDefaultValue.setValue("普通的");
 		priority.setDefaultValueProvider(specifiedDefaultValue);
 		
 		fieldSpecs.add(priority);
@@ -151,22 +151,22 @@ public class GlobalIssueSetting implements Serializable {
 		UserChoiceField assignees = new UserChoiceField();
 		assignees.setAllowMultiple(true);
 		assignees.setAllowEmpty(true);
-		assignees.setNameOfEmptyValue("Not assigned");
-		assignees.setName("Assignees");
+		assignees.setNameOfEmptyValue("未分配");
+		assignees.setName("受让人");
 		
 		fieldSpecs.add(assignees);
 		
 		BuildChoiceField failedBuild = new BuildChoiceField();
-		failedBuild.setName("Failed Build");
+		failedBuild.setName("构建失败");
 		failedBuild.setAllowEmpty(true);
-		failedBuild.setNameOfEmptyValue("Not specified");
+		failedBuild.setNameOfEmptyValue("未指定");
 		
 		fieldSpecs.add(failedBuild);
 		
 		ShowCondition showCondition = new ShowCondition();
-		showCondition.setInputName("Type");
+		showCondition.setInputName("类型");
 		ValueIsOneOf valueIsOneOf = new ValueIsOneOf();
-		valueIsOneOf.setValues(Lists.newArrayList("Build Failure"));
+		valueIsOneOf.setValues(Lists.newArrayList("构建失败"));
 		showCondition.setValueMatcher(valueIsOneOf);
 		failedBuild.setShowCondition(showCondition);
 		
@@ -258,18 +258,18 @@ public class GlobalIssueSetting implements Serializable {
 		listLinks.add("Child Issue");
 		listLinks.add("Blocked By");
 		
-		namedQueries.add(new NamedIssueQuery("Open", "\"State\" is \"Open\""));
-		namedQueries.add(new NamedIssueQuery("Assigned to me & Open", "\"Assignees\" is me and \"State\" is \"Open\""));
-		namedQueries.add(new NamedIssueQuery("Submitted by me & Open", "submitted by me and \"State\" is \"Open\""));
-		namedQueries.add(new NamedIssueQuery("Assigned to me", "\"Assignees\" is me"));
-		namedQueries.add(new NamedIssueQuery("Blocked Issues", "any \"Blocked By\" matching(\"State\" is \"Open\") or any \"Child Issue\" matching(\"State\" is \"Open\")"));
-		namedQueries.add(new NamedIssueQuery("Submitted by me", "submitted by me"));
-		namedQueries.add(new NamedIssueQuery("Submitted recently", "\"Submit Date\" is since \"last week\""));
-		namedQueries.add(new NamedIssueQuery("Updated recently", "\"Update Date\" is since \"last week\""));
-		namedQueries.add(new NamedIssueQuery("Open & Critical", "\"State\" is \"Open\" and \"Priority\" is \"Critical\""));
-		namedQueries.add(new NamedIssueQuery("Open & Unassigned", "\"State\" is \"Open\" and \"Assignees\" is empty"));
-		namedQueries.add(new NamedIssueQuery("Closed", "\"State\" is \"Closed\""));
-		namedQueries.add(new NamedIssueQuery("All", null));
+		namedQueries.add(new NamedIssueQuery("打开", "\"State\" is \"Open\""));
+		namedQueries.add(new NamedIssueQuery("分配给我&打开", "\"Assignees\" is me and \"State\" is \"Open\""));
+		namedQueries.add(new NamedIssueQuery("由我提交&打开", "submitted by me and \"State\" is \"Open\""));
+		namedQueries.add(new NamedIssueQuery("分配给我", "\"Assignees\" is me"));
+		namedQueries.add(new NamedIssueQuery("被阻止的问题", "any \"Blocked By\" matching(\"State\" is \"Open\") or any \"Child Issue\" matching(\"State\" is \"Open\")"));
+		namedQueries.add(new NamedIssueQuery("由我提交", "submitted by me"));
+		namedQueries.add(new NamedIssueQuery("最近提交", "\"Submit Date\" is since \"last week\""));
+		namedQueries.add(new NamedIssueQuery("最近更新", "\"Update Date\" is since \"last week\""));
+		namedQueries.add(new NamedIssueQuery("打开 & 关键的", "\"State\" is \"Open\" and \"Priority\" is \"Critical\""));
+		namedQueries.add(new NamedIssueQuery("打开 & 未分配", "\"State\" is \"Open\" and \"Assignees\" is empty"));
+		namedQueries.add(new NamedIssueQuery("关闭", "\"State\" is \"Closed\""));
+		namedQueries.add(new NamedIssueQuery("所有", null));
 	}
 	
 	public List<String> sortFieldNames(Collection<String> fieldNames) {

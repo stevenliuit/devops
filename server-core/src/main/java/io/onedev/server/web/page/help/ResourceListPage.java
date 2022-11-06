@@ -67,7 +67,7 @@ public class ResourceListPage extends ApiHelpPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Resources");
+		return new Label(componentId, "资源");
 	}
 
 }

@@ -67,17 +67,17 @@ public abstract class UserPage extends AdministrationPage {
 		
 		List<PageTab> tabs = new ArrayList<>();
 		
-		tabs.add(new UserTab("Profile", "profile", UserProfilePage.class));
-		tabs.add(new UserTab("Email Addresses", "mail", UserEmailAddressesPage.class));
-		tabs.add(new UserTab("Edit Avatar", "avatar", UserAvatarPage.class));
+		tabs.add(new UserTab("帐户", "profile", UserProfilePage.class));
+		tabs.add(new UserTab("电子邮件地址", "mail", UserEmailAddressesPage.class));
+		tabs.add(new UserTab("编辑头像", "avatar", UserAvatarPage.class));
 			
-		tabs.add(new UserTab("Change Password", "password", UserPasswordPage.class));
-		tabs.add(new UserTab("Belonging Groups", "group", UserMembershipsPage.class));
-		tabs.add(new UserTab("Authorized Projects", "project", UserAuthorizationsPage.class));
+		tabs.add(new UserTab("更改密码", "password", UserPasswordPage.class));
+		tabs.add(new UserTab("所属分组", "group", UserMembershipsPage.class));
+		tabs.add(new UserTab("授权项目", "project", UserAuthorizationsPage.class));
 		tabs.add(new UserTab("SSH Keys", "key", UserSshKeysPage.class));
 		tabs.add(new UserTab("GPG Keys", "key", UserGpgKeysPage.class));
 		tabs.add(new UserTab("Access Token", "token", UserAccessTokenPage.class));
-		tabs.add(new UserTab("Two-factor Authentication", "shield", UserTwoFactorAuthenticationPage.class));
+		tabs.add(new UserTab("双因素身份验证", "shield", UserTwoFactorAuthenticationPage.class));
 		
 		add(new Tabbable("userTabs", tabs));
 	}

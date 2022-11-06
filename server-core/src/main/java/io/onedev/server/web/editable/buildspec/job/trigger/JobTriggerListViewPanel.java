@@ -81,7 +81,7 @@ class JobTriggerListViewPanel extends Panel {
 							@Override
 							protected Component newTitle(String componentId) {
 								String triggerType = EditableUtils.getDisplayName(triggers.get(triggerIndex).getClass());
-								return new Label(componentId, "Trigger (type: " + triggerType + ")");
+								return new Label(componentId, "触发器 (type: " + triggerType + ")");
 							}
 
 							@Override
@@ -125,7 +125,7 @@ class JobTriggerListViewPanel extends Panel {
 			protected void onInitialize() {
 				super.onInitialize();
 				addTopToolbar(new HeadersToolbar<Void>(this, null));
-				addBottomToolbar(new NoRecordsToolbar(this, Model.of("Not defined")));
+				addBottomToolbar(new NoRecordsToolbar(this, Model.of("没有定义")));
 				add(new NoRecordsBehavior());
 			}
 			

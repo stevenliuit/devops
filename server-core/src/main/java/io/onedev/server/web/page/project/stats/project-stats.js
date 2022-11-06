@@ -15,7 +15,7 @@ onedev.server.stats = {
 			var $contribs = $(".project-contribs");
 			var $overall = $contribs.find(".overall");
 			if (Object.keys(overallContributions).length === 0) {
-				$overall.html("<div class='no-data'>No data</div>");
+				$overall.html("<div class='no-data'>没有数据</div>");
 				return;
 			}
 			
@@ -340,7 +340,7 @@ onedev.server.stats = {
 			
 			var $chart = $(".source-lines>div>.chart");
 			if (lineIncrements.length == 0) {
-				$chart.append("<div class='no-data'>No data</div>");
+				$chart.append("<div class='no-data'>没有数据</div>");
 				return;
 			}
 			
@@ -404,7 +404,7 @@ onedev.server.stats = {
 			if (defaultBranch != null)
 				title = "SLOC on " + defaultBranch;
 			else
-				title = "No default branch";
+				title = "无默认分支";
 			var option = {
 				title: {
 					text: title,

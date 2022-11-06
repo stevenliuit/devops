@@ -269,7 +269,7 @@ public class RoleListPage extends AdministrationPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Roles");
+		return new Label(componentId, "角色");
 	}
 
 }

@@ -82,7 +82,7 @@ class ProjectDependencyListViewPanel extends Panel {
 
 							@Override
 							protected Component newTitle(String componentId) {
-								return new Label(componentId, "Project Dependency");
+								return new Label(componentId, "项目依赖");
 							}
 
 							@Override

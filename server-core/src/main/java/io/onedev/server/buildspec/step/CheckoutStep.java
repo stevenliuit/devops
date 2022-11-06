@@ -16,7 +16,7 @@ import io.onedev.server.util.validation.annotation.SafePath;
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 
-@Editable(order=50, name="Checkout Code")
+@Editable(order=50, name="检出代码")
 public class CheckoutStep extends Step {
 
 	private static final long serialVersionUID = 1L;
@@ -31,9 +31,9 @@ public class CheckoutStep extends Step {
 	
 	private String checkoutPath;
 	
-	@Editable(order=100, description="By default code is cloned via an auto-generated credential, "
-			+ "which only has read permission over current project. In case the job needs to <a href='$docRoot/pages/push-in-job.md' target='_blank'>push code to server</a>, or want "
-			+ "to <a href='$docRoot/pages/clone-submodules-via-ssh.md' target='_blank'>clone private submodules</a>, you should supply custom credential with appropriate permissions here")
+	@Editable(order=100, description="默认情况下，代码通过自动生成的凭证克隆, "
+			+ "仅对当前项目具有读取权限. 如果工作需要 <a href='$docRoot/pages/push-in-job.md' target='_blank'>将代码推送到服务器</a>, 或想要 "
+			+ "<a href='$docRoot/pages/clone-submodules-via-ssh.md' target='_blank'>克隆私有子模块</a>, 您应该在此处提供具有适当权限的自定义凭据")
 	@NotNull
 	public GitCredential getCloneCredential() {
 		return cloneCredential;
@@ -43,7 +43,7 @@ public class CheckoutStep extends Step {
 		this.cloneCredential = cloneCredential;
 	}
 
-	@Editable(order=120, name="Retrieve LFS Files", description="Check this to retrieve Git LFS files")
+	@Editable(order=120, name="检索 LFS 文件", description="选中此项以检索 Git LFS 文件")
 	public boolean isWithLfs() {
 		return withLfs;
 	}
@@ -52,7 +52,7 @@ public class CheckoutStep extends Step {
 		this.withLfs = withLfs;
 	}
 
-	@Editable(order=180, name="Retrieve Submodules", description="Check this to retrieve submodules")
+	@Editable(order=180, name="检索子模块", description="选中此项以检索子模块")
 	public boolean isWithSubmodules() {
 		return withSubmodules;
 	}
@@ -61,8 +61,8 @@ public class CheckoutStep extends Step {
 		this.withSubmodules = withSubmodules;
 	}
 
-	@Editable(order=200, description="Optionally specify depth for a shallow clone in order "
-			+ "to speed up source retrieval")
+	@Editable(order=200, description="可选择按顺序指定浅克隆的深度 "
+			+ "加快源检索")
 	public Integer getCloneDepth() {
 		return cloneDepth;
 	}
@@ -71,9 +71,9 @@ public class CheckoutStep extends Step {
 		this.cloneDepth = cloneDepth;
 	}
 
-	@Editable(order=300, placeholder="工作空间", description="Optionally specify path relative to "
-			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> to clone code into. "
-			+ "Leave empty to use job workspace itself")
+	@Editable(order=300, placeholder="工作空间", description="（可选）指定相对于的路径 "
+			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>工作区</a> 将代码克隆. "
+			+ "留空以使用作业工作区本身")
 	@Interpolative(variableSuggester="suggestVariables")
 	@SafePath
 	public String getCheckoutPath() {

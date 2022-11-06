@@ -74,7 +74,7 @@ public class UserGpgKeysPage extends UserPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "User GPG Keys");
+		return new Label(componentId, "用户 GPG 密钥");
 	}
 	
 }

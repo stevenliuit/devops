@@ -59,7 +59,7 @@ public class BrandingSettingPage extends AdministrationPage {
 					}
 				}
 				OneDev.getInstance(SettingManager.class).saveBrandingSetting(setting);
-				getSession().success("Branding setting has been saved");
+				getSession().success("设置已保存");
 			}
 			
 		};
@@ -90,7 +90,7 @@ public class BrandingSettingPage extends AdministrationPage {
 
 			@Override
 			protected String getHint() {
-				return "Select file...";
+				return "选择文件...";
 			}
 
 			@Override
@@ -107,7 +107,7 @@ public class BrandingSettingPage extends AdministrationPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Branding");
+		return new Label(componentId, "定制中心");
 	}
 
 }

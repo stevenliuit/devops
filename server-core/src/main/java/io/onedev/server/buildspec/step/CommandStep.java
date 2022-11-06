@@ -18,15 +18,14 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Interpolative;
 import io.onedev.server.web.editable.annotation.ShowCondition;
 
-@Editable(order=100, name="Execute Commands")
+@Editable(order=100, name="执行命令")
 public class CommandStep extends Step {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static final String USE_TTY_HELP = "Many commands print outputs with ANSI colors in "
-			+ "TTY mode to help identifying problems easily. However some commands running in this mode may "
-			+ "wait for user input to cause build hanging. This can normally be fixed by adding extra options "
-			+ "to the command";
+	public static final String USE_TTY_HELP = "许多命令以 ANSI 颜色打印输出 "
+			+ "TTY 模式有助于轻松识别问题. 但是在此模式下运行的某些命令可能 "
+			+ "等待用户输入导致构建挂起. 这通常可以通过在命令中添加额外的选项来解决";
 
 	private boolean runInContainer = true;
 	
@@ -36,7 +35,7 @@ public class CommandStep extends Step {
 	
 	private boolean useTTY;
 	
-	@Editable(order=50, description="Whether or not to run this step inside container")
+	@Editable(order=50, description="是否在容器内运行此步骤")
 	public boolean isRunInContainer() {
 		return runInContainer;
 	}
@@ -50,7 +49,7 @@ public class CommandStep extends Step {
 		return (boolean) EditContext.get().getInputValue("runInContainer");
 	}
 	
-	@Editable(order=100, description="Specify container image to execute commands inside")
+	@Editable(order=100, description="指定容器镜像执行里面的命令")
 	@ShowCondition("isRunInContainerEnabled")
 	@Interpolative(variableSuggester="suggestVariables")
 	@NotEmpty
@@ -76,7 +75,7 @@ public class CommandStep extends Step {
 		this.interpreter = interpreter;
 	}
 
-	@Editable(order=10000, name="Enable TTY Mode", description=USE_TTY_HELP)
+	@Editable(order=10000, name="启用 TTY 模式", description=USE_TTY_HELP)
 	@ShowCondition("isRunInContainerEnabled")
 	public boolean isUseTTY() {
 		return useTTY;

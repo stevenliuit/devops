@@ -227,7 +227,7 @@ public class LinkSpecListPage extends IssueSettingPage {
 	
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Issue Links");
+		return new Label(componentId, "问题链接");
 	}
 	
 }

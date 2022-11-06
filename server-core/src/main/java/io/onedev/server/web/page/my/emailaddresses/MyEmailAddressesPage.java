@@ -31,7 +31,7 @@ public class MyEmailAddressesPage extends MyPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "My Email Addresses");
+		return new Label(componentId, "我的电子邮件地址");
 	}
 
 }

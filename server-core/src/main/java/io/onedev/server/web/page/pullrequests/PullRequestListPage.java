@@ -224,7 +224,7 @@ public class PullRequestListPage extends LayoutPage {
 	
 	@Override
 	protected String getPageTitle() {
-		return "Pull Requests - OneDev";
+		return "拉取请求 - 管理系统";
 	}
 	
 	public static PageParameters paramsOf(int page) {
@@ -239,7 +239,7 @@ public class PullRequestListPage extends LayoutPage {
 
 	@Override
 	protected Component newTopbarTitle(String componentId) {
-		return new Label(componentId, "Pull Requests");
+		return new Label(componentId, "拉取请求");
 	}
 	
 }
