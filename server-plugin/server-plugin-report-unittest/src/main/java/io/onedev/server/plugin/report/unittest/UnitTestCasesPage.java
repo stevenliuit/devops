@@ -154,8 +154,8 @@ public class UnitTestCasesPage extends UnitTestReportPage {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				return Lists.newArrayList(
-						"Path containing spaces or starting with dash needs to be quoted",
-						"Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. Prefix with '-' to exclude"
+						"需要引用包含空格或以破折号开头的路径",
+						"使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除"
 						);
 			}
 			
@@ -231,8 +231,8 @@ public class UnitTestCasesPage extends UnitTestReportPage {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				return Lists.newArrayList(
-						"Path containing spaces or starting with dash needs to be quoted",
-						"Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. Prefix with '-' to exclude"
+						"需要引用包含空格或以破折号开头的路径",
+						"使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除"
 						);
 			}
 			

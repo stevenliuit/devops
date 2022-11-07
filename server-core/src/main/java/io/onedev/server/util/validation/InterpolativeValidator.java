@@ -47,8 +47,7 @@ public class InterpolativeValidator implements ConstraintValidator<Interpolative
 					constraintContext.disableDefaultConstraintViolation();
 					String message = this.message;
 					if (message.length() == 0) {
-						message = "Last appearance of @ is a surprise to me. Either use @...@ to reference a variable, "
-								+ "or use @@ for literal @";
+						message = "@的最后一次出现让我感到惊讶。 要么使用@...@ 引用变量，要么使用@@ 作为文字@";
 					}
 					constraintContext.buildConstraintViolationWithTemplate(message).addConstraintViolation();
 					return false;

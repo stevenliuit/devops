@@ -53,7 +53,7 @@ public class GradleJobSuggestion implements JobSuggestion {
 			detectBuildVersion.setName("detect build version");
 			detectBuildVersion.setImage(imageName);
 			detectBuildVersion.getInterpreter().setCommands(Lists.newArrayList(
-					"echo \"Detecting project version (may require some time while downloading gradle dependencies)...\"",
+					"echo \"检测项目版本（下载 gradle 依赖项时可能需要一些时间）...\"",
 					"echo $(gradle properties | grep ^version: | grep -v unspecified | cut -c10-) > buildVersion"));
 			job.getSteps().add(detectBuildVersion);
 			

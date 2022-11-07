@@ -88,7 +88,7 @@ public class ActionAuthorizationsPage extends ProjectBuildSettingPage {
 			
 		});
 		
-		columns.add(new AbstractColumn<ActionAuthorization, Void>(Model.of("Authorized Branches")) {
+		columns.add(new AbstractColumn<ActionAuthorization, Void>(Model.of("授权分支")) {
 
 			@Override
 			public void populateItem(Item<ICellPopulator<ActionAuthorization>> cellItem, String componentId, 

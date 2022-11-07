@@ -74,7 +74,7 @@ public class DefaultUserInvitationManager extends BaseEntityManager<UserInvitati
 				settingManager.getMailSetting().getSendSetting(), 
 				Arrays.asList(invitation.getEmailAddress()),
 				Lists.newArrayList(), Lists.newArrayList(), 
-				"[Invitation] You are Invited to Use OneDev", 
+				"【邀请】邀请您使用本系统", 
 				htmlBody, textBody, null, null);
 	}
 	

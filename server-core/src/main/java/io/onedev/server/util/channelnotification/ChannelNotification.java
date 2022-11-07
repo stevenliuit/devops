@@ -47,7 +47,7 @@ public class ChannelNotification implements Serializable {
 	
 	private String codeCommentQuery;
 
-	@Editable(order=50, description="Specify webhook url to post events")
+	@Editable(order=50, description="指定 webhook url 以发布事件")
 	@NotEmpty
 	public String getWebhookUrl() {
 		return webhookUrl;
@@ -57,7 +57,7 @@ public class ChannelNotification implements Serializable {
 		this.webhookUrl = webhookUrl;
 	}
 
-	@Editable(order=100, name="Notify Issue Events")
+	@Editable(order=100, name="通知问题事件")
 	public boolean isIssues() {
 		return issues;
 	}
@@ -66,7 +66,7 @@ public class ChannelNotification implements Serializable {
 		this.issues = issues;
 	}
 
-	@Editable(order=200, name="Applicable Issues", placeholder="所有")
+	@Editable(order=200, name="适用问题", placeholder="所有")
 	@IssueQuery(withOrder=false)
 	@ShowCondition("isIssuesEnabled")
 	public String getIssueQuery() {
@@ -82,7 +82,7 @@ public class ChannelNotification implements Serializable {
 		return (boolean) EditContext.get().getInputValue("issues");
 	}
 
-	@Editable(order=300, name="Notify Pull Request Events")
+	@Editable(order=300, name="通知拉取请求事件")
 	public boolean isPullRequests() {
 		return pullRequests;
 	}
@@ -91,7 +91,7 @@ public class ChannelNotification implements Serializable {
 		this.pullRequests = pullRequests;
 	}
 
-	@Editable(order=400, name="Applicable Pull Requests", placeholder="所有")
+	@Editable(order=400, name="适用的拉取请求", placeholder="所有")
 	@PullRequestQuery(withOrder=false)
 	@ShowCondition("isPullRequestsEnabled")
 	public String getPullRequestQuery() {
@@ -107,7 +107,7 @@ public class ChannelNotification implements Serializable {
 		return (boolean) EditContext.get().getInputValue("pullRequests");
 	}
 	
-	@Editable(order=500, name="Notify Build Events")
+	@Editable(order=500, name="通知构建事件")
 	public boolean isBuilds() {
 		return builds;
 	}
@@ -116,7 +116,7 @@ public class ChannelNotification implements Serializable {
 		this.builds = builds;
 	}
 
-	@Editable(order=600, name="Applicable Builds", placeholder="所有")
+	@Editable(order=600, name="适用版本", placeholder="所有")
 	@BuildQuery(withOrder=false, withUnfinishedCriteria=true)
 	@ShowCondition("isBuildsEnabled")
 	public String getBuildQuery() {
@@ -132,7 +132,7 @@ public class ChannelNotification implements Serializable {
 		return (boolean) EditContext.get().getInputValue("builds");
 	}
 	
-	@Editable(order=700, name="Notify Code Push Events")
+	@Editable(order=700, name="通知代码推送事件")
 	public boolean isCodePush() {
 		return codePush;
 	}
@@ -141,7 +141,7 @@ public class ChannelNotification implements Serializable {
 		this.codePush = codePush;
 	}
 
-	@Editable(order=800, name="Applicable Commits", placeholder="所有")
+	@Editable(order=800, name="适用的提交", placeholder="所有")
 	@CommitQuery
 	@ShowCondition("isCodePushEnabled")
 	public String getCommitQuery() {
@@ -157,7 +157,7 @@ public class ChannelNotification implements Serializable {
 		return (boolean) EditContext.get().getInputValue("codePush");
 	}
 	
-	@Editable(order=900, name="Notify Code Comment Events")
+	@Editable(order=900, name="通知代码注释事件")
 	public boolean isCodeComments() {
 		return codeComments;
 	}
@@ -166,7 +166,7 @@ public class ChannelNotification implements Serializable {
 		this.codeComments = codeComments;
 	}
 
-	@Editable(order=1000, name="Applicable Code Comments", placeholder="所有")
+	@Editable(order=1000, name="适用的代码注释", placeholder="所有")
 	@CodeCommentQuery(withOrder=false)
 	@ShowCondition("isCodeCommentsEnabled")
 	public String getCodeCommentQuery() {

@@ -126,8 +126,8 @@ public class ProblemReportPage extends BuildReportPage {
 			@Override
 			protected List<String> getHints(TerminalExpect terminalExpect) {
 				return Lists.newArrayList(
-						"Path containing spaces or starting with dash needs to be quoted",
-						"Use '*' or '?' for wildcard match. Prefix with '-' to exclude"
+						"需要引用包含空格或以破折号开头的路径",
+						"使用“*”或“？” 用于通配符匹配。 前缀 '-' 排除"
 						);
 			}
 			

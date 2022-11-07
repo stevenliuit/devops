@@ -56,7 +56,7 @@ public class MavenJobSuggestion implements JobSuggestion {
 			detectBuildVersion.setName("detect build version");
 			detectBuildVersion.setImage(imageName);
 			detectBuildVersion.getInterpreter().setCommands(Lists.newArrayList(
-					"echo \"Detecting project version (may require some time while downloading maven dependencies)...\"",
+					"echo \"检测项目版本（下载 maven 依赖项时可能需要一些时间）...\"",
 					"echo $(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout) > buildVersion"));
 			job.getSteps().add(detectBuildVersion);
 			

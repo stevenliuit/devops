@@ -425,7 +425,7 @@ public class DefaultDataManager implements DataManager, Serializable {
 		User root = userManager.getRoot();
 		String url = settingManager.getSystemSetting().getServerUrl();
 		String htmlBody = String.format(""
-				+ "OneDev url: <a href='%s'>%s</a>"
+				+ "系统 url: <a href='%s'>%s</a>"
 				+ "<p style='margin: 16px 0;'>"
 				+ "<b>Error detail:</b>"
 				+ "<pre style='font-family: monospace;'>%s</pre>"
@@ -433,15 +433,15 @@ public class DefaultDataManager implements DataManager, Serializable {
 				+ "-- Sent by OneDev", 
 				url, url, Throwables.getStackTraceAsString(e));
 		String textBody = String.format(""
-				+ "OneDev url: %s\n\n"
-				+ "Error detail:\n"
+				+ "系统 url: %s\n\n"
+				+ "详细错误:\n"
 				+ "%s",
 				url, Throwables.getStackTraceAsString(e));
 		
 		EmailAddress emailAddress = root.getPrimaryEmailAddress();
 		if (emailAddress != null && emailAddress.isVerified()) {
 			mailManager.sendMail(Lists.newArrayList(emailAddress.getValue()), Lists.newArrayList(),
-					Lists.newArrayList(), "[Backup] OneDev Database Auto-backup Failed", 
+					Lists.newArrayList(), "[备份] 系统 数据库自动备份失败", 
 					htmlBody, textBody, null, null);
 		}
 	}

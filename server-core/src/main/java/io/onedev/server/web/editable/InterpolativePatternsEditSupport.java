@@ -66,8 +66,8 @@ public class InterpolativePatternsEditSupport implements EditSupport {
 							@Override
 							protected List<String> getHints(TerminalExpect terminalExpect) {
 								return Lists.newArrayList(
-										"Pattern containing spaces or starting with dash needs to be quoted",
-										patterns.path()? "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. Prefix with '-' to exclude": "Use '*' or '?' for wildcard match. Prefix with '-' to exclude");
+										"需要引用包含空格或以破折号开头的模式",
+										patterns.path()? "使用 '**', '*' 或者 '?' 为了 <a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>. 前缀 '-' 排除": "使用“*”或“？” 用于通配符匹配。 前缀 '-' 排除");
 							}
 							
 						});

@@ -96,7 +96,7 @@ public class JobSecretsPage extends ProjectBuildSettingPage {
 			
 		});
 		
-		columns.add(new AbstractColumn<JobSecret, Void>(Model.of("Authorized Branches")) {
+		columns.add(new AbstractColumn<JobSecret, Void>(Model.of("授权分支")) {
 
 			@Override
 			public void populateItem(Item<ICellPopulator<JobSecret>> cellItem, String componentId, 

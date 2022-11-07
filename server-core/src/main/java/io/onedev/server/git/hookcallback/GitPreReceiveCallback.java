@@ -75,7 +75,7 @@ public class GitPreReceiveCallback extends HttpServlet {
         
         if (!fields.get(2).equals(GitUtils.HOOK_TOKEN)) {
             response.sendError(HttpServletResponse.SC_FORBIDDEN,
-                    "Git hook callbacks can only be accessed by OneDev itself");
+                    "Git 钩子回调只能由 系统 本身访问");
             return;
         }
         
@@ -103,7 +103,7 @@ public class GitPreReceiveCallback extends HttpServlet {
             	}
             }
             
-            Preconditions.checkState(refUpdateInfo != null, "Git ref update information is not available");
+            Preconditions.checkState(refUpdateInfo != null, "Git ref 更新信息不可用");
             
 	        Output output = new Output(response.getOutputStream());
 	        
@@ -129,7 +129,7 @@ public class GitPreReceiveCallback extends HttpServlet {
 
 	    		if (refName.startsWith(PullRequest.REFS_PREFIX) || refName.startsWith(PullRequestUpdate.REFS_PREFIX)) {
 	    			if (!user.asSubject().isPermitted(new ProjectPermission(project, new ManageProject()))) {
-	    				error(output, refName, Lists.newArrayList("Only project administrators can update onedev refs."));
+	    				error(output, refName, Lists.newArrayList("只有项目管理员可以更新 系统 refs."));
 	    				break;
 	    			}
 	    		} else if (refName.startsWith(Constants.R_HEADS)) {
@@ -138,30 +138,28 @@ public class GitPreReceiveCallback extends HttpServlet {
 	    			BranchProtection protection = project.getHierarchyBranchProtection(branchName, user);
 					if (oldObjectId.equals(ObjectId.zeroId())) {
 						if (protection.isPreventCreation()) {
-							errorMessages.add("Can not create this branch according to branch protection setting");
+							errorMessages.add("无法根据分支保护设置创建此分支");
 						} else if (protection.isSignatureRequired() 
 								&& !project.hasValidCommitSignature(newObjectId, gitEnvs)) {
-							errorMessages.add("Can not create this branch as branch protection setting "
-									+ "requires valid signature on head commit");
+							errorMessages.add("无法创建此分支，因为分支保护设置需要头部提交时的有效签名");
 						}
 					} else if (newObjectId.equals(ObjectId.zeroId())) {
 						if (protection.isPreventDeletion()) 
-							errorMessages.add("Can not delete this branch according to branch protection setting");
+							errorMessages.add("不能根据分支保护设置删除这个分支");
 					} else if (protection.isPreventForcedPush() 
 							&& !GitUtils.isMergedInto(project.getRepository(), gitEnvs, oldObjectId, newObjectId)) {
-						errorMessages.add("Can not force-push to this branch according to branch protection setting");
+						errorMessages.add("不能根据分支保护设置强制推送到该分支");
 					} else if (protection.isSignatureRequired() 
 							&& !project.hasValidCommitSignature(newObjectId, gitEnvs)) {
-						errorMessages.add("Can not push to this branch as branch protection rule requires "
-								+ "valid signature for head commit");
+						errorMessages.add("无法推送到此分支，因为分支保护规则需要有效签名才能进行头部提交");
 					} else if (protection.isReviewRequiredForPush(user, project, branchName, oldObjectId, newObjectId, gitEnvs)) {
-    					errorMessages.add("Review required for your change. Please submit pull request instead");
+    					errorMessages.add("您的更改需要审核。 请改为提交拉取请求");
 					}
 	    			if (errorMessages.isEmpty() 
 	    					&& !oldObjectId.equals(ObjectId.zeroId()) 
 	    					&& !newObjectId.equals(ObjectId.zeroId()) 
 	    					&& project.isBuildRequiredForPush(user, branchName, oldObjectId, newObjectId, gitEnvs)) {
-	    				errorMessages.add("Build required for your change. Please submit pull request instead");
+	    				errorMessages.add("构建所需的更改。 请改为提交拉取请求");
 	    			}
 	    			if (errorMessages.isEmpty() && newObjectId.equals(ObjectId.zeroId())) {
 	    				try {
@@ -178,21 +176,19 @@ public class GitPreReceiveCallback extends HttpServlet {
 	    			TagProtection protection = project.getHierarchyTagProtection(tagName, user);
 					if (oldObjectId.equals(ObjectId.zeroId())) {
 						if (protection.isPreventCreation()) {
-							errorMessages.add("Can not create this tag according to tag protection setting");
+							errorMessages.add("无法根据标签保护设置创建此标签");
 						} else if (protection.isSignatureRequired() 
 								&& !project.hasValidTagSignature(newObjectId, gitEnvs)) {
-							errorMessages.add("Can not create this tag as tag protection setting requires "
-									+ "valid tag signature");
+							errorMessages.add("无法创建此标签，因为标签保护设置需要有效的标签签名");
 						}
 					} else if (newObjectId.equals(ObjectId.zeroId())) {
 						if (protection.isPreventDeletion())
-							errorMessages.add("Can not delete this tag according to tag protection setting");
+							errorMessages.add("无法根据标签保护设置删除此标签");
 					} else if (protection.isPreventUpdate()) {
-						errorMessages.add("Can not update this tag according to tag protection setting");
+						errorMessages.add("无法根据标签保护设置更新此标签");
 					} else if (protection.isSignatureRequired() 
 							&& !project.hasValidTagSignature(newObjectId, gitEnvs)) {
-						errorMessages.add("Can not update this tag as tag protection setting requires "
-								+ "valid tag signature");
+						errorMessages.add("无法更新此标签，因为标签保护设置需要有效的标签签名");
 					}
 	    			if (errorMessages.isEmpty() && newObjectId.equals(ObjectId.zeroId())) {
 	    				try {

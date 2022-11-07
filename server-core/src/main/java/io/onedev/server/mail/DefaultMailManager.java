@@ -367,7 +367,7 @@ public class DefaultMailManager implements MailManager {
 			@Nullable User user, @Nullable SenderAuthorization authorization) {
 		if ((user == null || !user.asSubject().isPermitted(new ProjectPermission(project, privilege))) 
 				&& (authorization == null || !authorization.isPermitted(project, privilege))) {
-			String errorMessage = String.format("Permission denied (project: %s, sender: %s, permission: %s)", 
+			String errorMessage = String.format("权限被拒绝（项目：%s，发件人：%s，权限：%s）", 
 					project.getPath(), sender.getAddress(), privilege.getClass().getName());
 			throw new UnauthorizedException(errorMessage);
 		}
@@ -428,7 +428,7 @@ public class DefaultMailManager implements MailManager {
 							Project project = projectManager.findByPath(designatedProject);
 							if (project == null) {
 								String errorMessage = String.format(
-										"Sender project does not exist (sender: %s, project: %s)", 
+										"发件人项目不存在（发件人：%s，项目：%s）", 
 										from.getAddress(), designatedProject);
 								throw new ExplicitException(errorMessage);
 							}
@@ -463,11 +463,9 @@ public class DefaultMailManager implements MailManager {
 										if (watch != null) {
 											watch.setWatching(false);
 											issueWatchManager.save(watch);
-											String subject = "Unsubscribed successfully from issue " + issue.getFQN(); 
-											String body = "You will no longer receive notifications of issue " + issue.getFQN() + " unless mentioned. "
-													+ "However if you subscribed to certain issue queries, you may still get notifications of newly "
-													+ "created issues matching those queries. In this case, you will need to login to your account "
-													+ "and unsubscribe those queries.";
+											String subject = "已成功取消订阅问题 " + issue.getFQN(); 
+											String body = "除非提及，否则您将不再收到问题通知 " + issue.getFQN() + " . "
+													+ "但是，如果您订阅了某些问题查询，您可能仍会收到与这些查询匹配的新创建问题的通知。 在这种情况下，您需要登录您的帐户并取消订阅这些查询.";
 											sendMailAsync(Lists.newArrayList(from.getAddress()), Lists.newArrayList(), Lists.newArrayList(), 
 													subject, body, body, null, getMessageId(message));
 										}
@@ -489,11 +487,9 @@ public class DefaultMailManager implements MailManager {
 										if (watch != null) {
 											watch.setWatching(false);
 											pullRequestWatchManager.save(watch);
-											String subject = "Unsubscribed successfully from pull request " + pullRequest.getFQN(); 
-											String body = "You will no longer receive notifications of pull request " + pullRequest.getFQN() 
-													+ " unless mentioned. However if you subscribed to certain pull request queries, you may still "
-													+ "get notifications of newly submitted pull request matching those queries. In this case, you "
-													+ "will need to login to your account and unsubscribe those queries.";
+											String subject = "从拉取请求中成功退订 " + pullRequest.getFQN(); 
+											String body = "除非提及，否则您将不再收到问题通知 " + pullRequest.getFQN() 
+													+ " . 但是，如果您订阅了某些拉取请求查询，您可能仍会收到与这些查询匹配的新提交拉取请求的通知。 在这种情况下，您需要登录您的帐户并取消订阅这些查询.";
 											sendMailAsync(Lists.newArrayList(from.getAddress()), Lists.newArrayList(), Lists.newArrayList(), 
 													subject, body, body, null, getMessageId(message));
 										}
@@ -725,9 +721,9 @@ public class DefaultMailManager implements MailManager {
 		
 		issueManager.open(issue);
 		
-		String htmlBody = String.format("Issue <a href='%s'>%s</a> is created. You may reply this email to add more comments", 
+		String htmlBody = String.format("已创建问题 <a href='%s'>%s</a>。 您可以回复此电子邮件以添加更多评论", 
 				urlManager.urlFor(issue), issue.getFQN());
-		String textBody = String.format("Issue %s is created. You may reply this email to add more comments", 
+		String textBody = String.format("已创建问题 %s。 您可以回复此电子邮件以添加更多评论", 
 				issue.getFQN());
 		
 		sendMailAsync(Lists.newArrayList(submitter.getAddress()), Lists.newArrayList(), Lists.newArrayList(),
