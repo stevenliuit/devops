@@ -85,7 +85,7 @@ public class UserMembershipsPage extends UserPage {
 	protected void onInitialize() {
 		super.onInitialize();
 		
-		add(new Label("externalManagedNote", "Group membership of this user is managed from " + getUser().getAuthSource())
+		add(new Label("externalManagedNote", "此用户的组成员资格由 " + getUser().getAuthSource())
 				.setVisible(getUser().isMembershipExternalManaged()));
 		
 		TextField<String> searchField;
@@ -132,7 +132,7 @@ public class UserMembershipsPage extends UserPage {
 			protected void onInitialize() {
 				super.onInitialize();
 				
-				getSettings().setPlaceholder("Add to group...");
+				getSettings().setPlaceholder("添加到分组...");
 				getSettings().setFormatResult("onedev.server.groupChoiceFormatter.formatResult");
 				getSettings().setFormatSelection("onedev.server.groupChoiceFormatter.formatSelection");
 				getSettings().setEscapeMarkup("onedev.server.groupChoiceFormatter.escapeMarkup");
@@ -169,7 +169,7 @@ public class UserMembershipsPage extends UserPage {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Memberships";
+						return "删除选定的成员资格";
 					}
 
 					@Override
@@ -193,7 +193,7 @@ public class UserMembershipsPage extends UserPage {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete selected memberships";
+										return "在下方输入 <code>yes</code> 以删除选定的成员资格";
 									}
 									
 									@Override
@@ -217,7 +217,7 @@ public class UserMembershipsPage extends UserPage {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select memberships to delete");
+									tag.put("title", "请选择要删除的成员");
 								}
 							}
 							
@@ -231,7 +231,7 @@ public class UserMembershipsPage extends UserPage {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Memberships";
+						return "删除所有查询的成员资格";
 					}
 					
 					@Override
@@ -257,7 +257,7 @@ public class UserMembershipsPage extends UserPage {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete all queried memberships";
+										return "在下方输入 <code>yes</code> 以删除所有查询的成员资格";
 									}
 									
 									@Override
@@ -280,7 +280,7 @@ public class UserMembershipsPage extends UserPage {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No memberships to delete");
+									tag.put("title", "没有要删除的会员资格");
 								}
 							}
 							

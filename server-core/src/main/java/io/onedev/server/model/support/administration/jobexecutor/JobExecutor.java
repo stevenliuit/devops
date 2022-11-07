@@ -68,10 +68,7 @@ public abstract class JobExecutor implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=20, description="Enable this to allow project managers to open web terminal to running builds. "
-			+ "<b class='text-danger'>WARNING</b>: Users with shell access can take control of the node used by "
-			+ "the executor. You should configure job authorization below to make sure the executor can only be "
-			+ "used by trusted jobs if this option is enabled")
+	@Editable(order=20, description="启用此选项以允许项目经理打开 Web 终端以运行构建。<b class='text-danger'>警告</b>：具有 shell 访问权限的用户可以控制执行程序使用的节点。 您应该在下面配置作业授权，以确保如果启用此选项，执行程序只能由受信任的作业使用")
 	@ShowCondition("isTerminalSupported")
 	public boolean isShellAccessEnabled() {
 		return shellAccessEnabled;
@@ -87,7 +84,7 @@ public abstract class JobExecutor implements Serializable {
 	}
 
 	@Editable(order=10000, placeholder="可供任何jobs使用", 
-			description="Optionally specify jobs authorized to use this executor")
+			description="可选择指定授权使用此执行程序的作业")
 	@JobAuthorization
 	@Nullable
 	public String getJobAuthorization() {
@@ -98,10 +95,7 @@ public abstract class JobExecutor implements Serializable {
 		this.jobAuthorization = jobAuthorization;
 	}
 
-	@Editable(order=50000, group="More Settings", description="Specify job cache TTL (time to live) by days. "
-			+ "OneDev may create multiple job caches even for same cache key to avoid cache conflicts when "
-			+ "running jobs concurrently. This setting tells OneDev to remove caches inactive for specified "
-			+ "time period to save disk space")
+	@Editable(order=50000, group="更多设置", description="按天指定作业缓存 TTL（生存时间）。系统甚至可以为同一个缓存键创建多个作业缓存，以避免在同时运行作业时发生缓存冲突。 此设置告诉系统删除指定时间段内不活动的缓存以节省磁盘空间")
 	public int getCacheTTL() {
 		return cacheTTL;
 	}

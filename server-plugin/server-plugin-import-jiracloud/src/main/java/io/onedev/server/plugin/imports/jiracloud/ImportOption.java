@@ -37,8 +37,7 @@ public class ImportOption implements Serializable {
 		return OneDev.getInstance(SettingManager.class).getIssueSetting();
 	}
 	
-	@Editable(order=350, description="Specify a user field to hold assignee information.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=350, description="指定一个用户字段来保存受让人信息。<br><b>注意：</b>您可以自定义 系统 问题字段，以防此处没有合适的选项")
 	@ChoiceProvider("getAssigneesIssueFieldChoices")
 	@NotEmpty
 	public String getAssigneeIssueField() {
@@ -59,8 +58,7 @@ public class ImportOption implements Serializable {
 		return choices;
 	}
 
-	@Editable(order=360, description="Optionally specify a date field to hold due date information.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=360, description="可以选择指定一个日期字段来保存到期日期信息。<br><b>注意：</b>如果此处没有适当的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getDueDateIssueFieldChoices")
 	public String getDueDateIssueField() {
 		return dueDateIssueField;
@@ -80,8 +78,7 @@ public class ImportOption implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=370, description="Optionally specify a working period field to hold time spent infomration.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=370, description="可以选择指定一个工作期间字段来保存所花费的时间信息。<br><b>注意：</b>您可以自定义 系统 问题字段，以防此处没有合适的选项")
 	@ChoiceProvider("getWorkingPeriodIssueFieldChoices")
 	public String getTimeSpentIssueField() {
 		return timeSpentIssueField;
@@ -91,8 +88,7 @@ public class ImportOption implements Serializable {
 		this.timeSpentIssueField = timeSpentIssueField;
 	}
 
-	@Editable(order=380, description="Optionally specify a working period field to hold time estimate infomration.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=380, description="可以选择指定一个工作周期字段来保存时间估计信息。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getWorkingPeriodIssueFieldChoices")
 	public String getTimeEstimateIssueField() {
 		return timeEstimateIssueField;
@@ -122,8 +118,7 @@ public class ImportOption implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=600, description="Specify how to map JIRA issue statuses to OneDev custom fields.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue states in case there is no appropriate option here")
+	@Editable(order=600, description="指定如何将 JIRA 问题状态映射到 OneDev 自定义字段。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题状态")
 	public List<IssueStatusMapping> getIssueStatusMappings() {
 		return issueStatusMappings;
 	}
@@ -132,8 +127,7 @@ public class ImportOption implements Serializable {
 		this.issueStatusMappings = issueStatusMappings;
 	}
 
-	@Editable(order=700, description="Specify how to map JIRA issue types to OneDev custom fields.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=700, description="指定如何将 JIRA 问题类型映射到 OneDev 自定义字段。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	public List<IssueTypeMapping> getIssueTypeMappings() {
 		return issueTypeMappings;
 	}
@@ -142,8 +136,7 @@ public class ImportOption implements Serializable {
 		this.issueTypeMappings = issueTypeMappings;
 	}
 
-	@Editable(order=800, description="Specify how to map JIRA issue priorities to OneDev custom fields.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=800, description="指定如何将 JIRA 问题优先级映射到 OneDev 自定义字段。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	public List<IssuePriorityMapping> getIssuePriorityMappings() {
 		return issuePriorityMappings;
 	}

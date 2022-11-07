@@ -61,7 +61,7 @@ public abstract class EntityWatchesPanel extends Panel {
 
 			@Override
 			protected String load() {
-				return "Watchers (" + String.valueOf(getEffectWatches().size()) + ")";
+				return "观察者 (" + String.valueOf(getEffectWatches().size()) + ")";
 			}
 			
 		}));

@@ -18,9 +18,8 @@ public class IssueTemplate implements Serializable {
 
 	private String issueDescription;
 	
-	@Editable(order=100, name="Applicable Issues", placeholder="所有", 
-			description="Optionally specify issues applicable for this template. "
-			+ "Leave empty for all")
+	@Editable(order=100, name="适用问题", placeholder="所有", 
+			description="可以选择指定适用于此模板的问题。 为所有人留空")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withOrder = false)
 	public String getIssueQuery() {
 		return issueQuery;

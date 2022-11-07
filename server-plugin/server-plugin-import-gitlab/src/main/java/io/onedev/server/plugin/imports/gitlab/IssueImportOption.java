@@ -32,8 +32,7 @@ public class IssueImportOption implements Serializable {
 	
 	private List<IssueLabelMapping> issueLabelMappings = new ArrayList<>();
 	
-	@Editable(order=300, description="Specify which issue state to use for closed GitLab issues.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue states in case there is no appropriate option here")
+	@Editable(order=300, description="指定用于已关闭 GitLab 问题的问题状态。<br><b>注意：</b> 如果此处没有合适的选项，您可以自定义 系统 问题状态")
 	@ChoiceProvider("getCloseStateChoices")
 	@NotEmpty
 	public String getClosedIssueState() {
@@ -56,8 +55,7 @@ public class IssueImportOption implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=350, description="Specify a multi-value user field to hold assignees information.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=350, description="指定一个多值用户字段来保存受让人信息。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getAssigneesIssueFieldChoices")
 	@NotEmpty
 	public String getAssigneesIssueField() {
@@ -78,8 +76,7 @@ public class IssueImportOption implements Serializable {
 		return choices;
 	}
 
-	@Editable(order=360, description="Optionally specify a date field to hold due date information.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=360, description="可以选择指定一个日期字段来保存到期日期信息。<br><b>注意：</b>如果此处没有适当的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getDueDateIssueFieldChoices")
 	public String getDueDateIssueField() {
 		return dueDateIssueField;
@@ -99,8 +96,7 @@ public class IssueImportOption implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=370, description="Optionally specify a working period field to hold estimated time infomration.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=370, description="可以选择指定工作期间字段以保存估计的时间信息。<br><b>注意：</b>如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getWorkingPeriodIssueFieldChoices")
 	public String getEstimatedTimeIssueField() {
 		return estimatedTimeIssueField;
@@ -110,8 +106,7 @@ public class IssueImportOption implements Serializable {
 		this.estimatedTimeIssueField = estimatedTimeIssueField;
 	}
 
-	@Editable(order=380, description="Optionally specify a working period field to hold spent time infomration.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=380, description="可以选择指定一个工作时间字段来保存花费的时间信息。<br><b>注意：</b>如果此处没有适当的选项，您可以自定义 系统 问题字段")
 	@ChoiceProvider("getWorkingPeriodIssueFieldChoices")
 	public String getSpentTimeIssueField() {
 		return spentTimeIssueField;
@@ -131,9 +126,7 @@ public class IssueImportOption implements Serializable {
 		return choices;
 	}
 	
-	@Editable(order=400, description="Specify how to map GitLab issue labels to OneDev custom "
-			+ "fields.<br>"
-			+ "<b>NOTE: </b> You may customize OneDev issue fields in case there is no appropriate option here")
+	@Editable(order=400, description="指定如何将 GitLab 问题标签映射到 OneDev 自定义字段。<br><b>注意：</b> 如果此处没有合适的选项，您可以自定义 系统 问题字段")
 	public List<IssueLabelMapping> getIssueLabelMappings() {
 		return issueLabelMappings;
 	}

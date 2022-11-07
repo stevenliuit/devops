@@ -24,10 +24,7 @@ public abstract class PullRequestTrigger extends TransitionTrigger {
 				.getRuleName(IssueQueryLexer.FixedInCurrentPullRequest));		
 	}
 	
-	@Editable(name="Target Branches", order=100, placeholder="所有分支", description="Optionally specify "
-			+ "space-separated target branches of the pull requests to check. Use '**', '*' or '?' for "
-			+ "<a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all branches")
+	@Editable(name="目标分支", order=100, placeholder="所有分支", description="可以选择指定要检查的拉取请求的以空格分隔的目标分支。 使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除。 留空以匹配所有分支")
 	@Patterns(suggester = "suggestBranches", path=true)
 	public String getBranches() {
 		return branches;
@@ -37,8 +34,7 @@ public abstract class PullRequestTrigger extends TransitionTrigger {
 		this.branches = branches;
 	}
 
-	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues "
-			+ "applicable for this transition. Leave empty for all issues")
+	@Editable(order=1000, name="适用问题", placeholder="所有", description="（可选）指定适用于此过渡的问题。 为所有问题留空")
 	@IssueQuery(withOrder = false, withCurrentPullRequestCriteria = true)
 	@Override
 	public String getIssueQuery() {

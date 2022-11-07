@@ -23,9 +23,7 @@ public class BranchUpdateTrigger extends TransitionTrigger {
 				.getRuleName(IssueQueryLexer.FixedInCurrentCommit));		
 	}
 	
-	@Editable(order=200, name="Applicable Branches", placeholder="所有分支", description="Optionally specify space-separated branches "
-			+ "applicable for this trigger. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all")
+	@Editable(order=200, name="适用分支", placeholder="所有分支", description="可以选择指定适用于此触发器的空格分隔分支。 使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除。 留空以匹配所有")
 	@Patterns(suggester = "suggestBranches", path=true)
 	public String getBranches() {
 		return branches;
@@ -44,8 +42,7 @@ public class BranchUpdateTrigger extends TransitionTrigger {
 			return new ArrayList<>();
 	}
 
-	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues applicable "
-			+ "for this transition. Leave empty for all issues")
+	@Editable(order=1000, name="适用问题", placeholder="所有", description="（可选）指定适用于此过渡的问题。 为所有问题留空")
 	@IssueQuery(withOrder = false, withCurrentCommitCriteria = true)
 	@Override
 	public String getIssueQuery() {
@@ -59,9 +56,9 @@ public class BranchUpdateTrigger extends TransitionTrigger {
 	@Override
 	public String getDescription() {
 		if (branches != null)
-			return "code is committed to branches '" + branches + "'";
+			return "代码提交到分支 '" + branches + "'";
 		else
-			return "code is committed to any branch";
+			return "代码提交到任何分支";
 	}
 	
 }

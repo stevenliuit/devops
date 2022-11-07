@@ -53,7 +53,7 @@ public class LinkSpec extends AbstractEntity {
 	@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
 	private Collection<LinkAuthorization> authorizations = new ArrayList<>();
 	
-	@Editable(order=100, description="Name of the link")
+	@Editable(order=100, description="链接的名称")
 	@NotEmpty
 	public String getName() {
 		return name;
@@ -63,7 +63,7 @@ public class LinkSpec extends AbstractEntity {
 		this.name = name;
 	}
 
-	@Editable(order=150, name="Multiple", description="Whether or not multiple issues can be linked")
+	@Editable(order=150, name="多个", description="是否可以链接多个问题")
 	public boolean isMultiple() {
 		return multiple;
 	}
@@ -73,8 +73,8 @@ public class LinkSpec extends AbstractEntity {
 	}
 
 
-	@Editable(order=160, name="Linkable Issues", placeholder="所有问题", 
-			description="Optionally specify criteria of issues which can be linked")
+	@Editable(order=160, name="可链接问题", placeholder="所有问题", 
+			description="可选地指定可以链接的问题的标准")
 	@io.onedev.server.web.editable.annotation.IssueQuery
 	public String getIssueQuery() {
 		return issueQuery;
@@ -84,8 +84,7 @@ public class LinkSpec extends AbstractEntity {
 		this.issueQuery = issueQuery;
 	}
 
-	@Editable(order=175, name="Asymmetric", description="Whether or not the link is asymmetric. A asymmetric link has different "
-			+ "meaning from different side. For instance a 'parent-child' link is asymmetric, while a 'related to' link is symmetric")
+	@Editable(order=175, name="不对称", description="链接是否不对称。不对称链接在不同的方面具有不同的含义。例如，'parent-child'链接是不对称的，而'related to'链接是对称的")
 	public LinkSpecOpposite getOpposite() {
 		return opposite;
 	}

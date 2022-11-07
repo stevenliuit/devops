@@ -48,10 +48,7 @@ public class JobSecret implements Serializable {
 	}
 
 	@Editable(order=300, placeholder="所有", description=""
-			+ "Optionally specify space-separated branches to authorize.\n"
-			+ "Only builds from authorized branches can access this secret.\n"
-			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to authorize all branches")
+			+ "可以选择指定以空格分隔的分支进行授权。\n 只有来自授权分支的构建才能访问此密钥。\n 使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。前缀'-' 排除。 留空以授权所有分支机构")
 	@Patterns(suggester = "suggestBranches", path=true)
 	public String getAuthorizedBranches() {
 		return authorizedBranches;

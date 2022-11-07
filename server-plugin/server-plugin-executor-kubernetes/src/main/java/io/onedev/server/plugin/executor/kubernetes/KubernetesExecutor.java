@@ -129,7 +129,7 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 	
 	private transient volatile String containerName;
 	
-	@Editable(order=20, description="Optionally specify node selector of the job pods")
+	@Editable(order=20, description="可选择指定作业 pod 的节点选择器")
 	public List<NodeSelectorEntry> getNodeSelector() {
 		return nodeSelector;
 	}
@@ -138,9 +138,7 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.nodeSelector = nodeSelector;
 	}
 
-	@Editable(order=40, description="Optionally specify cluster role the job pods service account "
-			+ "binding to. This is necessary if you want to do things such as running other "
-			+ "Kubernetes pods in job command")
+	@Editable(order=40, description="可以选择指定作业 pod 服务帐户绑定到的集群角色。 如果您想做一些事情，例如在作业命令中运行其他 Kubernetes pod，这是必要的")
 	public String getClusterRole() {
 		return clusterRole;
 	}
@@ -149,8 +147,7 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.clusterRole = clusterRole;
 	}
 
-	@Editable(order=200, description="Specify login information of docker registries if necessary. "
-			+ "These logins will be used to create image pull secrets of the job pods")
+	@Editable(order=200, description="如有必要，指定 docker 注册表的登录信息。 这些登录名将用于创建作业 pod 的图像拉取secrets")
 	public List<RegistryLogin> getRegistryLogins() {
 		return registryLogins;
 	}
@@ -159,13 +156,7 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.registryLogins = registryLogins;
 	}
 	
-	@Editable(order=300, description="Whether or not to mount docker/containerd sock into job "
-			+ "container to support container operations in job commands, for instance to build "
-			+ "container image.<br>"
-			+ "<b class='text-danger'>WARNING</b>: Malicious jobs can take control of k8s node "
-			+ "running the job by operating the mounted container sock. You should configure "
-			+ "job authorization below to make sure the executor can only be used by trusted "
-			+ "jobs if this option is enabled")
+	@Editable(order=300, description="是否将 docker/containerd sock 挂载到作业容器中以支持作业命令中的容器操作，例如构建容器映像。<br><b class='text-danger'>WARNING</b>：恶意作业可能会占用 通过操作挂载的容器 sock 来控制运行作业的 k8s 节点。 您应该在下面配置作业授权，以确保如果启用此选项，执行程序只能由受信任的作业使用")
 	public boolean isMountContainerSock() {
 		return mountContainerSock;
 	}
@@ -174,9 +165,7 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.mountContainerSock = mountContainerSock;
 	}
 
-	@Editable(order=25000, group="More Settings", description="Optionally specify where to run service pods "
-			+ "specified in job. The first matching locator will be used. If no any locators are found, "
-			+ "node selector of the executor will be used")
+	@Editable(order=25000, group="更多设置", description="（可选）指定在哪里运行作业中指定的服务 pod。 将使用第一个匹配的定位器。 如果没有找到任何定位器，将使用执行器的节点选择器")
 	public List<ServiceLocator> getServiceLocators() {
 		return serviceLocators;
 	}
@@ -185,10 +174,8 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.serviceLocators = serviceLocators;
 	}
 
-	@Editable(name="Kubectl Config File", order=26000, group="More Settings", 
-			placeholder="Use default", description="Specify absolute path to the config file "
-					+ "used by kubectl to access the cluster. Leave empty to have kubectl "
-					+ "determining cluster access information automatically")
+	@Editable(name="Kubectl配置文件", order=26000, group="更多设置", 
+			placeholder="默认情况下使用", description="指定 kubectl 用于访问集群的配置文件的绝对路径。 留空让 kubectl 自动确定集群访问信息")
 	public String getConfigFile() {
 		return configFile;
 	}
@@ -197,9 +184,8 @@ public class KubernetesExecutor extends JobExecutor implements Testable<TestData
 		this.configFile = configFile;
 	}
 
-	@Editable(name="Path to kubectl", order=27000, group="More Settings", placeholder="Use default", 
-			description="Specify absolute path to the kubectl utility, for instance: <i>/usr/bin/kubectl</i>. "
-			+ "If left empty, OneDev will try to find the utility from system path")
+	@Editable(name="kubectl 的路径", order=27000, group="更多设置", placeholder="默认情况下使用", 
+			description="指定 kubectl 实用程序的绝对路径，例如：<i>/usr/bin/kubectl</i>。 如果留空，OneDev 将尝试从系统路径中查找实用程序")
 	public String getKubeCtlPath() {
 		return kubeCtlPath;
 	}

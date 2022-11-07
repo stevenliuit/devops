@@ -602,7 +602,7 @@ public abstract class IssueSidePanel extends Panel {
 			protected void onInitialize() {
 				super.onInitialize();
 				
-				getSettings().setPlaceholder("Add to milestone...");
+				getSettings().setPlaceholder("添加到里程碑...");
 				getSettings().setFormatResult("onedev.server.milestoneChoiceFormatter.formatResult");
 				getSettings().setFormatSelection("onedev.server.milestoneChoiceFormatter.formatSelection");
 				getSettings().setEscapeMarkup("onedev.server.milestoneChoiceFormatter.escapeMarkup");

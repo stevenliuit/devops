@@ -24,10 +24,8 @@ public class ServiceLocator implements Serializable {
 	
 	private List<NodeSelectorEntry> nodeSelector = new ArrayList<>();
 	
-	@Editable(order=100, name="Applicable Names", placeholder="所有", description=""
-			+ "Optionally specify space-separated service names applicable for this locator. "
-			+ "Use '*' or '?' for wildcard match. Prefix with '-' to exclude. "
-			+ "Leave empty to match all")
+	@Editable(order=100, name="适用名称", placeholder="所有", description=""
+			+ "可以选择指定适用于此定位器的以空格分隔的服务名称。 使用“*”或“？” 用于通配符匹配。 前缀 '-' 排除。 留空以匹配所有")
 	@Patterns
 	public String getServiceNames() {
 		return serviceNames;
@@ -38,9 +36,7 @@ public class ServiceLocator implements Serializable {
 	}
 	
 	@Editable(order=200, name="Applicable Images", placeholder="所有", description=""
-			+ "Optionally specify space-separated service images applicable for this locator. "
-			+ "Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all")
+			+ "可以选择指定适用于此定位器的以空格分隔的服务图像。 使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除。 留空以匹配所有")
 	@Patterns(path=true)
 	public String getServiceImages() {
 		return serviceImages;
@@ -50,8 +46,8 @@ public class ServiceLocator implements Serializable {
 		this.serviceImages = serviceImages;
 	}
 
-	@Editable(order=300, description="Specify node selector of this locator")
-	@Size(min=1, message="At least one entry should be specified")
+	@Editable(order=300, description="指定此定位器的节点选择器")
+	@Size(min=1, message="至少应指定一个条目")
 	public List<NodeSelectorEntry> getNodeSelector() {
 		return nodeSelector;
 	}

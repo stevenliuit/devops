@@ -13,7 +13,7 @@ import io.onedev.server.web.editable.annotation.IssueQuery;
 import io.onedev.server.web.editable.annotation.Patterns;
 import io.onedev.server.web.util.SuggestionUtils;
 
-@Editable(order=400, name="Build is successful")
+@Editable(order=400, name="构建成功")
 public class BuildSuccessfulTrigger extends TransitionTrigger {
 
 	private static final long serialVersionUID = 1L;
@@ -27,9 +27,7 @@ public class BuildSuccessfulTrigger extends TransitionTrigger {
 				.getRuleName(IssueQueryLexer.FixedInCurrentBuild));		
 	}
 	
-	@Editable(order=100, name="Applicable Jobs", placeholder="Any job", description="Optionally specify space-separated jobs "
-			+ "applicable for this trigger. Use '*' or '?' for wildcard match. Prefix with '-' to exclude. "
-			+ "Leave empty to match all")
+	@Editable(order=100, name="适用Jobs", placeholder="任何job", description="可以选择指定适用于此触发器的以空格分隔的作业。 使用“*”或“？” 用于通配符匹配。 前缀 '-' 排除。 留空以匹配所有")
 	@Patterns(suggester = "suggestJobs")
 	public String getJobNames() {
 		return jobNames;
@@ -39,9 +37,7 @@ public class BuildSuccessfulTrigger extends TransitionTrigger {
 		this.jobNames = jobNames;
 	}
 
-	@Editable(order=200, name="Applicable Branches", placeholder="所有分支", description="Optionally specify space-separated branches "
-			+ "applicable for this trigger. Use '**', '*' or '?' for <a href='$docRoot/pages/path-wildcard.md' target='_blank'>path wildcard match</a>. "
-			+ "Prefix with '-' to exclude. Leave empty to match all")
+	@Editable(order=200, name="适用分支", placeholder="所有分支", description="可以选择指定适用于此触发器的空格分隔分支。 使用“**”、“*”或“？” 用于<a href='$docRoot/pages/path-wildcard.md' target='_blank'>路径通配符匹配</a>。 前缀 '-' 排除。 留空以匹配所有")
 	@Patterns(suggester = "suggestBranches", path=true)
 	public String getBranches() {
 		return branches;
@@ -69,8 +65,7 @@ public class BuildSuccessfulTrigger extends TransitionTrigger {
 			return new ArrayList<>();
 	}
 	
-	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues "
-			+ "applicable for this transition. Leave empty for all issues")
+	@Editable(order=1000, name="适用问题", placeholder="所有", description="（可选）指定适用于此过渡的问题。 为所有问题留空")
 	@IssueQuery(withOrder = false, withCurrentBuildCriteria = true)
 	@Override
 	public String getIssueQuery() {
@@ -86,7 +81,7 @@ public class BuildSuccessfulTrigger extends TransitionTrigger {
 		Usage usage = super.onDeleteBranch(branchName);
 		PatternSet patternSet = PatternSet.parse(getBranches());
 		if (patternSet.getIncludes().contains(branchName) || patternSet.getExcludes().contains(branchName))
-			usage.add("applicable branches");
+			usage.add("适用分支");
 		return usage;
 	}
 	
@@ -94,14 +89,14 @@ public class BuildSuccessfulTrigger extends TransitionTrigger {
 	public String getDescription() {
 		if (jobNames != null) {
 			if (branches != null)
-				return "build is successful for jobs '" + jobNames + "' on branches '" + branches + "'";
+				return "构建工作成功 '" + jobNames + "' 在分支上 '" + branches + "'";
 			else
-				return "build is successful for jobs '" + jobNames + "' on any branch";
+				return "构建工作成功 '" + jobNames + "' 在任何分支上";
 		} else {
 			if (branches != null)
-				return "build is successful for any job on branches '" + branches + "'";
+				return "build 对于分支上的任何工作都是成功的 '" + branches + "'";
 			else
-				return "build is successful for any job and branch";
+				return "构建对于任何工作和分支都是成功的";
 		}
 	}
 	

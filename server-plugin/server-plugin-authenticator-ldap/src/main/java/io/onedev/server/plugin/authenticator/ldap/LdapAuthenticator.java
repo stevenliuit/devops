@@ -36,7 +36,7 @@ import io.onedev.server.model.support.administration.authenticator.Authenticator
 import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.Password;
 
-@Editable(name="Generic LDAP", order=200)
+@Editable(name="通用 LDAP", order=200)
 public class LdapAuthenticator extends Authenticator {
 
 	private static final long serialVersionUID = 1L;
@@ -62,7 +62,7 @@ public class LdapAuthenticator extends Authenticator {
     private GroupRetrieval groupRetrieval = new DoNotRetrieveGroups();
     
     @Editable(order=100, name="LDAP URL", description=
-        	"Specifies LDAP URL, for example: <i>ldap://localhost</i>, or <i>ldaps://localhost</i>.")
+        	"指定 LDAP URL，例如: <i>ldap://localhost</i>, or <i>ldaps://localhost</i>.")
     @NotEmpty
 	public String getLdapUrl() {
 		return ldapUrl;
@@ -73,9 +73,7 @@ public class LdapAuthenticator extends Authenticator {
 	}
 
 	@Editable(order=300, description=""
-			+ "To authenticate user against LDAP and retrieve associated attributes and groups, OneDev would have to "
-			+ "first authenticate itself against the LDAP server and OneDev does that by sending 'manager' DN and "
-			+ "password")
+			+ "要根据 LDAP 对用户进行身份验证并检索关联的属性和组，系统必须首先根据 LDAP 服务器对自己进行身份验证，而系统通过发送“manager”DN 和密码来做到这一点")
 	@NotEmpty
 	public String getManagerDN() {
 		return managerDN;
@@ -85,7 +83,7 @@ public class LdapAuthenticator extends Authenticator {
 		this.managerDN = managerDN;
 	}
 
-	@Editable(order=400, description="Specifies password of above manager DN")
+	@Editable(order=400, description="指定上述管理员的密码 DN")
 	@NotEmpty
 	@Password
 	public String getManagerPassword() {
@@ -97,7 +95,7 @@ public class LdapAuthenticator extends Authenticator {
 	}
 
 	@Editable(order=500, description=
-			"Specifies the base node for user search. For example: <i>ou=users, dc=example, dc=com</i>")
+			"指定用户搜索的基节点。 例如: <i>ou=users, dc=example, dc=com</i>")
 	@NotEmpty
 	public String getUserSearchBase() {
 		return userSearchBase;
@@ -108,9 +106,7 @@ public class LdapAuthenticator extends Authenticator {
 	}
 
 	@Editable(order=600, description=
-		     "This filter is used to determine the LDAP entry for current user. " + 
-		     "For example: <i>(&(uid={0})(objectclass=person))</i>. In this example, " +
-		     "<i>{0}</i> represents login name of current user.")
+		     "此过滤器用于确定当前用户的 LDAP 条目。 例如：<i>(&(uid={0})(objectclass=person))</i>。 在本例中，<i>{0}</i> 表示当前用户的登录名。")
 	@NotEmpty
 	public String getUserSearchFilter() {
 		return userSearchFilter;
@@ -121,9 +117,7 @@ public class LdapAuthenticator extends Authenticator {
 	}
 
 	@Editable(order=700, description=""
-			+ "Optionally specifies name of the attribute inside the user LDAP entry whose value will be taken as user "
-			+ "full name. This field is normally set to <i>displayName</i> according to RFC 2798. If left empty, full "
-			+ "name of the user will not be retrieved")
+			+ "可选地指定用户 LDAP 条目内的属性名称，其值将被视为用户全名。 根据 RFC 2798，此字段通常设置为 <i>displayName</i>。如果留空，将不会检索用户的全名")
 	public String getUserFullNameAttribute() {
 		return userFullNameAttribute;
 	}
@@ -133,8 +127,7 @@ public class LdapAuthenticator extends Authenticator {
 	}
 
 	@Editable(order=800, description=""
-			+ "Specifies name of the attribute inside the user LDAP entry whose value will be taken as user "
-			+ "email. This field is normally set to <i>mail</i> according to RFC 2798")
+			+ "指定用户 LDAP 条目中属性的名称，其值将被视为用户电子邮件。 根据 RFC 2798，此字段通常设置为 <i>mail</i>")
 	@NotEmpty
 	public String getUserEmailAttribute() {
 		return userEmailAttribute;
@@ -144,9 +137,8 @@ public class LdapAuthenticator extends Authenticator {
 		this.userEmailAttribute = userEmailAttribute;
 	}
 
-	@Editable(name="User SSH Key Attribute", order=850, description=""
-			+ "Optionally specify name of the attribute inside the user LDAP entry whose values will be taken as user "
-			+ "SSH keys. SSH keys will be managed by LDAP only if this field is set")
+	@Editable(name="用户 SSH 密钥属性", order=850, description=""
+			+ "（可选）指定用户 LDAP 条目中的属性名称，其值将作为用户 SSH 密钥。 仅当设置此字段时，SSH 密钥才会由 LDAP 管理")
 	public String getUserSshKeyAttribute() {
 		return userSshKeyAttribute;
 	}
@@ -155,10 +147,7 @@ public class LdapAuthenticator extends Authenticator {
 		this.userSshKeyAttribute = userSshKeyAttribute;
 	}
 
-	@Editable(order=900, description="Specify the strategy to retrieve group membership information. "
-			+ "To give appropriate permissions to a LDAP group, a OneDev group with same name should "
-			+ "be defined. Use strategy <tt>Do Not Retrieve Groups</tt> if you want to manage group "
-			+ "memberships at OneDev side")
+	@Editable(order=900, description="指定检索组成员信息的策略。 要为 LDAP 组授予适当的权限，应定义同名的系统组。 如果您想在系统端管理组成员资格，请使用策略 <tt>不检索组</tt>")
 	@NotNull(message="不能为空")
 	public GroupRetrieval getGroupRetrieval() {
 		return groupRetrieval;

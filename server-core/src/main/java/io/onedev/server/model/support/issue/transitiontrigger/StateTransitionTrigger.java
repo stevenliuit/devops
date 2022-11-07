@@ -13,7 +13,7 @@ import io.onedev.server.web.editable.annotation.Editable;
 import io.onedev.server.web.editable.annotation.IssueQuery;
 import io.onedev.server.web.editable.annotation.OmitName;
 
-@Editable(order=550, name="State of other issue is transited to")
+@Editable(order=550, name="其他问题的状态转移到")
 public class StateTransitionTrigger extends TransitionTrigger {
 
 	private static final long serialVersionUID = 1L;
@@ -23,7 +23,7 @@ public class StateTransitionTrigger extends TransitionTrigger {
 	@Editable(order=100)
 	@OmitName
 	@ChoiceProvider("getStateChoices")
-	@Size(min=1, message="At least one state needs to be specified")
+	@Size(min=1, message="至少需要指定一种状态")
 	public List<String> getStates() {
 		return states;
 	}
@@ -40,8 +40,7 @@ public class StateTransitionTrigger extends TransitionTrigger {
 		return stateNames;
 	}
 	
-	@Editable(order=1000, name="Applicable Issues", placeholder="所有", description="Optionally specify issues "
-			+ "applicable for this transition. Leave empty for all issues")
+	@Editable(order=1000, name="适用问题", placeholder="所有", description="（可选）指定适用于此过渡的问题。 为所有问题留空")
 	@IssueQuery(withOrder = false, withCurrentIssueCriteria = true)
 	@Override
 	public String getIssueQuery() {
@@ -54,7 +53,7 @@ public class StateTransitionTrigger extends TransitionTrigger {
 
 	@Override
 	public String getDescription() {
-		return "state of an issue is transited to " + states;
+		return "问题的状态转换为 " + states;
 	}
 	
 }

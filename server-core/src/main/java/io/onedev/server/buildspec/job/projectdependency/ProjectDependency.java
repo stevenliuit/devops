@@ -43,7 +43,7 @@ public class ProjectDependency implements Serializable {
 	private String accessTokenSecret;
 	
 	// change Named("projectPath") also if change name of this property 
-	@Editable(order=200, name="Project", description="Specify project to retrieve artifacts from")
+	@Editable(order=200, name="项目", description="指定要从中检索工件的项目")
 	@ChoiceProvider("getProjectChoices")
 	@NotEmpty
 	public String getProjectPath() {
@@ -71,7 +71,7 @@ public class ProjectDependency implements Serializable {
 		return choices;
 	}
 
-	@Editable(order=300, name="Build")
+	@Editable(order=300, name="编译")
 	@NotNull
 	public BuildProvider getBuildProvider() {
 		return buildProvider;
@@ -92,8 +92,8 @@ public class ProjectDependency implements Serializable {
 		return null;
 	}
 	
-	@Editable(order=400, name="Artifacts to Retrieve", description="Specify artifacts to retrieve into <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>. "
-			+ "Only published artifacts (via artifact publish step) can be retrieved.")
+	@Editable(order=400, name="要检索的工件", description="指定要检索到 <a href='$docRoot/pages/concepts.md#job-workspace'>工作空间</a>. "
+			+ "只能检索已发布的工件（通过工件发布步骤）.")
 	@Interpolative(variableSuggester="suggestVariables")
 	@Patterns(path=true)
 	@NotEmpty
@@ -106,8 +106,8 @@ public class ProjectDependency implements Serializable {
 	}
 	
 	@Editable(order=500, placeholder="工作空间", description=""
-			+ "Optionally specify a path relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> "
-			+ "to put retrieved artifacts. Leave empty to use job workspace itself")
+			+ "（可选）指定相对于的路径<a href='$docRoot/pages/concepts.md#job-workspace'>工作空间</a> "
+			+ "放置检索到的工件。保留为空以使用作业工作区本身")
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getDestinationPath() {
 		return destinationPath;
@@ -122,9 +122,7 @@ public class ProjectDependency implements Serializable {
 		return BuildSpec.suggestVariables(matchWith, false, false, false);
 	}
 	
-	@Editable(order=500, placeholder="匿名访问", description="Specify a secret to be used as "
-			+ "access token to retrieve artifacts from above project. If not specified, project "
-			+ "artifacts will be accessed anonymously")
+	@Editable(order=500, placeholder="匿名访问", description="指定要用作访问令牌的机密，以从上述项目中检索工件。如果未指定，将匿名访问项目工件")
 	@ChoiceProvider("getAccessTokenSecretChoices")
 	@Nullable
 	public String getAccessTokenSecret() {

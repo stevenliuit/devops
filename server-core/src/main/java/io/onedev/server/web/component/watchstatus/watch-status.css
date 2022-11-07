@@ -2,13 +2,13 @@
 	margin-left: 0.5rem;
 }
 .watch-status.default:AFTER {
-	content: "Watch if involved";
+	content: "关注是否参与";
 }
 .watch-status.watch:AFTER {
-	content: "Watch";
+	content: "观看";
 }
 .watch-status.do-not-watch:AFTER {
-	content: "Do not watch";
+	content: "不要看";
 }
 .watch-status .icon {
 	display: none;

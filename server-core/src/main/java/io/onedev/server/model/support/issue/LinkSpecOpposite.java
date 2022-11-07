@@ -22,8 +22,8 @@ public class LinkSpecOpposite implements Serializable {
 	
 	private String issueQuery;
 	
-	@Editable(order=100, name="Name On the Other Side", description="Name of the link on the other side. "
-			+ "For instance if name is <tt>child issues</tt>, name on the other side can be <tt>parent issue</tt>")
+	@Editable(order=100, name="另一边的名字", description="另一边的链接名称. "
+			+ "例如，如果名称是<tt>子问题</tt>，另一边的名称可以是<tt>父问题</tt>")
 	@NotEmpty
 	public String getName() {
 		return name;
@@ -33,9 +33,7 @@ public class LinkSpecOpposite implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=200, name="Multiple On the Other Side", description="Whether or not multiple issues can be linked "
-			+ "on the other side. For instance child issues on the other side means parent issue, and multiple should "
-			+ "be false on that side if only one parent is allowed")
+	@Editable(order=200, name="多在另一边", description="是否可以在另一侧链接多个问题. 例如，另一侧的子问题意味着父问题，如果只允许一个父问题，则该侧的多个应该是错误的")
 	public boolean isMultiple() {
 		return multiple;
 	}
@@ -44,8 +42,8 @@ public class LinkSpecOpposite implements Serializable {
 		this.multiple = multiple;
 	}
 
-	@Editable(order=300, name="Linkable Issues On the Other Side", placeholder="所有问题", 
-			description="Optionally specify criteria of issues which can be linked on the other side")
+	@Editable(order=300, name="另一端的可链接问题", placeholder="所有问题", 
+			description="（可选）指定可以在另一侧链接的问题标准")
 	@io.onedev.server.web.editable.annotation.IssueQuery
 	public String getIssueQuery() {
 		return issueQuery;

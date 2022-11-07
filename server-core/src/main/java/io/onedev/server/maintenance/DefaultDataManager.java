@@ -260,18 +260,18 @@ public class DefaultDataManager implements DataManager, Serializable {
 		setting = settingManager.getSetting(Key.ISSUE);
 		if (setting == null) {
 			LinkSpec link = new LinkSpec();
-			link.setName("Child Issue");
+			link.setName("子问题");
 			link.setMultiple(true);
 			link.setOpposite(new LinkSpecOpposite());
-			link.getOpposite().setName("Parent Issue");
+			link.getOpposite().setName("父问题");
 			link.setOrder(1);
 			linkSpecManager.save(link);
 			
 			link = new LinkSpec();
-			link.setName("Blocked By");
+			link.setName("被阻止");
 			link.setMultiple(true);
 			link.setOpposite(new LinkSpecOpposite());
-			link.getOpposite().setName("Blocking");
+			link.getOpposite().setName("阻塞");
 			link.getOpposite().setMultiple(true);
 			link.setOrder(2);
 			linkSpecManager.save(link);

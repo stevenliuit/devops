@@ -107,7 +107,7 @@ public class ServerDockerExecutor extends JobExecutor implements Testable<TestDa
 	
 	private static transient volatile String hostInstallPath;
 	
-	@Editable(order=400, description="Specify login information for docker registries if necessary")
+	@Editable(order=400, description="如有必要，指定 docker 注册表的登录信息")
 	public List<RegistryLogin> getRegistryLogins() {
 		return registryLogins;
 	}
@@ -116,11 +116,7 @@ public class ServerDockerExecutor extends JobExecutor implements Testable<TestDa
 		this.registryLogins = registryLogins;
 	}
 
-	@Editable(order=500, description="Whether or not to mount docker sock into job container to "
-			+ "support docker operations in job commands, for instance to build docker image.<br>"
-			+ "<b class='text-danger'>WARNING</b>: Malicious jobs can take control of whole OneDev "
-			+ "by operating the mounted docker sock. You should configure job authorization below "
-			+ "to make sure the executor can only be used by trusted jobs if this option is enabled")
+	@Editable(order=500, description="是否将 docker sock 挂载到作业容器中以支持作业命令中的 docker 操作，例如构建 docker 映像。<br><b class='text-danger'>WARNING</b>：恶意作业可以控制 通过操作安装的 docker sock 整个系统。 您应该在下面配置作业授权，以确保如果启用此选项，执行程序只能由受信任的作业使用")
 	public boolean isMountDockerSock() {
 		return mountDockerSock;
 	}
@@ -129,8 +125,7 @@ public class ServerDockerExecutor extends JobExecutor implements Testable<TestDa
 		this.mountDockerSock = mountDockerSock;
 	}
 
-	@Editable(order=50050, group="More Settings", description="Optionally specify options to run container. For instance, you may use <tt>-m 2g</tt> "
-			+ "to limit memory of created container to be 2 giga bytes")
+	@Editable(order=50050, group="更多设置", description="可以选择指定运行容器的选项。 例如，您可以使用 <tt>-m 2g</tt> 将创建的容器的内存限制为 2 GB")
 	public String getRunOptions() {
 		return runOptions;
 	}
@@ -139,9 +134,8 @@ public class ServerDockerExecutor extends JobExecutor implements Testable<TestDa
 		this.runOptions = runOptions;
 	}
 
-	@Editable(order=50100, group="More Settings", placeholder="Use default", description=""
-			+ "Optionally specify docker executable, for instance <i>/usr/local/bin/docker</i>. "
-			+ "Leave empty to use docker executable in PATH")
+	@Editable(order=50100, group="更多设置", placeholder="默认情况下使用", description=""
+			+ "可选择指定 docker 可执行文件，例如 <i>/usr/local/bin/docker</i>。留空以在 PATH 中使用 docker 可执行文件")
 	public String getDockerExecutable() {
 		return dockerExecutable;
 	}

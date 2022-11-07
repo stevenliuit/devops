@@ -50,7 +50,7 @@ public class JobDependency implements Serializable {
 		this.jobName = jobName;
 	}
 
-	@Editable(order=150, description="Whether or not to require this dependency to be successful")
+	@Editable(order=150, description="是否要求此依赖成功")
 	public boolean isRequireSuccessful() {
 		return requireSuccessful;
 	}
@@ -59,7 +59,7 @@ public class JobDependency implements Serializable {
 		this.requireSuccessful = requireSuccessful;
 	}
 
-	@Editable(order=200, name="Job Parameters")
+	@Editable(order=200, name="Job参数")
 	@ParamSpecProvider("getParamSpecs")
 	@VariableOption(withBuildVersion=false, withDynamicVariables=false)
 	@OmitName
@@ -71,11 +71,10 @@ public class JobDependency implements Serializable {
 		this.jobParams = jobParams;
 	}
 	
-	@Editable(order=300, name="Artifacts to Retrieve", placeholder="不检索", description=""
-			+ "Optionally specify artifacts to retrieve from the dependency into "
-			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a>. "
-			+ "Only published artifacts (via artifact publish step) can be retrieved. Leave empty to not "
-			+ "retrieve any artifacts")
+	@Editable(order=300, name="要检索的工件", placeholder="不检索", description=""
+			+ "可选地指定要从依赖项中检索到的工件 "
+			+ "<a href='$docRoot/pages/concepts.md#job-workspace'>工作空间</a>. "
+			+ "只能检索已发布的工件（通过工件发布步骤）。 留空不检索任何工件")
 	@Interpolative(variableSuggester="suggestVariables")
 	@Patterns(path=true)
 	public String getArtifacts() {
@@ -87,8 +86,8 @@ public class JobDependency implements Serializable {
 	}
 
 	@Editable(order=400, placeholder="工作空间", description=""
-			+ "Optionally specify a path relative to <a href='$docRoot/pages/concepts.md#job-workspace'>job workspace</a> "
-			+ "to put retrieved artifacts. Leave empty to use job workspace itself")
+			+ "（可选）指定相对于的路径<a href='$docRoot/pages/concepts.md#job-workspace'>工作空间</a> "
+			+ "放置检索到的工件。 留空以使用作业工作区本身")
 	@Interpolative(variableSuggester="suggestVariables")
 	public String getDestinationPath() {
 		return destinationPath;

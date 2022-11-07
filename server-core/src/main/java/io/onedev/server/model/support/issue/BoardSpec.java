@@ -74,8 +74,7 @@ public class BoardSpec implements Serializable {
 		this.name = name;
 	}
 
-	@Editable(order=200, placeholder="未指定", description="Optionally specify a base query to "
-			+ "filter/order issues of the board")
+	@Editable(order=200, placeholder="未指定", description="可选地指定一个基本查询来过滤/订购board的问题")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withCurrentUserCriteria = true)
 	@Nullable
 	public String getBaseQuery() {
@@ -86,8 +85,7 @@ public class BoardSpec implements Serializable {
 		this.baseQuery = baseQuery;
 	}
 
-	@Editable(order=250, placeholder="未指定", description="Optionally specify a base query to filter/order issues in backlog. "
-			+ "Backlog issues are those not associating with current milestone")
+	@Editable(order=250, placeholder="未指定", description="可选地指定一个基本查询来过滤/订购积压中的问题。积压问题是那些与当前里程碑无关的问题")
 	@io.onedev.server.web.editable.annotation.IssueQuery(withCurrentUserCriteria = true)
 	@Nullable
 	public String getBacklogBaseQuery() {
@@ -98,8 +96,7 @@ public class BoardSpec implements Serializable {
 		this.backlogBaseQuery = backlogBaseQuery;
 	}
 
-	@Editable(order=300, description="Specify issue field to identify different columns of the board. "
-			+ "Only state and single-valued enumeration field can be used here")
+	@Editable(order=300, description="指定问题字段以识别板的不同列。 这里只能使用state和single-valued枚举字段")
 	@ChoiceProvider("getIdentifyFieldChoices")
 	@NotEmpty
 	public String getIdentifyField() {
@@ -118,9 +115,8 @@ public class BoardSpec implements Serializable {
 		this.columns = columns;
 	}
 
-	@Editable(order=400, name="Board Columns", description="Specify columns of the board. "
-			+ "Each column corresponds to a value of the issue field specified above")
-	@Size(min=2, message="At least two columns need to be defined")
+	@Editable(order=400, name="Board列", description="指定Board列的列。 每列对应于上面指定的问题字段的值")
+	@Size(min=2, message="至少需要定义两列")
 	@ChoiceProvider("getColumnChoices")
 	public List<String> getEditColumns() {
 		if (editColumns == null)
@@ -147,7 +143,7 @@ public class BoardSpec implements Serializable {
 		return displayColumns;
 	}
 
-	@Editable(order=500, placeholder="不显示任何字段", description="Specify fields to display in board card")
+	@Editable(order=500, placeholder="不显示任何字段", description="指定要在板卡中显示的字段")
 	@ChoiceProvider("getDisplayFieldChoices")
 	public List<String> getDisplayFields() {
 		return displayFields;
@@ -157,7 +153,7 @@ public class BoardSpec implements Serializable {
 		this.displayFields = displayFields;
 	}
 	
-	@Editable(order=600, placeholder="Not displaying any links", description="Specify links to display in board card")
+	@Editable(order=600, placeholder="不显示任何链接", description="指定要在板卡中显示的链接")
 	@ChoiceProvider("getDisplayLinkChoices")
 	public List<String> getDisplayLinks() {
 		return displayLinks;

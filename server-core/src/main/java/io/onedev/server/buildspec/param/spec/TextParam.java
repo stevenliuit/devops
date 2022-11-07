@@ -20,7 +20,7 @@ public class TextParam extends ParamSpec {
 	
 	private DefaultValueProvider defaultValueProvider;
 
-	@Editable(order=1050, name="Multiple Lines")
+	@Editable(order=1050, name="多行")
 	public boolean isMultiline() {
 		return multiline;
 	}
@@ -29,8 +29,7 @@ public class TextParam extends ParamSpec {
 		this.multiline = multiline;
 	}
 
-	@Editable(order=1100, description="Optionally specify a <a href='http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html'>regular expression pattern</a> for valid values of " +
-			"the text input")
+	@Editable(order=1100, description="（可选）指定 <a href='http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html'>正则表达式模式</a> 文本输入的有效值")
 	public String getPattern() {
 		return pattern;
 	}
@@ -39,7 +38,7 @@ public class TextParam extends ParamSpec {
 		this.pattern = pattern;
 	}
 
-	@Editable(order=1200, name="Default Value", placeholder="无默认值")
+	@Editable(order=1200, name="默认值", placeholder="无默认值")
 	@Valid
 	public DefaultValueProvider getDefaultValueProvider() {
 		return defaultValueProvider;
