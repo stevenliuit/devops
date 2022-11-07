@@ -45,12 +45,12 @@ public class InUseErrorPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Unable To Delete Right Now";
+		return "现在无法删除";
 	}
 
 	@Override
 	protected String getSubTitle() {
-		return "The object you are deleting is still being used";
+		return "您正在删除的对象仍在使用中";
 	}
 
 	@Override

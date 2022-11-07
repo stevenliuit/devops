@@ -95,11 +95,11 @@ public class PasswordResetPage extends SimplePage {
 								+ "<p style='margin: 16px 0;'>"
 								+ "Per your request, password of your login \"%s\" at <a href=\"%s\">%s</a> has been reset to:<br>"
 								+ "%s<br><br>"
-								+ "Please login and change the password in your earliest convenience.",
+								+ "请尽快登录并更改密码.",
 								user.getDisplayName(), user.getName(), serverUrl, serverUrl, password);
 	
 							String textBody = String.format("Dear %s,\n\n"
-									+ "Per your request, password of account \"%s\" at %s has been reset to:\n"
+									+ "根据您的要求，帐户密码 \"%s\" at %s 已重置为:\n"
 									+ "%s",
 									user.getDisplayName(), user.getName(), serverUrl, password);
 							
@@ -120,10 +120,10 @@ public class PasswordResetPage extends SimplePage {
 									settingManager.getMailSetting().getSendSetting(), 
 									Arrays.asList(emailAddressValue),
 									Lists.newArrayList(), Lists.newArrayList(), 
-									"[Password Reset] Your OneDev Password Has Been Reset", 
+									"[重设密码] 您的 系统 密码已重置", 
 									htmlBody, textBody, null, null);
 							
-							return "Please check your email " + emailAddressValue + " for the reset password";
+							return "请查看你的邮箱 " + emailAddressValue + " 用于重置密码";
 						} else {
 							throw new ExplicitException("Unable to send password reset email as smtp setting is not defined");
 						}
@@ -149,12 +149,12 @@ public class PasswordResetPage extends SimplePage {
 	
 	@Override
 	protected String getTitle() {
-		return "Forgotten Password?";
+		return "忘记密码?";
 	}
 
 	@Override
 	protected String getSubTitle() {
-		return "Enter your user name or email to reset password";
+		return "输入您的用户名或电子邮件以重置密码";
 	}
 
 }

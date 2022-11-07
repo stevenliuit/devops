@@ -38,8 +38,7 @@ public class ImportServer implements Serializable, Validatable {
 	
 	private String project;
 	
-	@Editable(order=5, name="URL", description="Specify URL of remote git repository. "
-			+ "Only http/https protocol is supported")
+	@Editable(order=5, name="URL", description="指定远程 git 存储库的 URL。 仅支持 http/https 协议")
 	@NotEmpty
 	public String getUrl() {
 		return url;
@@ -49,7 +48,7 @@ public class ImportServer implements Serializable, Validatable {
 		this.url = url;
 	}
 
-	@Editable(order=10, name="Require Autentication")
+	@Editable(order=10, name="需要身份验证")
 	public Authentication getAuthentication() {
 		return authentication;
 	}
@@ -59,7 +58,7 @@ public class ImportServer implements Serializable, Validatable {
 	}
 
 	@Editable(order=200, placeholderProvider="getProjectPlaceholder", 
-			description="Specify project to be created at OneDev side")
+			description="指定要在系统端创建的项目")
 	public String getProject() {
 		return project;
 	}
@@ -126,7 +125,7 @@ public class ImportServer implements Serializable, Validatable {
 				SensitiveMasker.pop();
 			}
 			
-			return "project imported successfully";
+			return "项目导入成功";
 		} catch (Exception e) {
 			if (projectId != null)
 				OneDev.getInstance(StorageManager.class).deleteProjectDir(projectId);
@@ -145,7 +144,7 @@ public class ImportServer implements Serializable, Validatable {
 		if (getUrl() != null) {
 			if (!getUrl().startsWith("http://") && !getUrl().startsWith("https://")) {
 				isValid = false;
-				context.buildConstraintViolationWithTemplate("Only http(s) protocol is supported")
+				context.buildConstraintViolationWithTemplate("仅支持 http(s) 协议")
 						.addPropertyNode("url").addConstraintViolation();
 			}
 		}
@@ -155,7 +154,7 @@ public class ImportServer implements Serializable, Validatable {
 			try {
 				Project project = getProjectManager().initialize(getProject());
 				if (!project.isNew()) 
-					errorMessage = "Project already exists";
+					errorMessage = "项目已经存在";
 			} catch (UnauthorizedException e) {
 				errorMessage = e.getMessage();
 			}

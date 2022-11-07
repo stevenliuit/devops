@@ -30,7 +30,7 @@ public class MethodNotAllowedErrorPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Method Not Allowed";
+		return "不允许的方法";
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class MethodNotAllowedErrorPage extends SimplePage {
 	
 	@Override
 	protected String getSubTitle() {
-		return "This http method is not allowed";
+		return "不允许使用此 http 方法";
 	}
 
 }

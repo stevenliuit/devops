@@ -97,7 +97,7 @@ public class IssueImportPage<Where extends Serializable, What extends Serializab
 					
 					@Override
 					protected String getTitle() {
-						return "Importing from " + importer.getName();
+						return "从 " + importer.getName() + " 导入";
 					}
 
 					@Override

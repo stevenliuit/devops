@@ -92,7 +92,7 @@ public class ProjectImportPage extends LayoutPage {
 					
 					@Override
 					protected String getTitle() {
-						return "Importing from " + importer.getName();
+						return "从 " + importer.getName() + " 导入";
 					}
 
 					@Override

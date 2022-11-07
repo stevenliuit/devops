@@ -54,7 +54,7 @@ public class GitHubProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify repositories";
+			return "指定存储库";
 		}
 
 		@Override

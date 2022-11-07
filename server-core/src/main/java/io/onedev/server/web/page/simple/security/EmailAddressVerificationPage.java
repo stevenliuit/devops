@@ -64,7 +64,7 @@ public class EmailAddressVerificationPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Email Address Verification";
+		return "电子邮件地址验证";
 	}
 
 	@Override

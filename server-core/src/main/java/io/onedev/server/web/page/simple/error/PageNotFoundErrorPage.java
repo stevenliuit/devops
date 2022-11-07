@@ -30,7 +30,7 @@ public class PageNotFoundErrorPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Page Not Found";
+		return "网页未找到";
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class PageNotFoundErrorPage extends SimplePage {
 	
 	@Override
 	protected String getSubTitle() {
-		return "I didn't eat it. I swear!";
+		return "我没吃掉。 我发誓!";
 	}
 
 }

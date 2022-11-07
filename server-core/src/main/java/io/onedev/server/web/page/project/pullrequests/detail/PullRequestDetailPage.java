@@ -597,11 +597,9 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 				Collection<String> requiredJobs = new ArrayList<>(getPullRequest().getRequiredJobs());
 				requiredJobs.removeAll(getPullRequest().getCurrentBuilds().stream().map(it->it.getJobName()).collect(Collectors.toSet()));
 				if (requiredJobs.size() > 1) {
-					return "Jobs \"" + StringUtils.join(requiredJobs, ", ") + "\" are required to be successful, "
-							+ "however no applicable pull request trigger is defined for these jobs in build spec";
+					return "Jobs \"" + StringUtils.join(requiredJobs, ", ") + "\" 必须成功，但是在构建规范中没有为这些作业定义适用的拉取请求触发器";
 				} else if (requiredJobs.size() == 1) {
-					return "Job '" + requiredJobs.iterator().next() + "' is required to be successful, "
-							+ "however no applicable pull request trigger is defined for this job in build spec";
+					return "Job '" + requiredJobs.iterator().next() + "' 需要成功，但是在构建规范中没有为此作业定义适用的拉取请求触发器";
 				} else {
 					return null;
 				}
@@ -748,7 +746,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 											protected void updateAjaxAttributes(AjaxRequestAttributes attributes) {
 												super.updateAjaxAttributes(attributes);
 												attributes.getAjaxCallListeners().add(new ConfirmClickListener(
-														"Do you really want to change target branch to " + branch + "?"));
+														"你真的想将目标分支更改为 " + branch + "?"));
 											}
 
 											@Override
@@ -968,7 +966,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 						public void onClick() {
 							getPullRequestManager().check(getPullRequest(), false);
 							if (getPullRequest().getCheckError() == null) 
-								Session.get().success("Pull request is synchronized");
+								Session.get().success("拉取请求已同步");
 						}
 						
 					});
@@ -978,7 +976,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 						public void onClick() {
 							PullRequest request = getPullRequest();
 							getPullRequestManager().delete(request);
-							Session.get().success("Pull request #" + request.getNumber() + " deleted");
+							Session.get().success("拉取请求 #" + request.getNumber() + " 已删除");
 							
 							String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(PullRequest.class);
 							if (redirectUrlAfterDelete != null)
@@ -987,7 +985,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 								setResponsePage(ProjectPullRequestsPage.class, ProjectPullRequestsPage.paramsOf(getProject()));
 						}
 						
-					}.add(new ConfirmClickModifier("Do you really want to delete this pull request?")));
+					}.add(new ConfirmClickModifier("你真的要删除这个拉取请求吗?")));
 				} else {
 					actions.add(new WebMarkupContainer("synchronize"));
 					actions.add(new WebMarkupContainer("delete"));
@@ -1294,7 +1292,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Approve";
+						return "确认批准";
 					}
 				};
 			}
@@ -1327,7 +1325,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					protected boolean operate() {
 						if (canOperate()) {
 							getPullRequestReviewManager().review(getPullRequest(), false, getComment());
-							Session.get().success("Requested For changes");
+							Session.get().success("请求已更改");
 							return true;
 						} else {
 							return false; 
@@ -1336,7 +1334,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Request For Changes";
+						return "确认更改请求";
 					}
 				};
 			}
@@ -1403,7 +1401,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Discard";
+						return "确认丢弃";
 					}
 				};
 			}
@@ -1439,7 +1437,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Reopen";
+						return "确认重新打开";
 					}
 				};
 			}
@@ -1469,7 +1467,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					protected boolean operate() {
 						if (canOperate()) {
 							OneDev.getInstance(PullRequestManager.class).deleteSourceBranch(getPullRequest(), getComment());
-							Session.get().success("Deleted source branch");
+							Session.get().success("源分支已删除");
 							return true;
 						} else {
 							return false; 
@@ -1478,7 +1476,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Delete Source Branch";
+						return "确认删除源分支";
 					}
 				};
 			}
@@ -1508,7 +1506,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					protected boolean operate() {
 						if (canOperate()) {
 							OneDev.getInstance(PullRequestManager.class).restoreSourceBranch(getPullRequest(), getComment());
-							Session.get().success("Restored source branch");
+							Session.get().success("源分支已恢复");
 							return true;
 						} else {
 							return false; 
@@ -1517,7 +1515,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 					
 					@Override
 					protected String getTitle() {
-						return "Confirm Restore Source Branch";
+						return "确认恢复源分支";
 					}
 				};
 			}
@@ -1624,7 +1622,7 @@ public abstract class PullRequestDetailPage extends ProjectPage implements PullR
 	
 	@Override
 	protected String getPageTitle() {
-		return getPullRequest().getTitle() + " - Pull Request #" +  getPullRequest().getNumber() + " - " + getProject().getPath();
+		return getPullRequest().getTitle() + " - 拉取请求 #" +  getPullRequest().getNumber() + " - " + getProject().getPath();
 	}
 
 	@Override

@@ -68,7 +68,7 @@ public class CreateUserFromInvitationPage extends SimplePage {
 				User userWithSameName = getUserManager().findByName(newUser.getName());
 				if (userWithSameName != null) {
 					editor.error(new Path(new PathNode.Named(User.PROP_NAME)),
-							"Login name already used by another account");
+							"登录名已被另一个帐户使用");
 				} 
 				
 				if (editor.isValid()){
@@ -93,7 +93,7 @@ public class CreateUserFromInvitationPage extends SimplePage {
 						
 					});
 					
-					Session.get().success("Account set up successfully");
+					Session.get().success("账户设置成功");
 					SecurityUtils.getSubject().runAs(user.getPrincipals());
 					setResponsePage(MyAvatarPage.class);
 				}
@@ -124,7 +124,7 @@ public class CreateUserFromInvitationPage extends SimplePage {
 
 	@Override
 	protected String getTitle() {
-		return "Set Up Your Account";
+		return "设置您的帐户";
 	}
 
 	@Override

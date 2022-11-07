@@ -36,7 +36,7 @@ public class GitLabProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Choose group";
+			return "选择组";
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class GitLabProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify projects";
+			return "指定项目";
 		}
 
 		@Override
@@ -78,7 +78,7 @@ public class GitLabProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify import option";
+			return "指定导入选项";
 		}
 
 		@Override

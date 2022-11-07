@@ -19,7 +19,7 @@ public class UrlProjectImporter implements ProjectImporter {
 
 		@Override
 		public String getTitle() {
-			return "Specify URL to import from";
+			return "指定要从中导入的 URL";
 		}
 
 		@Override
