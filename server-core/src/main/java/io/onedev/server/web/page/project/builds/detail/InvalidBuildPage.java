@@ -60,7 +60,7 @@ public class InvalidBuildPage extends ProjectPage {
 			public void onClick() {
 				OneDev.getInstance(BuildManager.class).delete(getBuild());
 				
-				Session.get().success("Build #" + getBuild().getNumber() + " deleted");
+				Session.get().success("构建 #" + getBuild().getNumber() + " 已删除");
 				
 				String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(Build.class);
 				if (redirectUrlAfterDelete != null)
@@ -75,7 +75,7 @@ public class InvalidBuildPage extends ProjectPage {
 				setVisible(SecurityUtils.canManage(getBuild()));
 			}
 			
-		}.add(new ConfirmClickModifier("Do you really want to delete build #" + getBuild().getNumber() + "?")));
+		}.add(new ConfirmClickModifier("你真的要删除构建吗 #" + getBuild().getNumber() + "?")));
 	}
 
 	public static PageParameters paramsOf(Build build) {

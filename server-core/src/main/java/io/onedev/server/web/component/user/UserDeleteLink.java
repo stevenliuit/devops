@@ -22,13 +22,13 @@ public abstract class UserDeleteLink extends Link<Void> {
 	protected void onInitialize() {
 		super.onInitialize();
 		
-		add(new ConfirmClickModifier("Do you really want to delete user '" + getUser().getDisplayName() + "'?"));		
+		add(new ConfirmClickModifier("你真的要删除用户吗'" + getUser().getDisplayName() + "'?"));		
 	}
 
 	@Override
 	public void onClick() {
 		OneDev.getInstance(UserManager.class).delete(getUser());
-		WebSession.get().success("User '" + getUser().getDisplayName() + "' deleted");
+		WebSession.get().success("用户 '" + getUser().getDisplayName() + "' 已删除");
 		
 		String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(User.class);
 		if (redirectUrlAfterDelete != null)

@@ -42,10 +42,10 @@ public class AgentOverviewPage extends AgentDetailPage {
 			public void onClick() {
 				OneDev.getInstance(AgentManager.class).restart(getAgent());
 				setResponsePage(AgentOverviewPage.class, AgentOverviewPage.paramsOf(getAgent()));
-				Session.get().success("Restart command issued");
+				Session.get().success("发出重启命令");
 			}
 			
-		}.add(new ConfirmClickModifier("Do you really want to restart this agent?")));
+		}.add(new ConfirmClickModifier("你真的要重启这个代理吗?")));
 		
 		add(new Link<Void>("remove") {
 
@@ -53,10 +53,10 @@ public class AgentOverviewPage extends AgentDetailPage {
 			public void onClick() {
 				OneDev.getInstance(AgentManager.class).delete(getAgent());
 				setResponsePage(AgentListPage.class);
-				Session.get().success("Agent removed");
+				Session.get().success("Agent已删除");
 			}
 			
-		}.add(new ConfirmClickModifier("Do you really want to remove this agent?")));
+		}.add(new ConfirmClickModifier("你真的要删除这个代理吗?")));
 		
 		add(new Link<Void>("pauseOrResume") {
 

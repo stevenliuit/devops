@@ -147,9 +147,9 @@ public class BuildArtifactsPage extends BuildDetailPage {
 						
 					};
 					if (rowModel.getObject().isDirectory())
-						link.add(new ConfirmClickModifier("Do you really want to delete this directory?"));
+						link.add(new ConfirmClickModifier("你真的要删除这个目录吗?"));
 					else
-						link.add(new ConfirmClickModifier("Do you really want to delete this file?"));
+						link.add(new ConfirmClickModifier("你真的要删除这个文件吗?"));
 					fragment.add(link);
 					cellItem.add(fragment);
 				}

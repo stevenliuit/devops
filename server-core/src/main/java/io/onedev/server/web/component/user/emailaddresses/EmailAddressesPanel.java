@@ -79,7 +79,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 				
 				if (getUser().isExternalManaged() && address.equals(getUser().getPrimaryEmailAddress())) {
 					item.add(new Label("externalManagedNote", 
-							"This primary email address is managed from " + getUser().getAuthSource()));
+							"此主电子邮件地址由 " + getUser().getAuthSource()));
 				} else {
 					item.add(new WebMarkupContainer("externalManagedNote").setVisible(false));
 				}
@@ -96,7 +96,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 
 								@Override
 								public String getLabel() {
-									return "Set As Primary";
+									return "设为主要";
 								}
 
 								@Override
@@ -118,7 +118,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 
 								@Override
 								public String getLabel() {
-									return "Use For Git Operations";
+									return "用于 Git 操作";
 								}
 
 								@Override
@@ -140,7 +140,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 
 								@Override
 								public String getLabel() {
-									return "Resend Verification Email";
+									return "重新发送验证电子邮件";
 								}
 
 								@Override
@@ -151,10 +151,10 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 										public void onClick(AjaxRequestTarget target) {
 											if (OneDev.getInstance(SettingManager.class).getMailSetting() != null) {
 												getEmailAddressManager().sendVerificationEmail(item.getModelObject());
-												Session.get().success("Verification email sent, please check it");
+												Session.get().success("验证邮件已发送，请查收");
 											} else {
 												target.appendJavaScript(String.format("alert('%s');", 
-														"Unable to send verification email as system mail setting is not defined yet"));
+														"由于系统邮件设置尚未定义，无法发送验证邮件"));
 											}
 											dropdown.close();
 										}
@@ -183,7 +183,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 										}
 
 									};
-									link.add(new ConfirmClickModifier("Do you really want to delete this email address?"));
+									link.add(new ConfirmClickModifier("您真的要删除此电子邮件地址吗?"));
 									return link;
 								}
 								
@@ -210,7 +210,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 				super.onSubmit();
 				
 				if (getEmailAddressManager().findByValue(emailAddressValue) != null) {
-					error("This email address is being used");
+					error("正在使用此电子邮件地址");
 				} else {
 					EmailAddress address = new EmailAddress();
 					address.setValue(emailAddressValue);
@@ -252,7 +252,7 @@ public class EmailAddressesPanel extends GenericPanel<User> {
 						
 						@Override
 						public Serializable getErrorMessage(IErrorMessageSource messageSource) {
-							return "Malformed email address";
+							return "格式错误的电子邮件地址";
 						}
 						
 					});

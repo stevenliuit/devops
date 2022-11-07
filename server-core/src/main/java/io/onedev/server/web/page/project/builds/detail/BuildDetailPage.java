@@ -526,7 +526,7 @@ public abstract class BuildDetailPage extends ProjectPage
 							public void onClick() {
 								OneDev.getInstance(BuildManager.class).delete(getBuild());
 								
-								Session.get().success("Build #" + getBuild().getNumber() + " deleted");
+								Session.get().success("构建 #" + getBuild().getNumber() + " 已删除");
 								
 								String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(Build.class);
 								if (redirectUrlAfterDelete != null)
@@ -535,7 +535,7 @@ public abstract class BuildDetailPage extends ProjectPage
 									setResponsePage(ProjectBuildsPage.class, ProjectBuildsPage.paramsOf(getProject()));
 							}
 							
-						}.add(new ConfirmClickModifier("Do you really want to delete this build?"));
+						}.add(new ConfirmClickModifier("你真的要删除这个构建吗?"));
 					}
 					
 				};
@@ -641,9 +641,9 @@ public abstract class BuildDetailPage extends ProjectPage
 	@Override
 	protected String getPageTitle() {
 		if (getBuild().getVersion() != null)
-			return getBuild().getVersion() + " - Build #" +  getBuild().getNumber() + " - " + getProject().getPath();
+			return getBuild().getVersion() + " - 构建 #" +  getBuild().getNumber() + " - " + getProject().getPath();
 		else
-			return "Build #" +  getBuild().getNumber() + " - " + getProject().getPath();
+			return "构建 #" +  getBuild().getNumber() + " - " + getProject().getPath();
 	}
 
 	@Override

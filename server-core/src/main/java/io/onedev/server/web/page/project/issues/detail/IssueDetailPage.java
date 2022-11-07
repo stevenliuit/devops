@@ -185,7 +185,7 @@ public abstract class IssueDetailPage extends ProjectIssuesPage implements Input
 							@Override
 							public void onClick() {
 								getIssueManager().delete(getIssue());
-								Session.get().success("Issue #" + getIssue().getNumber() + " deleted");
+								Session.get().success("问题 #" + getIssue().getNumber() + " 已删除");
 								
 								String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(Issue.class);
 								if (redirectUrlAfterDelete != null)
@@ -194,7 +194,7 @@ public abstract class IssueDetailPage extends ProjectIssuesPage implements Input
 									setResponsePage(ProjectIssueListPage.class, ProjectIssueListPage.paramsOf(getProject()));
 							}
 							
-						}.add(new ConfirmClickModifier("Do you really want to delete this issue?"));
+						}.add(new ConfirmClickModifier("你真的要删除这个问题吗?"));
 					}
 
 				};
@@ -349,7 +349,7 @@ public abstract class IssueDetailPage extends ProjectIssuesPage implements Input
 
 	@Override
 	protected String getPageTitle() {
-		return getIssue().getTitle() + " - Issue #" +  getIssue().getNumber() + " - " + getProject().getPath();
+		return getIssue().getTitle() + " - 问题 #" +  getIssue().getNumber() + " - " + getProject().getPath();
 	}
 
 	@Override

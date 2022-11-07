@@ -292,7 +292,7 @@ public class IssueBoardsPage extends ProjectIssuesPage {
 									&& getProject().getIssueSetting().getBoardSpecs() != null);
 						}
 						
-					}.add(new ConfirmClickModifier("This will discard all project specific boards, do you want to continue?")));
+					}.add(new ConfirmClickModifier("这将丢弃所有项目特定的板，您要继续吗?")));
 					
 					menuFragment.add(new ListView<BoardSpec>("boards", boards) {
 
@@ -356,7 +356,7 @@ public class IssueBoardsPage extends ProjectIssuesPage {
 									setResponsePage(IssueBoardsPage.class, params);
 								}
 
-							}.add(new ConfirmClickModifier("Do you really want to delete board '" + item.getModelObject().getName() + "'?") ));
+							}.add(new ConfirmClickModifier("你真的要删除Board吗 '" + item.getModelObject().getName() + "'?") ));
 						}
 						
 					});

@@ -59,7 +59,7 @@ public class InvalidPullRequestPage extends ProjectPage {
 			public void onClick() {
 				OneDev.getInstance(PullRequestManager.class).delete(getPullRequest());
 				
-				Session.get().success("Pull request #" + getPullRequest().getNumber() + " deleted");
+				Session.get().success("拉取请求 #" + getPullRequest().getNumber() + " 已删除");
 				
 				String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(PullRequest.class);
 				if (redirectUrlAfterDelete != null)
@@ -74,7 +74,7 @@ public class InvalidPullRequestPage extends ProjectPage {
 				setVisible(SecurityUtils.canManage(getPullRequest().getTargetProject()));
 			}
 			
-		}.add(new ConfirmClickModifier("Do you really want to delete pull request #" + getPullRequest().getNumber() + "?")));
+		}.add(new ConfirmClickModifier("你真的要删除拉取请求吗 #" + getPullRequest().getNumber() + "?")));
 	}
 
 	public static PageParameters paramsOf(PullRequest request) {

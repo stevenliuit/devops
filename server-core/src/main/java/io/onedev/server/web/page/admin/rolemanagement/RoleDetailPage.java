@@ -107,7 +107,7 @@ public class RoleDetailPage extends AdministrationPage {
 					Role roleWithSameName = roleManager.find(role.getName());
 					if (roleWithSameName != null && !roleWithSameName.equals(role)) {
 						editor.error(new Path(new PathNode.Named("name")),
-								"This name has already been used by another role.");
+								"此名称已被其他角色使用.");
 					} 
 					if (editor.isValid()) {
 						Collection<LinkSpec> authorizedLinks = new ArrayList<>();
@@ -115,7 +115,7 @@ public class RoleDetailPage extends AdministrationPage {
 							authorizedLinks.add(OneDev.getInstance(LinkSpecManager.class).find(linkName));
 						roleManager.save(role, authorizedLinks, oldName);
 						setResponsePage(RoleDetailPage.class, RoleDetailPage.paramsOf(role));
-						Session.get().success("Role updated");
+						Session.get().success("角色已更新");
 					}
 				}
 				
@@ -129,7 +129,7 @@ public class RoleDetailPage extends AdministrationPage {
 				@Override
 				public void onClick() {
 					OneDev.getInstance(RoleManager.class).delete(getRole());
-					Session.get().success("Role '" + getRole().getName() + "' deleted");
+					Session.get().success("角色 '" + getRole().getName() + "' 已删除");
 					
 					String redirectUrlAfterDelete = WebSession.get().getRedirectUrlAfterDelete(Role.class);
 					if (redirectUrlAfterDelete != null)
@@ -144,7 +144,7 @@ public class RoleDetailPage extends AdministrationPage {
 					setVisible(!getRole().isOwner());
 				}
 				
-			}.add(new ConfirmClickModifier("Do you really want to delete role '" + getRole().getName() + "'?")));
+			}.add(new ConfirmClickModifier("你真的要删除角色吗 '" + getRole().getName() + "'?")));
 			
 			fragment.add(form);
 			add(fragment);
