@@ -46,7 +46,7 @@ public class ProjectContribsPage extends ProjectStatsPage {
 	protected void onInitialize() {
 		super.onInitialize();
 		if (getProject().getDefaultBranch() != null)
-			add(new Label("note", "Contributions to " + getProject().getDefaultBranch() + " branch, excluding merge commits"));
+			add(new Label("note", "贡献 " + getProject().getDefaultBranch() + " 分支，不包括合并提交"));
 		else
 			add(new WebMarkupContainer("note").setVisible(false));
 		add(new WebMarkupContainer(USER_CARD_ID).setOutputMarkupId(true));
