@@ -56,7 +56,7 @@ public abstract class EntityNavPanel<T extends AbstractEntity> extends Panel {
 				super.onComponentTag(tag);
 				if (getCursor() == null || getCursor().getOffset() <= 0)
 					tag.put("disabled", "disabled");
-				tag.put("title", "Next " + entityName);
+				tag.put("title", "下一步 " + entityName);
 			}
 
 			@Override
@@ -91,7 +91,7 @@ public abstract class EntityNavPanel<T extends AbstractEntity> extends Panel {
 				super.onComponentTag(tag);
 				if (getCursor() == null || getCursor().getOffset() >= getCursor().getCount()-1)
 					tag.put("disabled", "disabled");
-				tag.put("title", "Previous " + entityName);
+				tag.put("title", "上一步 " + entityName);
 			}
 
 			@Override

@@ -175,7 +175,7 @@ public class RoleListPage extends AdministrationPage {
 					@Override
 					protected void updateAjaxAttributes(AjaxRequestAttributes attributes) {
 						super.updateAjaxAttributes(attributes);
-						String message = "Do you really want to delete role '" + rowModel.getObject().getName() + "'?";						
+						String message = "你真的要删除角色吗 '" + rowModel.getObject().getName() + "'?";						
 						attributes.getAjaxCallListeners().add(new ConfirmClickListener(message));
 					}
 
@@ -183,7 +183,7 @@ public class RoleListPage extends AdministrationPage {
 					public void onClick(AjaxRequestTarget target) {
 						Role role = rowModel.getObject();
 						OneDev.getInstance(RoleManager.class).delete(role);
-						Session.get().success("Role '" + role.getName() + "' deleted");
+						Session.get().success("角色 '" + role.getName() + "' 已删除");
 						target.add(rolesTable);
 					}
 
@@ -192,7 +192,7 @@ public class RoleListPage extends AdministrationPage {
 						super.onComponentTag(tag);
 						if (!isEnabled()) {
 							tag.put("disabled", "disabled");
-							tag.put("title", "This is a built-in role and can not be deleted");
+							tag.put("title", "这是一个内置角色，无法删除");
 						}
 					}
 

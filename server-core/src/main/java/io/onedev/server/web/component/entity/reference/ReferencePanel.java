@@ -25,9 +25,8 @@ public abstract class ReferencePanel extends Panel {
 			@Override
 			protected void onComponentTag(ComponentTag tag) {
 				super.onComponentTag(tag);
-				tag.put("title", "Reference this " + getReferenceable().getType() 
-						+ " in markdown or commit message via below string. "
-						+ "Project name can be ommitted if reference from current project");
+				tag.put("title", "参考这个 " + getReferenceable().getType() 
+						+ " 通过以下字符串在降价或提交消息中。 如果从当前项目中引用，项目名称可以省略");
 			}
 			
 		});

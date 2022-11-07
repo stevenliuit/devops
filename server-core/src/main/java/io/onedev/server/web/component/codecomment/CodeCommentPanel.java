@@ -118,7 +118,7 @@ public abstract class CodeCommentPanel extends Panel {
 				@Override
 				protected void onComponentTag(ComponentTag tag) {
 					super.onComponentTag(tag);
-					tag.put("title", "Current context is different from the context when this comment is added, click to show the comment context");
+					tag.put("title", "当前上下文与添加此评论时的上下文不同，点击显示评论上下文");
 				}
 				
 			});
@@ -639,7 +639,7 @@ public abstract class CodeCommentPanel extends Panel {
 					@Override
 					protected void onComponentTag(ComponentTag tag) {
 						super.onComponentTag(tag);
-						tag.put("title", "Current context is different from this action, click to show the comment context");
+						tag.put("title", "当前上下文与此操作不同，单击以显示评论上下文");
 					}
 					
 				});
@@ -711,7 +711,7 @@ public abstract class CodeCommentPanel extends Panel {
 					@Override
 					protected void onComponentTag(ComponentTag tag) {
 						super.onComponentTag(tag);
-						tag.put("title", "Current context is different from the context when this reply is added, click to show the reply context");
+						tag.put("title", "当前上下文与添加此回复时的上下文不同，点击显示回复上下文");
 					}
 					
 				});

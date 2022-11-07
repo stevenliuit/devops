@@ -265,9 +265,9 @@ public class ProjectListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -332,7 +332,7 @@ public class ProjectListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Move Selected Projects To...";
+						return "将选定项目移至...";
 					}
 
 					@Override
@@ -360,15 +360,15 @@ public class ProjectListPanel extends Panel {
 										for (IModel<Project> each: selectionColumn.getSelections()) {
 											Project eachProject = each.getObject();
 											if (!SecurityUtils.canManage(eachProject)) {
-												errorMessage = "Project manage privilege required to move '" + eachProject + "'";
+												errorMessage = "移动所需的项目管理权限 '" + eachProject + "'";
 												break;
 											} else if (eachProject.isSelfOrAncestorOf(project)) {
-												errorMessage = "Can not move project '" + eachProject + "' to be under itself or its descendants";
+												errorMessage = "无法将项目 '" + eachProject + "' 移动到其自身或其后代下";
 												break;
 											} else {
 												Project projectWithSameName = getProjectManager().find(project, eachProject.getName());
 												if (projectWithSameName != null && !projectWithSameName.equals(eachProject)) {
-													errorMessage = "A child project with name '" + eachProject.getName() + "' already exists under '" + project.getPath() + "'";
+													errorMessage = "一个有名字的子项目 '" + eachProject.getName() + "' 已存在于 '" + project.getPath() + "'";
 													break;
 												}
 											}
@@ -396,7 +396,7 @@ public class ProjectListPanel extends Panel {
 												
 												@Override
 												protected String getConfirmMessage() {
-													return "Type <code>yes</code> below to move selected projects to be under '" + getTargetProject() + "'";
+													return "在下面输入 <code>yes</code> 将选定的项目移到下面 '" + getTargetProject() + "'";
 												}
 												
 												@Override
@@ -423,7 +423,7 @@ public class ProjectListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select projects to move");
+									tag.put("title", "请选择要移动的项目");
 								}
 							}
 							
@@ -437,7 +437,7 @@ public class ProjectListPanel extends Panel {
 	
 						@Override
 						public String getLabel() {
-							return "Set Selected As Root Projects";
+							return "将选定项目设置为根项目";
 						}
 	
 						@Override
@@ -452,12 +452,12 @@ public class ProjectListPanel extends Panel {
 									for (IModel<Project> each: selectionColumn.getSelections()) {
 										Project eachProject = each.getObject();
 										if (!SecurityUtils.canManage(eachProject)) {
-											errorMessage = "Project manage privilege required to modify '" + eachProject + "'";
+											errorMessage = "修改所需的项目管理权限 '" + eachProject + "'";
 											break;
 										} else {
 											Project projectWithSameName = getProjectManager().findByPath(eachProject.getName());
 											if (projectWithSameName != null && !projectWithSameName.equals(eachProject)) {
-												errorMessage = "A root project with name '" + eachProject.getName() + "' already exists";
+												errorMessage = "具有名称的根项目 '" + eachProject.getName() + "' 已经存在";
 												break;
 											}
 										}
@@ -476,12 +476,12 @@ public class ProjectListPanel extends Panel {
 												getProjectManager().move(projects, null);
 												target.add(body);
 												selectionColumn.getSelections().clear();
-												Session.get().success("Projects modified");
+												Session.get().success("项目已修改");
 											}
 											
 											@Override
 											protected String getConfirmMessage() {
-												return "Type <code>yes</code> below to set selected as root projects";
+												return "在下面键入 <code>yes</code> 以将选定的项目设置为根项目";
 											}
 											
 											@Override
@@ -505,7 +505,7 @@ public class ProjectListPanel extends Panel {
 									configure();
 									if (!isEnabled()) {
 										tag.put("disabled", "disabled");
-										tag.put("title", "Please select projects to modify");
+										tag.put("title", "请选择要修改的项目");
 									}
 								}
 								
@@ -518,7 +518,7 @@ public class ProjectListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Projects";
+						return "删除选定的项目";
 					}
 					
 					@Override
@@ -533,7 +533,7 @@ public class ProjectListPanel extends Panel {
 								for (IModel<Project> each: selectionColumn.getSelections()) { 
 									Project eachProject = each.getObject();
 									if (!SecurityUtils.canManage(eachProject)) {
-										errorMessage = "Project manage privilege required to delete '" + eachProject + "'";
+										errorMessage = "删除所需的项目管理权限 '" + eachProject + "'";
 										break;
 									}
 								}
@@ -554,7 +554,7 @@ public class ProjectListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to delete selected projects";
+											return "在下面输入 <code>yes</code> 以删除选定的项目";
 										}
 										
 										@Override
@@ -578,7 +578,7 @@ public class ProjectListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select projects to delete");
+									tag.put("title", "请选择要删除的项目");
 								}
 							}
 							
@@ -591,7 +591,7 @@ public class ProjectListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Move All Queried Projects To...";
+						return "将所有查询的项目移至...";
 					}
 					
 					@Override
@@ -620,15 +620,15 @@ public class ProjectListPanel extends Panel {
 										for (Iterator<Project> it = (Iterator<Project>) dataProvider.iterator(0, projectsTable.getItemCount()); it.hasNext();) {
 											Project eachProject = it.next();
 											if (!SecurityUtils.canManage(eachProject)) {
-												errorMessage = "Project manage privilege required to move '" + eachProject + "'";
+												errorMessage = "移动所需的项目管理权限 '" + eachProject + "'";
 												break;
 											} else if (eachProject.isSelfOrAncestorOf(project)) {
-												errorMessage = "Can not move project '" + eachProject + "' to be under itself or its descendants";
+												errorMessage = "不能将项目 '" + eachProject + "' 移动到其自身或其后代之下";
 												break;
 											} else {
 												Project projectWithSameName = getProjectManager().find(project, eachProject.getName());
 												if (projectWithSameName != null && !projectWithSameName.equals(eachProject)) {
-													errorMessage = "A child project with name '" + eachProject.getName() + "' already exists under '" + project.getPath() + "'";
+													errorMessage = "一个有名字的子项目 '" + eachProject.getName() + "' already exists under '" + project.getPath() + "'";
 													break;
 												}
 											}
@@ -651,12 +651,12 @@ public class ProjectListPanel extends Panel {
 													getProjectManager().move(projects, getTargetProject());
 													target.add(body);
 													selectionColumn.getSelections().clear();
-													Session.get().success("Projects moved");
+													Session.get().success("项目已移动");
 												}
 												
 												@Override
 												protected String getConfirmMessage() {
-													return "Type <code>yes</code> below to move all queried projects to be under '" + getTargetProject() + "'";
+													return "在下面输入 <code>yes</code> 将所有查询到的项目移到下面 '" + getTargetProject() + "'";
 												}
 												
 												@Override
@@ -683,7 +683,7 @@ public class ProjectListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No projects to move");
+									tag.put("title", "没有要迁移的项目");
 								}
 							}
 							
@@ -697,7 +697,7 @@ public class ProjectListPanel extends Panel {
 
 						@Override
 						public String getLabel() {
-							return "Set All Queried As Root Projects";
+							return "设置所有查询为根项目";
 						}
 						
 						@Override
@@ -712,12 +712,12 @@ public class ProjectListPanel extends Panel {
 									for (Iterator<Project> it = (Iterator<Project>) dataProvider.iterator(0, projectsTable.getItemCount()); it.hasNext();) {
 										Project eachProject = it.next();
 										if (!SecurityUtils.canManage(eachProject)) {
-											errorMessage = "Project manage privilege required to modify '" + eachProject + "'";
+											errorMessage = "修改所需的项目管理权限 '" + eachProject + "'";
 											break;
 										} else {
 											Project projectWithSameName = getProjectManager().findByPath(eachProject.getName());
 											if (projectWithSameName != null && !projectWithSameName.equals(eachProject)) {
-												errorMessage = "A root project with name '" + eachProject.getName() + "' already exists";
+												errorMessage = "具有名称的根项目 '" + eachProject.getName() + "' 已经存在";
 												break;
 											}
 										}
@@ -736,12 +736,12 @@ public class ProjectListPanel extends Panel {
 												getProjectManager().move(projects, null);
 												target.add(body);
 												selectionColumn.getSelections().clear();
-												Session.get().success("Projects modified");
+												Session.get().success("项目已修改");
 											}
 											
 											@Override
 											protected String getConfirmMessage() {
-												return "Type <code>yes</code> below to set all queried as root projects";
+												return "在下面输入 <code>yes</code> 将所有查询的项目设置为根项目";
 											}
 											
 											@Override
@@ -765,7 +765,7 @@ public class ProjectListPanel extends Panel {
 									configure();
 									if (!isEnabled()) {
 										tag.put("disabled", "disabled");
-										tag.put("title", "No projects to modify");
+										tag.put("title", "没有要修改的项目");
 									}
 								}
 								
@@ -779,7 +779,7 @@ public class ProjectListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Projects";
+						return "删除所有查询的项目";
 					}
 					
 					@Override
@@ -795,7 +795,7 @@ public class ProjectListPanel extends Panel {
 								for (Iterator<Project> it = (Iterator<Project>) dataProvider.iterator(0, projectsTable.getItemCount()); it.hasNext();) {
 									Project eachProject = it.next();
 									if (!SecurityUtils.canManage(eachProject)) {
-										errorMessage = "Project manage privilege required to delete '" + eachProject + "'";
+										errorMessage = "删除所需的项目管理权限 '" + eachProject + "'";
 										break;
 									}
 								}
@@ -817,7 +817,7 @@ public class ProjectListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to delete all queried projects";
+											return "在下方输入 <code>yes</code> 删除所有查询到的项目";
 										}
 										
 										@Override
@@ -842,7 +842,7 @@ public class ProjectListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No projects to delete");
+									tag.put("title", "没有要删除的项目");
 								}
 							}
 							
@@ -870,7 +870,7 @@ public class ProjectListPanel extends Panel {
 			@Override
 			protected String getHelp() {
 				if (!SecurityUtils.isAdministrator())
-					return "Permission will be checked upon actual operation";
+					return "实际操作时会检查权限";
 				else
 					return null;
 			}
@@ -968,7 +968,7 @@ public class ProjectListPanel extends Panel {
 		if (getParentProject() != null) {
 			PageParameters params = NewProjectPage.paramsOf(getParentProject());
 			add(new BookmarkablePageLink<Void>("addProject", NewProjectPage.class, params)
-					.add(AttributeAppender.replace("title", "Add child project"))
+					.add(AttributeAppender.replace("title", "添加子项目"))
 					.setVisible(canCreateProjects));
 		} else {
 			add(new BookmarkablePageLink<Void>("addProject", NewProjectPage.class)

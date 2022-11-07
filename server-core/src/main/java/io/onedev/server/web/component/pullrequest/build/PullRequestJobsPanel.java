@@ -145,12 +145,12 @@ public abstract class PullRequestJobsPanel extends GenericPanel<List<JobBuildInf
 						String title;
 						if (status != null) {
 							if (status != Status.SUCCESSFUL)
-								title = "Some builds are "; 
+								title = "一些构建是 "; 
 							else
-								title = "Builds are "; 
-							title += status.toString().toLowerCase() + ", click for details";
+								title = "构建是 "; 
+							title += status.toString().toLowerCase() + ", 点击查看更多细节";
 						} else {
-							title = "No builds";
+							title = "没有构建";
 						}
 						tag.put("title", title);
 					}

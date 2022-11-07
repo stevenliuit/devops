@@ -571,12 +571,12 @@ public class ProjectBranchesPage extends ProjectPage {
 					if (effectiveRequest.isOpen()) {
 						requestLink.add(new Label("label", "Open"));
 						requestLink.add(AttributeAppender.append("class", "btn-warning"));
-						requestLink.add(AttributeAppender.append("title", "A pull request is open for this change"));
+						requestLink.add(AttributeAppender.append("title", "已针对此更改打开拉取请求"));
 					} else {
 						requestLink.add(new Label("label", "Merged"));
 						requestLink.add(AttributeAppender.append("class", "btn-success"));
 						requestLink.add(AttributeAppender.append("title", 
-								"This change is squashed/rebased onto base branch via a pull request"));
+								"此更改通过拉取请求压缩/重新定位到基础分支"));
 					}
 				} else {
 					requestLink = new WebMarkupContainer("effectiveRequest");
@@ -601,9 +601,9 @@ public class ProjectBranchesPage extends ProjectPage {
 						super.disableLink(tag);
 						tag.append("class", "disabled", " ");
 						if (getProject().getDefaultBranch().equals(branch)) {
-							tag.put("title", "Can not delete default branch");
+							tag.put("title", "无法删除默认分支");
 						} else {
-							tag.put("title", "Deletion not allowed due to branch protection rule");
+							tag.put("title", "由于分支保护规则，不允许删除");
 						}
 					}
 
@@ -622,7 +622,7 @@ public class ProjectBranchesPage extends ProjectPage {
 							bodyFrag.add(new Label("branch", branch));
 							fragment.add(bodyFrag);
 						} else {
-							fragment.add(new Label("body", "You selected to delete branch " + branch));
+							fragment.add(new Label("body", "您选择删除分支 " + branch));
 						}
 						fragment.add(new AjaxLink<Void>("delete") {
 
@@ -805,9 +805,9 @@ public class ProjectBranchesPage extends ProjectPage {
 				super.onComponentTag(tag);
 				
 				if (ahead)
-					tag.put("title", "" + count + " commits ahead of base branch");
+					tag.put("title", "" + count + " 在基本分支之前提交");
 				else
-					tag.put("title", "" + count + " commits behind of base branch");
+					tag.put("title", "" + count + " 在基础分支后面提交");
 					
 				if (count == 0)
 					tag.setName("span");

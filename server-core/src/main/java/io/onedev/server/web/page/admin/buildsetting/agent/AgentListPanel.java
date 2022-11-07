@@ -188,9 +188,9 @@ class AgentListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -260,7 +260,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Pause Selected Agents";
+						return "暂停选定的Agents";
 					}
 					
 					@Override
@@ -276,7 +276,7 @@ class AgentListPanel extends Panel {
 								OneDev.getInstance(AgentManager.class).pause(agents);
 								target.add(body);
 								selectionColumn.getSelections().clear();
-								Session.get().success("Paused selected agents");
+								Session.get().success("暂停选定的Agents");
 							}
 							
 							@Override
@@ -291,7 +291,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select agents to pause");
+									tag.put("title", "请选择要暂停的Agents");
 								}
 							}
 							
@@ -304,7 +304,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Resume Selected Agents";
+						return "恢复选定的Agents";
 					}
 					
 					@Override
@@ -320,7 +320,7 @@ class AgentListPanel extends Panel {
 								OneDev.getInstance(AgentManager.class).resume(agents);
 								target.add(body);
 								selectionColumn.getSelections().clear();
-								Session.get().success("Resumed selected agents");
+								Session.get().success("恢复选定的agents");
 							}
 							
 							@Override
@@ -335,7 +335,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select agents to resume");
+									tag.put("title", "请选择要恢复的agents");
 								}
 							}
 							
@@ -348,7 +348,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Restart Selected Agents";
+						return "重新启动选定Agents";
 					}
 					
 					@Override
@@ -369,12 +369,12 @@ class AgentListPanel extends Panel {
 										OneDev.getInstance(AgentManager.class).restart(agents);
 										target.add(body);
 										selectionColumn.getSelections().clear();
-										Session.get().success("Restart command issued to selected agents");
+										Session.get().success("向选定agents发出的重新启动命令");
 									}
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to restart selected agents";
+										return "在下面键入 <code>yes</code> 以重新启动选定的agents";
 									}
 									
 									@Override
@@ -397,7 +397,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select agents to restart");
+									tag.put("title", "请选择要重新启动的agents");
 								}
 							}
 							
@@ -410,7 +410,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Remove Selected Offline Agents";
+						return "删除选定的离线Agents";
 					}
 					
 					@Override
@@ -438,9 +438,7 @@ class AgentListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Removed selected offline agents. Please note that tokens used by these agents will "
-												+ "NOT be removed, and they will reappear here if go online. "
-												+ "Type <code>yes</code> below to confirm";
+										return "删除了选定的离线agents。 请注意，这些agents使用的令牌不会被删除，如果上线，它们会重新出现在这里。 在下方输入 <code>yes</code> 进行确认";
 									}
 									
 									@Override
@@ -464,7 +462,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select offline agents to remove");
+									tag.put("title", "请选择要删除的离线agents");
 								}
 							}
 							
@@ -477,7 +475,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Unauthorize Selected Agents";
+						return "取消授权选定的Agents";
 					}
 					
 					@Override
@@ -505,8 +503,7 @@ class AgentListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Removing selected agents as well as tokens used by them. Please note that other agents sharing "
-												+ "tokens with these agents will also be removed. Type <code>yes</code> below to confirm";
+										return "删除选定的agents以及它们使用的令牌。 请注意，与这些agents共享 okens 的其他agents也将被删除。 在下方输入 <code>yes</code> 进行确认";
 									}
 									
 									@Override
@@ -530,7 +527,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select offline agents to remove");
+									tag.put("title", "请选择要删除的离线agents");
 								}
 							}
 							
@@ -543,7 +540,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Pause All Queried Agents";
+						return "暂停所有查询的Agents";
 					}
 					
 					@Override
@@ -566,12 +563,12 @@ class AgentListPanel extends Panel {
 										OneDev.getInstance(AgentManager.class).pause(agents);
 										selectionColumn.getSelections().clear();
 										target.add(body);
-										Session.get().success("Paused all queried agents");
+										Session.get().success("暂停所有查询的agents");
 									}
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to pause all queried agents";
+										return "在下面键入 <code>yes</code> 以暂停所有查询的agents";
 									}
 									
 									@Override
@@ -595,7 +592,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No agents to pause");
+									tag.put("title", "没有agents可以暂停");
 								}
 							}
 							
@@ -608,7 +605,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Resume All Queried Agents";
+						return "恢复所有查询的Agents";
 					}
 					
 					@Override
@@ -631,12 +628,12 @@ class AgentListPanel extends Panel {
 										OneDev.getInstance(AgentManager.class).resume(agents);
 										target.add(body);
 										selectionColumn.getSelections().clear();
-										Session.get().success("Resumed all queried agents");
+										Session.get().success("恢复所有查询的代理agents");
 									}
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to resume all queried agents";
+										return "在下面输入 <code>yes</code> 以恢复所有查询的agents";
 									}
 									
 									@Override
@@ -660,7 +657,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No agents to resume");
+									tag.put("title", "没有要恢复的agents");
 								}
 							}
 							
@@ -673,7 +670,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Restart All Queried Agents";
+						return "重新启动所有查询的Agents";
 					}
 					
 					@Override
@@ -696,12 +693,12 @@ class AgentListPanel extends Panel {
 										OneDev.getInstance(AgentManager.class).restart(agents);
 										target.add(body);
 										selectionColumn.getSelections().clear();
-										Session.get().success("Restart command issued to all queried agents");
+										Session.get().success("向所有查询的agents发出重新启动命令");
 									}
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to restart all queried agents";
+										return "在下面输入 <code>yes</code> 以重新启动所有查询的agents";
 									}
 									
 									@Override
@@ -725,7 +722,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No agents to restart");
+									tag.put("title", "没有要重新启动的agents");
 								}
 							}
 							
@@ -738,7 +735,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Remove All Queried Offline Agents";
+						return "删除所有查询的离线Agents";
 					}
 					
 					@Override
@@ -767,9 +764,7 @@ class AgentListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Remove all queried offline agents. Please note that this will NOT remove "
-												+ "tokens used by these agents, and they will reappear here if go online. "
-												+ "Type <code>yes</code> below to confirm";
+										return "删除所有查询的离线agents。 请注意，这不会删除这些agents使用的令牌，如果上线，它们将重新出现在此处。 在下方输入 <code>yes</code> 进行确认";
 									}
 									
 									@Override
@@ -793,7 +788,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No offline agents to remove");
+									tag.put("title", "没有要删除的离线agents");
 								}
 							}
 							
@@ -806,7 +801,7 @@ class AgentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Unauthorize All Queried Agents";
+						return "取消授权所有查询的Agents";
 					}
 					
 					@Override
@@ -833,8 +828,7 @@ class AgentListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Removing all queried agents as well as tokens used by them. Please note that other agents sharing "
-												+ "tokens with these agents will also be removed. Type <code>yes</code> below to confirm";
+										return "删除所有查询的agents以及它们使用的令牌。 请注意，与这些agents共享令牌的其他agents也将被删除。 在下方输入 <code>yes</code> 进行确认";
 									}
 									
 									@Override
@@ -858,7 +852,7 @@ class AgentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No agents to unauthorize");
+									tag.put("title", "没有agents可以取消授权");
 								}
 							}
 							

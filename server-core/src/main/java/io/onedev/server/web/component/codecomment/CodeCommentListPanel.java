@@ -196,9 +196,9 @@ public abstract class CodeCommentListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -253,7 +253,7 @@ public abstract class CodeCommentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Resolve Selected Comments";
+						return "解决选定的评论";
 					}
 					
 					@Override
@@ -288,7 +288,7 @@ public abstract class CodeCommentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select comments to resolve");
+									tag.put("title", "请选择要解决的评论");
 								}
 							}
 							
@@ -301,7 +301,7 @@ public abstract class CodeCommentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Unresolve Selected Comments";
+						return "取消选择的评论";
 					}
 					
 					@Override
@@ -336,7 +336,7 @@ public abstract class CodeCommentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select comments to unresolve");
+									tag.put("title", "请选择要解决的评论");
 								}
 							}
 							
@@ -350,7 +350,7 @@ public abstract class CodeCommentListPanel extends Panel {
 	
 						@Override
 						public String getLabel() {
-							return "Delete Selected Comments";
+							return "删除选定的评论";
 						}
 						
 						@Override
@@ -374,7 +374,7 @@ public abstract class CodeCommentListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to delete selected issues";
+											return "在下面输入 <code>yes</code> 以删除选定的问题";
 										}
 										
 										@Override
@@ -398,7 +398,7 @@ public abstract class CodeCommentListPanel extends Panel {
 									configure();
 									if (!isEnabled()) {
 										tag.put("disabled", "disabled");
-										tag.put("title", "Please select issues to delete");
+										tag.put("title", "请选择要删除的问题");
 									}
 								}
 								
@@ -412,7 +412,7 @@ public abstract class CodeCommentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Resolve All Queried Comments";
+						return "解决所有查询的评论";
 					}
 					
 					@Override
@@ -449,7 +449,7 @@ public abstract class CodeCommentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No comments to resolve");
+									tag.put("title", "没有评论要解决");
 								}
 							}
 							
@@ -462,7 +462,7 @@ public abstract class CodeCommentListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Unresolve All Queried Comments";
+						return "取消解决所有查询的评论";
 					}
 					
 					@Override
@@ -499,7 +499,7 @@ public abstract class CodeCommentListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No comments to unresolve");
+									tag.put("title", "没有评论要解决");
 								}
 							}
 							
@@ -513,7 +513,7 @@ public abstract class CodeCommentListPanel extends Panel {
 	
 						@Override
 						public String getLabel() {
-							return "Delete All Queried Comments";
+							return "删除所有查询的评论";
 						}
 						
 						@Override
@@ -539,7 +539,7 @@ public abstract class CodeCommentListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to delete all queried comments";
+											return "在下方输入 <code>yes</code> 删除所有查询到的评论";
 										}
 										
 										@Override
@@ -562,7 +562,7 @@ public abstract class CodeCommentListPanel extends Panel {
 									configure();
 									if (!isEnabled()) {
 										tag.put("disabled", "disabled");
-										tag.put("title", "No comments to delete");
+										tag.put("title", "没有要删除的评论");
 									}
 								}
 								

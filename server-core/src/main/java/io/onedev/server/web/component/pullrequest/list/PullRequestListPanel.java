@@ -231,9 +231,9 @@ public abstract class PullRequestListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -253,7 +253,7 @@ public abstract class PullRequestListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Discard Selected Pull Requests";
+						return "丢弃选定的拉取请求";
 					}
 					
 					@Override
@@ -268,7 +268,7 @@ public abstract class PullRequestListPanel extends Panel {
 								for (IModel<PullRequest> each: selectionColumn.getSelections()) {
 									PullRequest request = each.getObject();
 									if (!request.isOpen()) {
-										errorMessage = "Pull request #" + request.getNumber() + " already closed";
+										errorMessage = "拉取请求 #" + request.getNumber() + " 已经关闭";
 										break;
 									}
 								}
@@ -288,7 +288,7 @@ public abstract class PullRequestListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to discard selected pull requests";
+											return "在下面输入 <code>yes</code> 以丢弃选定的拉取请求";
 										}
 										
 										@Override
@@ -313,7 +313,7 @@ public abstract class PullRequestListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select pull requests to discard");
+									tag.put("title", "请选择要丢弃的拉取请求");
 								}
 							}
 							
@@ -326,7 +326,7 @@ public abstract class PullRequestListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Pull Requests";
+						return "删除选定的拉取请求";
 					}
 					
 					@Override
@@ -351,7 +351,7 @@ public abstract class PullRequestListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete selected builds";
+										return "在下面输入 <code>yes</code> 以删除选定的构建";
 									}
 									
 									@Override
@@ -375,7 +375,7 @@ public abstract class PullRequestListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select pull requests to delete");
+									tag.put("title", "请选择要删除的拉取请求");
 								}
 							}
 							
@@ -388,7 +388,7 @@ public abstract class PullRequestListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Discard All Queried Pull Requests";
+						return "丢弃所有查询的拉取请求";
 					}
 					
 					@Override
@@ -404,7 +404,7 @@ public abstract class PullRequestListPanel extends Panel {
 								for (Iterator<PullRequest> it = (Iterator<PullRequest>) dataProvider.iterator(0, requestsTable.getItemCount()); it.hasNext();) {
 									PullRequest request = it.next();
 									if (!request.isOpen()) {
-										errorMessage = "Pull request #" + request.getNumber() + " already closed";
+										errorMessage = "拉取请求 #" + request.getNumber() + " 已经关闭";
 										break;
 									}
 								}
@@ -424,7 +424,7 @@ public abstract class PullRequestListPanel extends Panel {
 										
 										@Override
 										protected String getConfirmMessage() {
-											return "Type <code>yes</code> below to discard all queried pull requests";
+											return "在下面输入 <code>yes</code> 以丢弃所有查询的拉取请求";
 										}
 										
 										@Override
@@ -449,7 +449,7 @@ public abstract class PullRequestListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No pull requests to discard");
+									tag.put("title", "没有要丢弃的拉取请求");
 								}
 							}
 							
@@ -462,7 +462,7 @@ public abstract class PullRequestListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Pull Requests";
+						return "删除所有查询的拉取请求";
 					}
 					
 					@Override
@@ -488,7 +488,7 @@ public abstract class PullRequestListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete all queried pull requests";
+										return "在下方输入 <code>yes</code> 以删除所有查询到的拉取请求";
 									}
 									
 									@Override
@@ -512,7 +512,7 @@ public abstract class PullRequestListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No pull requests to delete");
+									tag.put("title", "没有要删除的拉取请求");
 								}
 							}
 							

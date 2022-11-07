@@ -138,7 +138,7 @@ public class GroupMembershipsPage extends GroupPage {
 			protected void onInitialize() {
 				super.onInitialize();
 				
-				getSettings().setPlaceholder("Add member...");
+				getSettings().setPlaceholder("添加成员...");
 				getSettings().setFormatResult("onedev.server.userChoiceFormatter.formatResult");
 				getSettings().setFormatSelection("onedev.server.userChoiceFormatter.formatSelection");
 				getSettings().setEscapeMarkup("onedev.server.userChoiceFormatter.escapeMarkup");
@@ -180,7 +180,7 @@ public class GroupMembershipsPage extends GroupPage {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Memberships";
+						return "删除选定的成员资格";
 					}
 
 					@Override
@@ -204,7 +204,7 @@ public class GroupMembershipsPage extends GroupPage {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete selected memberships";
+										return "在下方输入 <code>yes</code> 以删除选定的成员资格";
 									}
 									
 									@Override
@@ -228,7 +228,7 @@ public class GroupMembershipsPage extends GroupPage {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select memberships to delete");
+									tag.put("title", "请选择要删除的成员");
 								}
 							}
 							
@@ -242,7 +242,7 @@ public class GroupMembershipsPage extends GroupPage {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Memberships";
+						return "删除所有查询的成员资格";
 					}
 					
 					@Override
@@ -268,7 +268,7 @@ public class GroupMembershipsPage extends GroupPage {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete all queried memberships";
+										return "在下方输入 <code>yes</code> 以删除所有查询的成员资格";
 									}
 									
 									@Override
@@ -291,7 +291,7 @@ public class GroupMembershipsPage extends GroupPage {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No memberships to delete");
+									tag.put("title", "没有要删除的成员资格");
 								}
 							}
 							

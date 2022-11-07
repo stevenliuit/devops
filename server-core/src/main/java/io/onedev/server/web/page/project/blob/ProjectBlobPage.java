@@ -963,7 +963,7 @@ public class ProjectBlobPage extends ProjectPage implements BlobRenderContext,
 			protected void onComponentTag(ComponentTag tag) {
 				super.onComponentTag(tag);
 				if (isOnBranch())
-					tag.put("title", "Press 'y' to get permalink");
+					tag.put("title", "按'y'获取永久链接");
 			}
 
 			@Override

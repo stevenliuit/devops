@@ -261,9 +261,9 @@ public abstract class IssueListPanel extends Panel {
 				if (!isEnabled()) 
 					tag.append("class", "disabled", " ");
 				if (!querySubmitted)
-					tag.put("title", "Query not submitted");
+					tag.put("title", "查询未提交");
 				else if (queryModel.getObject() == null)
-					tag.put("title", "Can not save malformed query");
+					tag.put("title", "无法保存格式错误的查询");
 			}
 
 			@Override
@@ -564,7 +564,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Batch Edit Selected Issues";
+						return "批量编辑选定的问题";
 					}
 
 					@Override
@@ -630,7 +630,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select issues to edit");
+									tag.put("title", "请选择要编辑的问题");
 								}
 							}
 							
@@ -643,7 +643,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Move Selected Issues To...";
+						return "将选定的问题移至...";
 					}
 
 					@Override
@@ -685,7 +685,7 @@ public abstract class IssueListPanel extends Panel {
 											
 											@Override
 											protected String getConfirmMessage() {
-												return "Type <code>yes</code> below to move selected issues to project '" + getTargetProject() + "'";
+												return "在下方输入 <code>yes</code> 将选定的问题移至项目 '" + getTargetProject() + "'";
 											}
 											
 											@Override
@@ -711,7 +711,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select issues to move");
+									tag.put("title", "请选择要移动的问题");
 								}
 							}
 							
@@ -724,7 +724,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete Selected Issues";
+						return "删除选定的问题";
 					}
 					
 					@Override
@@ -748,7 +748,7 @@ public abstract class IssueListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete selected issues";
+										return "在下面输入 <code>yes</code> 以删除选定的问题";
 									}
 									
 									@Override
@@ -772,7 +772,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "Please select issues to delete");
+									tag.put("title", "请选择要删除的问题");
 								}
 							}
 							
@@ -785,7 +785,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Batch Edit All Queried Issues";
+						return "批量编辑所有查询的问题";
 					}
 
 					@Override
@@ -848,7 +848,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No issues to edit");
+									tag.put("title", "没有可编辑的问题");
 								}
 							}
 							
@@ -861,7 +861,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Move All Queried Issues To...";
+						return "将所有查询的问题移至...";
 					}
 					
 					@Override
@@ -905,7 +905,7 @@ public abstract class IssueListPanel extends Panel {
 											
 											@Override
 											protected String getConfirmMessage() {
-												return "Type <code>yes</code> below to move all queried issues to project '" + getTargetProject() + "'";
+												return "在下面输入 <code>yes</code> 将所有查询到的问题移到项目中 '" + getTargetProject() + "'";
 											}
 											
 											@Override
@@ -931,7 +931,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No issues to move");
+									tag.put("title", "没有要移动的问题");
 								}
 							}
 							
@@ -944,7 +944,7 @@ public abstract class IssueListPanel extends Panel {
 
 					@Override
 					public String getLabel() {
-						return "Delete All Queried Issues";
+						return "删除所有查询的问题";
 					}
 					
 					@Override
@@ -970,7 +970,7 @@ public abstract class IssueListPanel extends Panel {
 									
 									@Override
 									protected String getConfirmMessage() {
-										return "Type <code>yes</code> below to delete all queried issues";
+										return "在下面输入 <code>yes</code> 以删除所有查询的问题";
 									}
 									
 									@Override
@@ -993,7 +993,7 @@ public abstract class IssueListPanel extends Panel {
 								configure();
 								if (!isEnabled()) {
 									tag.put("disabled", "disabled");
-									tag.put("title", "No issues to delete");
+									tag.put("title", "没有要删除的问题");
 								}
 							}
 							
