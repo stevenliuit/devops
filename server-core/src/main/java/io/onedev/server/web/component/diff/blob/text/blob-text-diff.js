@@ -324,7 +324,7 @@ onedev.server.blobTextDiff = {
 
 			function showInvalidSelection() {
 				var $content = $("<div></div>");
-				$content.append(`<a class='invalid'><svg class='icon'><use xlink:href='${onedev.server.icons}#warning'/></svg> Invalid selection, click for details</a>`);
+				$content.append(`<a class='invalid'><svg class='icon'><use xlink:href='${onedev.server.icons}#warning'/></svg> 无效选择，点击查看详情</a>`);
 				$content.children("a").attr("href", doclink + "/pages/diff-selection.md").attr("target", "_blank");
 				return {
 					position: position, 
@@ -750,7 +750,7 @@ onedev.server.blobTextDiff = {
 
 			var tooltipId = "blame-message-" + containerId + "_" + oldLine + "_" + newLine;
 			$container.data("blameMessageCallback")(tooltipId, $(this).data("hash"));
-			var $tooltip = $("<div class='blame-message'><div class='loading'>Loading...</div></div>");
+			var $tooltip = $("<div class='blame-message'><div class='loading'>加载中...</div></div>");
 			$tooltip.attr("id", tooltipId);
 			$tooltip.data("trigger", this);
 			$tooltip.data("alignment", alignment);
@@ -762,11 +762,11 @@ onedev.server.blobTextDiff = {
 		var $container = $("#" + containerId);
 		
 		if (!markUrl) {
-			$content = $(`<div><span class='invalid'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#warning'/></svg> Unable to comment here</a>`);
+			$content = $(`<div><span class='invalid'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#warning'/></svg> 无法在此发表评论</a>`);
 		} else {
-			var $content = $(`<div><a class='permanent'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#link'/></svg> Permanent link of this selection</a>`);
+			var $content = $(`<div><a class='permanent'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#link'/></svg> 此选择是永久链接</a>`);
 			$content.children("a.permanent").attr("href", markUrl);
-			$content.append(`<a class='copy-marked'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#copy'/></svg> Copy selected text to clipboard</a>`);
+			$content.append(`<a class='copy-marked'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#copy'/></svg> 将所选文本复制到剪贴板</a>`);
 			var clipboard = new Clipboard(".copy-marked", {
 			    text: function(trigger) {
 			        return markedText;
@@ -777,7 +777,7 @@ onedev.server.blobTextDiff = {
 				$(".selection-popover").remove();
 			});
 			if (loggedIn) {
-				$content.append(`<a class='comment'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#comment'/></svg> Add comment on this selection</a>`);
+				$content.append(`<a class='comment'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#comment'/></svg> 对此选择添加评论</a>`);
 				$content.children("a.comment").click(function() {
 					if (onedev.server.blobTextDiff.confirmUnsavedChanges($container)) {
 						$container.data("callback")("addComment", markRange.leftSide, 
@@ -786,7 +786,7 @@ onedev.server.blobTextDiff = {
 				});
 			} else {
 				var loginHref = $(".sign-in").attr("href");
-				$content.append(`<a class='comment' href='${loginHref}'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#warning'/></svg> Login to comment on selection</a>`);
+				$content.append(`<a class='comment' href='${loginHref}'><svg class='icon mr-1'><use xlink:href='${onedev.server.icons}#warning'/></svg> 登录以评论选择</a>`);
 			}			
 		}		
 		
@@ -1150,7 +1150,7 @@ onedev.server.blobTextDiff = {
 					cssClasses += " updated";
 					updated = true;
 				}
-				content += `<a class='${cssClasses}' title='Click to show comment of marked text'>#${comments[i].id}</a>`;
+				content += `<a class='${cssClasses}' title='单击以显示标记文本的注释'>#${comments[i].id}</a>`;
 			}
 
 			if (updated)
@@ -1192,7 +1192,7 @@ onedev.server.blobTextDiff = {
 			var comment = comments[0];
 			if (comment.updated)
 				$indicator.addClass("updated");
-			$indicator.addClass("comment-trigger").attr("title", "Click to show comment of marked text");
+			$indicator.addClass("comment-trigger").attr("title", "单击以显示标记文本的注释");
 			$indicator.append("<svg class='icon'><use xlink:href='" + onedev.server.icons + "#comment'/></svg>");
 			$indicator.mouseover(function() {
 				onedev.server.blobTextDiff.mark($container, comment.range);
